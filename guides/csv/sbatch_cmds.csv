@@ -1,0 +1,13 @@
+**Parameter**,**Description**,**Value**,**Mandatory**
+"``-J, --job-name``",A user defined name assigned to the job,Any combination of letters and numbers,no
+"``-t, --time``",Maximum time the job will be allowed to run,Time given in format: DD-HH:MM:SS,**YES**
+``--mem``,Amount of memory the job requires per **node**,"<number>[units], where units are K for kilobytes, M for megabytes, G for gigabytes or T for terabytes",**YES** (for the ``gpu`` partition only)
+"``-n, --ntasks``",Number of tasks of the job,Number,no (default 1)
+``--ntasks-per-node``,Number of tasks assigned to a node,Number,no (default 1)
+"``-N, --nodes``",Number of nodes requested,Number,no (default 1)
+"``-c, --cpus-per-task``",Number of threads per task,Number,no (default 1)
+"``-p, --partition``",Partition/queue where the job will be submited,"compute or gpu",**YES**
+``--output``,File where the standard output will be written. You can use placeholders to control the file naming scheme (see https://slurm.schedmd.com/sbatch.html#SECTION_FILENAME-PATTERN),Any combination of letters and numbers,no
+``--error``,File where the standard error will be written. You can use placeholders to control the file naming scheme (see https://slurm.schedmd.com/sbatch.html#SECTION_FILENAME-PATTERN),Any combination of letters and numbers,no
+``--exclusive``,The job cannot share nodes with other running jobs, No values, **YES** (for the ``compute`` partition only)
+``--test-only``,Return an estimate of when a job would be run, No values, no

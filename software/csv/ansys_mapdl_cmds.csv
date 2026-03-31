@@ -1,0 +1,10 @@
+**Option**,**Value**,**Description**
+"``-b``","no value, ``list`` or ``nolist``","Run in batch mode. Input commands are taken from ``stdin`` or a file specified with the ``-i`` option. If ``list`` is specified, or no value is given, the content of the input file is included in the output file. Conversely, with ``nolist`` the input commands are not included in the output file."
+"``-i``","``<input file>``","Path to input file of a computational problem containing APDL commands to use for batch processing"
+"``-o``","<output file>","Name of the file to store the output of MAPDL's batch execution."
+"``-dir``","directory path (Default: Directory executable is launched from)","Directory used to solve in. Users may want to write files to a different directory (e.g. some dir in their scratch space)."
+"``-np``","Number of processes to use","**For SMP and DMP analyses:** Number of CPU cores to use. **For a hybrid parallel processing analysis:** Number of processes to use (when used alongside the ``-nt`` option, the total number of CPU cores is ``np * nt``)."
+"``-nt``","Number of threads to use","The number of threads per process to be used in a hybrid parallel processing analysis"
+"``-machines``","``:`` separated list of pairs. Each pair consitst of a host and the number of processors per host (nprocs). Example: ``host1:<nprocs host1>:host2:<nprocs host2>``","Specifies the machines on which to run a DMP analysis."
+"``-mpi``","``openmpi`` or ``intelmpi`` (default)","Type of MPI to use."
+"``-mpifile``","a filename","Name of an existing MPI file to be used in a DMP run."

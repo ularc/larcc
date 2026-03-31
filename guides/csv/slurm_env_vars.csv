@@ -1,0 +1,15 @@
+Slurm Variable Name,Description,Example values
+$SLURM_CPUS_ON_NODE,Number of total CPUs allocated on node,"8,3"
+$SLURM_CPUS_PER_TASK,"Number of cores per task. I.e., the value given to the ``-cpus-per-task`` or ``-c`` sbatch options. Not set unless one of those options given.","8,3"
+$SLURM_JOB_ID,Job ID,5741192
+$SLURM_JOB_NAME,Job Name,myjob
+$SLURM_JOB_NODELIST,Nodes assigned to job,"larcc-cpu[1-3]"
+$SLURM_JOB_NUM_NODES,Number of nodes allocated to job,2
+$SLURM_LOCALID,Index to core running on within node,4
+$SLURM_NODEID,Index to node running on relative to nodes assigned to job,0
+$SLURM_NNODES,Deprecated. Same as SLURM_JOB_NUM_NODES,4
+$SLURM_NTASKS,Total number of tasks. Number of total cores is given by SLURM_NTASKS times SLURM_CPUS_PER_TASK ,11
+$SLURM_PROCID,Index of task relative to job,0
+$SLURM_SUBMIT_DIR,Directory from which the ``sbatch`` command was invoked,/home/user/wdir
+$SLURM_SUBMIT_HOST,Hostname of the computer from which the command ``sbatch`` was invoked.,larcc-login1
+$SLURM_TASKS_PER_NODE,"This gives a comma-delimited list of integers representing the task per the node, using the same ordering as in SLURM_JOB_NODELIST. If consecutive nodes have the same task count, the integer will be followed by '(xN)', so the example value is for 2 tasks on the first three nodes and 1 task on the fourth node.","2(x3),1"

@@ -1,0 +1,38 @@
+@startuml
+
+rectangle "Copy results from scratch to home" {
+caption \lpdsh -R ssh -w $SLURM_JOB_NODELIST "cp -r /mnt/scratch/local/$USER/results /home/$USER/results_\`hostname\`"
+rectangle "<b>larcc-cpu1\nExecutes the pdsh command" as job_executor
+note left
+  This is where slurm executes
+  your submission script
+end note
+rectangle "<b>CARDS 4PB Storage" as Shared
+
+rectangle "<b>larcc-cpu1\nExecutes cp command" as Node1 {
+  folder "/home/$USER" as Node1Home
+  folder "/mnt/scratch/local/$USER" as Node1Scratch
+}
+
+rectangle "<b>larcc-cpu2\nExecutes cp command" as Node2 {
+  folder "/home/$USER" as Node2Home
+  folder "/mnt/scratch/local/$USER" as Node2Scratch
+}
+rectangle "<b>larcc-cpu3\nExecutes cp command" as Node3 {
+  folder "/home/$USER" as Node3Home
+  folder "/mnt/scratch/local/$USER" as Node3Scratch
+}
+
+job_executor -down-> Node1 : ssh
+job_executor -down-> Node2 : ssh
+job_executor -down-> Node3 : ssh
+
+Node1Home <-up- Node1Scratch : \lcopy "results" folder\nas "results_larcc-cpu1"\nto
+Node2Home <-up- Node2Scratch : \lcopy "results" folder\nas "results_larcc-cpu2"\nto
+Node3Home <-up- Node3Scratch : \lcopy "results" folder\nas "results_larcc-cpu3"\nto
+
+Node1Home -[dashed]down-> Shared
+Node2Home -[dashed]down-> Shared
+Node3Home -[dashed]down-> Shared
+}
+@enduml

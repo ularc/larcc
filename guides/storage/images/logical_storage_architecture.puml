@@ -1,0 +1,29 @@
+@startuml
+skinparam linetype polyline
+skinparam linetype ortho
+
+storage "<b>CARDS:</b> 4PB Shared\nCeph Storage" as cards
+node "LARCC CPU Node" as cpu_node {
+  folder "/home/$USER" as cpu_home {
+  }
+  folder "/mnt/scratch/local/$USER" as cpu_scratch_folder {
+  }
+  storage "14TB Local\n NVMe Storage" as cpu_scratch
+}
+
+node "LARCC GPU Node" as gpu_node {
+  folder "/home/$USER" as gpu_home {
+  }
+  folder "/mnt/scratch/local/$USER" as gpu_scratch_folder {
+  }
+  storage "28TB Local\n NVMe Storage" as gpu_scratch
+}
+cpu_home -down-> cards
+gpu_home -down-> cards
+
+gpu_scratch_folder -down-> gpu_scratch
+cpu_scratch_folder -down-> cpu_scratch
+cpu_home -[hidden]right-> cpu_scratch
+gpu_home -[hidden]left-> gpu_scratch
+
+@enduml

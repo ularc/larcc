@@ -1,0 +1,15 @@
+Solvers/Feature,SMP,DMP and Hybrid
+Sparse,Y,Y
+PCG,Y,Y
+ICCG,Y,Y (mixed mode only)
+JCG,Y,"Y (mixed mode only. For static analyses and transient analyses using the full method (TRNOPT,FULL), the solver runs in pure DMP mode only when the matrix is symmetric. Otherwise, it runs in SMP mode)"
+QMR [3],Y,Y (mixed mode only)
+Block Lanczos eigensolver,Y,Y
+PCG Lanczos eigensolver,Y,Y
+Supernode eigensolver,Y,Y (mixed mode only)
+Subspace eigensolver,Y,Y
+Unsymmetric eigensolver,Y,Y
+Damped eigensolver,Y,Y
+QRDAMP eigensolver,Y,Y
+"Element formulation, results calculation",Y,Y
+Graphics and other pre- and postprocessing,Y,Y (mixed mode only)

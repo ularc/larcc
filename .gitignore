@@ -1,0 +1,5 @@
+# Ignore the files built by make 
+_build/*
+
+# Ignore the vscode directory 
+.vscode
