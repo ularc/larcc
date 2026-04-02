@@ -1,0 +1,668 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PyTorch &mdash; LARCC User Documentation  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=a5c4661c" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=3ad828ca" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../_static/tabs.js?v=3030b3cb"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="R" href="R.html" />
+    <link rel="prev" title="LIGGGHTS" href="liggghts.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            LARCC User Documentation
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../accounts_and_support/index.html">Accounts and Support</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../accounts_and_support/index.html#request-an-account">Request an account</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../accounts_and_support/index.html#accounts-for-uofl-individuals">Accounts for UofL individuals</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../accounts_and_support/index.html#uofl-vpn-connection">UofL VPN Connection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../accounts_and_support/index.html#request-support-tickets">Request Support (Tickets)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../gettingstarted/index.html">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/index.html#usage-agreement">Usage Agreement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/index.html#hpc-system-overview">HPC system overview</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../gettingstarted/index.html#about-the-cluster">About the cluster</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gettingstarted/index.html#about-scientific-software">About Scientific Software</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gettingstarted/index.html#about-jobs">About Jobs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/index.html#quickstart">Quickstart</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../gettingstarted/index.html#logging-into-the-cluster">Logging into the cluster</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../gettingstarted/index.html#using-the-command-line">Using the command line</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../gettingstarted/index.html#using-mobaxterm">Using MobaXterm</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../gettingstarted/index.html#copying-files-to-from-the-cluster">Copying files to/from the cluster</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../gettingstarted/index.html#id1">Using the command line</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../gettingstarted/index.html#id2">Using MobaXterm</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../gettingstarted/index.html#using-software-installed-in-the-cluster">Using software installed in the cluster</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../gettingstarted/index.html#list-available-software">List available software</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../gettingstarted/index.html#load-software">Load software</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../gettingstarted/index.html#list-currently-loaded-software">List currently loaded software</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../gettingstarted/index.html#unloading-software">Unloading software</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../gettingstarted/index.html#queues-and-jobs">Queues and jobs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/index.html#policies">Policies</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../gettingstarted/index.html#installing-packages-system-wide">Installing packages system-wide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gettingstarted/index.html#running-applications-on-the-login-nodes">Running applications on the login nodes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gettingstarted/index.html#resource-restrictions">Resource restrictions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../gettingstarted/index.html#job-runtime-restrictions">Job runtime restrictions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../gettingstarted/index.html#storage-restrictions">Storage restrictions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/index.html">Guides</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../guides/system_guide/index.html">HPC System Guide</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../guides/system_guide/index.html#introduction">Introduction</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../guides/system_guide/index.html#what-is-a-shell">What is a Shell?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../guides/system_guide/index.html#what-is-case-sensitivity">What is case-sensitivity?</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../guides/system_guide/index.html#connecting-to-the-cluster">Connecting to the Cluster</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../guides/system_guide/index.html#understanding-filesystems">Understanding Filesystems</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../guides/system_guide/index.html#what-is-a-filesystem">What is a Filesystem?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../guides/system_guide/index.html#filesystem-hierarchies">Filesystem Hierarchies</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../guides/system_guide/index.html#navigating-the-filesystem">Navigating the filesystem</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../guides/system_guide/index.html#using-modules">Using Modules</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/slurm/index.html">Slurm Queueing System Guide</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../guides/slurm/index.html#basic-slurm-terminology">Basic Slurm Terminology</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../guides/slurm/terminology.html">Basic Slurm Terminology</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../guides/slurm/index.html#job-types-and-job-submission">Job Types and Job Submission</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../guides/slurm/interactive_jobs.html">Interactive Jobs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../guides/slurm/batch_jobs.html">Batch Jobs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../guides/slurm/batch_jobs.html#job-arrays">Job Arrays</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../guides/slurm/job_dependencies.html">Job Dependencies</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../guides/slurm/index.html#job-environment">Job Environment</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../guides/slurm/job_environment.html">Slurm environmental variables</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../guides/slurm/index.html#strategies-when-submitting-slurm-jobs">Strategies When Submitting Slurm Jobs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../guides/slurm/job_submission_strategies.html">Single Job with Multiple Job Steps</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../guides/slurm/job_submission_strategies.html#job-arrays">Job Arrays</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../guides/slurm/job_submission_strategies.html#requesting-cpu-nodes-with-multiple-parallel-tasks">Requesting CPU Nodes with Multiple Parallel Tasks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../guides/slurm/job_submission_strategies.html#single-gpu-node-with-one-task-per-gpu-and-cpu-cores-evenly-distributed-across-tasks">Single GPU node with one task per GPU and CPU cores evenly distributed across tasks</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/storage/index.html">Storage Guide</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../guides/storage/index.html#understanding-storage-on-compute-nodes">Understanding Storage on Compute Nodes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../guides/storage/index.html#storage-types">Storage Types</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../guides/storage/index.html#recommended-workflow">Recommended Workflow</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../guides/storage/index.html#copying-data-between-home-and-scratch">Copying Data Between Home and Scratch</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Software</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="conda.html">Conda (Anaconda/Miniconda/Miniforge)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="conda.html#basics">Basics</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="conda.html#about-anaconda-miniconda-and-miniforge">About Anaconda, Miniconda and Miniforge</a></li>
+<li class="toctree-l4"><a class="reference internal" href="conda.html#what-is-a-conda-environment">What is a Conda environment?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="conda.html#why-use-multiple-conda-environments">Why use multiple Conda environments?</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="conda.html#using-conda">Using Conda</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="conda.html#loading-the-miniforge3-module-and-the-base-environment">Loading the miniforge3 module and the base environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="conda.html#creating-and-activating-an-environment">Creating and activating an environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="conda.html#installing-packages-with-conda-and-mamba">Installing packages with conda and mamba</a></li>
+<li class="toctree-l4"><a class="reference internal" href="conda.html#installing-packages-with-pip">Installing packages with pip</a></li>
+<li class="toctree-l4"><a class="reference internal" href="conda.html#cloning-an-environment">Cloning an environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="conda.html#miscellaneous">Miscellaneous</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="conda.html#conda-in-a-batch-job">Conda in a batch job</a></li>
+<li class="toctree-l3"><a class="reference internal" href="conda.html#conda-in-an-interactive-job">Conda in an interactive job</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="gaussian.html">Gaussian</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="gaussian.html#running-gaussian">Running Gaussian</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="gaussian.html#example-slurm-job-script">Example Slurm Job Script</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="jupyter.html">Jupyter</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="jupyter.html#launching-jupyter-through-a-batch-job">Launching Jupyter through a batch job</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="jupyter.html#optional-create-a-jupyter-environment">1. (Optional) Create a jupyter environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="jupyter.html#create-the-submission-script">2. Create the submission script</a></li>
+<li class="toctree-l4"><a class="reference internal" href="jupyter.html#connect-to-jupyter-from-your-web-browser">3. Connect to jupyter from your web browser</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="jupyter.html#launching-jupyter-through-an-interactive-job">Launching Jupyter through an interactive job</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="jupyter.html#id2">1. (Optional) Create a jupyter environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="jupyter.html#submit-an-interactive-job">2. Submit an interactive job</a></li>
+<li class="toctree-l4"><a class="reference internal" href="jupyter.html#manually-launch-jupyter">3. Manually launch Jupyter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="jupyter.html#access-jupyter-from-your-workstation">4. Access Jupyter from your workstation</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="jupyter.html#transitioning-from-jupyter-to-python-script">Transitioning from Jupyter to Python Script</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="jupyter.html#export-the-notebook">1. Export the Notebook</a></li>
+<li class="toctree-l4"><a class="reference internal" href="jupyter.html#clean-up-the-script">2. Clean Up the Script</a></li>
+<li class="toctree-l4"><a class="reference internal" href="jupyter.html#replace-notebook-specific-features">3. Replace Notebook-Specific Features</a></li>
+<li class="toctree-l4"><a class="reference internal" href="jupyter.html#handle-file-paths-and-inputs">4. Handle File Paths and Inputs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="jupyter.html#test-the-script">5. Test the Script</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="matlab.html">MATLAB</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="matlab.html#basics">Basics</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="matlab.html#workers-and-pools">Workers and pools</a></li>
+<li class="toctree-l4"><a class="reference internal" href="matlab.html#parallel-and-distributed-execution">Parallel and distributed execution</a></li>
+<li class="toctree-l4"><a class="reference internal" href="matlab.html#cluster-profiles">Cluster profiles</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="matlab.html#submitting-a-batch-job">Submitting a batch job</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="matlab.html#submit-jobs-through-a-batch-script">Submit jobs through a batch script</a></li>
+<li class="toctree-l4"><a class="reference internal" href="matlab.html#submit-jobs-through-matlab-s-command-prompt">Submit jobs through MATLAB’s command prompt</a></li>
+<li class="toctree-l4"><a class="reference internal" href="matlab.html#submit-jobs-through-a-batch-script-and-a-matlab-submission-script">Submit jobs through a batch script and a MATLAB submission script</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="matlab.html#creating-a-cluster-profile-for-larcc">Creating a cluster profile for LARCC</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="lammps.html">LAMMPS</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="lammps.html#running-lammps">Running LAMMPS</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="lammps.html#example-slurm-job-script">Example Slurm Job Script</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="lammps.html#building-lammps">Building LAMMPS</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="liggghts.html">LIGGGHTS</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="liggghts.html#running-ligghts">Running LIGGHTS</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="liggghts.html#example-slurm-job-script">Example Slurm Job Script</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">PyTorch</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#verifying-gpu-availability">Verifying GPU Availability</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#using-gpus-in-pytorch">Using GPUs in PyTorch</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#moving-tensors-to-gpu">Moving Tensors to GPU</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#model-training-on-gpu">Model Training on GPU</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#monitoring-gpu-usage">Monitoring GPU Usage</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#multi-gpu-usage-in-pytorch">Multi-GPU Usage in PyTorch</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#single-node-multi-gpu-dataparallel-or-ddp">Single Node, Multi-GPU (DataParallel or DDP)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="R.html">R</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="R.html#using-r">Using R</a></li>
+<li class="toctree-l3"><a class="reference internal" href="R.html#installing-r-packages">Installing R Packages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="R.html#installing-r-packages-in-custom-locations">Installing R packages in custom locations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="R.html#installing-r-packages-with-external-library-dependencies">Installing R Packages with External Library Dependencies</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="R.html#example-installing-the-units-package">Example: Installing the <code class="docutils literal notranslate"><span class="pre">units</span></code> Package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="R.html#example-installing-the-sf-package">Example: Installing the <code class="docutils literal notranslate"><span class="pre">sf</span></code> Package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="R.html#simplifying-with-conda">Simplifying with Conda</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="R.html#using-the-pak-package-manager">Using the <code class="docutils literal notranslate"><span class="pre">pak</span></code> Package Manager</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="rstudio.html">RStudio</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="rstudio.html#pre-launch">Pre-launch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rstudio.html#launch-rstudio-server">Launch RStudio Server</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tensorflow.html">Tensorflow</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tensorflow.html#verifying-gpu-availability">Verifying GPU Availability</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tensorflow.html#single-node-multi-gpu-training">Single Node, Multi-GPU Training</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="vasp.html">VASP</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="vasp.html#license-restrictions">License Restrictions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="vasp.html#running-vasp">Running VASP</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="vasp.html#vasp-on-gpu-nodes">VASP on GPU nodes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="vasp.html#vasp-on-cpu-only-nodes">VASP on CPU-only nodes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="vasp.html#example-slurm-job-script">Example Slurm Job Script</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../usecases/index.html">AI Use Cases</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../usecases/chest_xray.html">Pneumonia detection based on Chest X-Ray</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../usecases/chest_xray.html#ingesting-the-data">1. Ingesting the data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../usecases/chest_xray.html#training-the-models">2. Training the models</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../usecases/chest_xray.html#cnn-training-and-validation">CNN Training and Validation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../usecases/chest_xray.html#transfer-learning-training-and-validation">Transfer Learning Training and Validation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../usecases/chest_xray.html#fine-tuning-training-and-validation">Fine Tuning Training and Validation</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../usecases/chest_xray.html#visualize-metrics">3. Visualize Metrics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../usecases/chest_xray.html#save-your-results-for-further-analyses">4. Save your results for further analyses</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../usecases/medbert.html">Med-BERT</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">LARCC User Documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Software</a></li>
+      <li class="breadcrumb-item active">PyTorch</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/software/pytorch.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="pytorch">
+<span id="id1"></span><h1>PyTorch<a class="headerlink" href="#pytorch" title="Link to this heading"></a></h1>
+<p>To use PyTorch on the cluster, start by reviewing the <a class="reference internal" href="conda.html#conda"><span class="std std-ref">Conda</span></a> installer
+and how to manage <a class="reference internal" href="conda.html#conda-create-env"><span class="std std-ref">Conda environments</span></a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Newer PyTorch versions are not available via Conda, but you can install them using <code class="docutils literal notranslate"><span class="pre">pip</span></code> within Conda environments.</p>
+</div>
+<p>There are two main ways to use PyTorch:</p>
+<ol class="arabic">
+<li><p><strong>Using the Global Conda Environment</strong></p>
+<p>The cluster provides a pre-configured Conda environment with PyTorch.
+Only administrators can modify this environment, so you’re limited to the installed packages.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>module<span class="w"> </span>load<span class="w"> </span>miniforge3/24.3.0-0-gcc-11.5.0-wkw4vym
+conda<span class="w"> </span>env<span class="w"> </span>list
+conda<span class="w"> </span>activate<span class="w"> </span>pytorch
+</pre></div>
+</div>
+</li>
+<li><p><strong>Creating a Custom Conda Environment</strong></p>
+<p>You can create your own environment and install PyTorch via <code class="docutils literal notranslate"><span class="pre">pip</span></code>.
+Note that cloning the global <code class="docutils literal notranslate"><span class="pre">pytorch</span></code> environment won’t include PyTorch itself, as it was installed via <code class="docutils literal notranslate"><span class="pre">pip</span></code>.
+Our GPUs support CUDA up to 12.9. Below are installation examples:</p>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-0-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-0-0-0" name="0-0" role="tab" tabindex="0">PyTorch 2.7.1 + CUDA 11.8</button><button aria-controls="panel-0-0-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-1" name="0-1" role="tab" tabindex="-1">PyTorch 2.7.1 + CUDA 12.6</button><button aria-controls="panel-0-0-2" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-2" name="0-2" role="tab" tabindex="-1">PyTorch 2.7.1 + CUDA 12.8</button></div><div aria-labelledby="tab-0-0-0" class="sphinx-tabs-panel" id="panel-0-0-0" name="0-0" role="tabpanel" tabindex="0"><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>module<span class="w"> </span>load<span class="w"> </span>miniforge3/24.3.0-0-gcc-11.5.0-wkw4vym
+conda<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>my_pytorch_cuda11.8
+conda<span class="w"> </span>activate<span class="w"> </span>my_pytorch_cuda11.8
+pip<span class="w"> </span>install<span class="w"> </span>torch<span class="w"> </span>torchvision<span class="w"> </span>torchaudio<span class="w"> </span>--index-url<span class="w"> </span>https://download.pytorch.org/whl/cu118
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-0-0-1" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-1" name="0-1" role="tabpanel" tabindex="0"><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>module<span class="w"> </span>load<span class="w"> </span>miniforge3/24.3.0-0-gcc-11.5.0-wkw4vym
+conda<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>my_pytorch_cuda12.6
+conda<span class="w"> </span>activate<span class="w"> </span>my_pytorch_cuda12.6
+pip<span class="w"> </span>install<span class="w"> </span>torch<span class="w"> </span>torchvision<span class="w"> </span>torchaudio
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-0-0-2" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-2" name="0-2" role="tabpanel" tabindex="0"><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>module<span class="w"> </span>load<span class="w"> </span>miniforge3/24.3.0-0-gcc-11.5.0-wkw4vym
+conda<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>my_pytorch_cuda12.8
+conda<span class="w"> </span>activate<span class="w"> </span>my_pytorch_cuda12.8
+pip<span class="w"> </span>install<span class="w"> </span>torch<span class="w"> </span>torchvision<span class="w"> </span>torchaudio<span class="w"> </span>--index-url<span class="w"> </span>https://download.pytorch.org/whl/cu128
+</pre></div>
+</div>
+</div></div>
+</li>
+</ol>
+<section id="verifying-gpu-availability">
+<h2>Verifying GPU Availability<a class="headerlink" href="#verifying-gpu-availability" title="Link to this heading"></a></h2>
+<p>After installing PyTorch and activating your environment,
+you can verify that PyTorch detects the available GPUs by using
+the following Python commands on a GPU node:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">torch</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;CUDA available:&quot;</span><span class="p">,</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Number of GPUs:&quot;</span><span class="p">,</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">device_count</span><span class="p">())</span>
+<span class="k">if</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Current GPU:&quot;</span><span class="p">,</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">get_device_name</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">current_device</span><span class="p">()))</span>
+</pre></div>
+</div>
+<p>Remember you’ll need to request an interactive or batch job
+to be able to ssh into a GPU node. For example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Submit interactive job</span>
+srun<span class="w"> </span>--partition<span class="o">=</span>gpu<span class="w"> </span>--job-name<span class="w"> </span>test_my_pytorch_env<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--time<span class="o">=</span><span class="m">05</span>:00<span class="w"> </span>--nodes<span class="o">=</span><span class="m">1</span><span class="w"> </span>--gpus<span class="o">=</span><span class="m">1</span><span class="w"> </span>--ntasks-per-node<span class="o">=</span><span class="m">1</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--pty<span class="w"> </span>/bin/bash<span class="w"> </span>-i
+
+<span class="c1"># Create python file to test pytorch</span>
+cat<span class="w"> </span><span class="s">&lt;&lt;EOF &gt; pytorch_test.py</span>
+<span class="s">import torch</span>
+
+<span class="s">print(&quot;CUDA available:&quot;, torch.cuda.is_available())</span>
+<span class="s">print(&quot;Number of GPUs:&quot;, torch.cuda.device_count())</span>
+<span class="s">if torch.cuda.is_available():</span>
+<span class="s">    print(&quot;Current GPU:&quot;, torch.cuda.get_device_name(torch.cuda.current_device()))</span>
+<span class="s">EOF</span>
+
+<span class="c1"># Execute the test program</span>
+module<span class="w"> </span>load<span class="w"> </span>miniforge3/24.3.0-0-gcc-11.5.0-wkw4vym
+conda<span class="w"> </span>activate<span class="w"> </span>my_pytorch_env
+python<span class="w"> </span>pytorch_test.py
+</pre></div>
+</div>
+<p>If CUDA is available and at least one GPU is detected, you should see output similar to:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>CUDA available: True
+Number of GPUs: 1
+Current GPU: NVIDIA H100 NVL
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If <cite>torch.cuda.is_available()</cite> returns <cite>False</cite>, ensure that:</p>
+<ul class="simple">
+<li><p>You are running on a compute node with GPU access (not a login or cpu node).</p></li>
+<li><p><strong>Your job explicitely requests 1 or more GPUs</strong> (e.g. <code class="docutils literal notranslate"><span class="pre">--gpus=2</span></code>, <code class="docutils literal notranslate"><span class="pre">--gpus-per-node=2</span></code>)</p></li>
+<li><p>Your environment includes a PyTorch build with CUDA support.</p></li>
+<li><p>The appropriate GPU drivers and CUDA libraries are available on the system.</p></li>
+</ul>
+</div>
+</section>
+<section id="using-gpus-in-pytorch">
+<h2>Using GPUs in PyTorch<a class="headerlink" href="#using-gpus-in-pytorch" title="Link to this heading"></a></h2>
+<p>Once you’ve confirmed that your custom PyTorch environment detects the GPUs,
+you can start using it for computations. Below are common usage patterns:</p>
+<section id="moving-tensors-to-gpu">
+<h3>Moving Tensors to GPU<a class="headerlink" href="#moving-tensors-to-gpu" title="Link to this heading"></a></h3>
+<p>You can move tensors to the GPU using the <code class="docutils literal notranslate"><span class="pre">.to()</span></code> or <code class="docutils literal notranslate"><span class="pre">.cuda()</span></code> methods:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">torch</span>
+
+<span class="c1"># Create a tensor on the CPU</span>
+<span class="n">x_cpu</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+
+<span class="c1"># Move it to the GPU (if available)</span>
+<span class="n">device</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s2">&quot;cuda&quot;</span> <span class="k">if</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">()</span> <span class="k">else</span> <span class="s2">&quot;cpu&quot;</span><span class="p">)</span>
+<span class="n">x_gpu</span> <span class="o">=</span> <span class="n">x_cpu</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tensor device:&quot;</span><span class="p">,</span> <span class="n">x_gpu</span><span class="o">.</span><span class="n">device</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="model-training-on-gpu">
+<h3>Model Training on GPU<a class="headerlink" href="#model-training-on-gpu" title="Link to this heading"></a></h3>
+<p>To train a model on the GPU, both the model and the data must be moved to the GPU:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">import</span> <span class="nn">torch.nn</span> <span class="k">as</span> <span class="nn">nn</span>
+<span class="kn">import</span> <span class="nn">torch.optim</span> <span class="k">as</span> <span class="nn">optim</span>
+
+<span class="c1"># Dummy model</span>
+<span class="k">class</span> <span class="nc">SimpleModel</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">linear</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">linear</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="n">device</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s2">&quot;cuda&quot;</span> <span class="k">if</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">()</span> <span class="k">else</span> <span class="s2">&quot;cpu&quot;</span><span class="p">)</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">SimpleModel</span><span class="p">()</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+<span class="n">criterion</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">MSELoss</span><span class="p">()</span>
+<span class="n">optimizer</span> <span class="o">=</span> <span class="n">optim</span><span class="o">.</span><span class="n">SGD</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="mf">0.01</span><span class="p">)</span>
+
+<span class="c1"># Dummy data</span>
+<span class="n">inputs</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+<span class="n">targets</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+
+<span class="c1"># Training step</span>
+<span class="n">outputs</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">inputs</span><span class="p">)</span>
+<span class="n">loss</span> <span class="o">=</span> <span class="n">criterion</span><span class="p">(</span><span class="n">outputs</span><span class="p">,</span> <span class="n">targets</span><span class="p">)</span>
+<span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+<span class="n">optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Training step completed on:&quot;</span><span class="p">,</span> <span class="n">device</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="monitoring-gpu-usage">
+<h3>Monitoring GPU Usage<a class="headerlink" href="#monitoring-gpu-usage" title="Link to this heading"></a></h3>
+<p>You can monitor GPU usage with:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nvidia-smi
+</pre></div>
+</div>
+<p>This command shows GPU memory usage, active processes, and more.</p>
+</section>
+</section>
+<section id="multi-gpu-usage-in-pytorch">
+<h2>Multi-GPU Usage in PyTorch<a class="headerlink" href="#multi-gpu-usage-in-pytorch" title="Link to this heading"></a></h2>
+<p>PyTorch supports single-node multi-GPU training. We present detailed examples below.
+Users are encourages to read <a class="reference external" href="https://docs.pytorch.org/docs/stable/elastic/run.html">torchrun (Elastic Launch) documentation</a>
+for more information and use cases.</p>
+<section id="single-node-multi-gpu-dataparallel-or-ddp">
+<h3>Single Node, Multi-GPU (DataParallel or DDP)<a class="headerlink" href="#single-node-multi-gpu-dataparallel-or-ddp" title="Link to this heading"></a></h3>
+<p>For simple use cases, you can use <cite>torch.nn.DataParallel</cite>,
+but for better performance and scalability, <cite>torch.nn.parallel.DistributedDataParallel</cite> (DDP) is recommended.</p>
+<p>Below is a template you can use to run a batch job using DDP on a single node while using 2 GPUs
+and all CPU cores.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Keep in mind that when using the <code class="docutils literal notranslate"><span class="pre">nccl</span></code> backend with DDP, only 1 process per GPU is allowed. For this case,
+each node has 48 CPU cores and 2 GPUs. Since we are using 1 process per GPU, we are left with 46 cores.
+We want each process to spawn multiple OpenMP threads,
+so we do 46 (CPU cores) / 2 (GPU processes) = 23 threads per GPU process.</p>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="c1">#SBATCH --job-name=ddp_single_node</span>
+<span class="c1">#SBATCH --nodes=1</span>
+<span class="c1">#SBATCH --ntasks-per-node=2</span>
+<span class="c1">#SBATCH --gpus-per-node=2</span>
+<span class="c1">#SBATCH --cpus-per-task=23</span>
+<span class="c1">#SBATCH --time=01:00:00</span>
+<span class="c1">#SBATCH --partition=gpu</span>
+
+module<span class="w"> </span>load<span class="w"> </span>miniforge3/24.3.0-0-gcc-11.5.0-wkw4vym
+conda<span class="w"> </span>activate<span class="w"> </span>pytorch
+
+<span class="c1"># Each node has 48 CPU cores and 2 GPUs. Since we are using 1</span>
+<span class="c1"># process per GPU, we are left with 46 cores. We want each</span>
+<span class="c1"># process to spawn multiple OpenMP threads, so we</span>
+<span class="c1"># do 46 (CPU cores) / 2 (GPU processes) = 23 (threads per GPU process)</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">OMP_NUM_THREADS</span><span class="o">=</span><span class="m">23</span>
+<span class="c1"># These are other OpenMP options used to control placement of threads</span>
+<span class="c1"># in CPU cores</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">OMP_PLACES</span><span class="o">=</span>cores
+<span class="nb">export</span><span class="w"> </span><span class="nv">OMP_PROC_BIND</span><span class="o">=</span>close
+<span class="nb">export</span><span class="w"> </span><span class="nv">OMP_STACKSIZE</span><span class="o">=</span>512m
+
+srun<span class="w"> </span>python3<span class="w"> </span>-m<span class="w"> </span>torch.distributed.run<span class="w"> </span><span class="se">\</span>
+<span class="w">     </span>--standalone<span class="w"> </span><span class="se">\</span>
+<span class="w">     </span>--nnodes<span class="o">=</span><span class="m">1</span><span class="w"> </span><span class="se">\</span>
+<span class="w">     </span>--nproc-per-node<span class="o">=</span><span class="m">2</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>/path/to/train.py
+</pre></div>
+</div>
+<p>In your <code class="docutils literal notranslate"><span class="pre">train.py</span></code>, initialize DDP like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">import</span> <span class="nn">torch.distributed</span> <span class="k">as</span> <span class="nn">dist</span>
+<span class="kn">from</span> <span class="nn">torch.nn.parallel</span> <span class="kn">import</span> <span class="n">DistributedDataParallel</span> <span class="k">as</span> <span class="n">DDP</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="n">dist</span><span class="o">.</span><span class="n">init_process_group</span><span class="p">(</span><span class="s2">&quot;nccl&quot;</span><span class="p">)</span>
+    <span class="n">local_rank</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;LOCAL_RANK&quot;</span><span class="p">])</span>
+    <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">set_device</span><span class="p">(</span><span class="n">local_rank</span><span class="p">)</span>
+
+    <span class="n">model</span> <span class="o">=</span> <span class="n">MyModel</span><span class="p">()</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">local_rank</span><span class="p">)</span>
+    <span class="n">ddp_model</span> <span class="o">=</span> <span class="n">DDP</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">device_ids</span><span class="o">=</span><span class="p">[</span><span class="n">local_rank</span><span class="p">])</span>
+
+    <span class="c1"># Training loop here...</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Here is a working example of the <code class="docutils literal notranslate"><span class="pre">train.py</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">import</span> <span class="nn">torch.nn</span> <span class="k">as</span> <span class="nn">nn</span>
+<span class="kn">import</span> <span class="nn">torch.optim</span> <span class="k">as</span> <span class="nn">optim</span>
+<span class="kn">import</span> <span class="nn">torch.distributed</span> <span class="k">as</span> <span class="nn">dist</span>
+<span class="kn">from</span> <span class="nn">torch.nn.parallel</span> <span class="kn">import</span> <span class="n">DistributedDataParallel</span> <span class="k">as</span> <span class="n">DDP</span>
+<span class="kn">from</span> <span class="nn">torch.utils.data</span> <span class="kn">import</span> <span class="n">Dataset</span><span class="p">,</span> <span class="n">DataLoader</span><span class="p">,</span> <span class="n">DistributedSampler</span>
+
+<span class="c1"># Dummy dataset</span>
+<span class="k">class</span> <span class="nc">RandomDataset</span><span class="p">(</span><span class="n">Dataset</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">length</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">len</span> <span class="o">=</span> <span class="n">length</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">length</span><span class="p">,</span> <span class="n">size</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">labels</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">length</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">index</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">labels</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">len</span>
+
+<span class="c1"># Simple model</span>
+<span class="k">class</span> <span class="nc">SimpleModel</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_size</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">SimpleModel</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">linear</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">input_size</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">linear</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="c1"># Initialize the process group</span>
+    <span class="n">dist</span><span class="o">.</span><span class="n">init_process_group</span><span class="p">(</span><span class="n">backend</span><span class="o">=</span><span class="s2">&quot;nccl&quot;</span><span class="p">)</span>
+
+    <span class="n">local_rank</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;LOCAL_RANK&quot;</span><span class="p">])</span>
+    <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">set_device</span><span class="p">(</span><span class="n">local_rank</span><span class="p">)</span>
+    <span class="n">device</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s2">&quot;cuda&quot;</span><span class="p">,</span> <span class="n">local_rank</span><span class="p">)</span>
+
+    <span class="c1"># Create model and move to GPU</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">SimpleModel</span><span class="p">(</span><span class="n">input_size</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">DDP</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">device_ids</span><span class="o">=</span><span class="p">[</span><span class="n">local_rank</span><span class="p">])</span>
+
+    <span class="c1"># Create dataset and distributed sampler</span>
+    <span class="n">dataset</span> <span class="o">=</span> <span class="n">RandomDataset</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
+    <span class="n">sampler</span> <span class="o">=</span> <span class="n">DistributedSampler</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
+    <span class="n">dataloader</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span> <span class="n">sampler</span><span class="o">=</span><span class="n">sampler</span><span class="p">)</span>
+
+    <span class="c1"># Loss and optimizer</span>
+    <span class="n">criterion</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">MSELoss</span><span class="p">()</span>
+    <span class="n">optimizer</span> <span class="o">=</span> <span class="n">optim</span><span class="o">.</span><span class="n">SGD</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="mf">0.01</span><span class="p">)</span>
+
+    <span class="c1"># Training loop</span>
+    <span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+        <span class="n">sampler</span><span class="o">.</span><span class="n">set_epoch</span><span class="p">(</span><span class="n">epoch</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">batch_idx</span><span class="p">,</span> <span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">dataloader</span><span class="p">):</span>
+            <span class="n">data</span><span class="p">,</span> <span class="n">target</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">),</span> <span class="n">target</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+
+            <span class="n">optimizer</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
+            <span class="n">output</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+            <span class="n">loss</span> <span class="o">=</span> <span class="n">criterion</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span>
+            <span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+            <span class="n">optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+
+            <span class="k">if</span> <span class="n">batch_idx</span> <span class="o">%</span> <span class="mi">10</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">local_rank</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Epoch </span><span class="si">{</span><span class="n">epoch</span><span class="si">}</span><span class="s2"> | Batch </span><span class="si">{</span><span class="n">batch_idx</span><span class="si">}</span><span class="s2"> | Loss </span><span class="si">{</span><span class="n">loss</span><span class="o">.</span><span class="n">item</span><span class="p">()</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="n">dist</span><span class="o">.</span><span class="n">destroy_process_group</span><span class="p">()</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="liggghts.html" class="btn btn-neutral float-left" title="LIGGGHTS" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="R.html" class="btn btn-neutral float-right" title="R" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, ITS - Research Computing.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

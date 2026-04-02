@@ -1,0 +1,527 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Med-BERT &mdash; LARCC User Documentation  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=3ad828ca" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Pneumonia detection based on Chest X-Ray" href="chest_xray.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            LARCC User Documentation
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../accounts_and_support/index.html">Accounts and Support</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../accounts_and_support/index.html#request-an-account">Request an account</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../accounts_and_support/index.html#accounts-for-uofl-individuals">Accounts for UofL individuals</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../accounts_and_support/index.html#uofl-vpn-connection">UofL VPN Connection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../accounts_and_support/index.html#request-support-tickets">Request Support (Tickets)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../gettingstarted/index.html">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/index.html#usage-agreement">Usage Agreement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/index.html#hpc-system-overview">HPC system overview</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../gettingstarted/index.html#about-the-cluster">About the cluster</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gettingstarted/index.html#about-scientific-software">About Scientific Software</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gettingstarted/index.html#about-jobs">About Jobs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/index.html#quickstart">Quickstart</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../gettingstarted/index.html#logging-into-the-cluster">Logging into the cluster</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../gettingstarted/index.html#using-the-command-line">Using the command line</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../gettingstarted/index.html#using-mobaxterm">Using MobaXterm</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../gettingstarted/index.html#copying-files-to-from-the-cluster">Copying files to/from the cluster</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../gettingstarted/index.html#id1">Using the command line</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../gettingstarted/index.html#id2">Using MobaXterm</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../gettingstarted/index.html#using-software-installed-in-the-cluster">Using software installed in the cluster</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../gettingstarted/index.html#list-available-software">List available software</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../gettingstarted/index.html#load-software">Load software</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../gettingstarted/index.html#list-currently-loaded-software">List currently loaded software</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../gettingstarted/index.html#unloading-software">Unloading software</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../gettingstarted/index.html#queues-and-jobs">Queues and jobs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/index.html#policies">Policies</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../gettingstarted/index.html#installing-packages-system-wide">Installing packages system-wide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gettingstarted/index.html#running-applications-on-the-login-nodes">Running applications on the login nodes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gettingstarted/index.html#resource-restrictions">Resource restrictions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../gettingstarted/index.html#job-runtime-restrictions">Job runtime restrictions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../gettingstarted/index.html#storage-restrictions">Storage restrictions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/index.html">Guides</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../guides/system_guide/index.html">HPC System Guide</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../guides/system_guide/index.html#introduction">Introduction</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../guides/system_guide/index.html#what-is-a-shell">What is a Shell?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../guides/system_guide/index.html#what-is-case-sensitivity">What is case-sensitivity?</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../guides/system_guide/index.html#connecting-to-the-cluster">Connecting to the Cluster</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../guides/system_guide/index.html#understanding-filesystems">Understanding Filesystems</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../guides/system_guide/index.html#what-is-a-filesystem">What is a Filesystem?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../guides/system_guide/index.html#filesystem-hierarchies">Filesystem Hierarchies</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../guides/system_guide/index.html#navigating-the-filesystem">Navigating the filesystem</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../guides/system_guide/index.html#using-modules">Using Modules</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/slurm/index.html">Slurm Queueing System Guide</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../guides/slurm/index.html#basic-slurm-terminology">Basic Slurm Terminology</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../guides/slurm/terminology.html">Basic Slurm Terminology</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../guides/slurm/index.html#job-types-and-job-submission">Job Types and Job Submission</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../guides/slurm/interactive_jobs.html">Interactive Jobs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../guides/slurm/batch_jobs.html">Batch Jobs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../guides/slurm/batch_jobs.html#job-arrays">Job Arrays</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../guides/slurm/job_dependencies.html">Job Dependencies</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../guides/slurm/index.html#job-environment">Job Environment</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../guides/slurm/job_environment.html">Slurm environmental variables</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../guides/slurm/index.html#strategies-when-submitting-slurm-jobs">Strategies When Submitting Slurm Jobs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../guides/slurm/job_submission_strategies.html">Single Job with Multiple Job Steps</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../guides/slurm/job_submission_strategies.html#job-arrays">Job Arrays</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../guides/slurm/job_submission_strategies.html#requesting-cpu-nodes-with-multiple-parallel-tasks">Requesting CPU Nodes with Multiple Parallel Tasks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../guides/slurm/job_submission_strategies.html#single-gpu-node-with-one-task-per-gpu-and-cpu-cores-evenly-distributed-across-tasks">Single GPU node with one task per GPU and CPU cores evenly distributed across tasks</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/storage/index.html">Storage Guide</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../guides/storage/index.html#understanding-storage-on-compute-nodes">Understanding Storage on Compute Nodes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../guides/storage/index.html#storage-types">Storage Types</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../guides/storage/index.html#recommended-workflow">Recommended Workflow</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../guides/storage/index.html#copying-data-between-home-and-scratch">Copying Data Between Home and Scratch</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../software/index.html">Software</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../software/conda.html">Conda (Anaconda/Miniconda/Miniforge)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../software/conda.html#basics">Basics</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../software/conda.html#about-anaconda-miniconda-and-miniforge">About Anaconda, Miniconda and Miniforge</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../software/conda.html#what-is-a-conda-environment">What is a Conda environment?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../software/conda.html#why-use-multiple-conda-environments">Why use multiple Conda environments?</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../software/conda.html#using-conda">Using Conda</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../software/conda.html#loading-the-miniforge3-module-and-the-base-environment">Loading the miniforge3 module and the base environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../software/conda.html#creating-and-activating-an-environment">Creating and activating an environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../software/conda.html#installing-packages-with-conda-and-mamba">Installing packages with conda and mamba</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../software/conda.html#installing-packages-with-pip">Installing packages with pip</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../software/conda.html#cloning-an-environment">Cloning an environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../software/conda.html#miscellaneous">Miscellaneous</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../software/conda.html#conda-in-a-batch-job">Conda in a batch job</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../software/conda.html#conda-in-an-interactive-job">Conda in an interactive job</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../software/gaussian.html">Gaussian</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../software/gaussian.html#running-gaussian">Running Gaussian</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../software/gaussian.html#example-slurm-job-script">Example Slurm Job Script</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../software/jupyter.html">Jupyter</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../software/jupyter.html#launching-jupyter-through-a-batch-job">Launching Jupyter through a batch job</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../software/jupyter.html#optional-create-a-jupyter-environment">1. (Optional) Create a jupyter environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../software/jupyter.html#create-the-submission-script">2. Create the submission script</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../software/jupyter.html#connect-to-jupyter-from-your-web-browser">3. Connect to jupyter from your web browser</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../software/jupyter.html#launching-jupyter-through-an-interactive-job">Launching Jupyter through an interactive job</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../software/jupyter.html#id2">1. (Optional) Create a jupyter environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../software/jupyter.html#submit-an-interactive-job">2. Submit an interactive job</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../software/jupyter.html#manually-launch-jupyter">3. Manually launch Jupyter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../software/jupyter.html#access-jupyter-from-your-workstation">4. Access Jupyter from your workstation</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../software/jupyter.html#transitioning-from-jupyter-to-python-script">Transitioning from Jupyter to Python Script</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../software/jupyter.html#export-the-notebook">1. Export the Notebook</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../software/jupyter.html#clean-up-the-script">2. Clean Up the Script</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../software/jupyter.html#replace-notebook-specific-features">3. Replace Notebook-Specific Features</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../software/jupyter.html#handle-file-paths-and-inputs">4. Handle File Paths and Inputs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../software/jupyter.html#test-the-script">5. Test the Script</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../software/matlab.html">MATLAB</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../software/matlab.html#basics">Basics</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../software/matlab.html#workers-and-pools">Workers and pools</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../software/matlab.html#parallel-and-distributed-execution">Parallel and distributed execution</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../software/matlab.html#cluster-profiles">Cluster profiles</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../software/matlab.html#submitting-a-batch-job">Submitting a batch job</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../software/matlab.html#submit-jobs-through-a-batch-script">Submit jobs through a batch script</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../software/matlab.html#submit-jobs-through-matlab-s-command-prompt">Submit jobs through MATLAB’s command prompt</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../software/matlab.html#submit-jobs-through-a-batch-script-and-a-matlab-submission-script">Submit jobs through a batch script and a MATLAB submission script</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../software/matlab.html#creating-a-cluster-profile-for-larcc">Creating a cluster profile for LARCC</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../software/lammps.html">LAMMPS</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../software/lammps.html#running-lammps">Running LAMMPS</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../software/lammps.html#example-slurm-job-script">Example Slurm Job Script</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../software/lammps.html#building-lammps">Building LAMMPS</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../software/liggghts.html">LIGGGHTS</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../software/liggghts.html#running-ligghts">Running LIGGHTS</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../software/liggghts.html#example-slurm-job-script">Example Slurm Job Script</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../software/pytorch.html">PyTorch</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../software/pytorch.html#verifying-gpu-availability">Verifying GPU Availability</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../software/pytorch.html#using-gpus-in-pytorch">Using GPUs in PyTorch</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../software/pytorch.html#moving-tensors-to-gpu">Moving Tensors to GPU</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../software/pytorch.html#model-training-on-gpu">Model Training on GPU</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../software/pytorch.html#monitoring-gpu-usage">Monitoring GPU Usage</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../software/pytorch.html#multi-gpu-usage-in-pytorch">Multi-GPU Usage in PyTorch</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../software/pytorch.html#single-node-multi-gpu-dataparallel-or-ddp">Single Node, Multi-GPU (DataParallel or DDP)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../software/R.html">R</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../software/R.html#using-r">Using R</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../software/R.html#installing-r-packages">Installing R Packages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../software/R.html#installing-r-packages-in-custom-locations">Installing R packages in custom locations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../software/R.html#installing-r-packages-with-external-library-dependencies">Installing R Packages with External Library Dependencies</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../software/R.html#example-installing-the-units-package">Example: Installing the <code class="docutils literal notranslate"><span class="pre">units</span></code> Package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../software/R.html#example-installing-the-sf-package">Example: Installing the <code class="docutils literal notranslate"><span class="pre">sf</span></code> Package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../software/R.html#simplifying-with-conda">Simplifying with Conda</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../software/R.html#using-the-pak-package-manager">Using the <code class="docutils literal notranslate"><span class="pre">pak</span></code> Package Manager</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../software/rstudio.html">RStudio</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../software/rstudio.html#pre-launch">Pre-launch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../software/rstudio.html#launch-rstudio-server">Launch RStudio Server</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../software/tensorflow.html">Tensorflow</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../software/tensorflow.html#verifying-gpu-availability">Verifying GPU Availability</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../software/tensorflow.html#single-node-multi-gpu-training">Single Node, Multi-GPU Training</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../software/vasp.html">VASP</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../software/vasp.html#license-restrictions">License Restrictions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../software/vasp.html#running-vasp">Running VASP</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../software/vasp.html#vasp-on-gpu-nodes">VASP on GPU nodes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../software/vasp.html#vasp-on-cpu-only-nodes">VASP on CPU-only nodes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../software/vasp.html#example-slurm-job-script">Example Slurm Job Script</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">AI Use Cases</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="chest_xray.html">Pneumonia detection based on Chest X-Ray</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="chest_xray.html#ingesting-the-data">1. Ingesting the data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="chest_xray.html#training-the-models">2. Training the models</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="chest_xray.html#cnn-training-and-validation">CNN Training and Validation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="chest_xray.html#transfer-learning-training-and-validation">Transfer Learning Training and Validation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="chest_xray.html#fine-tuning-training-and-validation">Fine Tuning Training and Validation</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="chest_xray.html#visualize-metrics">3. Visualize Metrics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="chest_xray.html#save-your-results-for-further-analyses">4. Save your results for further analyses</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Med-BERT</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">LARCC User Documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">AI Use Cases</a></li>
+      <li class="breadcrumb-item active">Med-BERT</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/usecases/medbert.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="med-bert">
+<h1>Med-BERT<a class="headerlink" href="#med-bert" title="Link to this heading"></a></h1>
+<p>The Med-BERT model is a natural language processing model for disease prediction based on EHR records.
+You can read more about it in the paper:</p>
+<blockquote>
+<div><p><em>Laila Rasmy, Yang Xiang, Ziqian Xie, Cui Tao, and Degui Zhi. “Med-BERT: pre-trained contextualized embeddings on large-scale structured electronic health records for disease prediction.” npj digital medicine 2021</em> <a class="reference external" href="https://www.nature.com/articles/s41746-021-00455-y">https://www.nature.com/articles/s41746-021-00455-y</a>.</p>
+</div></blockquote>
+<p>Due to vendor restrictions, the authors could not share their trained model:</p>
+<blockquote>
+<div><p><em>Initially we really hoped to share our models but unfortunately, the pre-trained models are no longer sharable. According to SBMI Data Service Office: “Under the terms of our contracts with data vendors, we are not permitted to share any of the data utilized in our publications, as well as large models derived from those data.”</em></p>
+</div></blockquote>
+<p>but they shared code to reproducte Med-BERT at <a class="reference external" href="https://github.com/ZhiGroup/Med-BERT">https://github.com/ZhiGroup/Med-BERT</a>.</p>
+<p>If you have access to data that aligns with Med-BERT’s requirements, you can leverage LARCC’s resources to create your own instance of Med-BERT.
+Here is an example for the pre-training phase:</p>
+<ol class="arabic">
+<li><p>Setup code dependencies. For this case, the pretraining code depends on tensorflow 1.x, which</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>is only compatible with python 3.5 to 3.7. The cluster comes with python 3.9 by default and, currently, there is no module for any
+of these python versions. Thus, you will need to use <a class="reference internal" href="../software/conda.html#conda"><span class="std std-ref">Conda</span></a> to create an environment with the desired python version.</p></li>
+<li><p>is compatible with protobuf versions prior 4.0.</p></li>
+<li><p>is compatible with cuda versions up to CUDA 10. LARCC’s gpus are only compatible with CUDA versions greater than 11.8, so you will need to
+use CPUs for the pretraining.</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>module<span class="w"> </span>load<span class="w"> </span>miniforge3
+conda<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>my_tf1<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.7<span class="w"> </span>tensorflow-gpu<span class="w"> </span><span class="s1">&#39;protobuf&lt;=3.20&#39;</span><span class="w"> </span>pandas<span class="w"> </span>numpy<span class="w"> </span>matplotlib
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Download code and rename all spaces in folder names with <code class="docutils literal notranslate"><span class="pre">_</span></code> to avoid conflicts in Linux.</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>~
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/ZhiGroup/Med-BERT.git
+find<span class="w"> </span>Med-BERT<span class="w"> </span>-type<span class="w"> </span>d<span class="w"> </span>-name<span class="w"> </span><span class="s1">&#39;*[[:space:]]*&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>xargs<span class="w"> </span>-I<span class="w"> </span><span class="s1">&#39;{}&#39;</span><span class="w"> </span>sh<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;mv &#39;{}&#39; \`echo &#39;{}&#39; | sed &#39;s/ /_/g&#39;\`&quot;</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Preprocess the data you will use for the pretraining step. In the example below, the option <code class="docutils literal notranslate"><span class="pre">--output_file='ehr_tf_features'</span></code>
+will create a tensorflow formatted features file named <code class="docutils literal notranslate"><span class="pre">ehr_tf_features</span></code> required for the pretraining.</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>~/Med-BERT/Pretraining_Code/Data_Pre-processing_Code
+<span class="c1"># NOTE: You can do the following on a batch job instead.</span>
+srun<span class="w"> </span>--partition<span class="o">=</span>compute<span class="w"> </span>--job-name<span class="w"> </span>med-bert<span class="w"> </span>--time<span class="o">=</span><span class="m">01</span>:00:00<span class="w"> </span>--ntasks-per-node<span class="o">=</span><span class="m">128</span><span class="w"> </span>--cpu-bind<span class="o">=</span>cores<span class="w"> </span>--pty<span class="w"> </span>/bin/bash<span class="w"> </span>-i
+<span class="nb">cd</span><span class="w"> </span>~/Med-BERT/Pretraining_Code/Data_Pre-processing_Code
+module<span class="w"> </span>load<span class="w"> </span>miniforge3
+conda<span class="w"> </span>activate<span class="w"> </span>my_tf1
+<span class="c1"># NOTE: This assumes your input file is stored in the path below. Change it to something</span>
+<span class="c1"># else if you store your data somewhere else</span>
+<span class="nv">INPUT</span><span class="o">=</span>~/Med-BERT/Pretraining_Code/Data_Pre-processing_Code/data_file.tsv
+<span class="nv">OUT_PREFIX</span><span class="o">=</span>preprocessed
+python3<span class="w"> </span>preprocess_pretrain_data.py<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$INPUT</span><span class="s2">&quot;</span><span class="w"> </span>NA<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$OUT_PREFIX</span><span class="s2">&quot;</span>
+python3<span class="w"> </span>create_BERTpretrain_EHRfeatures.py<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--input_file<span class="o">=</span><span class="s2">&quot;</span><span class="nv">$OUT_PREFIX</span><span class="s2">.bencs.train&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--output_file<span class="o">=</span><span class="s1">&#39;ehr_tf_features&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--vocab_file<span class="o">=</span><span class="s2">&quot;</span><span class="nv">$OUT_PREFIX</span><span class="s2">.types&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--max_predictions_per_seq<span class="o">=</span><span class="m">1</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--max_seq_length<span class="o">=</span><span class="m">64</span>
+<span class="nb">exit</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Create a submission script for the pretraining phase. Assume the script below is written to <code class="docutils literal notranslate"><span class="pre">~/med-bert.sbatch</span></code>.</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You may want to perform some preliminary runs with smaller values for The
+<code class="docutils literal notranslate"><span class="pre">--num_train_steps</span></code> and <code class="docutils literal notranslate"><span class="pre">--num_warmup_steps</span></code> options where you tweak the number of cores
+on each run. The idea is to find the optimal number of cores to use as too many cores does not
+always guarantee better performance. For example, using the provided example data file from
+the Med-BERT repo:</p>
+<table class="docutils align-center" id="id1">
+<caption><span class="caption-text">Pretraining of Med-BERT example data with <code class="docutils literal notranslate"><span class="pre">--num_train_steps=4500</span></code> and <code class="docutils literal notranslate"><span class="pre">--num_warmup_steps=1000</span></code></span><a class="headerlink" href="#id1" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 50.0%" />
+<col style="width: 50.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Cores</p></th>
+<th class="head"><p>Time</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>128</p></td>
+<td><p>15m36.219s</p></td>
+</tr>
+<tr class="row-odd"><td><p>64</p></td>
+<td><p>12m36.336s</p></td>
+</tr>
+<tr class="row-even"><td><p>32</p></td>
+<td><p>18m28.998s</p></td>
+</tr>
+<tr class="row-odd"><td><p>12</p></td>
+<td><p>19m52.057s</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="ch">#!/bin/bash</span>
+<span class="linenos"> 2</span><span class="c1">#SBATCH --partition=compute</span>
+<span class="linenos"> 3</span><span class="c1">#SBATCH --time=3-00:00:00</span>
+<span class="linenos"> 4</span><span class="c1">#SBATCH --ntasks=128</span>
+<span class="linenos"> 5</span><span class="c1">#SBATCH --ntasks-per-core=1</span>
+<span class="linenos"> 6</span>
+<span class="linenos"> 7</span><span class="nv">PROJECT_NAME</span><span class="o">=</span><span class="s2">&quot;Med-BERT&quot;</span>
+<span class="linenos"> 8</span><span class="nv">PROJECT_DIR</span><span class="o">=</span><span class="s2">&quot;/home/</span><span class="nv">$USER</span><span class="s2">/</span><span class="nv">$PROJECT_NAME</span><span class="s2">&quot;</span>
+<span class="linenos"> 9</span><span class="nv">SCRATCH_DIR</span><span class="o">=</span><span class="s2">&quot;/mnt/scratch/local/</span><span class="nv">$USER</span><span class="s2">&quot;</span>
+<span class="linenos">10</span><span class="nv">WDIR</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$SCRATCH_DIR</span><span class="s2">/</span><span class="nv">$SLURM_JOB_ID</span><span class="s2">&quot;</span>
+<span class="linenos">11</span><span class="nv">PRETRAIN_DIR</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$WDIR</span><span class="s2">/</span><span class="nv">$PROJECT_NAME</span><span class="s2">/Pretraining_Code&quot;</span>
+<span class="linenos">12</span><span class="nv">OUTDIR</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$WDIR</span><span class="s2">/out&quot;</span>
+<span class="linenos">13</span>
+<span class="linenos">14</span><span class="c1"># Copy project to scratch space to speed-up reading and writting of data.</span>
+<span class="linenos">15</span><span class="c1"># Checkpoints will be written to scratch too. You want to avoid writting to</span>
+<span class="linenos">16</span><span class="c1"># your home storage as it&#39;s orders of magnitude slower for read/write operations.</span>
+<span class="linenos">17</span>mkdir<span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$WDIR</span><span class="s2">&quot;</span>
+<span class="linenos">18</span>mkdir<span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$OUTDIR</span><span class="s2">&quot;</span>
+<span class="linenos">19</span>cp<span class="w"> </span>-r<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$PROJECT_DIR</span><span class="s2">&quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$WDIR</span><span class="s2">&quot;</span>
+<span class="linenos">20</span><span class="nb">cd</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$PRETRAIN_DIR</span><span class="s2">&quot;</span>
+<span class="linenos">21</span>
+<span class="linenos">22</span><span class="c1"># BACKUP settings:</span>
+<span class="linenos">23</span><span class="c1">#   These variables control how often and where the checkpoints produced</span>
+<span class="linenos">24</span><span class="c1">#   by the pretraining code is copied over to persistent storage.</span>
+<span class="linenos">25</span><span class="nv">BACKUP_DIR</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$PROJECT_DIR</span><span class="s2">/Pretraining_Code/checkpoint_</span><span class="nv">$SLURM_JOB_ID</span><span class="s2">&quot;</span>
+<span class="linenos">26</span><span class="nv">BACKUP_FREQUENCY</span><span class="o">=</span><span class="m">600</span><span class="w"> </span><span class="c1"># i.e. checkpoint every 10m</span>
+<span class="linenos">27</span><span class="nv">BACKUP_LOCK</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$SCRATCH_DIR</span><span class="s2">/backup_in_progress_</span><span class="nv">$SLURM_JOB_ID</span><span class="s2">&quot;</span>
+<span class="linenos">28</span><span class="nv">BACKUP_CMD</span><span class="o">=</span><span class="s2">&quot;rsync -a </span><span class="nv">$OUTDIR</span><span class="s2">/ </span><span class="nv">$BACKUP_DIR</span><span class="s2">/&quot;</span>
+<span class="linenos">29</span>
+<span class="linenos">30</span><span class="c1"># Start background process to copy any produced checkpoint back to</span>
+<span class="linenos">31</span><span class="c1"># persistent storage</span>
+<span class="linenos">32</span>bash<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;</span>
+<span class="linenos">33</span><span class="s2">  while [ -e /proc/</span><span class="nv">$$</span><span class="s2"> ]; do</span>
+<span class="linenos">34</span><span class="s2">    sleep </span><span class="nv">$BACKUP_FREQUENCY</span>
+<span class="linenos">35</span><span class="s2">    touch </span><span class="nv">$BACKUP_LOCK</span>
+<span class="linenos">36</span><span class="s2">    </span><span class="nv">$BACKUP_CMD</span>
+<span class="linenos">37</span><span class="s2">    rm </span><span class="nv">$BACKUP_LOCK</span>
+<span class="linenos">38</span><span class="s2">  done</span>
+<span class="linenos">39</span><span class="s2">&quot;</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="linenos">40</span><span class="nv">backup_pid</span><span class="o">=</span><span class="nv">$!</span>
+<span class="linenos">41</span>
+<span class="linenos">42</span>module<span class="w"> </span>load<span class="w"> </span>miniforge3
+<span class="linenos">43</span>conda<span class="w"> </span>activate<span class="w"> </span>my_tf1
+<span class="linenos">44</span>
+<span class="linenos">45</span>python3<span class="w"> </span>run_EHRpretraining.py<span class="w"> </span><span class="se">\</span>
+<span class="linenos">46</span><span class="w">        </span>--input_file<span class="o">=</span><span class="s2">&quot;</span><span class="nv">$PRETRAIN_DIR</span><span class="s2">/Data_Pre-processing_Code/ehr_tf_features&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="linenos">47</span><span class="w">        </span>--output_dir<span class="o">=</span><span class="s2">&quot;</span><span class="nv">$OUTDIR</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="linenos">48</span><span class="w">        </span>--do_train<span class="o">=</span>True<span class="w"> </span><span class="se">\</span>
+<span class="linenos">49</span><span class="w">        </span>--do_eval<span class="o">=</span>True<span class="w"> </span><span class="se">\</span>
+<span class="linenos">50</span><span class="w">        </span>--bert_config_file<span class="o">=</span><span class="s2">&quot;</span><span class="nv">$PRETRAIN_DIR</span><span class="s2">/config.json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="linenos">51</span><span class="w">        </span>--train_batch_size<span class="o">=</span><span class="m">32</span><span class="w"> </span><span class="se">\</span>
+<span class="linenos">52</span><span class="w">        </span>--max_seq_length<span class="o">=</span><span class="m">64</span><span class="w"> </span><span class="se">\</span>
+<span class="linenos">53</span><span class="w">        </span>--max_predictions_per_seq<span class="o">=</span><span class="m">1</span><span class="w"> </span><span class="se">\</span>
+<span class="linenos">54</span><span class="w">        </span>--num_train_steps<span class="o">=</span><span class="m">4500000</span><span class="w"> </span><span class="se">\</span>
+<span class="linenos">55</span><span class="w">        </span>--num_warmup_steps<span class="o">=</span><span class="m">10000</span><span class="w"> </span><span class="se">\</span>
+<span class="linenos">56</span><span class="w">        </span>--learning_rate<span class="o">=</span>5e-5
+<span class="linenos">57</span>
+<span class="linenos">58</span><span class="c1"># Wait for active backup (if any) to finish</span>
+<span class="linenos">59</span><span class="k">while</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-e<span class="w"> </span><span class="nv">$BACKUP_LOCK</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">do</span><span class="w"> </span>sleep<span class="w"> </span><span class="m">1</span><span class="p">;</span><span class="w"> </span><span class="k">done</span>
+<span class="linenos">60</span><span class="c1"># Prevent any more auto-backups from starting and perform</span>
+<span class="linenos">61</span><span class="c1"># final backup</span>
+<span class="linenos">62</span><span class="nb">kill</span><span class="w"> </span>-9<span class="w"> </span><span class="nv">$backup_pid</span>
+<span class="linenos">63</span><span class="nv">$BACKUP_CMD</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Submit script to slurm with <code class="docutils literal notranslate"><span class="pre">sbatch</span> <span class="pre">~/med-bert.sbatch</span></code>.</p></li>
+</ol>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="chest_xray.html" class="btn btn-neutral float-left" title="Pneumonia detection based on Chest X-Ray" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, ITS - Research Computing.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

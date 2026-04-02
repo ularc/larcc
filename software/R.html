@@ -1,0 +1,516 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>R &mdash; LARCC User Documentation  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=3ad828ca" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="RStudio" href="rstudio.html" />
+    <link rel="prev" title="PyTorch" href="pytorch.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            LARCC User Documentation
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../accounts_and_support/index.html">Accounts and Support</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../accounts_and_support/index.html#request-an-account">Request an account</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../accounts_and_support/index.html#accounts-for-uofl-individuals">Accounts for UofL individuals</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../accounts_and_support/index.html#uofl-vpn-connection">UofL VPN Connection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../accounts_and_support/index.html#request-support-tickets">Request Support (Tickets)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../gettingstarted/index.html">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/index.html#usage-agreement">Usage Agreement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/index.html#hpc-system-overview">HPC system overview</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../gettingstarted/index.html#about-the-cluster">About the cluster</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gettingstarted/index.html#about-scientific-software">About Scientific Software</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gettingstarted/index.html#about-jobs">About Jobs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/index.html#quickstart">Quickstart</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../gettingstarted/index.html#logging-into-the-cluster">Logging into the cluster</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../gettingstarted/index.html#using-the-command-line">Using the command line</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../gettingstarted/index.html#using-mobaxterm">Using MobaXterm</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../gettingstarted/index.html#copying-files-to-from-the-cluster">Copying files to/from the cluster</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../gettingstarted/index.html#id1">Using the command line</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../gettingstarted/index.html#id2">Using MobaXterm</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../gettingstarted/index.html#using-software-installed-in-the-cluster">Using software installed in the cluster</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../gettingstarted/index.html#list-available-software">List available software</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../gettingstarted/index.html#load-software">Load software</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../gettingstarted/index.html#list-currently-loaded-software">List currently loaded software</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../gettingstarted/index.html#unloading-software">Unloading software</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../gettingstarted/index.html#queues-and-jobs">Queues and jobs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/index.html#policies">Policies</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../gettingstarted/index.html#installing-packages-system-wide">Installing packages system-wide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gettingstarted/index.html#running-applications-on-the-login-nodes">Running applications on the login nodes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gettingstarted/index.html#resource-restrictions">Resource restrictions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../gettingstarted/index.html#job-runtime-restrictions">Job runtime restrictions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../gettingstarted/index.html#storage-restrictions">Storage restrictions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/index.html">Guides</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../guides/system_guide/index.html">HPC System Guide</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../guides/system_guide/index.html#introduction">Introduction</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../guides/system_guide/index.html#what-is-a-shell">What is a Shell?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../guides/system_guide/index.html#what-is-case-sensitivity">What is case-sensitivity?</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../guides/system_guide/index.html#connecting-to-the-cluster">Connecting to the Cluster</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../guides/system_guide/index.html#understanding-filesystems">Understanding Filesystems</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../guides/system_guide/index.html#what-is-a-filesystem">What is a Filesystem?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../guides/system_guide/index.html#filesystem-hierarchies">Filesystem Hierarchies</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../guides/system_guide/index.html#navigating-the-filesystem">Navigating the filesystem</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../guides/system_guide/index.html#using-modules">Using Modules</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/slurm/index.html">Slurm Queueing System Guide</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../guides/slurm/index.html#basic-slurm-terminology">Basic Slurm Terminology</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../guides/slurm/terminology.html">Basic Slurm Terminology</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../guides/slurm/index.html#job-types-and-job-submission">Job Types and Job Submission</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../guides/slurm/interactive_jobs.html">Interactive Jobs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../guides/slurm/batch_jobs.html">Batch Jobs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../guides/slurm/batch_jobs.html#job-arrays">Job Arrays</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../guides/slurm/job_dependencies.html">Job Dependencies</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../guides/slurm/index.html#job-environment">Job Environment</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../guides/slurm/job_environment.html">Slurm environmental variables</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../guides/slurm/index.html#strategies-when-submitting-slurm-jobs">Strategies When Submitting Slurm Jobs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../guides/slurm/job_submission_strategies.html">Single Job with Multiple Job Steps</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../guides/slurm/job_submission_strategies.html#job-arrays">Job Arrays</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../guides/slurm/job_submission_strategies.html#requesting-cpu-nodes-with-multiple-parallel-tasks">Requesting CPU Nodes with Multiple Parallel Tasks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../guides/slurm/job_submission_strategies.html#single-gpu-node-with-one-task-per-gpu-and-cpu-cores-evenly-distributed-across-tasks">Single GPU node with one task per GPU and CPU cores evenly distributed across tasks</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/storage/index.html">Storage Guide</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../guides/storage/index.html#understanding-storage-on-compute-nodes">Understanding Storage on Compute Nodes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../guides/storage/index.html#storage-types">Storage Types</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../guides/storage/index.html#recommended-workflow">Recommended Workflow</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../guides/storage/index.html#copying-data-between-home-and-scratch">Copying Data Between Home and Scratch</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Software</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="conda.html">Conda (Anaconda/Miniconda/Miniforge)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="conda.html#basics">Basics</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="conda.html#about-anaconda-miniconda-and-miniforge">About Anaconda, Miniconda and Miniforge</a></li>
+<li class="toctree-l4"><a class="reference internal" href="conda.html#what-is-a-conda-environment">What is a Conda environment?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="conda.html#why-use-multiple-conda-environments">Why use multiple Conda environments?</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="conda.html#using-conda">Using Conda</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="conda.html#loading-the-miniforge3-module-and-the-base-environment">Loading the miniforge3 module and the base environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="conda.html#creating-and-activating-an-environment">Creating and activating an environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="conda.html#installing-packages-with-conda-and-mamba">Installing packages with conda and mamba</a></li>
+<li class="toctree-l4"><a class="reference internal" href="conda.html#installing-packages-with-pip">Installing packages with pip</a></li>
+<li class="toctree-l4"><a class="reference internal" href="conda.html#cloning-an-environment">Cloning an environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="conda.html#miscellaneous">Miscellaneous</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="conda.html#conda-in-a-batch-job">Conda in a batch job</a></li>
+<li class="toctree-l3"><a class="reference internal" href="conda.html#conda-in-an-interactive-job">Conda in an interactive job</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="gaussian.html">Gaussian</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="gaussian.html#running-gaussian">Running Gaussian</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="gaussian.html#example-slurm-job-script">Example Slurm Job Script</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="jupyter.html">Jupyter</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="jupyter.html#launching-jupyter-through-a-batch-job">Launching Jupyter through a batch job</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="jupyter.html#optional-create-a-jupyter-environment">1. (Optional) Create a jupyter environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="jupyter.html#create-the-submission-script">2. Create the submission script</a></li>
+<li class="toctree-l4"><a class="reference internal" href="jupyter.html#connect-to-jupyter-from-your-web-browser">3. Connect to jupyter from your web browser</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="jupyter.html#launching-jupyter-through-an-interactive-job">Launching Jupyter through an interactive job</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="jupyter.html#id2">1. (Optional) Create a jupyter environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="jupyter.html#submit-an-interactive-job">2. Submit an interactive job</a></li>
+<li class="toctree-l4"><a class="reference internal" href="jupyter.html#manually-launch-jupyter">3. Manually launch Jupyter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="jupyter.html#access-jupyter-from-your-workstation">4. Access Jupyter from your workstation</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="jupyter.html#transitioning-from-jupyter-to-python-script">Transitioning from Jupyter to Python Script</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="jupyter.html#export-the-notebook">1. Export the Notebook</a></li>
+<li class="toctree-l4"><a class="reference internal" href="jupyter.html#clean-up-the-script">2. Clean Up the Script</a></li>
+<li class="toctree-l4"><a class="reference internal" href="jupyter.html#replace-notebook-specific-features">3. Replace Notebook-Specific Features</a></li>
+<li class="toctree-l4"><a class="reference internal" href="jupyter.html#handle-file-paths-and-inputs">4. Handle File Paths and Inputs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="jupyter.html#test-the-script">5. Test the Script</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="matlab.html">MATLAB</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="matlab.html#basics">Basics</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="matlab.html#workers-and-pools">Workers and pools</a></li>
+<li class="toctree-l4"><a class="reference internal" href="matlab.html#parallel-and-distributed-execution">Parallel and distributed execution</a></li>
+<li class="toctree-l4"><a class="reference internal" href="matlab.html#cluster-profiles">Cluster profiles</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="matlab.html#submitting-a-batch-job">Submitting a batch job</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="matlab.html#submit-jobs-through-a-batch-script">Submit jobs through a batch script</a></li>
+<li class="toctree-l4"><a class="reference internal" href="matlab.html#submit-jobs-through-matlab-s-command-prompt">Submit jobs through MATLAB’s command prompt</a></li>
+<li class="toctree-l4"><a class="reference internal" href="matlab.html#submit-jobs-through-a-batch-script-and-a-matlab-submission-script">Submit jobs through a batch script and a MATLAB submission script</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="matlab.html#creating-a-cluster-profile-for-larcc">Creating a cluster profile for LARCC</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="lammps.html">LAMMPS</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="lammps.html#running-lammps">Running LAMMPS</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="lammps.html#example-slurm-job-script">Example Slurm Job Script</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="lammps.html#building-lammps">Building LAMMPS</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="liggghts.html">LIGGGHTS</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="liggghts.html#running-ligghts">Running LIGGHTS</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="liggghts.html#example-slurm-job-script">Example Slurm Job Script</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pytorch.html">PyTorch</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pytorch.html#verifying-gpu-availability">Verifying GPU Availability</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pytorch.html#using-gpus-in-pytorch">Using GPUs in PyTorch</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pytorch.html#moving-tensors-to-gpu">Moving Tensors to GPU</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pytorch.html#model-training-on-gpu">Model Training on GPU</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pytorch.html#monitoring-gpu-usage">Monitoring GPU Usage</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pytorch.html#multi-gpu-usage-in-pytorch">Multi-GPU Usage in PyTorch</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pytorch.html#single-node-multi-gpu-dataparallel-or-ddp">Single Node, Multi-GPU (DataParallel or DDP)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">R</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#using-r">Using R</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#installing-r-packages">Installing R Packages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#installing-r-packages-in-custom-locations">Installing R packages in custom locations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#installing-r-packages-with-external-library-dependencies">Installing R Packages with External Library Dependencies</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#example-installing-the-units-package">Example: Installing the <code class="docutils literal notranslate"><span class="pre">units</span></code> Package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#example-installing-the-sf-package">Example: Installing the <code class="docutils literal notranslate"><span class="pre">sf</span></code> Package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#simplifying-with-conda">Simplifying with Conda</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#using-the-pak-package-manager">Using the <code class="docutils literal notranslate"><span class="pre">pak</span></code> Package Manager</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="rstudio.html">RStudio</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="rstudio.html#pre-launch">Pre-launch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rstudio.html#launch-rstudio-server">Launch RStudio Server</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tensorflow.html">Tensorflow</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tensorflow.html#verifying-gpu-availability">Verifying GPU Availability</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tensorflow.html#single-node-multi-gpu-training">Single Node, Multi-GPU Training</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="vasp.html">VASP</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="vasp.html#license-restrictions">License Restrictions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="vasp.html#running-vasp">Running VASP</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="vasp.html#vasp-on-gpu-nodes">VASP on GPU nodes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="vasp.html#vasp-on-cpu-only-nodes">VASP on CPU-only nodes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="vasp.html#example-slurm-job-script">Example Slurm Job Script</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../usecases/index.html">AI Use Cases</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../usecases/chest_xray.html">Pneumonia detection based on Chest X-Ray</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../usecases/chest_xray.html#ingesting-the-data">1. Ingesting the data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../usecases/chest_xray.html#training-the-models">2. Training the models</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../usecases/chest_xray.html#cnn-training-and-validation">CNN Training and Validation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../usecases/chest_xray.html#transfer-learning-training-and-validation">Transfer Learning Training and Validation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../usecases/chest_xray.html#fine-tuning-training-and-validation">Fine Tuning Training and Validation</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../usecases/chest_xray.html#visualize-metrics">3. Visualize Metrics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../usecases/chest_xray.html#save-your-results-for-further-analyses">4. Save your results for further analyses</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../usecases/medbert.html">Med-BERT</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">LARCC User Documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Software</a></li>
+      <li class="breadcrumb-item active">R</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/software/R.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="r">
+<span id="id1"></span><h1>R<a class="headerlink" href="#r" title="Link to this heading"></a></h1>
+<section id="using-r">
+<h2>Using R<a class="headerlink" href="#using-r" title="Link to this heading"></a></h2>
+<p>There are three ways to use R in the cluster:</p>
+<ol class="arabic">
+<li><p>Using a Conda environment (see our <a class="reference internal" href="conda.html#conda"><span class="std std-ref">Conda documentation</span></a> for more information). The conda package for R is called
+<code class="docutils literal notranslate"><span class="pre">r-base</span></code> and you specify a version of R like this: <code class="docutils literal notranslate"><span class="pre">r-base=&lt;version&gt;</span></code>. For example, the command below creates a conda
+environment named <code class="docutils literal notranslate"><span class="pre">R_44</span></code> that uses R version <code class="docutils literal notranslate"><span class="pre">4.4</span></code>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>module<span class="w"> </span>load<span class="w"> </span>miniforge3/24.3.0-0-gcc-11.5.0-wkw4vym
+conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>R_44<span class="w"> </span>r-base<span class="o">=</span><span class="m">4</span>.4
+</pre></div>
+</div>
+</li>
+<li><p>Using an <code class="docutils literal notranslate"><span class="pre">Apptainer</span></code> container with R pre-installed. The
+<a class="reference external" href="https://rocker-project.org/">Rocker Project</a> has many of these, including images with packages that
+are generally difficult to install (e.g. the geospatial toolkit for R, or Rstudio).</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># load the apptainer module in LARCC</span>
+module<span class="w"> </span>load<span class="w"> </span>apptainer/1.3.4-gcc-11.5.0-as2nnsb
+<span class="c1"># Download the container image and store it as</span>
+<span class="c1"># file geo.sif</span>
+apptainer<span class="w"> </span>pull<span class="w"> </span>geo.sif<span class="w"> </span>docker://rocker/geospatial:latest
+</pre></div>
+</div>
+</li>
+<li><p>Using a cluster provided module. This is generally discouraged unless the performace gain from doing so
+is strictly necessary. Researchers generally require multiple versions of R and maintaining an optimized
+stack of packages for each version is not scalable.</p></li>
+</ol>
+<p>If a version of R you require is not available as a module, you should use Conda (or an Apptainer container)
+to create a custom environment with the precise version you need:</p>
+<ol class="arabic simple">
+<li><p>Load the Miniforge module: <code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">load</span> <span class="pre">miniforge3/24.3.0-0-gcc-11.5.0-wkw4vym</span></code>.</p></li>
+<li><p>Create an environment for R: <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">create</span> <span class="pre">--name</span> <span class="pre">R_env</span></code>.
+See <a class="reference internal" href="conda.html#conda-create-env"><span class="std std-ref">this</span></a> section of our Conda documentation for more information on
+creating environments.</p></li>
+<li><p>Activate newly created environment: <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span> <span class="pre">R_env</span></code>.</p></li>
+<li><p>Install <code class="docutils literal notranslate"><span class="pre">r-base</span></code> and <code class="docutils literal notranslate"><span class="pre">r-essentials</span></code>: <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">r-base</span> <span class="pre">r-essentials</span></code>.
+See <a class="reference internal" href="conda.html#conda-install-pkgs"><span class="std std-ref">this</span></a> section of our Conda documentation for more information on specifying
+a particular version or R you want installed.</p></li>
+<li><p>You can then launch R!</p></li>
+</ol>
+<p>If you are using a module, then you can start using R right after loading the module.</p>
+</section>
+<section id="installing-r-packages">
+<h2>Installing R Packages<a class="headerlink" href="#installing-r-packages" title="Link to this heading"></a></h2>
+<p>When using R within a Conda environment, we recommend installing packages through Conda itself when posible.
+<strong>Many CRAN packages are available through Conda</strong>, often with an <code class="docutils literal notranslate"><span class="pre">r-</span></code> prefix. e.g., <code class="docutils literal notranslate"><span class="pre">r-dplyr</span></code>.</p>
+<p>If a package is not available through conda, we recommend using the <code class="docutils literal notranslate"><span class="pre">pak</span></code> package manager within R
+(See Section <a class="reference internal" href="#r-pak-manager"><span class="std std-ref">Using the pak Package Manager</span></a> for more information), but
+you are also welcome to use the default <code class="docutils literal notranslate"><span class="pre">install.package()</span></code>, <code class="docutils literal notranslate"><span class="pre">devtools</span></code>, etc.</p>
+<p>Keep in mind that if you are using a system-built version of R though a modulefile,
+you need to provide a custom installation location.
+See Section <a class="reference internal" href="#r-custom-install-location"><span class="std std-ref">Installing R packages in custom locations</span></a> for more
+information.</p>
+</section>
+<section id="installing-r-packages-in-custom-locations">
+<span id="r-custom-install-location"></span><h2>Installing R packages in custom locations<a class="headerlink" href="#installing-r-packages-in-custom-locations" title="Link to this heading"></a></h2>
+<p><strong>If you are using an R module as opposed to Conda</strong>,
+R packages are stored by default in system directories that users cannot write to.
+As a result, commands like:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;readr&quot;</span><span class="p">)</span>
+<span class="nf">install.packages</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;readr&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;ggplot2&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;tidyr&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>will fail with a “permission denied” error.</p>
+<p>To install packages successfully, you should specify a custom library path—typically within your home directory:</p>
+<ol class="arabic">
+<li><p>Create a directory for your R packages (adjust the version as needed):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir<span class="w"> </span>-p<span class="w"> </span>/home/user/R_lib/4.4.1
+</pre></div>
+</div>
+</li>
+<li><p>Launch R and install packages to that directory:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">install.packages</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;readr&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;ggplot2&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;tidyr&quot;</span><span class="p">),</span><span class="w"> </span><span class="n">lib</span><span class="o">=</span><span class="s">&quot;/home/user/R_lib/4.4.1&quot;</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="s">&quot;readr&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">lib.loc</span><span class="o">=</span><span class="s">&quot;/home/user/R_lib/4.4.1&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<p>You can also specify a custom location when invoking <code class="docutils literal notranslate"><span class="pre">install.packages</span></code> within a conda-installed R,
+but this is generally not necessary as R packages are installed to
+<code class="docutils literal notranslate"><span class="pre">/home/&lt;user&gt;/.conda/envs/&lt;env&gt;/lib/R/library</span></code> (where <code class="docutils literal notranslate"><span class="pre">&lt;user&gt;</span></code> is your username
+and <code class="docutils literal notranslate"><span class="pre">&lt;env&gt;</span></code> is the name of the Conda environment), which avoids collisions between packages installed
+on different environments.</p>
+</section>
+<section id="installing-r-packages-with-external-library-dependencies">
+<h2>Installing R Packages with External Library Dependencies<a class="headerlink" href="#installing-r-packages-with-external-library-dependencies" title="Link to this heading"></a></h2>
+<p>Some R packages rely on external libraries that may not be located in standard system paths. When installing such packages manually,
+you must explicitly inform R of the location of these libraries.</p>
+<section id="example-installing-the-units-package">
+<h3>Example: Installing the <code class="docutils literal notranslate"><span class="pre">units</span></code> Package<a class="headerlink" href="#example-installing-the-units-package" title="Link to this heading"></a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">units</span></code> package depends on the external library <code class="docutils literal notranslate"><span class="pre">libudunits2</span></code>. Suppose the environment variable <code class="docutils literal notranslate"><span class="pre">UDUNITS_ROOT</span></code> contains
+the path to the directory where <code class="docutils literal notranslate"><span class="pre">libudunits2</span></code> was built. You can install the package in R using:</p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Install the units package</span>
+<span class="n">udunits2_root</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">Sys.getenv</span><span class="p">(</span><span class="s">&quot;UDUNITS_ROOT&quot;</span><span class="p">)</span>
+<span class="n">udunits2_lib</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">paste</span><span class="p">(</span><span class="n">udunits2_root</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;/lib&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">sep</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">)</span>
+<span class="n">udunits2_inc</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">paste</span><span class="p">(</span><span class="n">udunits2_root</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;/include&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">sep</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">)</span>
+<span class="n">units_config</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">paste</span><span class="p">(</span><span class="s">&quot;--with-udunits2-lib=&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">udunits2_lib</span><span class="p">,</span>
+<span class="w">                      </span><span class="s">&quot; --with-udunits2-include=&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">udunits2_inc</span><span class="p">,</span><span class="w"> </span><span class="n">sep</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">)</span>
+<span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;units&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">configure.args</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">units_config</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Here, you’re explicitly specifying the paths to the <code class="docutils literal notranslate"><span class="pre">lib</span></code> and <code class="docutils literal notranslate"><span class="pre">include</span></code> directories using
+the <code class="docutils literal notranslate"><span class="pre">--with-udunits2-lib</span></code> and <code class="docutils literal notranslate"><span class="pre">--with-udunits2-include</span></code> options. Note that different packages may require different configuration flags,
+so you’ll need to consult their documentation or source code to determine the correct options.</p>
+</section>
+<section id="example-installing-the-sf-package">
+<h3>Example: Installing the <code class="docutils literal notranslate"><span class="pre">sf</span></code> Package<a class="headerlink" href="#example-installing-the-sf-package" title="Link to this heading"></a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">sf</span></code> package depends on several components, including the <code class="docutils literal notranslate"><span class="pre">units</span></code> R package, and the external libraries <code class="docutils literal notranslate"><span class="pre">proj</span></code> and <code class="docutils literal notranslate"><span class="pre">sqlite3</span></code>.
+Assuming the environment variables <code class="docutils literal notranslate"><span class="pre">PROJ_ROOT</span></code> and <code class="docutils literal notranslate"><span class="pre">SQLITE_ROOT</span></code> point to the respective installation directories, you can install <code class="docutils literal notranslate"><span class="pre">sf</span></code> as follows:</p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Install the sf package</span>
+<span class="n">proj_root</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">Sys.getenv</span><span class="p">(</span><span class="s">&quot;PROJ_ROOT&quot;</span><span class="p">)</span>
+<span class="n">proj_lib</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">paste</span><span class="p">(</span><span class="n">proj_root</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;/lib&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">sep</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">)</span>
+<span class="n">proj_inc</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">paste</span><span class="p">(</span><span class="n">proj_root</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;/include&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">sep</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">)</span>
+<span class="n">sqlite_root</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">Sys.getenv</span><span class="p">(</span><span class="s">&quot;SQLITE_ROOT&quot;</span><span class="p">)</span>
+<span class="n">sqlite_lib</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">paste</span><span class="p">(</span><span class="n">sqlite_root</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;/lib&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">sep</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">)</span>
+<span class="n">sf_config</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">paste</span><span class="p">(</span><span class="s">&quot;--with-proj-include=&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">proj_inc</span><span class="p">,</span>
+<span class="w">                   </span><span class="s">&quot; --with-proj-lib=&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">proj_lib</span><span class="p">,</span>
+<span class="w">                   </span><span class="s">&quot; --with-proj-api=no&quot;</span><span class="p">,</span>
+<span class="w">                   </span><span class="s">&quot; --with-sqlite3-lib=&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">sqlite_lib</span><span class="p">,</span><span class="w"> </span><span class="n">sep</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">)</span>
+<span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;sf&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">configure.args</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sf_config</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>As you can see, manually managing external dependencies can be tedious and does not scale well—essentially replicating the work of a package manager.</p>
+</section>
+<section id="simplifying-with-conda">
+<h3>Simplifying with Conda<a class="headerlink" href="#simplifying-with-conda" title="Link to this heading"></a></h3>
+<p>Many of these challenges can be avoided by using Conda, which automatically installs and configures external libraries for supported R packages.
+While Conda doesn’t cover every CRAN package, it supports a substantial subset.</p>
+<p>For example, you can install both <code class="docutils literal notranslate"><span class="pre">units</span></code> and <code class="docutils literal notranslate"><span class="pre">sf</span></code> with a single command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>install<span class="w"> </span>r-units<span class="w"> </span>r-sf
+</pre></div>
+</div>
+<p>This will also install <code class="docutils literal notranslate"><span class="pre">libudunits2</span></code>, <code class="docutils literal notranslate"><span class="pre">proj</span></code>, <code class="docutils literal notranslate"><span class="pre">sqlite3</span></code>, and other required dependencies within your Conda environment, streamlining the setup process.</p>
+</section>
+</section>
+<section id="using-the-pak-package-manager">
+<span id="r-pak-manager"></span><h2>Using the <code class="docutils literal notranslate"><span class="pre">pak</span></code> Package Manager<a class="headerlink" href="#using-the-pak-package-manager" title="Link to this heading"></a></h2>
+<p>While <code class="docutils literal notranslate"><span class="pre">install.packages()</span></code> works for CRAN, many workflows require packages from Bioconductor, GitHub, or custom sources.
+Tools like <code class="docutils literal notranslate"><span class="pre">remotes</span></code>, <code class="docutils literal notranslate"><span class="pre">devtools</span></code>, and <code class="docutils literal notranslate"><span class="pre">BiocManager</span></code> help, but managing dependencies across them can be complex.</p>
+<p>We recommend using <code class="docutils literal notranslate"><span class="pre">pak</span></code>, a unified package manager that supports CRAN, Bioconductor, GitHub, URLs, git repositories, and local files.
+It simplifies installation and improves dependency handling.</p>
+<p>Example usage:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="c1"># Install pak to your custom library</span>
+<span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;pak&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">lib</span><span class="o">=</span><span class="s">&quot;/home/user/R_lib/4.4.1&quot;</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="s">&quot;pak&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">lib.loc</span><span class="o">=</span><span class="s">&quot;/home/user/R_lib/4.4.1&quot;</span><span class="p">)</span>
+
+<span class="c1"># Install from CRAN or Bioconductor</span>
+<span class="n">pak</span><span class="o">::</span><span class="nf">pkg_install</span><span class="p">(</span><span class="s">&quot;ggplot2&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">lib</span><span class="o">=</span><span class="s">&quot;/home/user/R_lib/4.4.1&quot;</span><span class="p">)</span>
+
+<span class="c1"># Install from GitHub</span>
+<span class="n">pak</span><span class="o">::</span><span class="nf">pkg_install</span><span class="p">(</span><span class="s">&quot;tidyverse/tibble&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">lib</span><span class="o">=</span><span class="s">&quot;/home/user/R_lib/4.4.1&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="pytorch.html" class="btn btn-neutral float-left" title="PyTorch" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="rstudio.html" class="btn btn-neutral float-right" title="RStudio" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, ITS - Research Computing.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

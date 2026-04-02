@@ -1,0 +1,761 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Remote Solver Manager (RSM) &mdash; LARCC User Documentation  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=3ad828ca" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            LARCC User Documentation
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../accounts_and_support/index.html">Accounts and Support</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../accounts_and_support/index.html#request-an-account">Request an account</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../accounts_and_support/index.html#accounts-for-uofl-individuals">Accounts for UofL individuals</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../accounts_and_support/index.html#uofl-vpn-connection">UofL VPN Connection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../accounts_and_support/index.html#request-support-tickets">Request Support (Tickets)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../gettingstarted/index.html">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/index.html#usage-agreement">Usage Agreement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/index.html#hpc-system-overview">HPC system overview</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../gettingstarted/index.html#about-the-cluster">About the cluster</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gettingstarted/index.html#about-scientific-software">About Scientific Software</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gettingstarted/index.html#about-jobs">About Jobs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/index.html#quickstart">Quickstart</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../gettingstarted/index.html#logging-into-the-cluster">Logging into the cluster</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../gettingstarted/index.html#using-the-command-line">Using the command line</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../gettingstarted/index.html#using-mobaxterm">Using MobaXterm</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../gettingstarted/index.html#copying-files-to-from-the-cluster">Copying files to/from the cluster</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../gettingstarted/index.html#id1">Using the command line</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../gettingstarted/index.html#id2">Using MobaXterm</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../gettingstarted/index.html#using-software-installed-in-the-cluster">Using software installed in the cluster</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../gettingstarted/index.html#list-available-software">List available software</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../gettingstarted/index.html#load-software">Load software</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../gettingstarted/index.html#list-currently-loaded-software">List currently loaded software</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../gettingstarted/index.html#unloading-software">Unloading software</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../gettingstarted/index.html#queues-and-jobs">Queues and jobs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/index.html#policies">Policies</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../gettingstarted/index.html#installing-packages-system-wide">Installing packages system-wide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gettingstarted/index.html#running-applications-on-the-login-nodes">Running applications on the login nodes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gettingstarted/index.html#resource-restrictions">Resource restrictions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../gettingstarted/index.html#job-runtime-restrictions">Job runtime restrictions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../gettingstarted/index.html#storage-restrictions">Storage restrictions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/index.html">Guides</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../guides/system_guide/index.html">HPC System Guide</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../guides/system_guide/index.html#introduction">Introduction</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../guides/system_guide/index.html#what-is-a-shell">What is a Shell?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../guides/system_guide/index.html#what-is-case-sensitivity">What is case-sensitivity?</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../guides/system_guide/index.html#connecting-to-the-cluster">Connecting to the Cluster</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../guides/system_guide/index.html#understanding-filesystems">Understanding Filesystems</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../guides/system_guide/index.html#what-is-a-filesystem">What is a Filesystem?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../guides/system_guide/index.html#filesystem-hierarchies">Filesystem Hierarchies</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../guides/system_guide/index.html#navigating-the-filesystem">Navigating the filesystem</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../guides/system_guide/index.html#using-modules">Using Modules</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/slurm/index.html">Slurm Queueing System Guide</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../guides/slurm/index.html#basic-slurm-terminology">Basic Slurm Terminology</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../guides/slurm/terminology.html">Basic Slurm Terminology</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../guides/slurm/index.html#job-types-and-job-submission">Job Types and Job Submission</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../guides/slurm/interactive_jobs.html">Interactive Jobs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../guides/slurm/batch_jobs.html">Batch Jobs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../guides/slurm/batch_jobs.html#job-arrays">Job Arrays</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../guides/slurm/job_dependencies.html">Job Dependencies</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../guides/slurm/index.html#job-environment">Job Environment</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../guides/slurm/job_environment.html">Slurm environmental variables</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../guides/slurm/index.html#strategies-when-submitting-slurm-jobs">Strategies When Submitting Slurm Jobs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../guides/slurm/job_submission_strategies.html">Single Job with Multiple Job Steps</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../guides/slurm/job_submission_strategies.html#job-arrays">Job Arrays</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../guides/slurm/job_submission_strategies.html#requesting-cpu-nodes-with-multiple-parallel-tasks">Requesting CPU Nodes with Multiple Parallel Tasks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../guides/slurm/job_submission_strategies.html#single-gpu-node-with-one-task-per-gpu-and-cpu-cores-evenly-distributed-across-tasks">Single GPU node with one task per GPU and CPU cores evenly distributed across tasks</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/storage/index.html">Storage Guide</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../guides/storage/index.html#understanding-storage-on-compute-nodes">Understanding Storage on Compute Nodes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../guides/storage/index.html#storage-types">Storage Types</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../guides/storage/index.html#recommended-workflow">Recommended Workflow</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../guides/storage/index.html#copying-data-between-home-and-scratch">Copying Data Between Home and Scratch</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Software</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="conda.html">Conda (Anaconda/Miniconda/Miniforge)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="conda.html#basics">Basics</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="conda.html#about-anaconda-miniconda-and-miniforge">About Anaconda, Miniconda and Miniforge</a></li>
+<li class="toctree-l4"><a class="reference internal" href="conda.html#what-is-a-conda-environment">What is a Conda environment?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="conda.html#why-use-multiple-conda-environments">Why use multiple Conda environments?</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="conda.html#using-conda">Using Conda</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="conda.html#loading-the-miniforge3-module-and-the-base-environment">Loading the miniforge3 module and the base environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="conda.html#creating-and-activating-an-environment">Creating and activating an environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="conda.html#installing-packages-with-conda-and-mamba">Installing packages with conda and mamba</a></li>
+<li class="toctree-l4"><a class="reference internal" href="conda.html#installing-packages-with-pip">Installing packages with pip</a></li>
+<li class="toctree-l4"><a class="reference internal" href="conda.html#cloning-an-environment">Cloning an environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="conda.html#miscellaneous">Miscellaneous</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="conda.html#conda-in-a-batch-job">Conda in a batch job</a></li>
+<li class="toctree-l3"><a class="reference internal" href="conda.html#conda-in-an-interactive-job">Conda in an interactive job</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="gaussian.html">Gaussian</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="gaussian.html#running-gaussian">Running Gaussian</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="gaussian.html#example-slurm-job-script">Example Slurm Job Script</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="jupyter.html">Jupyter</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="jupyter.html#launching-jupyter-through-a-batch-job">Launching Jupyter through a batch job</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="jupyter.html#optional-create-a-jupyter-environment">1. (Optional) Create a jupyter environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="jupyter.html#create-the-submission-script">2. Create the submission script</a></li>
+<li class="toctree-l4"><a class="reference internal" href="jupyter.html#connect-to-jupyter-from-your-web-browser">3. Connect to jupyter from your web browser</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="jupyter.html#launching-jupyter-through-an-interactive-job">Launching Jupyter through an interactive job</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="jupyter.html#id2">1. (Optional) Create a jupyter environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="jupyter.html#submit-an-interactive-job">2. Submit an interactive job</a></li>
+<li class="toctree-l4"><a class="reference internal" href="jupyter.html#manually-launch-jupyter">3. Manually launch Jupyter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="jupyter.html#access-jupyter-from-your-workstation">4. Access Jupyter from your workstation</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="jupyter.html#transitioning-from-jupyter-to-python-script">Transitioning from Jupyter to Python Script</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="jupyter.html#export-the-notebook">1. Export the Notebook</a></li>
+<li class="toctree-l4"><a class="reference internal" href="jupyter.html#clean-up-the-script">2. Clean Up the Script</a></li>
+<li class="toctree-l4"><a class="reference internal" href="jupyter.html#replace-notebook-specific-features">3. Replace Notebook-Specific Features</a></li>
+<li class="toctree-l4"><a class="reference internal" href="jupyter.html#handle-file-paths-and-inputs">4. Handle File Paths and Inputs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="jupyter.html#test-the-script">5. Test the Script</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="matlab.html">MATLAB</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="matlab.html#basics">Basics</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="matlab.html#workers-and-pools">Workers and pools</a></li>
+<li class="toctree-l4"><a class="reference internal" href="matlab.html#parallel-and-distributed-execution">Parallel and distributed execution</a></li>
+<li class="toctree-l4"><a class="reference internal" href="matlab.html#cluster-profiles">Cluster profiles</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="matlab.html#submitting-a-batch-job">Submitting a batch job</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="matlab.html#submit-jobs-through-a-batch-script">Submit jobs through a batch script</a></li>
+<li class="toctree-l4"><a class="reference internal" href="matlab.html#submit-jobs-through-matlab-s-command-prompt">Submit jobs through MATLAB’s command prompt</a></li>
+<li class="toctree-l4"><a class="reference internal" href="matlab.html#submit-jobs-through-a-batch-script-and-a-matlab-submission-script">Submit jobs through a batch script and a MATLAB submission script</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="matlab.html#creating-a-cluster-profile-for-larcc">Creating a cluster profile for LARCC</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="lammps.html">LAMMPS</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="lammps.html#running-lammps">Running LAMMPS</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="lammps.html#example-slurm-job-script">Example Slurm Job Script</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="lammps.html#building-lammps">Building LAMMPS</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="liggghts.html">LIGGGHTS</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="liggghts.html#running-ligghts">Running LIGGHTS</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="liggghts.html#example-slurm-job-script">Example Slurm Job Script</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pytorch.html">PyTorch</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pytorch.html#verifying-gpu-availability">Verifying GPU Availability</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pytorch.html#using-gpus-in-pytorch">Using GPUs in PyTorch</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pytorch.html#moving-tensors-to-gpu">Moving Tensors to GPU</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pytorch.html#model-training-on-gpu">Model Training on GPU</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pytorch.html#monitoring-gpu-usage">Monitoring GPU Usage</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pytorch.html#multi-gpu-usage-in-pytorch">Multi-GPU Usage in PyTorch</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pytorch.html#single-node-multi-gpu-dataparallel-or-ddp">Single Node, Multi-GPU (DataParallel or DDP)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="R.html">R</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="R.html#using-r">Using R</a></li>
+<li class="toctree-l3"><a class="reference internal" href="R.html#installing-r-packages">Installing R Packages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="R.html#installing-r-packages-in-custom-locations">Installing R packages in custom locations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="R.html#installing-r-packages-with-external-library-dependencies">Installing R Packages with External Library Dependencies</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="R.html#example-installing-the-units-package">Example: Installing the <code class="docutils literal notranslate"><span class="pre">units</span></code> Package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="R.html#example-installing-the-sf-package">Example: Installing the <code class="docutils literal notranslate"><span class="pre">sf</span></code> Package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="R.html#simplifying-with-conda">Simplifying with Conda</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="R.html#using-the-pak-package-manager">Using the <code class="docutils literal notranslate"><span class="pre">pak</span></code> Package Manager</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="rstudio.html">RStudio</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="rstudio.html#pre-launch">Pre-launch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rstudio.html#launch-rstudio-server">Launch RStudio Server</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tensorflow.html">Tensorflow</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tensorflow.html#verifying-gpu-availability">Verifying GPU Availability</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tensorflow.html#single-node-multi-gpu-training">Single Node, Multi-GPU Training</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="vasp.html">VASP</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="vasp.html#license-restrictions">License Restrictions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="vasp.html#running-vasp">Running VASP</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="vasp.html#vasp-on-gpu-nodes">VASP on GPU nodes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="vasp.html#vasp-on-cpu-only-nodes">VASP on CPU-only nodes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="vasp.html#example-slurm-job-script">Example Slurm Job Script</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../usecases/index.html">AI Use Cases</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../usecases/chest_xray.html">Pneumonia detection based on Chest X-Ray</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../usecases/chest_xray.html#ingesting-the-data">1. Ingesting the data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../usecases/chest_xray.html#training-the-models">2. Training the models</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../usecases/chest_xray.html#cnn-training-and-validation">CNN Training and Validation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../usecases/chest_xray.html#transfer-learning-training-and-validation">Transfer Learning Training and Validation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../usecases/chest_xray.html#fine-tuning-training-and-validation">Fine Tuning Training and Validation</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../usecases/chest_xray.html#visualize-metrics">3. Visualize Metrics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../usecases/chest_xray.html#save-your-results-for-further-analyses">4. Save your results for further analyses</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../usecases/medbert.html">Med-BERT</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">LARCC User Documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Remote Solver Manager (RSM)</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/software/ansys.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="remote-solver-manager-rsm">
+<span id="ansys-mech"></span><h1>Remote Solver Manager (RSM)<a class="headerlink" href="#remote-solver-manager-rsm" title="Link to this heading"></a></h1>
+<section id="setup">
+<h2>Setup<a class="headerlink" href="#setup" title="Link to this heading"></a></h2>
+<p>The RSM is used by ANSYS Workbench to submit jobs to the cluster directly from Workbench on an user’s desktop.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>To use this feature Phineas users must have Ansys 2023R2 installed on their desktops.</p>
+</div>
+<ol class="arabic">
+<li><p>Open the Ansys RSM application in your workstation and click on the “Add Cluster” button:</p>
+<blockquote>
+<div><div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text">TODO: Create new image</span><a class="headerlink" href="#id1" title="Link to this code"></a></div>
+<div class="highlight-RST notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">image</span><span class="p">::</span> images/ansys_rsm_1.png
+     <span class="nc">:width:</span> 800
+</pre></div>
+</div>
+</div>
+</div></blockquote>
+</li>
+<li><p>In the “HPC Resource” tab fill in the fields and checkboxes as shown below. On the “Submit host” field indicate the IP address of the cluster (submit a ticket to Speed IT to get the IP if you do not already have it):</p>
+<blockquote>
+<div><div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-text">TODO: Create new image</span><a class="headerlink" href="#id2" title="Link to this code"></a></div>
+<div class="highlight-RST notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">image</span><span class="p">::</span> images/ansys_rsm_2.png
+     <span class="nc">:width:</span> 800
+</pre></div>
+</div>
+</div>
+</div></blockquote>
+</li>
+<li><dl>
+<dt>In the “File Management” tab fill in the fields and checkboxes as shown below. Replace the word <strong>USERNAME</strong> with your actual username <strong>in the cluster</strong>.</dt><dd><div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-text">TODO: Create new image</span><a class="headerlink" href="#id3" title="Link to this code"></a></div>
+<div class="highlight-RST notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">image</span><span class="p">::</span> images/ansys_rsm_3.png
+     <span class="nc">:width:</span> 800
+</pre></div>
+</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><p>Before continuing to the “Queues” tab, navigate to the “credentials” section located at the left-most pane. Then, under section “Accounts” (on the mid pane) ensure that your user is spelled <strong>EXACTLY</strong> as in the cluster. If a default user appears and it is not spelled as your cluster username, delete using the “Delete button” and create a new one using the “Create button” as shown in the image below.</p>
+<blockquote>
+<div><div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If you are using a computer from the university, your default username will show up with the prefix “AD\”, which is <strong>INCORRECT</strong>.</p>
+</div>
+<div class="literal-block-wrapper docutils container" id="id4">
+<div class="code-block-caption"><span class="caption-text">TODO: Create new image</span><a class="headerlink" href="#id4" title="Link to this code"></a></div>
+<div class="highlight-RST notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">image</span><span class="p">::</span> images/ansys_rsm_4.png
+     <span class="nc">:width:</span> 800
+</pre></div>
+</div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Click on the “Phineas” section on the left-most pane and navigate to the “Queues” tab. Then click the “Discover button” as shown below.</p>
+<blockquote>
+<div><div class="literal-block-wrapper docutils container" id="id5">
+<div class="code-block-caption"><span class="caption-text">TODO: Create new image</span><a class="headerlink" href="#id5" title="Link to this code"></a></div>
+<div class="highlight-RST notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">image</span><span class="p">::</span> images/ansys_rsm_5.png
+     <span class="nc">:width:</span> 800
+</pre></div>
+</div>
+</div>
+</div></blockquote>
+</li>
+</ol>
+</section>
+<section id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Link to this heading"></a></h2>
+<p>Start watching <a class="reference external" href="https://youtu.be/QPld56j93wc">this Ansys Tutorial</a> from minute 5:55.</p>
+</section>
+</section>
+<section id="mechanical-apdl-mapdl">
+<h1>Mechanical APDL (MAPDL)<a class="headerlink" href="#mechanical-apdl-mapdl" title="Link to this heading"></a></h1>
+<section id="basics">
+<h2>Basics<a class="headerlink" href="#basics" title="Link to this heading"></a></h2>
+<p>There are two executables that can be used to invoke the solver from the command line:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">mapdl</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ansysYYR</span></code> (<code class="docutils literal notranslate"><span class="pre">YY</span></code> is the corresponding release’s year
+and <code class="docutils literal notranslate"><span class="pre">R</span></code> the release number. For instance, for Ansys R2023-1 the
+executable is named <code class="docutils literal notranslate"><span class="pre">ansys231</span></code>)</p></li>
+</ul>
+<p>Since <code class="docutils literal notranslate"><span class="pre">ansysYYR</span></code> is a symlink to <code class="docutils literal notranslate"><span class="pre">mapdl</span></code>, invoking the solver through either
+executable works the same.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Users may prefer to call <code class="docutils literal notranslate"><span class="pre">mapdl</span></code> instead of <code class="docutils literal notranslate"><span class="pre">ansysYYR</span></code> on their batch scripts to make them
+portable across ansys versions.</p>
+</div>
+</section>
+<section id="parallel-and-distributed-modes">
+<h2>Parallel and distributed modes<a class="headerlink" href="#parallel-and-distributed-modes" title="Link to this heading"></a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">mapdl</span></code> can be invoked with support for 3 processing mechanisms: <em>Shared-memory parallel (SMP)</em>,
+<em>Distributed-memory parallel (DMP)</em> and <em>Mixed DMP-SMP</em>. As per Ansys documentation:</p>
+<blockquote>
+<div><p><strong>DMP mode:</strong> All features in the simulation support distributed-memory parallelism, and it is used throughout the solution. This mode typically provides optimal performance.</p>
+<p><strong>Mixed mode:</strong> The simulation involves a particular set of computations that do not support DMP processing. Examples include certain equation solvers and remeshing due to mesh nonlinear adaptivity. In these cases, distributed-memory parallelism is used throughout the solution, except for the unsupported set of computations. When that step is reached, the worker processes simply wait while the master process uses shared-memory parallelism to perform the computations. After the computations are finished, the worker processes continue to compute again until the entire solution is completed.</p>
+<p><strong>SMP mode:</strong> The simulation involves an analysis type or feature that does not support DMP processing. In this case, distributed-memory parallelism is disabled at the onset of the solution, and shared-memory parallelism is used instead. The worker processes are not involved at all in the solution but simply wait while the master process uses shared-memory parallelism to compute the entire solution.</p>
+</div></blockquote>
+<p>The following table shows the capabilities of each solver to run on each of the aforementioned modes:</p>
+<table class="docutils align-default" id="id6">
+<caption><span class="caption-text">Parallel Capability in SMP, DMP, and Hybrid Parallel Processing</span><a class="headerlink" href="#id6" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 44.4%" />
+<col style="width: 11.1%" />
+<col style="width: 44.4%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head stub"><p>Solvers/Feature</p></th>
+<th class="head"><p>SMP</p></th>
+<th class="head"><p>DMP and Hybrid</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><th class="stub"><p>Sparse</p></th>
+<td><p>Y</p></td>
+<td><p>Y</p></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p>PCG</p></th>
+<td><p>Y</p></td>
+<td><p>Y</p></td>
+</tr>
+<tr class="row-even"><th class="stub"><p>ICCG</p></th>
+<td><p>Y</p></td>
+<td><p>Y (mixed mode only)</p></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p>JCG</p></th>
+<td><p>Y</p></td>
+<td><p>Y (mixed mode only. For static analyses and transient analyses using the full method (TRNOPT,FULL), the solver runs in pure DMP mode only when the matrix is symmetric. Otherwise, it runs in SMP mode)</p></td>
+</tr>
+<tr class="row-even"><th class="stub"><p>QMR [3]</p></th>
+<td><p>Y</p></td>
+<td><p>Y (mixed mode only)</p></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p>Block Lanczos eigensolver</p></th>
+<td><p>Y</p></td>
+<td><p>Y</p></td>
+</tr>
+<tr class="row-even"><th class="stub"><p>PCG Lanczos eigensolver</p></th>
+<td><p>Y</p></td>
+<td><p>Y</p></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p>Supernode eigensolver</p></th>
+<td><p>Y</p></td>
+<td><p>Y (mixed mode only)</p></td>
+</tr>
+<tr class="row-even"><th class="stub"><p>Subspace eigensolver</p></th>
+<td><p>Y</p></td>
+<td><p>Y</p></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p>Unsymmetric eigensolver</p></th>
+<td><p>Y</p></td>
+<td><p>Y</p></td>
+</tr>
+<tr class="row-even"><th class="stub"><p>Damped eigensolver</p></th>
+<td><p>Y</p></td>
+<td><p>Y</p></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p>QRDAMP eigensolver</p></th>
+<td><p>Y</p></td>
+<td><p>Y</p></td>
+</tr>
+<tr class="row-even"><th class="stub"><p>Element formulation, results calculation</p></th>
+<td><p>Y</p></td>
+<td><p>Y</p></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p>Graphics and other pre- and postprocessing</p></th>
+<td><p>Y</p></td>
+<td><p>Y (mixed mode only)</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="command-line-options">
+<h2>Command line options<a class="headerlink" href="#command-line-options" title="Link to this heading"></a></h2>
+<p>The table below shows some of the most useful options to invoke <code class="docutils literal notranslate"><span class="pre">mapdl</span></code> with. To have
+more detailed information about what other options are available, please refer to
+chapter 4 of the ANSYS Mechanical APDL Operations Guide.</p>
+<table class="docutils align-default" id="id7">
+<caption><span class="caption-text">Common mapdl options</span><a class="headerlink" href="#id7" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 15.8%" />
+<col style="width: 42.1%" />
+<col style="width: 42.1%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head stub"><p><strong>Option</strong></p></th>
+<th class="head"><p><strong>Value</strong></p></th>
+<th class="head"><p><strong>Description</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><th class="stub"><p><code class="docutils literal notranslate"><span class="pre">-b</span></code></p></th>
+<td><p>no value, <code class="docutils literal notranslate"><span class="pre">list</span></code> or <code class="docutils literal notranslate"><span class="pre">nolist</span></code></p></td>
+<td><p>Run in batch mode. Input commands are taken from <code class="docutils literal notranslate"><span class="pre">stdin</span></code> or a file specified with the <code class="docutils literal notranslate"><span class="pre">-i</span></code> option. If <code class="docutils literal notranslate"><span class="pre">list</span></code> is specified, or no value is given, the content of the input file is included in the output file. Conversely, with <code class="docutils literal notranslate"><span class="pre">nolist</span></code> the input commands are not included in the output file.</p></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p><code class="docutils literal notranslate"><span class="pre">-i</span></code></p></th>
+<td><p><code class="docutils literal notranslate"><span class="pre">&lt;input</span> <span class="pre">file&gt;</span></code></p></td>
+<td><p>Path to input file of a computational problem containing APDL commands to use for batch processing</p></td>
+</tr>
+<tr class="row-even"><th class="stub"><p><code class="docutils literal notranslate"><span class="pre">-o</span></code></p></th>
+<td><p>&lt;output file&gt;</p></td>
+<td><p>Name of the file to store the output of MAPDL’s batch execution.</p></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p><code class="docutils literal notranslate"><span class="pre">-dir</span></code></p></th>
+<td><p>directory path (Default: Directory executable is launched from)</p></td>
+<td><p>Directory used to solve in. Users may want to write files to a different directory (e.g. some dir in their scratch space).</p></td>
+</tr>
+<tr class="row-even"><th class="stub"><p><code class="docutils literal notranslate"><span class="pre">-np</span></code></p></th>
+<td><p>Number of processes to use</p></td>
+<td><p><strong>For SMP and DMP analyses:</strong> Number of CPU cores to use. <strong>For a hybrid parallel processing analysis:</strong> Number of processes to use (when used alongside the <code class="docutils literal notranslate"><span class="pre">-nt</span></code> option, the total number of CPU cores is <code class="docutils literal notranslate"><span class="pre">np</span> <span class="pre">*</span> <span class="pre">nt</span></code>).</p></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p><code class="docutils literal notranslate"><span class="pre">-nt</span></code></p></th>
+<td><p>Number of threads to use</p></td>
+<td><p>The number of threads per process to be used in a hybrid parallel processing analysis</p></td>
+</tr>
+<tr class="row-even"><th class="stub"><p><code class="docutils literal notranslate"><span class="pre">-machines</span></code></p></th>
+<td><p><code class="docutils literal notranslate"><span class="pre">:</span></code> separated list of pairs. Each pair consitst of a host and the number of processors per host (nprocs). Example: <code class="docutils literal notranslate"><span class="pre">host1:&lt;nprocs</span> <span class="pre">host1&gt;:host2:&lt;nprocs</span> <span class="pre">host2&gt;</span></code></p></td>
+<td><p>Specifies the machines on which to run a DMP analysis.</p></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p><code class="docutils literal notranslate"><span class="pre">-mpi</span></code></p></th>
+<td><p><code class="docutils literal notranslate"><span class="pre">openmpi</span></code> or <code class="docutils literal notranslate"><span class="pre">intelmpi</span></code> (default)</p></td>
+<td><p>Type of MPI to use.</p></td>
+</tr>
+<tr class="row-even"><th class="stub"><p><code class="docutils literal notranslate"><span class="pre">-mpifile</span></code></p></th>
+<td><p>a filename</p></td>
+<td><p>Name of an existing MPI file to be used in a DMP run.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="run-in-a-single-node">
+<h2>Run in a single node<a class="headerlink" href="#run-in-a-single-node" title="Link to this heading"></a></h2>
+<p>If running a DMP analysis, use the <code class="docutils literal notranslate"><span class="pre">-dis</span></code> option to enable DMP mode
+and <code class="docutils literal notranslate"><span class="pre">-np</span></code> to specify the number of cores. For example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># &quot;-np 6&quot; means: use 6 cores</span>
+mapdl<span class="w"> </span>-dis<span class="w"> </span>-np<span class="w"> </span><span class="m">4</span><span class="w"> </span>-i<span class="w"> </span>input.dat<span class="w"> </span>-o<span class="w"> </span>solve.out
+</pre></div>
+</div>
+<p>If running a Mixed (DMP-SMP) analysis, use <code class="docutils literal notranslate"><span class="pre">-dis</span></code> option to enable DMP mode,
+<code class="docutils literal notranslate"><span class="pre">-np</span></code> to specify the number of processes and <code class="docutils literal notranslate"><span class="pre">-nt</span></code> to specify the number
+of threads per process. For example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># &quot;-np 4&quot; and &quot;-nt 4&quot; means:</span>
+<span class="c1"># use (num processes) * (threads per process) = 4 * 4 = 16 cores</span>
+mapdl<span class="w"> </span>-dis<span class="w"> </span>-np<span class="w"> </span><span class="m">4</span><span class="w"> </span>-nt<span class="w"> </span><span class="m">4</span><span class="w"> </span>-i<span class="w"> </span>input.dat<span class="w"> </span>-o<span class="w"> </span>solve.out
+</pre></div>
+</div>
+</section>
+<section id="run-in-multiple-nodes">
+<h2>Run in multiple nodes<a class="headerlink" href="#run-in-multiple-nodes" title="Link to this heading"></a></h2>
+<p>This is only supported in DMP mode and can be achieved by using the <code class="docutils literal notranslate"><span class="pre">-machines</span></code> option
+or an MPI file specified through the <code class="docutils literal notranslate"><span class="pre">-mpifile</span></code> option.</p>
+<p><strong>Using</strong> <code class="docutils literal notranslate"><span class="pre">-machines</span></code>:</p>
+<p>Specify the number of cores to use on each machine using the format:
+<code class="docutils literal notranslate"><span class="pre">machine1:NP1:machine2:NP2:...</span></code>, where <code class="docutils literal notranslate"><span class="pre">NP1</span></code> is the number of cores
+<code class="docutils literal notranslate"><span class="pre">machine1</span></code> should use, <code class="docutils literal notranslate"><span class="pre">NP2</span></code> the number of cores <code class="docutils literal notranslate"><span class="pre">machine2</span></code> should use and so on.
+For example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># &quot;-machines phineas-c01:4:phineas-c04:2&quot; means:</span>
+<span class="c1"># run on phineas-c01 and phineas-c04 using 4 cores and 2 cores respectively</span>
+mapdl<span class="w"> </span>-dis<span class="w"> </span>-machines<span class="w"> </span>phineas-c01:4:phineas-c04:2<span class="w"> </span>-i<span class="w"> </span>input.dat<span class="w"> </span>-o<span class="w"> </span>solve.out
+</pre></div>
+</div>
+<p><strong>Using</strong> <code class="docutils literal notranslate"><span class="pre">-mpifile</span></code>:</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">-mpifile</span></code> option CANNOT be used in conjunction with the <code class="docutils literal notranslate"><span class="pre">-np</span></code> or
+<code class="docutils literal notranslate"><span class="pre">-machines</span></code> option.</p>
+</div>
+<p>First, write the appropriate MPI file based on the type of MPI software being used. Ansys
+defaults to Intel MPI, but OpenMPI is supported as well. Beware the format used  in the
+MPI file differs from one MPI type to another. For example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># FOR INTEL MPI:</span>
+<span class="c1">#</span>
+<span class="c1"># obtain the location of the ansysdisYYR executable (YY=Ansys release year, R=release number).</span>
+<span class="nv">distributed_mapdl</span><span class="o">=</span><span class="k">$(</span>which<span class="w"> </span>ansysdis231<span class="k">)</span>
+<span class="c1"># create an Intel MPI compatible MPI file. Each line with &quot;-host&quot; and &quot;-np&quot;</span>
+<span class="c1"># indicates a machine and the respective number of cores to use. The rest</span>
+<span class="c1"># of each line defines ansys parameters like input, output and enabling of DMP mode.</span>
+cat<span class="w"> </span>&gt;<span class="w"> </span>mpifile_intelmpi<span class="w"> </span><span class="s">&lt;&lt; EOF</span>
+<span class="s">-host phineas-c01 -np 4 $distributed_mapdl -dis -i input.dat -o solve.out</span>
+<span class="s">-host phineas-c04 -np 2 $distributed_mapdl -dis -i input.dat -o solve.out</span>
+<span class="s">EOF</span>
+<span class="c1"># run mapdl</span>
+mapdl<span class="w"> </span>-dis<span class="w"> </span>-mpifile<span class="w"> </span>mpifile_intelmpi
+<span class="c1">#</span>
+<span class="c1"># FOR OPENMPI:</span>
+<span class="c1">#</span>
+<span class="c1"># create an OpenMPI compatible MPI file</span>
+cat<span class="w"> </span>&gt;<span class="w"> </span>mpifile_openmpi<span class="w"> </span><span class="s">&lt;&lt; EOF</span>
+<span class="s">phineas-c01 slots=4</span>
+<span class="s">phineas-c04 slots=2</span>
+<span class="s">EOF</span>
+<span class="c1"># run mapdl</span>
+mapdl<span class="w"> </span>-dis<span class="w"> </span>-mpi<span class="w"> </span>openmpi<span class="w"> </span>-mpifile<span class="w"> </span>mpifile_openmpi<span class="w"> </span>-i<span class="w"> </span>input.dat<span class="w"> </span>-o<span class="w"> </span>solve.out
+</pre></div>
+</div>
+</section>
+<section id="export-model-from-workbench-to-apdl">
+<span id="workbench-export-to-apdl"></span><h2>Export model from Workbench to APDL<a class="headerlink" href="#export-model-from-workbench-to-apdl" title="Link to this heading"></a></h2>
+<p>To export a model (including geometry) from ANSYS Workbench to Mechanical APDL:</p>
+<ol class="arabic simple">
+<li><p>In ANSYS Workbench, navigate to the project in which the model you wish to
+export is located.</p></li>
+<li><p>Right-click on the model in the Project Schematic and select “Export Model…”</p></li>
+<li><p>In the “Export Model” dialog box, select “Mechanical APDL” as the file format
+and choose a location to save the exported file.</p></li>
+<li><p>Click “OK” to complete the export process.</p></li>
+</ol>
+</section>
+<section id="submit-a-mapdl-batch-job">
+<h2>Submit a MAPDL batch job<a class="headerlink" href="#submit-a-mapdl-batch-job" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p>Generate an appropriate Mechanical APDL input file. If you are using workbench,
+check Section <a class="reference internal" href="#workbench-export-to-apdl"><span class="std std-ref">Export model from Workbench to APDL</span></a> or Ansys Workbench Manual for more
+information on how to export your model to Mechanical APDL.</p></li>
+<li><p>Copy sources (MAPDL input files) to the cluster staging area
+(somewhere within your home directory).</p></li>
+<li><p>Create a batch script that runs <code class="docutils literal notranslate"><span class="pre">mapdl</span></code>.</p></li>
+<li><p>Submit the batch script using the <code class="docutils literal notranslate"><span class="pre">sbatch</span></code> command.</p></li>
+</ol>
+</section>
+<section id="batch-script">
+<h2>Batch script<a class="headerlink" href="#batch-script" title="Link to this heading"></a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="c1">#SBATCH --job-name=ansys_mech_test</span>
+<span class="c1">#SBATCH --error=/home/user/ansys_mech_test.err.%j</span>
+<span class="c1">#SBATCH --output=/home/user/ansys_mech_test.out.%j</span>
+<span class="c1">#SBATCH --time=05:30:00</span>
+<span class="c1">#SBATCH --mem=120G</span>
+<span class="c1">#SBATCH --ntasks-per-node=20</span>
+<span class="c1">#SBATCH --nodes=2</span>
+<span class="c1">#SBATCH --partition=longjobs</span>
+
+<span class="c1">##############################################################</span>
+<span class="c1"># .---------------------------------------.</span>
+<span class="c1"># | MODIFY THESE VARIABLES AS YOU SEE FIT |</span>
+<span class="c1"># &#39;---------------------------------------&#39;</span>
+<span class="c1"># Contains all source files required for a MAPDL simulation</span>
+<span class="nv">SOURCE_DIR</span><span class="o">=</span><span class="s2">&quot;/home/username/simulation_1&quot;</span>
+<span class="c1"># Results are saved to this folder</span>
+<span class="nv">RESULT_DIR</span><span class="o">=</span><span class="s2">&quot;/home/username/simulation_1_result&quot;</span>
+<span class="c1"># Name of input file within SOURCE_DIR to be passed</span>
+<span class="c1"># directly to MAPDL</span>
+<span class="nv">MAPDL_INPUT_FILE_NAME</span><span class="o">=</span><span class="s2">&quot;remote.dat&quot;</span>
+<span class="c1"># Any output generated by MAPDL during the simulation will</span>
+<span class="c1"># be written to this file</span>
+<span class="nv">MAPDL_OUTPUT_FILE_NAME</span><span class="o">=</span><span class="s2">&quot;mapdl_output.out&quot;</span>
+<span class="c1">#############################################################</span>
+
+<span class="nv">WORK_DIR</span><span class="o">=</span><span class="s2">&quot;/tmp/</span><span class="nv">$SLURM_JOB_ID</span><span class="s2">&quot;</span>
+<span class="nv">INPUT_FILE</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$WORK_DIR</span><span class="s2">/</span><span class="nv">$MAPDL_INPUT_FILE_NAME</span><span class="s2">&quot;</span>
+<span class="nv">OUTPUT_FILE</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$WORK_DIR</span><span class="s2">/</span><span class="nv">$MAPDL_OUTPUT_FILE_NAME</span><span class="s2">&quot;</span>
+<span class="nv">TRIES</span><span class="o">=</span><span class="m">2</span>
+
+<span class="c1"># Get hostnames of allocated nodes for the job</span>
+<span class="nb">declare</span><span class="w"> </span>-a<span class="w"> </span>NODES
+mapfile<span class="w"> </span>-t<span class="w"> </span>NODES<span class="w"> </span>&lt;<span class="w"> </span>&lt;<span class="o">(</span>srun<span class="w"> </span>hostname<span class="w"> </span><span class="p">|</span><span class="w"> </span>uniq<span class="o">)</span>
+
+<span class="c1"># Helper function to execute a command on all</span>
+<span class="c1"># compute nodes allocated for the job</span>
+<span class="k">function</span><span class="w"> </span>computes_run<span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="nv">cmd</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$@</span><span class="s2">&quot;</span>
+<span class="w">    </span>pdsh<span class="w"> </span>-w<span class="w"> </span><span class="sb">`</span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">NODES</span><span class="p">[*]</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span><span class="s1">&#39;s/ /,/g&#39;</span><span class="sb">`</span><span class="w"> </span>-R<span class="w"> </span>ssh<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$cmd</span><span class="s2">&quot;</span>
+<span class="o">}</span>
+
+<span class="c1"># Delete everything from scratch space after</span>
+<span class="c1"># the simulation is done</span>
+<span class="k">function</span><span class="w"> </span>cleanup<span class="w"> </span><span class="o">{</span>
+<span class="w">    </span>computes_run<span class="w"> </span><span class="s2">&quot;test -d </span><span class="nv">$WORK_DIR</span><span class="s2"> &amp;&amp; rm -rf </span><span class="nv">$WORK_DIR</span><span class="s2">&quot;</span>
+<span class="o">}</span>
+<span class="nb">trap</span><span class="w"> </span>cleanup<span class="w"> </span>EXIT
+
+<span class="c1"># Copy source files from shared space to</span>
+<span class="c1"># scratch space of each allocated node</span>
+computes_run<span class="w"> </span><span class="s2">&quot;cp -r </span><span class="nv">$SOURCE_DIR</span><span class="s2"> </span><span class="nv">$WORK_DIR</span><span class="s2">&quot;</span>
+
+<span class="c1"># Get list of nodes to use for the computation</span>
+<span class="c1"># in the format:</span>
+<span class="c1"># &lt;node_1&gt;:&lt;cores&gt;:&lt;node_2&gt;:&lt;cores&gt;:...:&lt;node_n&gt;:&lt;cores&gt;</span>
+<span class="nv">MACHINES</span><span class="o">=</span><span class="k">$(</span>srun<span class="w"> </span>hostname<span class="w"> </span><span class="p">|</span><span class="w"> </span>sort<span class="w"> </span><span class="p">|</span><span class="w"> </span>uniq<span class="w"> </span>-c<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="se">\</span>
+<span class="w">            </span>awk<span class="w"> </span><span class="s1">&#39;{print $2 &quot;:&quot; $1}&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="se">\</span>
+<span class="w">            </span>paste<span class="w"> </span>-s<span class="w"> </span>-d<span class="w"> </span><span class="s2">&quot;:&quot;</span><span class="w"> </span>-<span class="k">)</span>
+
+module<span class="w"> </span>load<span class="w"> </span>infiniband<span class="w"> </span>ansys/2023r1
+
+<span class="nb">cd</span><span class="w"> </span><span class="nv">$WORK_DIR</span>
+
+<span class="k">for</span><span class="w"> </span><span class="o">((</span><span class="nv">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span><span class="w"> </span>i<span class="w"> </span>&lt;<span class="w"> </span><span class="nv">$TRIES</span><span class="p">;</span><span class="w"> </span>i++<span class="o">))</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
+<span class="w">    </span>mapdl<span class="w"> </span>-dis<span class="w"> </span>-usessh<span class="w"> </span>-b<span class="w"> </span>-s<span class="w"> </span>noread<span class="w"> </span><span class="se">\</span>
+<span class="w">        </span>-p<span class="w"> </span>ansys<span class="w"> </span><span class="se">\</span>
+<span class="w">        </span>-j<span class="w"> </span><span class="s1">&#39;file&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">        </span>-machines<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$MACHINES</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">        </span>-dir<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$WORK_DIR</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">        </span>-i<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$INPUT_FILE</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">        </span>-o<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$OUTPUT_FILE</span><span class="s2">&quot;</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$?</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="k">break</span><span class="p">;</span><span class="w"> </span><span class="k">fi</span>
+<span class="k">done</span>
+
+cp<span class="w"> </span>-r<span class="w"> </span><span class="nv">$WORK_DIR</span><span class="w"> </span><span class="nv">$RESULT_DIR</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, ITS - Research Computing.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

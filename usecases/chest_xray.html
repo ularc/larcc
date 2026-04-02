@@ -1,0 +1,1126 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pneumonia detection based on Chest X-Ray &mdash; LARCC User Documentation  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=3ad828ca" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Med-BERT" href="medbert.html" />
+    <link rel="prev" title="AI Use Cases" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            LARCC User Documentation
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../accounts_and_support/index.html">Accounts and Support</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../accounts_and_support/index.html#request-an-account">Request an account</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../accounts_and_support/index.html#accounts-for-uofl-individuals">Accounts for UofL individuals</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../accounts_and_support/index.html#uofl-vpn-connection">UofL VPN Connection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../accounts_and_support/index.html#request-support-tickets">Request Support (Tickets)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../gettingstarted/index.html">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/index.html#usage-agreement">Usage Agreement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/index.html#hpc-system-overview">HPC system overview</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../gettingstarted/index.html#about-the-cluster">About the cluster</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gettingstarted/index.html#about-scientific-software">About Scientific Software</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gettingstarted/index.html#about-jobs">About Jobs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/index.html#quickstart">Quickstart</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../gettingstarted/index.html#logging-into-the-cluster">Logging into the cluster</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../gettingstarted/index.html#using-the-command-line">Using the command line</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../gettingstarted/index.html#using-mobaxterm">Using MobaXterm</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../gettingstarted/index.html#copying-files-to-from-the-cluster">Copying files to/from the cluster</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../gettingstarted/index.html#id1">Using the command line</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../gettingstarted/index.html#id2">Using MobaXterm</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../gettingstarted/index.html#using-software-installed-in-the-cluster">Using software installed in the cluster</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../gettingstarted/index.html#list-available-software">List available software</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../gettingstarted/index.html#load-software">Load software</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../gettingstarted/index.html#list-currently-loaded-software">List currently loaded software</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../gettingstarted/index.html#unloading-software">Unloading software</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../gettingstarted/index.html#queues-and-jobs">Queues and jobs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/index.html#policies">Policies</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../gettingstarted/index.html#installing-packages-system-wide">Installing packages system-wide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gettingstarted/index.html#running-applications-on-the-login-nodes">Running applications on the login nodes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gettingstarted/index.html#resource-restrictions">Resource restrictions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../gettingstarted/index.html#job-runtime-restrictions">Job runtime restrictions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../gettingstarted/index.html#storage-restrictions">Storage restrictions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/index.html">Guides</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../guides/system_guide/index.html">HPC System Guide</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../guides/system_guide/index.html#introduction">Introduction</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../guides/system_guide/index.html#what-is-a-shell">What is a Shell?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../guides/system_guide/index.html#what-is-case-sensitivity">What is case-sensitivity?</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../guides/system_guide/index.html#connecting-to-the-cluster">Connecting to the Cluster</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../guides/system_guide/index.html#understanding-filesystems">Understanding Filesystems</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../guides/system_guide/index.html#what-is-a-filesystem">What is a Filesystem?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../guides/system_guide/index.html#filesystem-hierarchies">Filesystem Hierarchies</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../guides/system_guide/index.html#navigating-the-filesystem">Navigating the filesystem</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../guides/system_guide/index.html#using-modules">Using Modules</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/slurm/index.html">Slurm Queueing System Guide</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../guides/slurm/index.html#basic-slurm-terminology">Basic Slurm Terminology</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../guides/slurm/terminology.html">Basic Slurm Terminology</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../guides/slurm/index.html#job-types-and-job-submission">Job Types and Job Submission</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../guides/slurm/interactive_jobs.html">Interactive Jobs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../guides/slurm/batch_jobs.html">Batch Jobs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../guides/slurm/batch_jobs.html#job-arrays">Job Arrays</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../guides/slurm/job_dependencies.html">Job Dependencies</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../guides/slurm/index.html#job-environment">Job Environment</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../guides/slurm/job_environment.html">Slurm environmental variables</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../guides/slurm/index.html#strategies-when-submitting-slurm-jobs">Strategies When Submitting Slurm Jobs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../guides/slurm/job_submission_strategies.html">Single Job with Multiple Job Steps</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../guides/slurm/job_submission_strategies.html#job-arrays">Job Arrays</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../guides/slurm/job_submission_strategies.html#requesting-cpu-nodes-with-multiple-parallel-tasks">Requesting CPU Nodes with Multiple Parallel Tasks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../guides/slurm/job_submission_strategies.html#single-gpu-node-with-one-task-per-gpu-and-cpu-cores-evenly-distributed-across-tasks">Single GPU node with one task per GPU and CPU cores evenly distributed across tasks</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/storage/index.html">Storage Guide</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../guides/storage/index.html#understanding-storage-on-compute-nodes">Understanding Storage on Compute Nodes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../guides/storage/index.html#storage-types">Storage Types</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../guides/storage/index.html#recommended-workflow">Recommended Workflow</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../guides/storage/index.html#copying-data-between-home-and-scratch">Copying Data Between Home and Scratch</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../software/index.html">Software</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../software/conda.html">Conda (Anaconda/Miniconda/Miniforge)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../software/conda.html#basics">Basics</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../software/conda.html#about-anaconda-miniconda-and-miniforge">About Anaconda, Miniconda and Miniforge</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../software/conda.html#what-is-a-conda-environment">What is a Conda environment?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../software/conda.html#why-use-multiple-conda-environments">Why use multiple Conda environments?</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../software/conda.html#using-conda">Using Conda</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../software/conda.html#loading-the-miniforge3-module-and-the-base-environment">Loading the miniforge3 module and the base environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../software/conda.html#creating-and-activating-an-environment">Creating and activating an environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../software/conda.html#installing-packages-with-conda-and-mamba">Installing packages with conda and mamba</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../software/conda.html#installing-packages-with-pip">Installing packages with pip</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../software/conda.html#cloning-an-environment">Cloning an environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../software/conda.html#miscellaneous">Miscellaneous</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../software/conda.html#conda-in-a-batch-job">Conda in a batch job</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../software/conda.html#conda-in-an-interactive-job">Conda in an interactive job</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../software/gaussian.html">Gaussian</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../software/gaussian.html#running-gaussian">Running Gaussian</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../software/gaussian.html#example-slurm-job-script">Example Slurm Job Script</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../software/jupyter.html">Jupyter</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../software/jupyter.html#launching-jupyter-through-a-batch-job">Launching Jupyter through a batch job</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../software/jupyter.html#optional-create-a-jupyter-environment">1. (Optional) Create a jupyter environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../software/jupyter.html#create-the-submission-script">2. Create the submission script</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../software/jupyter.html#connect-to-jupyter-from-your-web-browser">3. Connect to jupyter from your web browser</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../software/jupyter.html#launching-jupyter-through-an-interactive-job">Launching Jupyter through an interactive job</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../software/jupyter.html#id2">1. (Optional) Create a jupyter environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../software/jupyter.html#submit-an-interactive-job">2. Submit an interactive job</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../software/jupyter.html#manually-launch-jupyter">3. Manually launch Jupyter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../software/jupyter.html#access-jupyter-from-your-workstation">4. Access Jupyter from your workstation</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../software/jupyter.html#transitioning-from-jupyter-to-python-script">Transitioning from Jupyter to Python Script</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../software/jupyter.html#export-the-notebook">1. Export the Notebook</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../software/jupyter.html#clean-up-the-script">2. Clean Up the Script</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../software/jupyter.html#replace-notebook-specific-features">3. Replace Notebook-Specific Features</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../software/jupyter.html#handle-file-paths-and-inputs">4. Handle File Paths and Inputs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../software/jupyter.html#test-the-script">5. Test the Script</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../software/matlab.html">MATLAB</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../software/matlab.html#basics">Basics</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../software/matlab.html#workers-and-pools">Workers and pools</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../software/matlab.html#parallel-and-distributed-execution">Parallel and distributed execution</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../software/matlab.html#cluster-profiles">Cluster profiles</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../software/matlab.html#submitting-a-batch-job">Submitting a batch job</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../software/matlab.html#submit-jobs-through-a-batch-script">Submit jobs through a batch script</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../software/matlab.html#submit-jobs-through-matlab-s-command-prompt">Submit jobs through MATLAB’s command prompt</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../software/matlab.html#submit-jobs-through-a-batch-script-and-a-matlab-submission-script">Submit jobs through a batch script and a MATLAB submission script</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../software/matlab.html#creating-a-cluster-profile-for-larcc">Creating a cluster profile for LARCC</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../software/lammps.html">LAMMPS</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../software/lammps.html#running-lammps">Running LAMMPS</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../software/lammps.html#example-slurm-job-script">Example Slurm Job Script</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../software/lammps.html#building-lammps">Building LAMMPS</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../software/liggghts.html">LIGGGHTS</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../software/liggghts.html#running-ligghts">Running LIGGHTS</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../software/liggghts.html#example-slurm-job-script">Example Slurm Job Script</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../software/pytorch.html">PyTorch</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../software/pytorch.html#verifying-gpu-availability">Verifying GPU Availability</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../software/pytorch.html#using-gpus-in-pytorch">Using GPUs in PyTorch</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../software/pytorch.html#moving-tensors-to-gpu">Moving Tensors to GPU</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../software/pytorch.html#model-training-on-gpu">Model Training on GPU</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../software/pytorch.html#monitoring-gpu-usage">Monitoring GPU Usage</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../software/pytorch.html#multi-gpu-usage-in-pytorch">Multi-GPU Usage in PyTorch</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../software/pytorch.html#single-node-multi-gpu-dataparallel-or-ddp">Single Node, Multi-GPU (DataParallel or DDP)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../software/R.html">R</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../software/R.html#using-r">Using R</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../software/R.html#installing-r-packages">Installing R Packages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../software/R.html#installing-r-packages-in-custom-locations">Installing R packages in custom locations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../software/R.html#installing-r-packages-with-external-library-dependencies">Installing R Packages with External Library Dependencies</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../software/R.html#example-installing-the-units-package">Example: Installing the <code class="docutils literal notranslate"><span class="pre">units</span></code> Package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../software/R.html#example-installing-the-sf-package">Example: Installing the <code class="docutils literal notranslate"><span class="pre">sf</span></code> Package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../software/R.html#simplifying-with-conda">Simplifying with Conda</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../software/R.html#using-the-pak-package-manager">Using the <code class="docutils literal notranslate"><span class="pre">pak</span></code> Package Manager</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../software/rstudio.html">RStudio</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../software/rstudio.html#pre-launch">Pre-launch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../software/rstudio.html#launch-rstudio-server">Launch RStudio Server</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../software/tensorflow.html">Tensorflow</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../software/tensorflow.html#verifying-gpu-availability">Verifying GPU Availability</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../software/tensorflow.html#single-node-multi-gpu-training">Single Node, Multi-GPU Training</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../software/vasp.html">VASP</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../software/vasp.html#license-restrictions">License Restrictions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../software/vasp.html#running-vasp">Running VASP</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../software/vasp.html#vasp-on-gpu-nodes">VASP on GPU nodes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../software/vasp.html#vasp-on-cpu-only-nodes">VASP on CPU-only nodes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../software/vasp.html#example-slurm-job-script">Example Slurm Job Script</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">AI Use Cases</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Pneumonia detection based on Chest X-Ray</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ingesting-the-data">1. Ingesting the data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#training-the-models">2. Training the models</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#cnn-training-and-validation">CNN Training and Validation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#transfer-learning-training-and-validation">Transfer Learning Training and Validation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#fine-tuning-training-and-validation">Fine Tuning Training and Validation</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#visualize-metrics">3. Visualize Metrics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#save-your-results-for-further-analyses">4. Save your results for further analyses</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="medbert.html">Med-BERT</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">LARCC User Documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">AI Use Cases</a></li>
+      <li class="breadcrumb-item active">Pneumonia detection based on Chest X-Ray</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/usecases/chest_xray.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="pneumonia-detection-based-on-chest-x-ray">
+<h1>Pneumonia detection based on Chest X-Ray<a class="headerlink" href="#pneumonia-detection-based-on-chest-x-ray" title="Link to this heading"></a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This use case is still a work in progress. We will be
+adding more information in the coming days and this message will be
+removed once it’s completely documented. Thank you for your patience.</p>
+</div>
+<p>This use-case is adapted from the Kaggle notebook
+<a class="reference external" href="https://www.kaggle.com/code/jonaspalucibarbosa/chest-x-ray-pneumonia-cnn-transfer-learning/notebook">Chest X-Ray (Pneumonia) - CNN &amp; Transfer Learning</a>.</p>
+<p>The purpose of the notebook is to apply Convolutional Neural Networks (CNNs) to Chest X-Ray images in order to identify cases of Pneumonia.
+The dataset used is version 3 of the <a class="reference external" href="https://www.kaggle.com/datasets/tolgadincer/labeled-chest-xray-images">Chest X-ray Images</a>, which includes separate folders for training and testing.
+Within the notebook, the training set is further split into training and validation subsets.</p>
+<p>Three approaches are explored for image classification:</p>
+<ol class="arabic simple">
+<li><p>Basic CNN architecture - A simple model built from scratch.</p></li>
+<li><p>Transfer Learning - Using a pretrained model with frozen layers to extract features.</p></li>
+<li><p>Fine-Tuning - Unfreezing the final layers of the pretrained model to improve performance.</p></li>
+</ol>
+<p>To run the notebook’s code in LARCC, you can:</p>
+<ol class="arabic simple">
+<li><p>Download the notebook from Kaggle, launch an instance of jupyter as described <a class="reference internal" href="../software/jupyter.html#jupyter"><span class="std std-ref">here</span></a> and load the notebook in Jupyter.</p></li>
+<li><p>Convert the notebook into a python script and run it through a batch or interactive job.</p></li>
+</ol>
+<p>Option 2 offers added benefits like the abilty to speed-up the training of your models, consuming less memory and even creating pipelines
+where multiple models can be trained at the same time.</p>
+<p>There is, however, a slight problem no matter which option is chosen. The code uses an older version of tensorflow and thus must
+be adapted to ensure it runs properly at the training phase.</p>
+<section id="ingesting-the-data">
+<h2>1. Ingesting the data<a class="headerlink" href="#ingesting-the-data" title="Link to this heading"></a></h2>
+<p>Let’s begin by familiarizing ourselves with the dataset. After downloading and extracting the files from Kaggle, you’ll find two main folders:</p>
+<ul class="simple">
+<li><p>One containing images for training and validation.</p></li>
+<li><p>Another containing images for testing.</p></li>
+</ul>
+<p>Assuming the user <code class="docutils literal notranslate"><span class="pre">jd01</span></code> stores the dataset in <code class="docutils literal notranslate"><span class="pre">/home/jd01/chest_xray</span></code>, the directory structure will resemble the following:</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../_images/dataset_structure.png"><img alt="kaggle_dataset_Structure" src="../_images/dataset_structure.png" width="600" />
+</a>
+</figure>
+<p>The <code class="docutils literal notranslate"><span class="pre">train</span></code> folder contains a total of 5,232 images—1,349 from healthy patients and 3,883 from patients diagnosed with pneumonia.
+The <code class="docutils literal notranslate"><span class="pre">test</span></code> folder includes 624 images—234 healthy and 390 sick. These numbers can be verified using a simple script:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">glob</span>
+
+<span class="n">main_path</span> <span class="o">=</span> <span class="s2">&quot;/home/jd01/chest_xray&quot;</span>
+<span class="n">train_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">main_path</span><span class="p">,</span><span class="s2">&quot;train&quot;</span><span class="p">)</span>
+<span class="n">test_path</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">main_path</span><span class="p">,</span><span class="s2">&quot;test&quot;</span><span class="p">)</span>
+
+<span class="n">train_normal</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">train_path</span><span class="o">+</span><span class="s2">&quot;/NORMAL/*.jpeg&quot;</span><span class="p">)</span>
+<span class="n">train_pneumonia</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">train_path</span><span class="o">+</span><span class="s2">&quot;/PNEUMONIA/*.jpeg&quot;</span><span class="p">)</span>
+
+<span class="n">test_normal</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">test_path</span><span class="o">+</span><span class="s2">&quot;/NORMAL/*.jpeg&quot;</span><span class="p">)</span>
+<span class="n">test_pneumonia</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">test_path</span><span class="o">+</span><span class="s2">&quot;/PNEUMONIA/*.jpeg&quot;</span><span class="p">)</span>
+
+<span class="n">num_img_train</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">train_normal</span><span class="p">)</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">train_pneumonia</span><span class="p">)</span>
+<span class="n">num_img_test</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">train_normal</span><span class="p">)</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">train_pneumonia</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Number of healthy patients in </span><span class="si">{</span><span class="n">train_path</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">train_normal</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Number of sick patients in </span><span class="si">{</span><span class="n">train_path</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">train_pneumonia</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Total number of images in </span><span class="si">{</span><span class="n">train_path</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">num_img_train</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Number of healthy patients in </span><span class="si">{</span><span class="n">test_path</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">test_normal</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Number of sick patients in </span><span class="si">{</span><span class="n">test_path</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">test_pneumonia</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Total number of images in </span><span class="si">{</span><span class="n">test_path</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">num_img_test</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>To visualize some these samples in a grid, we can define this function:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_samples</span><span class="p">(</span><span class="n">samples</span><span class="p">,</span> <span class="n">num_samples</span><span class="p">,</span> <span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">,</span> <span class="n">save_as</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">):</span>
+    <span class="k">assert</span> <span class="n">rows</span><span class="o">*</span><span class="n">cols</span> <span class="o">&lt;=</span> <span class="n">num_samples</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="n">num_samples</span><span class="p">,</span><span class="n">num_samples</span><span class="p">))</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">num_samples</span><span class="p">):</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="n">rows</span><span class="p">,</span><span class="n">cols</span><span class="p">,</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">samples</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+        <span class="n">img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="p">(</span><span class="n">IMG_SIZE</span><span class="p">,</span><span class="n">IMG_SIZE</span><span class="p">))</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">save_as</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">save_as</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>and use it as follows:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plot_samples</span><span class="p">(</span><span class="n">train_normal</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="n">save_as</span><span class="o">=</span><span class="s2">&quot;train_samples_normal.png&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<figure class="align-default" id="id1">
+<a class="reference internal image-reference" href="../_images/train_samples_normal.png"><img alt="../_images/train_samples_normal.png" height="731" src="../_images/train_samples_normal.png" width="832" />
+</a>
+<figcaption>
+<p><span class="caption-text">Samples of healthy patients in training data</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plot_samples</span><span class="p">(</span><span class="n">test_pneumonia</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="n">save_as</span><span class="o">=</span><span class="s2">&quot;train_samples_pneumonia.png&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<figure class="align-default" id="id2">
+<a class="reference internal image-reference" href="../_images/train_samples_pneumonia.png"><img alt="../_images/train_samples_pneumonia.png" height="731" src="../_images/train_samples_pneumonia.png" width="832" />
+</a>
+<figcaption>
+<p><span class="caption-text">Samples of sick patients in training data</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>To facilitate further exploration, we can convert the image paths into dataframes:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">train_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">train_normal</span><span class="p">]</span>
+<span class="n">train_list</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">train_pneumonia</span><span class="p">])</span>
+
+<span class="n">df_train</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([[</span><span class="s1">&#39;Normal&#39;</span><span class="p">]</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="n">train_normal</span><span class="p">)</span> <span class="p">,</span> <span class="p">[</span><span class="s1">&#39;Pneumonia&#39;</span><span class="p">]</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="n">train_pneumonia</span><span class="p">)]),</span> <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;class&#39;</span><span class="p">])</span>
+<span class="n">df_train</span><span class="p">[</span><span class="s1">&#39;image&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">train_list</span><span class="p">]</span>
+
+<span class="n">test_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">test_normal</span><span class="p">]</span>
+<span class="n">test_list</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">test_pneumonia</span><span class="p">])</span>
+
+<span class="n">df_test</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([[</span><span class="s1">&#39;Normal&#39;</span><span class="p">]</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="n">test_normal</span><span class="p">)</span> <span class="p">,</span> <span class="p">[</span><span class="s1">&#39;Pneumonia&#39;</span><span class="p">]</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="n">test_pneumonia</span><span class="p">)]),</span> <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;class&#39;</span><span class="p">])</span>
+<span class="n">df_test</span><span class="p">[</span><span class="s1">&#39;image&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">test_list</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>This allows us to visualize the distribution of samples:</p>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><figure class="align-default" id="id3">
+<a class="reference internal image-reference" href="../_images/train_data_dist_barplot.png"><img alt="../_images/train_data_dist_barplot.png" height="280" src="../_images/train_data_dist_barplot.png" width="420" />
+</a>
+<figcaption>
+<p><span class="caption-text">Training data sample distribution</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-default" id="id4">
+<a class="reference internal image-reference" href="../_images/test_data_dist_barplot.png"><img alt="../_images/test_data_dist_barplot.png" height="280" src="../_images/test_data_dist_barplot.png" width="420" />
+</a>
+<figcaption>
+<p><span class="caption-text">Test data sample distribution</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+</tr>
+<tr class="row-even"><td><figure class="align-default" id="id5">
+<a class="reference internal image-reference" href="../_images/train_data_dist_pieplot.png"><img alt="../_images/train_data_dist_pieplot.png" height="350" src="../_images/train_data_dist_pieplot.png" width="490" />
+</a>
+<figcaption>
+<p><span class="caption-text">Training data percentual distribution</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-default" id="id6">
+<a class="reference internal image-reference" href="../_images/test_data_dist_pieplot.png"><img alt="../_images/test_data_dist_pieplot.png" height="350" src="../_images/test_data_dist_pieplot.png" width="490" />
+</a>
+<figcaption>
+<p><span class="caption-text">Test data percentual distribution</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Before building the model, we need to load the images from both the <code class="docutils literal notranslate"><span class="pre">train</span></code> and <code class="docutils literal notranslate"><span class="pre">test</span></code> folders.
+The training data is split into two subsets:</p>
+<ul class="simple">
+<li><p><strong>Training set</strong>: 80% of the images (~4,186 samples)</p></li>
+<li><p><strong>Validation set</strong>: 20% of the images (~1,046 samples)</p></li>
+</ul>
+<p>This split can be implemented as follows:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
+
+<span class="n">IMG_SIZE</span> <span class="o">=</span> <span class="mi">224</span>
+<span class="n">BATCH</span> <span class="o">=</span> <span class="mi">32</span>
+<span class="n">SEED</span> <span class="o">=</span> <span class="mi">42</span>
+<span class="n">VALIDATION_SPLIT</span> <span class="o">=</span> <span class="mf">0.20</span>
+<span class="n">TRAINING_SPLIT</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">VALIDATION_SPLIT</span>
+
+<span class="n">classes</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;NORMAL&#39;</span><span class="p">,</span> <span class="s1">&#39;PNEUMONIA&#39;</span> <span class="p">]</span>
+
+<span class="n">ds_train</span><span class="p">,</span> <span class="n">ds_val</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">image_dataset_from_directory</span><span class="p">(</span>
+  <span class="n">train_path</span><span class="p">,</span>
+  <span class="n">class_names</span> <span class="o">=</span> <span class="n">classes</span><span class="p">,</span>
+  <span class="n">labels</span> <span class="o">=</span> <span class="s1">&#39;inferred&#39;</span><span class="p">,</span>
+  <span class="n">label_mode</span> <span class="o">=</span> <span class="s1">&#39;binary&#39;</span><span class="p">,</span>
+  <span class="n">image_size</span> <span class="o">=</span> <span class="p">(</span><span class="n">IMG_SIZE</span><span class="p">,</span> <span class="n">IMG_SIZE</span><span class="p">),</span>
+  <span class="n">batch_size</span> <span class="o">=</span> <span class="n">BATCH</span><span class="p">,</span>
+  <span class="n">seed</span> <span class="o">=</span> <span class="n">SEED</span><span class="p">,</span>
+  <span class="n">validation_split</span> <span class="o">=</span> <span class="n">VALIDATION_SPLIT</span><span class="p">,</span>
+  <span class="n">subset</span><span class="o">=</span><span class="s1">&#39;both&#39;</span>
+<span class="p">)</span>
+
+<span class="n">ds_test</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">image_dataset_from_directory</span><span class="p">(</span>
+  <span class="n">test_path</span><span class="p">,</span>
+  <span class="n">class_names</span> <span class="o">=</span> <span class="n">classes</span><span class="p">,</span>
+  <span class="n">labels</span> <span class="o">=</span> <span class="s1">&#39;inferred&#39;</span><span class="p">,</span>
+  <span class="n">label_mode</span> <span class="o">=</span> <span class="s1">&#39;binary&#39;</span><span class="p">,</span>
+  <span class="n">image_size</span> <span class="o">=</span> <span class="p">(</span><span class="n">IMG_SIZE</span><span class="p">,</span> <span class="n">IMG_SIZE</span><span class="p">),</span>
+  <span class="n">batch_size</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="n">seed</span> <span class="o">=</span> <span class="n">SEED</span><span class="p">,</span>
+  <span class="n">shuffle</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>Let’s take a closer look at how <code class="docutils literal notranslate"><span class="pre">tf.keras.utils.image_dataset_from_directory</span></code> works when loading the training dataset:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">labels='inferred'</span></code>: Automatically assigns labels based on subfolder names.
+For example, images in <code class="docutils literal notranslate"><span class="pre">/home/jd01/chest_xray/train/PNEUMONIA</span></code> and <code class="docutils literal notranslate"><span class="pre">/home/jd01/chest_xray/train/NORMAL</span></code>
+will be labeled accordingly.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">batch_size=BATCH</span></code> (e.g., <code class="docutils literal notranslate"><span class="pre">BATCH=32</span></code>): Divides the dataset into batches of up to 32 samples.
+- For <code class="docutils literal notranslate"><span class="pre">ds_val</span></code> (1,046 images): 33 batches (32 full, 1 with 22 images)
+- For <code class="docutils literal notranslate"><span class="pre">ds_train</span></code> (4,186 images): 131 batches (130 full, 1 with 26 images)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">subset='both'</span></code>: Returns both training and validation datasets.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">seed=SEED</span></code>: Ensures reproducibility across runs.
+Alternatively, you can generate <code class="docutils literal notranslate"><span class="pre">ds_val</span></code> and <code class="docutils literal notranslate"><span class="pre">ds_train</span></code> separately using
+<code class="docutils literal notranslate"><span class="pre">subset='validation'</span></code> and <code class="docutils literal notranslate"><span class="pre">subset='training'</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ds_train</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">image_dataset_from_directory</span><span class="p">(</span>
+  <span class="n">train_path</span><span class="p">,</span>
+  <span class="n">class_names</span> <span class="o">=</span> <span class="n">classes</span><span class="p">,</span>
+  <span class="n">labels</span> <span class="o">=</span> <span class="s1">&#39;inferred&#39;</span><span class="p">,</span>
+  <span class="n">label_mode</span> <span class="o">=</span> <span class="s1">&#39;binary&#39;</span><span class="p">,</span>
+  <span class="n">image_size</span> <span class="o">=</span> <span class="p">(</span><span class="n">IMG_SIZE</span><span class="p">,</span> <span class="n">IMG_SIZE</span><span class="p">),</span>
+  <span class="n">batch_size</span> <span class="o">=</span> <span class="n">BATCH</span><span class="p">,</span>
+  <span class="n">seed</span> <span class="o">=</span> <span class="n">SEED</span><span class="p">,</span>
+  <span class="n">validation_split</span> <span class="o">=</span> <span class="n">VALIDATION_SPLIT</span><span class="p">,</span>
+  <span class="n">subset</span><span class="o">=</span><span class="s1">&#39;training&#39;</span>
+<span class="p">)</span>
+<span class="n">ds_val</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">image_dataset_from_directory</span><span class="p">(</span>
+  <span class="n">train_path</span><span class="p">,</span>
+  <span class="n">class_names</span> <span class="o">=</span> <span class="n">classes</span><span class="p">,</span>
+  <span class="n">labels</span> <span class="o">=</span> <span class="s1">&#39;inferred&#39;</span><span class="p">,</span>
+  <span class="n">label_mode</span> <span class="o">=</span> <span class="s1">&#39;binary&#39;</span><span class="p">,</span>
+  <span class="n">image_size</span> <span class="o">=</span> <span class="p">(</span><span class="n">IMG_SIZE</span><span class="p">,</span> <span class="n">IMG_SIZE</span><span class="p">),</span>
+  <span class="n">batch_size</span> <span class="o">=</span> <span class="n">BATCH</span><span class="p">,</span>
+  <span class="n">seed</span> <span class="o">=</span> <span class="n">SEED</span><span class="p">,</span>
+  <span class="n">validation_split</span> <span class="o">=</span> <span class="n">VALIDATION_SPLIT</span><span class="p">,</span>
+  <span class="n">subset</span><span class="o">=</span><span class="s1">&#39;validation&#39;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>Next, we preprocess the images to prepare them for training.
+While the original code uses <code class="docutils literal notranslate"><span class="pre">tf.keras.preprocessing.image.ImageDataGenerator</span></code>,
+we’ll opt for a more modern approach using <code class="docutils literal notranslate"><span class="pre">tensorflow.keras.layers</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">tensorflow</span> <span class="kn">import</span> <span class="n">keras</span>
+<span class="kn">from</span> <span class="nn">tensorflow.keras</span> <span class="kn">import</span> <span class="n">layers</span>
+
+<span class="n">AUTOTUNE</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">experimental</span><span class="o">.</span><span class="n">AUTOTUNE</span>
+
+<span class="n">normalization_layer</span> <span class="o">=</span> <span class="n">layers</span><span class="o">.</span><span class="n">Rescaling</span><span class="p">(</span><span class="mf">1.</span><span class="o">/</span><span class="mi">255</span><span class="p">)</span>
+<span class="c1"># To achieve a similar zoom range as ImageDataGenerator(zoom_range=0.1)</span>
+<span class="c1"># which is [0.9, 1.1] zoom factor.</span>
+<span class="c1"># The RandomZoom layer takes fractional factors, so -0.1 to 0.1 means</span>
+<span class="c1"># 1 - 0.1 to 1 + 0.1 zoom.</span>
+<span class="n">zoom_layer</span> <span class="o">=</span> <span class="n">layers</span><span class="o">.</span><span class="n">RandomZoom</span><span class="p">(</span><span class="n">height_factor</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">),</span> <span class="n">width_factor</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">))</span>
+<span class="n">resize_layer</span> <span class="o">=</span> <span class="n">layers</span><span class="o">.</span><span class="n">RandomTranslation</span><span class="p">(</span><span class="n">height_factor</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">width_factor</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+
+<span class="n">ds_train</span> <span class="o">=</span> <span class="n">ds_train</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="p">(</span><span class="n">normalization_layer</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">y</span><span class="p">),</span> <span class="n">num_parallel_calls</span><span class="o">=</span><span class="n">AUTOTUNE</span><span class="p">)</span>
+<span class="n">ds_train</span> <span class="o">=</span> <span class="n">ds_train</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="p">(</span><span class="n">zoom_layer</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">y</span><span class="p">),</span> <span class="n">num_parallel_calls</span><span class="o">=</span><span class="n">AUTOTUNE</span><span class="p">)</span>
+<span class="n">ds_train</span> <span class="o">=</span> <span class="n">ds_train</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="p">(</span><span class="n">resize_layer</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">y</span><span class="p">),</span> <span class="n">num_parallel_calls</span><span class="o">=</span><span class="n">AUTOTUNE</span><span class="p">)</span>
+
+<span class="n">ds_val</span> <span class="o">=</span> <span class="n">ds_val</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="p">(</span><span class="n">normalization_layer</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">y</span><span class="p">),</span> <span class="n">num_parallel_calls</span><span class="o">=</span><span class="n">AUTOTUNE</span><span class="p">)</span>
+
+<span class="n">ds_test</span> <span class="o">=</span> <span class="n">ds_test</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="p">(</span><span class="n">normalization_layer</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">y</span><span class="p">),</span> <span class="n">num_parallel_calls</span><span class="o">=</span><span class="n">AUTOTUNE</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>At this stage, we’re ready to define and train our models.</p>
+</section>
+<section id="training-the-models">
+<h2>2. Training the models<a class="headerlink" href="#training-the-models" title="Link to this heading"></a></h2>
+<p>To begin, we calculate the number of steps (batches) required for training and validation:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+
+<span class="n">num_training_steps</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">ceil</span><span class="p">((</span><span class="n">num_img_train</span> <span class="o">*</span> <span class="n">TRAINING_SPLIT</span><span class="p">)</span><span class="o">/</span><span class="n">BATCH</span><span class="p">)</span>
+<span class="n">num_validation_steps</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">ceil</span><span class="p">((</span><span class="n">num_img_train</span> <span class="o">*</span> <span class="n">VALIDATION_SPLIT</span><span class="p">)</span><span class="o">/</span><span class="n">BATCH</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>As previously noted:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">num_training_steps</span> <span class="pre">=</span> <span class="pre">131</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">num_validation_steps</span> <span class="pre">=</span> <span class="pre">33</span></code></p></li>
+</ul>
+<p>After training, we will want to count the number of mispredictions from each model</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">predict_and_count_misses</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">dataset</span><span class="p">,</span> <span class="n">target_class</span><span class="p">):</span>
+    <span class="n">misses</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">images</span><span class="p">,</span> <span class="n">labels</span> <span class="ow">in</span> <span class="n">dataset</span><span class="p">:</span>
+        <span class="n">predictions</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">images</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">predicted_classes</span> <span class="o">=</span> <span class="p">(</span><span class="n">predictions</span> <span class="o">&gt;</span> <span class="mf">0.5</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s2">&quot;int32&quot;</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">images</span><span class="p">)):</span>
+            <span class="k">if</span> <span class="n">predicted_classes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">!=</span> <span class="n">target_class</span><span class="p">:</span>
+                <span class="k">continue</span>
+            <span class="k">if</span> <span class="n">labels</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">!=</span> <span class="n">predicted_classes</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+                <span class="n">misses</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">misses</span>
+</pre></div>
+</div>
+<section id="cnn-training-and-validation">
+<h3>CNN Training and Validation<a class="headerlink" href="#cnn-training-and-validation" title="Link to this heading"></a></h3>
+<p>In this approach, we build a convolutional neural network (CNN) from scratch, without using any pre-trained models:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">tensorflow.keras</span> <span class="kn">import</span> <span class="n">callbacks</span>
+<span class="kn">from</span> <span class="nn">tensorflow.keras.models</span> <span class="kn">import</span> <span class="n">Model</span>
+
+<span class="k">class</span> <span class="nc">ColorChannel</span><span class="p">:</span>
+  <span class="n">GREYSCALE</span> <span class="o">=</span> <span class="mi">1</span>
+  <span class="n">RGB</span> <span class="o">=</span> <span class="mi">3</span>
+  <span class="n">RGBA</span> <span class="o">=</span> <span class="mi">4</span>
+
+<span class="k">def</span> <span class="nf">get_uncompiled_model</span><span class="p">(</span><span class="n">img_width</span><span class="p">,</span> <span class="n">img_height</span><span class="p">,</span> <span class="n">color_channel</span><span class="p">):</span>
+    <span class="n">inputs</span> <span class="o">=</span> <span class="n">layers</span><span class="o">.</span><span class="n">Input</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="n">img_width</span><span class="p">,</span> <span class="n">img_height</span><span class="p">,</span> <span class="n">color_channel</span><span class="p">))</span>
+
+    <span class="c1"># Block One</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">layers</span><span class="o">.</span><span class="n">Conv2D</span><span class="p">(</span><span class="n">filters</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">kernel_size</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="s1">&#39;valid&#39;</span><span class="p">)(</span><span class="n">inputs</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">layers</span><span class="o">.</span><span class="n">BatchNormalization</span><span class="p">()(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">layers</span><span class="o">.</span><span class="n">Activation</span><span class="p">(</span><span class="s1">&#39;relu&#39;</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">layers</span><span class="o">.</span><span class="n">MaxPool2D</span><span class="p">()(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">layers</span><span class="o">.</span><span class="n">Dropout</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
+
+    <span class="c1"># Block Two</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">layers</span><span class="o">.</span><span class="n">Conv2D</span><span class="p">(</span><span class="n">filters</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span> <span class="n">kernel_size</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="s1">&#39;valid&#39;</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">layers</span><span class="o">.</span><span class="n">BatchNormalization</span><span class="p">()(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">layers</span><span class="o">.</span><span class="n">Activation</span><span class="p">(</span><span class="s1">&#39;relu&#39;</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">layers</span><span class="o">.</span><span class="n">MaxPool2D</span><span class="p">()(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">layers</span><span class="o">.</span><span class="n">Dropout</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
+
+    <span class="c1"># Block Three</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">layers</span><span class="o">.</span><span class="n">Conv2D</span><span class="p">(</span><span class="n">filters</span><span class="o">=</span><span class="mi">64</span><span class="p">,</span> <span class="n">kernel_size</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="s1">&#39;valid&#39;</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">layers</span><span class="o">.</span><span class="n">Conv2D</span><span class="p">(</span><span class="n">filters</span><span class="o">=</span><span class="mi">64</span><span class="p">,</span> <span class="n">kernel_size</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="s1">&#39;valid&#39;</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">layers</span><span class="o">.</span><span class="n">BatchNormalization</span><span class="p">()(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">layers</span><span class="o">.</span><span class="n">Activation</span><span class="p">(</span><span class="s1">&#39;relu&#39;</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">layers</span><span class="o">.</span><span class="n">MaxPool2D</span><span class="p">()(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">layers</span><span class="o">.</span><span class="n">Dropout</span><span class="p">(</span><span class="mf">0.4</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
+
+    <span class="c1"># Head</span>
+    <span class="c1">#x = layers.BatchNormalization()(x)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">layers</span><span class="o">.</span><span class="n">Flatten</span><span class="p">()(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">layers</span><span class="o">.</span><span class="n">Dropout</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
+
+    <span class="c1">#Final Layer (Output)</span>
+    <span class="n">output</span> <span class="o">=</span> <span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;sigmoid&#39;</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
+
+    <span class="n">model</span> <span class="o">=</span> <span class="n">keras</span><span class="o">.</span><span class="n">Model</span><span class="p">(</span><span class="n">inputs</span><span class="o">=</span><span class="p">[</span><span class="n">inputs</span><span class="p">],</span> <span class="n">outputs</span><span class="o">=</span><span class="n">output</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">model</span>
+
+<span class="n">early_stopping</span> <span class="o">=</span> <span class="n">callbacks</span><span class="o">.</span><span class="n">EarlyStopping</span><span class="p">(</span>
+  <span class="n">monitor</span><span class="o">=</span><span class="s1">&#39;val_loss&#39;</span><span class="p">,</span>
+  <span class="n">patience</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+  <span class="n">min_delta</span><span class="o">=</span><span class="mf">1e-7</span><span class="p">,</span>
+  <span class="n">restore_best_weights</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">plateau</span> <span class="o">=</span> <span class="n">callbacks</span><span class="o">.</span><span class="n">ReduceLROnPlateau</span><span class="p">(</span>
+    <span class="n">monitor</span><span class="o">=</span><span class="s1">&#39;val_loss&#39;</span><span class="p">,</span>
+    <span class="n">factor</span> <span class="o">=</span> <span class="mf">0.2</span><span class="p">,</span>
+    <span class="n">patience</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="n">min_delt</span> <span class="o">=</span> <span class="mf">1e-7</span><span class="p">,</span>
+    <span class="n">cooldown</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="n">verbose</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="p">)</span>
+
+<span class="n">cnn_model</span> <span class="o">=</span> <span class="n">get_uncompiled_model</span><span class="p">(</span><span class="n">IMG_SIZE</span><span class="p">,</span> <span class="n">IMG_SIZE</span><span class="p">,</span> <span class="n">ColorChannel</span><span class="o">.</span><span class="n">RGB</span><span class="p">)</span>
+<span class="n">cnn_model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">loss</span><span class="o">=</span><span class="s1">&#39;binary_crossentropy&#39;</span>
+              <span class="p">,</span> <span class="n">optimizer</span> <span class="o">=</span> <span class="n">keras</span><span class="o">.</span><span class="n">optimizers</span><span class="o">.</span><span class="n">Adam</span><span class="p">(</span><span class="n">learning_rate</span><span class="o">=</span><span class="mf">3e-5</span><span class="p">)</span>
+              <span class="p">,</span> <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;binary_accuracy&#39;</span><span class="p">])</span>
+
+<span class="n">cnn_training_history</span> <span class="o">=</span> <span class="n">cnn_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span>
+  <span class="n">ds_train</span><span class="p">,</span>
+  <span class="n">batch_size</span><span class="o">=</span><span class="n">BATCH</span><span class="p">,</span> <span class="n">epochs</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span>
+  <span class="n">validation_data</span><span class="o">=</span><span class="n">ds_val</span><span class="p">,</span>
+  <span class="n">callbacks</span><span class="o">=</span><span class="p">[</span><span class="n">early_stopping</span><span class="p">,</span> <span class="n">plateau</span><span class="p">],</span>
+  <span class="n">steps_per_epoch</span><span class="o">=</span><span class="n">num_training_steps</span><span class="p">,</span>
+  <span class="n">validation_steps</span><span class="o">=</span><span class="n">num_validation_steps</span>
+<span class="p">)</span>
+
+<span class="n">score</span> <span class="o">=</span> <span class="n">cnn_model</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">ds_val</span><span class="p">,</span> <span class="n">steps</span><span class="o">=</span><span class="n">num_validation_steps</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;(CNN) Val loss:&#39;</span><span class="p">,</span> <span class="n">score</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;(CNN) Val accuracy:&#39;</span><span class="p">,</span> <span class="n">score</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="n">misses</span> <span class="o">=</span> <span class="n">predict_and_count_misses</span><span class="p">(</span><span class="n">cnn_model</span><span class="p">,</span> <span class="n">ds_val</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Validation - False Negatives: </span><span class="si">{</span><span class="n">misses</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">misses</span> <span class="o">=</span> <span class="n">predict_and_count_misses</span><span class="p">(</span><span class="n">cnn_model</span><span class="p">,</span> <span class="n">ds_val</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Validation - False Positives: </span><span class="si">{</span><span class="n">misses</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">misses</span> <span class="o">=</span> <span class="n">predict_and_count_misses</span><span class="p">(</span><span class="n">cnn_model</span><span class="p">,</span> <span class="n">ds_test</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Testing - False Negatives: </span><span class="si">{</span><span class="n">misses</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">misses</span> <span class="o">=</span> <span class="n">predict_and_count_misses</span><span class="p">(</span><span class="n">cnn_model</span><span class="p">,</span> <span class="n">ds_test</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Testing - False Positives: </span><span class="si">{</span><span class="n">misses</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="transfer-learning-training-and-validation">
+<h3>Transfer Learning Training and Validation<a class="headerlink" href="#transfer-learning-training-and-validation" title="Link to this heading"></a></h3>
+<p>Here, we leverage a pre-trained model as a feature extractor. Specifically, we use <strong>ResNet152V2</strong>
+from the Keras Applications module
+(<a class="reference external" href="https://keras.io/api/applications/resnet/#resnet152v2-function">link</a>).</p>
+<p>This model was originally trained on the ImageNet dataset. By setting <code class="docutils literal notranslate"><span class="pre">include_top=False</span></code>,
+we remove the classification head and retain the feature extraction layers.
+We then append custom layers tailored to our classification task:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_pretrained</span><span class="p">(</span><span class="n">base_model</span><span class="p">):</span>
+  <span class="c1">#Input shape = [width, height, color channels]</span>
+  <span class="n">inputs</span> <span class="o">=</span> <span class="n">layers</span><span class="o">.</span><span class="n">Input</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="n">IMG_SIZE</span><span class="p">,</span> <span class="n">IMG_SIZE</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+
+  <span class="n">x</span> <span class="o">=</span> <span class="n">base_model</span><span class="p">(</span><span class="n">inputs</span><span class="p">)</span>
+
+  <span class="c1"># Head</span>
+  <span class="n">x</span> <span class="o">=</span> <span class="n">layers</span><span class="o">.</span><span class="n">GlobalAveragePooling2D</span><span class="p">()(</span><span class="n">x</span><span class="p">)</span>
+  <span class="n">x</span> <span class="o">=</span> <span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
+  <span class="n">x</span> <span class="o">=</span> <span class="n">layers</span><span class="o">.</span><span class="n">Dropout</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
+
+  <span class="c1">#Final Layer (Output)</span>
+  <span class="n">output</span> <span class="o">=</span> <span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;sigmoid&#39;</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
+
+  <span class="n">model</span> <span class="o">=</span> <span class="n">keras</span><span class="o">.</span><span class="n">Model</span><span class="p">(</span><span class="n">inputs</span><span class="o">=</span><span class="p">[</span><span class="n">inputs</span><span class="p">],</span> <span class="n">outputs</span><span class="o">=</span><span class="n">output</span><span class="p">)</span>
+
+  <span class="k">return</span> <span class="n">model</span>
+
+<span class="n">tl_base_model</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">applications</span><span class="o">.</span><span class="n">ResNet152V2</span><span class="p">(</span>
+  <span class="n">weights</span><span class="o">=</span><span class="s1">&#39;imagenet&#39;</span><span class="p">,</span>
+  <span class="n">input_shape</span><span class="o">=</span><span class="p">(</span><span class="n">IMG_SIZE</span><span class="p">,</span> <span class="n">IMG_SIZE</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span>
+  <span class="n">include_top</span><span class="o">=</span><span class="kc">False</span>
+<span class="p">)</span>
+<span class="n">tl_base_model</span><span class="o">.</span><span class="n">trainable</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="n">keras</span><span class="o">.</span><span class="n">backend</span><span class="o">.</span><span class="n">clear_session</span><span class="p">()</span>
+
+<span class="n">tl_model</span> <span class="o">=</span> <span class="n">get_pretrained</span><span class="p">(</span><span class="n">tl_base_model</span><span class="p">)</span>
+<span class="n">tl_model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span>
+  <span class="n">loss</span><span class="o">=</span><span class="s1">&#39;binary_crossentropy&#39;</span><span class="p">,</span>
+  <span class="n">optimizer</span> <span class="o">=</span> <span class="n">keras</span><span class="o">.</span><span class="n">optimizers</span><span class="o">.</span><span class="n">Adam</span><span class="p">(</span><span class="n">learning_rate</span><span class="o">=</span><span class="mf">5e-5</span><span class="p">),</span>
+  <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;binary_accuracy&#39;</span><span class="p">]</span>
+<span class="p">)</span>
+<span class="n">tl_training_history</span> <span class="o">=</span> <span class="n">tl_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span>
+  <span class="n">ds_train</span><span class="p">,</span>
+  <span class="n">batch_size</span><span class="o">=</span><span class="n">BATCH</span><span class="p">,</span> <span class="n">epochs</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span>
+  <span class="n">validation_data</span><span class="o">=</span><span class="n">ds_val</span><span class="p">,</span>
+  <span class="n">callbacks</span><span class="o">=</span><span class="p">[</span><span class="n">early_stopping</span><span class="p">,</span> <span class="n">plateau</span><span class="p">],</span>
+  <span class="n">steps_per_epoch</span><span class="o">=</span><span class="n">num_training_steps</span><span class="p">,</span>
+  <span class="n">validation_steps</span><span class="o">=</span><span class="n">num_validation_steps</span>
+<span class="p">)</span>
+
+<span class="n">score</span> <span class="o">=</span> <span class="n">tl_model</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">ds_val</span><span class="p">,</span> <span class="n">steps</span><span class="o">=</span><span class="n">num_validation_steps</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;(Transfer Learning) Val loss:&#39;</span><span class="p">,</span> <span class="n">score</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;(Transfer Learning) Val accuracy:&#39;</span><span class="p">,</span> <span class="n">score</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="n">misses</span> <span class="o">=</span> <span class="n">predict_and_count_misses</span><span class="p">(</span><span class="n">tl_model</span><span class="p">,</span> <span class="n">ds_val</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Validation - False Negatives: </span><span class="si">{</span><span class="n">misses</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">misses</span> <span class="o">=</span> <span class="n">predict_and_count_misses</span><span class="p">(</span><span class="n">tl_model</span><span class="p">,</span> <span class="n">ds_val</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Validation - False Positives: </span><span class="si">{</span><span class="n">misses</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">misses</span> <span class="o">=</span> <span class="n">predict_and_count_misses</span><span class="p">(</span><span class="n">tl_model</span><span class="p">,</span> <span class="n">ds_test</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Testing - False Negatives: </span><span class="si">{</span><span class="n">misses</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">misses</span> <span class="o">=</span> <span class="n">predict_and_count_misses</span><span class="p">(</span><span class="n">tl_model</span><span class="p">,</span> <span class="n">ds_test</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Testing - False Positives: </span><span class="si">{</span><span class="n">misses</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="fine-tuning-training-and-validation">
+<h3>Fine Tuning Training and Validation<a class="headerlink" href="#fine-tuning-training-and-validation" title="Link to this heading"></a></h3>
+<p>In the transfer learning setup, all layers of the pre-trained model are initially frozen to preserve their learned weights.
+Fine-tuning involves unfreezing a few of the final layers and continuing training,
+allowing the model to adapt these layers to our dataset:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ft_base_model</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">applications</span><span class="o">.</span><span class="n">ResNet152V2</span><span class="p">(</span>
+  <span class="n">weights</span><span class="o">=</span><span class="s1">&#39;imagenet&#39;</span><span class="p">,</span>
+  <span class="n">input_shape</span><span class="o">=</span><span class="p">(</span><span class="n">IMG_SIZE</span><span class="p">,</span> <span class="n">IMG_SIZE</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span>
+  <span class="n">include_top</span><span class="o">=</span><span class="kc">False</span>
+<span class="p">)</span>
+<span class="n">ft_base_model</span><span class="o">.</span><span class="n">trainable</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="c1"># Freeze all layers except for the</span>
+<span class="k">for</span> <span class="n">layer</span> <span class="ow">in</span> <span class="n">ft_base_model</span><span class="o">.</span><span class="n">layers</span><span class="p">[:</span><span class="o">-</span><span class="mi">13</span><span class="p">]:</span>
+    <span class="n">layer</span><span class="o">.</span><span class="n">trainable</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="c1"># Check which layers are tuneable (trainable)</span>
+<span class="k">for</span> <span class="n">layer_number</span><span class="p">,</span> <span class="n">layer</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">ft_base_model</span><span class="o">.</span><span class="n">layers</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">layer_number</span><span class="p">,</span> <span class="n">layer</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">layer</span><span class="o">.</span><span class="n">trainable</span><span class="p">)</span>
+
+<span class="n">keras</span><span class="o">.</span><span class="n">backend</span><span class="o">.</span><span class="n">clear_session</span><span class="p">()</span>
+
+<span class="n">ft_model</span> <span class="o">=</span> <span class="n">get_pretrained</span><span class="p">(</span><span class="n">ft_base_model</span><span class="p">)</span>
+
+<span class="n">ft_model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span>
+  <span class="n">loss</span><span class="o">=</span><span class="s1">&#39;binary_crossentropy&#39;</span><span class="p">,</span>
+  <span class="n">optimizer</span> <span class="o">=</span> <span class="n">keras</span><span class="o">.</span><span class="n">optimizers</span><span class="o">.</span><span class="n">Adam</span><span class="p">(</span><span class="n">learning_rate</span><span class="o">=</span><span class="mf">2e-6</span><span class="p">),</span> <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;binary_accuracy&#39;</span><span class="p">]</span>
+<span class="p">)</span>
+
+<span class="n">ft_training_history</span> <span class="o">=</span> <span class="n">ft_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span>
+  <span class="n">ds_train</span><span class="p">,</span>
+  <span class="n">batch_size</span><span class="o">=</span><span class="n">BATCH</span><span class="p">,</span> <span class="n">epochs</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span>
+  <span class="n">validation_data</span><span class="o">=</span><span class="n">ds_val</span><span class="p">,</span>
+  <span class="n">callbacks</span><span class="o">=</span><span class="p">[</span><span class="n">early_stopping</span><span class="p">,</span> <span class="n">plateau</span><span class="p">],</span>
+  <span class="n">steps_per_epoch</span><span class="o">=</span><span class="n">num_training_steps</span><span class="p">,</span>
+  <span class="n">validation_steps</span><span class="o">=</span><span class="n">num_validation_steps</span>
+<span class="p">)</span>
+
+<span class="n">score</span> <span class="o">=</span> <span class="n">ft_model</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">ds_val</span><span class="p">,</span> <span class="n">steps</span><span class="o">=</span><span class="n">num_validation_steps</span><span class="p">,</span> <span class="n">verbose</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;(Fine Tuning) Val loss:&#39;</span><span class="p">,</span> <span class="n">score</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;(Fine Tuning) Val accuracy:&#39;</span><span class="p">,</span> <span class="n">score</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="n">misses</span> <span class="o">=</span> <span class="n">predict_and_count_misses</span><span class="p">(</span><span class="n">ft_model</span><span class="p">,</span> <span class="n">ds_val</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Validation - False Negatives: </span><span class="si">{</span><span class="n">misses</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">misses</span> <span class="o">=</span> <span class="n">predict_and_count_misses</span><span class="p">(</span><span class="n">ft_model</span><span class="p">,</span> <span class="n">ds_val</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Validation - False Positives: </span><span class="si">{</span><span class="n">misses</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">misses</span> <span class="o">=</span> <span class="n">predict_and_count_misses</span><span class="p">(</span><span class="n">ft_model</span><span class="p">,</span> <span class="n">ds_test</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Testing - False Negatives: </span><span class="si">{</span><span class="n">misses</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">misses</span> <span class="o">=</span> <span class="n">predict_and_count_misses</span><span class="p">(</span><span class="n">ft_model</span><span class="p">,</span> <span class="n">ds_test</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Testing - False Positives: </span><span class="si">{</span><span class="n">misses</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="visualize-metrics">
+<h2>3. Visualize Metrics<a class="headerlink" href="#visualize-metrics" title="Link to this heading"></a></h2>
+<p>We look at 3 metrics here:</p>
+<ul class="simple">
+<li><p><strong>accuracy:</strong> Calculates how often predictions equal labels. For the models in this use case,
+the objective is to obtain a good enough <a class="reference external" href="https://keras.io/api/metrics/accuracy_metrics/">Binary Accuracy</a>.</p></li>
+<li><p><strong>loss:</strong> quantifies the difference between the model’s predicted output and the actual ground truth values.
+For the models in this use case, the objective is to minimize the
+<a class="reference external" href="https://keras.io/api/losses/probabilistic_losses/#binarycrossentropy-class">Binary Crossentropy</a> loss function
+through iterative adjustments of the model’s internal parameters</p></li>
+<li><p><strong>ROC Curve:</strong> Computes the False Positive Rates (FPR), True Positive Rates (TPR),
+and corresponding thresholds for different classification thresholds.</p></li>
+</ul>
+<p>We use the functions
+below to generate plots for the accuracy and loss metrics given a model’s training history,
+and the ROC Curve given a model and a dataset to predict against:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_accuracy</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="n">history</span><span class="p">,</span> <span class="n">fig_size</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">8</span><span class="p">),</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">save_as</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">):</span>
+  <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="n">fig_size</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="n">fontsize</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="n">fontsize</span><span class="p">)</span>
+  <span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">history</span><span class="o">.</span><span class="n">epoch</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s1">&#39;binary_accuracy&#39;</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;train&#39;</span><span class="p">)</span>
+  <span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">history</span><span class="o">.</span><span class="n">epoch</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s1">&#39;val_binary_accuracy&#39;</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;val&#39;</span><span class="p">)</span>
+  <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">fontsize</span><span class="p">)</span>
+  <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Accuracy&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">fontsize</span><span class="p">)</span>
+  <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Epoch&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">fontsize</span><span class="p">)</span>
+  <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mf">0.7</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
+  <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">frameon</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">fancybox</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">shadow</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">fontsize</span><span class="p">)</span>
+  <span class="k">if</span> <span class="n">save_as</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
+      <span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">save_as</span><span class="p">)</span>
+  <span class="k">else</span><span class="p">:</span>
+      <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">plot_loss</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="n">history</span><span class="p">,</span> <span class="n">fig_size</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">8</span><span class="p">),</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">save_as</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">):</span>
+  <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="n">fig_size</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="n">fontsize</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="n">fontsize</span><span class="p">)</span>
+  <span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">history</span><span class="o">.</span><span class="n">epoch</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s1">&#39;loss&#39;</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;train&#39;</span><span class="p">)</span>
+  <span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">history</span><span class="o">.</span><span class="n">epoch</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s1">&#39;val_loss&#39;</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;val&#39;</span><span class="p">)</span>
+  <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">fontsize</span><span class="p">)</span>
+  <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Loss&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">fontsize</span><span class="p">)</span>
+  <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Epoch&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">fontsize</span><span class="p">)</span>
+  <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
+  <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">frameon</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">fancybox</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">shadow</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">fontsize</span><span class="p">)</span>
+  <span class="k">if</span> <span class="n">save_as</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
+      <span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">save_as</span><span class="p">)</span>
+  <span class="k">else</span><span class="p">:</span>
+      <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">plot_roc_curve</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">dataset</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Receiver Operating Characteristic (ROC) Curve&#39;</span><span class="p">,</span> <span class="n">save_as</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">):</span>
+  <span class="n">y_true</span> <span class="o">=</span> <span class="p">[]</span>
+  <span class="n">y_scores</span> <span class="o">=</span> <span class="p">[]</span>
+
+  <span class="k">for</span> <span class="n">images</span><span class="p">,</span> <span class="n">labels</span> <span class="ow">in</span> <span class="n">dataset</span><span class="p">:</span>
+      <span class="n">probs</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">images</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+      <span class="n">y_scores</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">probs</span><span class="p">)</span>
+      <span class="n">y_true</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">labels</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span><span class="o">.</span><span class="n">flatten</span><span class="p">())</span>
+
+  <span class="n">y_true</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">y_true</span><span class="p">)</span>
+  <span class="n">y_scores</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">y_scores</span><span class="p">)</span>
+
+  <span class="c1"># Compute ROC curve and AUC</span>
+  <span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">,</span> <span class="n">thresholds</span> <span class="o">=</span> <span class="n">roc_curve</span><span class="p">(</span><span class="n">y_true</span><span class="p">,</span> <span class="n">y_scores</span><span class="p">)</span>
+  <span class="n">roc_auc</span> <span class="o">=</span> <span class="n">auc</span><span class="p">(</span><span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">)</span>
+
+  <span class="c1"># Plot ROC curve</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;ROC curve (AUC = </span><span class="si">{</span><span class="n">roc_auc</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;False Positive Rate&#39;</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;True Positive Rate&#39;</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;lower right&#39;</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+  <span class="k">if</span> <span class="n">save_as</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
+      <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">save_as</span><span class="p">)</span>
+  <span class="k">else</span><span class="p">:</span>
+      <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>The functions are used as follows:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plot_accuracy</span><span class="p">(</span>
+  <span class="s1">&#39;CNN Learning Curve (Accuracy)&#39;</span><span class="p">,</span>
+  <span class="n">cnn_training_history</span><span class="p">,</span>
+  <span class="n">save_as</span><span class="o">=</span><span class="s1">&#39;cnn_learning_curve_accuracy.png&#39;</span>
+<span class="p">)</span>
+<span class="n">plot_accuracy</span><span class="p">(</span>
+  <span class="s1">&#39;Transfer Learning Learning Curve (Accuracy)&#39;</span><span class="p">,</span>
+  <span class="n">tl_training_history</span><span class="p">,</span>
+  <span class="n">save_as</span><span class="o">=</span><span class="s1">&#39;tl_learning_curve_accuracy.png&#39;</span>
+<span class="p">)</span>
+<span class="n">plot_accuracy</span><span class="p">(</span>
+  <span class="s1">&#39;Fine Tuning Learning Curve (Accuracy)&#39;</span><span class="p">,</span>
+  <span class="n">ft_training_history</span><span class="p">,</span>
+  <span class="n">save_as</span><span class="o">=</span><span class="s1">&#39;ft_learning_curve_accuracy.png&#39;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><img alt="../_images/cnn_learning_curve_accuracy.png" src="../_images/cnn_learning_curve_accuracy.png" />
+</td>
+</tr>
+<tr class="row-even"><td><img alt="../_images/tl_learning_curve_accuracy.png" src="../_images/tl_learning_curve_accuracy.png" />
+</td>
+</tr>
+<tr class="row-odd"><td><img alt="../_images/ft_learning_curve_accuracy.png" src="../_images/ft_learning_curve_accuracy.png" />
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plot_loss</span><span class="p">(</span>
+  <span class="s1">&#39;CNN Learning Curve (Loss)&#39;</span><span class="p">,</span>
+  <span class="n">cnn_training_history</span><span class="p">,</span>
+  <span class="n">save_as</span><span class="o">=</span><span class="s1">&#39;cnn_learning_curve_loss.png&#39;</span>
+<span class="p">)</span>
+<span class="n">plot_loss</span><span class="p">(</span>
+  <span class="s1">&#39;Transfer Learning Learning Curve (Loss)&#39;</span><span class="p">,</span>
+  <span class="n">tl_training_history</span><span class="p">,</span>
+  <span class="n">save_as</span><span class="o">=</span><span class="s1">&#39;tl_learning_curve_loss.png&#39;</span>
+<span class="p">)</span>
+<span class="n">plot_loss</span><span class="p">(</span>
+  <span class="s1">&#39;Fine Tuning Learning Curve (Loss)&#39;</span><span class="p">,</span>
+  <span class="n">ft_training_history</span><span class="p">,</span>
+  <span class="n">save_as</span><span class="o">=</span><span class="s1">&#39;ft_learning_curve_loss.png&#39;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><img alt="../_images/cnn_learning_curve_loss.png" src="../_images/cnn_learning_curve_loss.png" />
+</td>
+</tr>
+<tr class="row-even"><td><img alt="../_images/tl_learning_curve_loss.png" src="../_images/tl_learning_curve_loss.png" />
+</td>
+</tr>
+<tr class="row-odd"><td><img alt="../_images/ft_learning_curve_loss.png" src="../_images/ft_learning_curve_loss.png" />
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plot_roc_curve</span><span class="p">(</span>
+  <span class="n">cnn_model</span><span class="p">,</span> <span class="n">ds_test</span><span class="p">,</span>
+  <span class="n">title</span><span class="o">=</span><span class="s1">&#39;CNN ROC Curve (Testing set)&#39;</span><span class="p">,</span>
+  <span class="n">save_as</span><span class="o">=</span><span class="s1">&#39;cnn_roc_curve_testing.png&#39;</span>
+<span class="p">)</span>
+<span class="n">plot_roc_curve</span><span class="p">(</span>
+  <span class="n">cnn_model</span><span class="p">,</span> <span class="n">ds_val</span><span class="p">,</span>
+  <span class="n">title</span><span class="o">=</span><span class="s1">&#39;CNN ROC Curve (Validation set)&#39;</span><span class="p">,</span>
+  <span class="n">save_as</span><span class="o">=</span><span class="s1">&#39;cnn_roc_curve_validation.png&#39;</span>
+<span class="p">)</span>
+
+<span class="n">plot_roc_curve</span><span class="p">(</span>
+  <span class="n">tl_model</span><span class="p">,</span> <span class="n">ds_val</span><span class="p">,</span>
+  <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Transfer Learning ROC Curve (Validation set)&#39;</span><span class="p">,</span>
+  <span class="n">save_as</span><span class="o">=</span><span class="s1">&#39;tl_roc_curve_validation.png&#39;</span>
+<span class="p">)</span>
+<span class="n">plot_roc_curve</span><span class="p">(</span>
+  <span class="n">tl_model</span><span class="p">,</span> <span class="n">ds_test</span><span class="p">,</span>
+  <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Transfer Learning ROC Curve (Testing set)&#39;</span><span class="p">,</span>
+  <span class="n">save_as</span><span class="o">=</span><span class="s1">&#39;tl_roc_curve_testing.png&#39;</span>
+<span class="p">)</span>
+
+<span class="n">plot_roc_curve</span><span class="p">(</span>
+  <span class="n">model_pretrained</span><span class="p">,</span> <span class="n">ds_val</span><span class="p">,</span>
+  <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Fine Tuning ROC Curve (Validation set)&#39;</span><span class="p">,</span>
+  <span class="n">save_as</span><span class="o">=</span><span class="s1">&#39;ft_roc_curve_validation.png&#39;</span>
+<span class="p">)</span>
+<span class="n">plot_roc_curve</span><span class="p">(</span>
+  <span class="n">model_pretrained</span><span class="p">,</span> <span class="n">ds_test</span><span class="p">,</span>
+  <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Fine Tuning ROC Curve (Testing set)&#39;</span><span class="p">,</span>
+  <span class="n">save_as</span><span class="o">=</span><span class="s1">&#39;ft_roc_curve_testing.png&#39;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><img alt="../_images/cnn_roc_curve_validation.png" src="../_images/cnn_roc_curve_validation.png" />
+</td>
+<td><img alt="../_images/cnn_roc_curve_testing.png" src="../_images/cnn_roc_curve_testing.png" />
+</td>
+</tr>
+<tr class="row-even"><td><img alt="../_images/tl_roc_curve_validation.png" src="../_images/tl_roc_curve_validation.png" />
+</td>
+<td><img alt="../_images/tl_roc_curve_testing.png" src="../_images/tl_roc_curve_testing.png" />
+</td>
+</tr>
+<tr class="row-odd"><td><img alt="../_images/ft_roc_curve_validation.png" src="../_images/ft_roc_curve_validation.png" />
+</td>
+<td><img alt="../_images/ft_roc_curve_testing.png" src="../_images/ft_roc_curve_testing.png" />
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="save-your-results-for-further-analyses">
+<h2>4. Save your results for further analyses<a class="headerlink" href="#save-your-results-for-further-analyses" title="Link to this heading"></a></h2>
+<p>We use the functions below to save training and prediction metrics
+in CSV format in case such information needs to be processed later and/or on another software.
+For example, is you want to analyze it more interactively using Microsoft Excel.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_yscores</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">dataset</span><span class="p">):</span>
+    <span class="n">y_true</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">y_scores</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="n">images</span><span class="p">,</span> <span class="n">labels</span> <span class="ow">in</span> <span class="n">dataset</span><span class="p">:</span>
+        <span class="n">probs</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">images</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+        <span class="n">y_scores</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">probs</span><span class="p">)</span>
+        <span class="n">y_true</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">labels</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span><span class="o">.</span><span class="n">flatten</span><span class="p">())</span>
+
+    <span class="n">y_true</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">y_true</span><span class="p">)</span>
+    <span class="n">y_scores</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">y_scores</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">y_true</span><span class="p">,</span> <span class="n">y_scores</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">save_training_metrics_per_epoch</span><span class="p">(</span><span class="n">model_name</span><span class="p">,</span> <span class="n">history</span><span class="p">):</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+        <span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;epoch&#39;</span><span class="p">:</span> <span class="n">history</span><span class="o">.</span><span class="n">epoch</span><span class="p">,</span> <span class="s1">&#39;train_accuracy&#39;</span><span class="p">:</span> <span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s1">&#39;binary_accuracy&#39;</span><span class="p">],</span>
+                <span class="s1">&#39;val_accuracy&#39;</span><span class="p">:</span> <span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s1">&#39;val_binary_accuracy&#39;</span><span class="p">]}</span>
+    <span class="p">)</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">model_name</span><span class="si">}</span><span class="s1">_accuracy_per_epoch.csv&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+        <span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;epoch&#39;</span><span class="p">:</span> <span class="n">history</span><span class="o">.</span><span class="n">epoch</span><span class="p">,</span> <span class="s1">&#39;train_loss&#39;</span><span class="p">:</span> <span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s1">&#39;loss&#39;</span><span class="p">],</span>
+              <span class="s1">&#39;val_loss&#39;</span><span class="p">:</span> <span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s1">&#39;val_loss&#39;</span><span class="p">]}</span>
+    <span class="p">)</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">model_name</span><span class="si">}</span><span class="s1">_loss_per_epoch.csv&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">save_prediction_metrics</span><span class="p">(</span><span class="n">model_name</span><span class="p">,</span> <span class="n">ds_name</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">dataset</span><span class="p">):</span>
+    <span class="n">prefix</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">model_name</span><span class="si">}</span><span class="s1">_</span><span class="si">{</span><span class="n">ds_name</span><span class="si">}</span><span class="s1">&#39;</span>
+    <span class="n">y_true</span><span class="p">,</span> <span class="n">y_scores</span> <span class="o">=</span> <span class="n">get_yscores</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">dataset</span><span class="p">)</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+        <span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;y_true&#39;</span><span class="p">:</span><span class="n">y_true</span><span class="p">,</span> <span class="s1">&#39;y_scores&#39;</span><span class="p">:</span> <span class="n">y_scores</span><span class="p">}</span>
+    <span class="p">)</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">prefix</span><span class="si">}</span><span class="s1">_yscores.csv&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+    <span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">,</span> <span class="n">thresholds</span> <span class="o">=</span> <span class="n">roc_curve</span><span class="p">(</span><span class="n">y_true</span><span class="p">,</span> <span class="n">y_scores</span><span class="p">)</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+        <span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;fpr&#39;</span><span class="p">:</span> <span class="n">fpr</span><span class="p">,</span> <span class="s1">&#39;tpr&#39;</span><span class="p">:</span><span class="n">tpr</span><span class="p">,</span> <span class="s1">&#39;thresholds&#39;</span><span class="p">:</span><span class="n">thresholds</span><span class="p">}</span>
+    <span class="p">)</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">prefix</span><span class="si">}</span><span class="s1">_roc.csv&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The functions are used as follows:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">model_names</span> <span class="o">=</span> <span class="p">[</span> <span class="s2">&quot;cnn&quot;</span><span class="p">,</span> <span class="s2">&quot;tl&quot;</span><span class="p">,</span> <span class="s2">&quot;ft&quot;</span> <span class="p">]</span>
+<span class="n">models</span> <span class="o">=</span> <span class="p">[</span> <span class="n">cnn_model</span><span class="p">,</span> <span class="n">tl_model</span><span class="p">,</span> <span class="n">ft_model</span> <span class="p">]</span>
+<span class="n">training_histories</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">cnn_training_history</span><span class="p">,</span>
+    <span class="n">tl_training_history</span><span class="p">,</span>
+    <span class="n">ft_training_history</span>
+<span class="p">]</span>
+<span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">history</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">model_names</span><span class="p">,</span> <span class="n">models</span><span class="p">,</span> <span class="n">training_histories</span><span class="p">):</span>
+    <span class="n">save_training_metrics_per_epoch</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">history</span><span class="p">)</span>
+    <span class="n">save_prediction_metrics</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="s1">&#39;validation&#39;</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">ds_val</span><span class="p">)</span>
+    <span class="n">save_prediction_metrics</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="s1">&#39;test&#39;</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">ds_test</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="AI Use Cases" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="medbert.html" class="btn btn-neutral float-right" title="Med-BERT" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, ITS - Research Computing.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

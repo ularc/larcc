@@ -1,0 +1,504 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Storage Guide &mdash; LARCC User Documentation  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=3ad828ca" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Software" href="../../software/index.html" />
+    <link rel="prev" title="Single Job with Multiple Job Steps" href="../slurm/job_submission_strategies.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            LARCC User Documentation
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../accounts_and_support/index.html">Accounts and Support</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../accounts_and_support/index.html#request-an-account">Request an account</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../accounts_and_support/index.html#accounts-for-uofl-individuals">Accounts for UofL individuals</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../accounts_and_support/index.html#uofl-vpn-connection">UofL VPN Connection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../accounts_and_support/index.html#request-support-tickets">Request Support (Tickets)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../gettingstarted/index.html">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../gettingstarted/index.html#usage-agreement">Usage Agreement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gettingstarted/index.html#hpc-system-overview">HPC system overview</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../gettingstarted/index.html#about-the-cluster">About the cluster</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../gettingstarted/index.html#about-scientific-software">About Scientific Software</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../gettingstarted/index.html#about-jobs">About Jobs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../gettingstarted/index.html#quickstart">Quickstart</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../gettingstarted/index.html#logging-into-the-cluster">Logging into the cluster</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../gettingstarted/index.html#using-the-command-line">Using the command line</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../gettingstarted/index.html#using-mobaxterm">Using MobaXterm</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../gettingstarted/index.html#copying-files-to-from-the-cluster">Copying files to/from the cluster</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../gettingstarted/index.html#id1">Using the command line</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../gettingstarted/index.html#id2">Using MobaXterm</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../gettingstarted/index.html#using-software-installed-in-the-cluster">Using software installed in the cluster</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../gettingstarted/index.html#list-available-software">List available software</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../gettingstarted/index.html#load-software">Load software</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../gettingstarted/index.html#list-currently-loaded-software">List currently loaded software</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../gettingstarted/index.html#unloading-software">Unloading software</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../gettingstarted/index.html#queues-and-jobs">Queues and jobs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../gettingstarted/index.html#policies">Policies</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../gettingstarted/index.html#installing-packages-system-wide">Installing packages system-wide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../gettingstarted/index.html#running-applications-on-the-login-nodes">Running applications on the login nodes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../gettingstarted/index.html#resource-restrictions">Resource restrictions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../gettingstarted/index.html#job-runtime-restrictions">Job runtime restrictions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../gettingstarted/index.html#storage-restrictions">Storage restrictions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Guides</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../system_guide/index.html">HPC System Guide</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../system_guide/index.html#introduction">Introduction</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../system_guide/index.html#what-is-a-shell">What is a Shell?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../system_guide/index.html#what-is-case-sensitivity">What is case-sensitivity?</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../system_guide/index.html#connecting-to-the-cluster">Connecting to the Cluster</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../system_guide/index.html#understanding-filesystems">Understanding Filesystems</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../system_guide/index.html#what-is-a-filesystem">What is a Filesystem?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../system_guide/index.html#filesystem-hierarchies">Filesystem Hierarchies</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../system_guide/index.html#navigating-the-filesystem">Navigating the filesystem</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../system_guide/index.html#using-modules">Using Modules</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../slurm/index.html">Slurm Queueing System Guide</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../slurm/index.html#basic-slurm-terminology">Basic Slurm Terminology</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../slurm/terminology.html">Basic Slurm Terminology</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../slurm/index.html#job-types-and-job-submission">Job Types and Job Submission</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../slurm/interactive_jobs.html">Interactive Jobs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../slurm/batch_jobs.html">Batch Jobs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../slurm/batch_jobs.html#job-arrays">Job Arrays</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../slurm/job_dependencies.html">Job Dependencies</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../slurm/index.html#job-environment">Job Environment</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../slurm/job_environment.html">Slurm environmental variables</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../slurm/index.html#strategies-when-submitting-slurm-jobs">Strategies When Submitting Slurm Jobs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../slurm/job_submission_strategies.html">Single Job with Multiple Job Steps</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../slurm/job_submission_strategies.html#job-arrays">Job Arrays</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../slurm/job_submission_strategies.html#requesting-cpu-nodes-with-multiple-parallel-tasks">Requesting CPU Nodes with Multiple Parallel Tasks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../slurm/job_submission_strategies.html#single-gpu-node-with-one-task-per-gpu-and-cpu-cores-evenly-distributed-across-tasks">Single GPU node with one task per GPU and CPU cores evenly distributed across tasks</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Storage Guide</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#understanding-storage-on-compute-nodes">Understanding Storage on Compute Nodes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#storage-types">Storage Types</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#recommended-workflow">Recommended Workflow</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#copying-data-between-home-and-scratch">Copying Data Between Home and Scratch</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../software/index.html">Software</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../software/conda.html">Conda (Anaconda/Miniconda/Miniforge)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../software/conda.html#basics">Basics</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../software/conda.html#about-anaconda-miniconda-and-miniforge">About Anaconda, Miniconda and Miniforge</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software/conda.html#what-is-a-conda-environment">What is a Conda environment?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software/conda.html#why-use-multiple-conda-environments">Why use multiple Conda environments?</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../software/conda.html#using-conda">Using Conda</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../software/conda.html#loading-the-miniforge3-module-and-the-base-environment">Loading the miniforge3 module and the base environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software/conda.html#creating-and-activating-an-environment">Creating and activating an environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software/conda.html#installing-packages-with-conda-and-mamba">Installing packages with conda and mamba</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software/conda.html#installing-packages-with-pip">Installing packages with pip</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software/conda.html#cloning-an-environment">Cloning an environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software/conda.html#miscellaneous">Miscellaneous</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../software/conda.html#conda-in-a-batch-job">Conda in a batch job</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../software/conda.html#conda-in-an-interactive-job">Conda in an interactive job</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../software/gaussian.html">Gaussian</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../software/gaussian.html#running-gaussian">Running Gaussian</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../software/gaussian.html#example-slurm-job-script">Example Slurm Job Script</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../software/jupyter.html">Jupyter</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../software/jupyter.html#launching-jupyter-through-a-batch-job">Launching Jupyter through a batch job</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../software/jupyter.html#optional-create-a-jupyter-environment">1. (Optional) Create a jupyter environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software/jupyter.html#create-the-submission-script">2. Create the submission script</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software/jupyter.html#connect-to-jupyter-from-your-web-browser">3. Connect to jupyter from your web browser</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../software/jupyter.html#launching-jupyter-through-an-interactive-job">Launching Jupyter through an interactive job</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../software/jupyter.html#id2">1. (Optional) Create a jupyter environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software/jupyter.html#submit-an-interactive-job">2. Submit an interactive job</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software/jupyter.html#manually-launch-jupyter">3. Manually launch Jupyter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software/jupyter.html#access-jupyter-from-your-workstation">4. Access Jupyter from your workstation</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../software/jupyter.html#transitioning-from-jupyter-to-python-script">Transitioning from Jupyter to Python Script</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../software/jupyter.html#export-the-notebook">1. Export the Notebook</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software/jupyter.html#clean-up-the-script">2. Clean Up the Script</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software/jupyter.html#replace-notebook-specific-features">3. Replace Notebook-Specific Features</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software/jupyter.html#handle-file-paths-and-inputs">4. Handle File Paths and Inputs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software/jupyter.html#test-the-script">5. Test the Script</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../software/matlab.html">MATLAB</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../software/matlab.html#basics">Basics</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../software/matlab.html#workers-and-pools">Workers and pools</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software/matlab.html#parallel-and-distributed-execution">Parallel and distributed execution</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software/matlab.html#cluster-profiles">Cluster profiles</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../software/matlab.html#submitting-a-batch-job">Submitting a batch job</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../software/matlab.html#submit-jobs-through-a-batch-script">Submit jobs through a batch script</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software/matlab.html#submit-jobs-through-matlab-s-command-prompt">Submit jobs through MATLAB’s command prompt</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software/matlab.html#submit-jobs-through-a-batch-script-and-a-matlab-submission-script">Submit jobs through a batch script and a MATLAB submission script</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../software/matlab.html#creating-a-cluster-profile-for-larcc">Creating a cluster profile for LARCC</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../software/lammps.html">LAMMPS</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../software/lammps.html#running-lammps">Running LAMMPS</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../software/lammps.html#example-slurm-job-script">Example Slurm Job Script</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../software/lammps.html#building-lammps">Building LAMMPS</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../software/liggghts.html">LIGGGHTS</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../software/liggghts.html#running-ligghts">Running LIGGHTS</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../software/liggghts.html#example-slurm-job-script">Example Slurm Job Script</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../software/pytorch.html">PyTorch</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../software/pytorch.html#verifying-gpu-availability">Verifying GPU Availability</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../software/pytorch.html#using-gpus-in-pytorch">Using GPUs in PyTorch</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../software/pytorch.html#moving-tensors-to-gpu">Moving Tensors to GPU</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software/pytorch.html#model-training-on-gpu">Model Training on GPU</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software/pytorch.html#monitoring-gpu-usage">Monitoring GPU Usage</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../software/pytorch.html#multi-gpu-usage-in-pytorch">Multi-GPU Usage in PyTorch</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../software/pytorch.html#single-node-multi-gpu-dataparallel-or-ddp">Single Node, Multi-GPU (DataParallel or DDP)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../software/R.html">R</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../software/R.html#using-r">Using R</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../software/R.html#installing-r-packages">Installing R Packages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../software/R.html#installing-r-packages-in-custom-locations">Installing R packages in custom locations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../software/R.html#installing-r-packages-with-external-library-dependencies">Installing R Packages with External Library Dependencies</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../software/R.html#example-installing-the-units-package">Example: Installing the <code class="docutils literal notranslate"><span class="pre">units</span></code> Package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software/R.html#example-installing-the-sf-package">Example: Installing the <code class="docutils literal notranslate"><span class="pre">sf</span></code> Package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software/R.html#simplifying-with-conda">Simplifying with Conda</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../software/R.html#using-the-pak-package-manager">Using the <code class="docutils literal notranslate"><span class="pre">pak</span></code> Package Manager</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../software/rstudio.html">RStudio</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../software/rstudio.html#pre-launch">Pre-launch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../software/rstudio.html#launch-rstudio-server">Launch RStudio Server</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../software/tensorflow.html">Tensorflow</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../software/tensorflow.html#verifying-gpu-availability">Verifying GPU Availability</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../software/tensorflow.html#single-node-multi-gpu-training">Single Node, Multi-GPU Training</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../software/vasp.html">VASP</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../software/vasp.html#license-restrictions">License Restrictions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../software/vasp.html#running-vasp">Running VASP</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../software/vasp.html#vasp-on-gpu-nodes">VASP on GPU nodes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software/vasp.html#vasp-on-cpu-only-nodes">VASP on CPU-only nodes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software/vasp.html#example-slurm-job-script">Example Slurm Job Script</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../usecases/index.html">AI Use Cases</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../usecases/chest_xray.html">Pneumonia detection based on Chest X-Ray</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../usecases/chest_xray.html#ingesting-the-data">1. Ingesting the data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../usecases/chest_xray.html#training-the-models">2. Training the models</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../usecases/chest_xray.html#cnn-training-and-validation">CNN Training and Validation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../usecases/chest_xray.html#transfer-learning-training-and-validation">Transfer Learning Training and Validation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../usecases/chest_xray.html#fine-tuning-training-and-validation">Fine Tuning Training and Validation</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../usecases/chest_xray.html#visualize-metrics">3. Visualize Metrics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../usecases/chest_xray.html#save-your-results-for-further-analyses">4. Save your results for further analyses</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../usecases/medbert.html">Med-BERT</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">LARCC User Documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Guides</a></li>
+      <li class="breadcrumb-item active">Storage Guide</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/guides/storage/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="storage-guide">
+<h1>Storage Guide<a class="headerlink" href="#storage-guide" title="Link to this heading"></a></h1>
+<section id="understanding-storage-on-compute-nodes">
+<span id="storage-on-compute-nodes"></span><h2>Understanding Storage on Compute Nodes<a class="headerlink" href="#understanding-storage-on-compute-nodes" title="Link to this heading"></a></h2>
+<p>When working on any compute node within the system, there are
+two primary types of storage available to users: <code class="docutils literal notranslate"><span class="pre">scratch</span></code> storage and <code class="docutils literal notranslate"><span class="pre">home</span></code> storage.
+These are illustrated in the diagram below:</p>
+<a class="reference internal image-reference" href="../../_images/logical_storage_architecture.png"><img alt="Logical Storage Architecture" src="../../_images/logical_storage_architecture.png" width="600" />
+</a>
+<section id="storage-types">
+<h3>Storage Types<a class="headerlink" href="#storage-types" title="Link to this heading"></a></h3>
+<section id="scratch-storage">
+<h4><code class="docutils literal notranslate"><span class="pre">scratch</span></code> Storage<a class="headerlink" href="#scratch-storage" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><p><strong>Local to each compute node</strong>: This means it is <strong>not shared</strong> across nodes.</p></li>
+<li><p><strong>High performance</strong>: Offers significantly faster read/write speeds compared to <code class="docutils literal notranslate"><span class="pre">home</span></code> storage.</p></li>
+<li><p><strong>Limited capacity</strong>: Typically smaller in size, so it’s best suited for temporary files and high-speed I/O operations during job execution.</p></li>
+<li><p><strong>Data retention policy:</strong> ALL DATA IS REMOVED after a job finishes.</p></li>
+</ul>
+</section>
+<section id="home-storage">
+<h4><code class="docutils literal notranslate"><span class="pre">home</span></code> Storage<a class="headerlink" href="#home-storage" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><p><strong>Shared across all nodes</strong>: Accessible from any compute node in the system.</p></li>
+<li><p><strong>Large capacity</strong>: Designed to store a user’s persistent data, such as source code, datasets, and results.</p></li>
+<li><p><strong>Slower access</strong>: Due to its shared nature, read/write operations are generally slower than <code class="docutils literal notranslate"><span class="pre">scratch</span></code> storage.</p></li>
+<li><p><strong>Data retention policy:</strong> Data is kept as this storage space is designed to hold persistent data.</p></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="recommended-workflow">
+<h2>Recommended Workflow<a class="headerlink" href="#recommended-workflow" title="Link to this heading"></a></h2>
+<p>A common and efficient workflow for running jobs on the system is:</p>
+<ol class="arabic simple">
+<li><p><strong>Prepare Input Data</strong>: Copy necessary input files from your <code class="docutils literal notranslate"><span class="pre">home</span></code> storage to the node’s local <code class="docutils literal notranslate"><span class="pre">scratch</span></code> storage at the start of your job.</p></li>
+<li><p><strong>Run the Application</strong>: Configure your application to read from and write to the <code class="docutils literal notranslate"><span class="pre">scratch</span></code> storage during execution.
+This takes advantage of its high-speed performance.</p></li>
+<li><p><strong>Save Results</strong>: Once the job completes, copy the output files back to your <code class="docutils literal notranslate"><span class="pre">home</span></code> storage for long-term retention.</p></li>
+</ol>
+<p>See Section <a class="reference internal" href="#storage-copy-data"><span class="std std-ref">Copying data between home and scratch</span></a> for more information on how to implement
+this worflow.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Always ensure that your input and output data will fit within the available space on <code class="docutils literal notranslate"><span class="pre">scratch</span></code> storage.
+If your files exceed this capacity, you may need to adjust your workflow accordingly.</p>
+</div>
+<section id="copying-data-between-home-and-scratch">
+<span id="storage-copy-data"></span><h3>Copying Data Between Home and Scratch<a class="headerlink" href="#copying-data-between-home-and-scratch" title="Link to this heading"></a></h3>
+<p>To efficiently transfer data between your shared <code class="docutils literal notranslate"><span class="pre">home</span></code> storage and node-local <code class="docutils literal notranslate"><span class="pre">scratch</span></code> storage, you can use <code class="docutils literal notranslate"><span class="pre">pdsh</span></code>—a parallel remote shell client that executes commands across multiple nodes simultaneously.</p>
+<p>The general template for the <code class="docutils literal notranslate"><span class="pre">pdsh</span></code> command includes three key components:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">-R</span> <span class="pre">ssh</span></code>: Specifies SSH as the remote shell method (always use <code class="docutils literal notranslate"><span class="pre">ssh</span></code>).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-w</span> <span class="pre">$SLURM_JOB_NODELIST</span></code>: Targets all nodes allocated to your job.</p></li>
+<li><p><strong>Remote command</strong>: Executes on each node, leveraging the fact that <code class="docutils literal notranslate"><span class="pre">home</span></code> is shared while <code class="docutils literal notranslate"><span class="pre">scratch</span></code> is local.</p></li>
+</ul>
+<p>Below are common usage patterns:</p>
+<section id="copy-input-data-from-home-to-scratch-on-all-nodes">
+<h4>Copy input data from home to scratch on all nodes<a class="headerlink" href="#copy-input-data-from-home-to-scratch-on-all-nodes" title="Link to this heading"></a></h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pdsh<span class="w"> </span>-R<span class="w"> </span>ssh<span class="w"> </span>-w<span class="w"> </span><span class="nv">$SLURM_JOB_NODELIST</span><span class="w"> </span><span class="s2">&quot;cp -r /home/</span><span class="nv">$USER</span><span class="s2">/input /mnt/scratch/local/</span><span class="nv">$USER</span><span class="s2">/&quot;</span>
+</pre></div>
+</div>
+<p>For example, assume you submitted a batch job requesting 3 nodes and slurm allocated <code class="docutils literal notranslate"><span class="pre">larcc-cpu[1-3]</span></code> such
+that <code class="docutils literal notranslate"><span class="pre">larcc-cpu1</span></code> is chosen as the node where the batch script is to be executed from. Then, the <code class="docutils literal notranslate"><span class="pre">pdsh</span></code>
+command above would:</p>
+<ol class="arabic simple">
+<li><p>Create 3 (parallel) ssh sessions from <code class="docutils literal notranslate"><span class="pre">larcc-cpu1</span></code> to itself, <code class="docutils literal notranslate"><span class="pre">larcc-cpu2</span></code> and <code class="docutils literal notranslate"><span class="pre">larcc-cpu3</span></code>.</p></li>
+<li><p>Within each session, instruct the node to copy the folder <code class="docutils literal notranslate"><span class="pre">/home/$USER/input</span></code> to <code class="docutils literal notranslate"><span class="pre">/mnt/scratch/local/$USER/</span></code></p></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/pdsh_home_to_scratch.png"><img alt="Logical Storage Architecture" src="../../_images/pdsh_home_to_scratch.png" width="900" />
+</a>
+</section>
+<section id="copy-results-from-scratch-to-home">
+<h4>Copy results from scratch to home<a class="headerlink" href="#copy-results-from-scratch-to-home" title="Link to this heading"></a></h4>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>When copying results back to <code class="docutils literal notranslate"><span class="pre">home</span></code>, ensure unique filenames or directories to prevent nodes from overwriting each other’s output.
+The commands below use the node’s hostname as a suffix to avoid conflicts.</p>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Copy results from scratch to home, appending hostname to avoid overwrites</span>
+pdsh<span class="w"> </span>-R<span class="w"> </span>ssh<span class="w"> </span>-w<span class="w"> </span><span class="nv">$SLURM_JOB_NODELIST</span><span class="w"> </span><span class="s2">&quot;cp -r /mnt/scratch/local/</span><span class="nv">$USER</span><span class="s2">/results /home/</span><span class="nv">$USER</span><span class="s2">/results_\`hostname\`&quot;</span>
+
+<span class="c1"># Alternatively, move results from scratch to home</span>
+pdsh<span class="w"> </span>-R<span class="w"> </span>ssh<span class="w"> </span>-w<span class="w"> </span><span class="nv">$SLURM_JOB_NODELIST</span><span class="w"> </span><span class="s2">&quot;mv /mnt/scratch/local/</span><span class="nv">$USER</span><span class="s2">/results /home/</span><span class="nv">$USER</span><span class="s2">/results_\`hostname\`&quot;</span>
+</pre></div>
+</div>
+<p>For example, assume you submitted a batch job requesting 3 nodes and slurm allocated <code class="docutils literal notranslate"><span class="pre">larcc-cpu[1-3]</span></code> such
+that <code class="docutils literal notranslate"><span class="pre">larcc-cpu1</span></code> is chosen as the node where the batch script is to be executed from. Then, the <code class="docutils literal notranslate"><span class="pre">pdsh</span></code>
+commands above would:</p>
+<ol class="arabic">
+<li><p>Create 3 (parallel) ssh sessions from <code class="docutils literal notranslate"><span class="pre">larcc-cpu1</span></code> to itself, <code class="docutils literal notranslate"><span class="pre">larcc-cpu2</span></code> and <code class="docutils literal notranslate"><span class="pre">larcc-cpu3</span></code>.</p></li>
+<li><p>Within each session, instruct the node to copy (or move if using <code class="docutils literal notranslate"><span class="pre">mv</span></code>) the folder <code class="docutils literal notranslate"><span class="pre">/mnt/scratch/local/$USER/results</span></code>
+to <code class="docutils literal notranslate"><span class="pre">/home/$USER/</span></code>, appending <code class="docutils literal notranslate"><span class="pre">_</span></code> followed by the node’s hostname to the copy. i.e.,</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># larcc-cpu1 executes:</span>
+cp<span class="w"> </span>-r<span class="w"> </span>/mnt/scratch/local/<span class="nv">$USER</span>/results<span class="w"> </span>/home/<span class="nv">$USER</span>/results_larcc-cpu1
+<span class="c1"># larcc-cpu2 executes:</span>
+cp<span class="w"> </span>-r<span class="w"> </span>/mnt/scratch/local/<span class="nv">$USER</span>/results<span class="w"> </span>/home/<span class="nv">$USER</span>/results_larcc-cpu2
+<span class="c1"># larcc-cpu3 executes:</span>
+cp<span class="w"> </span>-r<span class="w"> </span>/mnt/scratch/local/<span class="nv">$USER</span>/results<span class="w"> </span>/home/<span class="nv">$USER</span>/results_larcc-cpu3
+</pre></div>
+</div>
+</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/pdsh_scratch_to_home.png"><img alt="Logical Storage Architecture" src="../../_images/pdsh_scratch_to_home.png" width="900" />
+</a>
+<section id="simplified-copy-for-aggregated-results">
+<h5>Simplified Copy for Aggregated Results<a class="headerlink" href="#simplified-copy-for-aggregated-results" title="Link to this heading"></a></h5>
+<p>If your application aggregates results on the submission node (e.g., via MPI reduction), and per-node outputs are not needed,
+you can use a standard copy command instead of <code class="docutils literal notranslate"><span class="pre">pdsh</span></code>.</p>
+</section>
+</section>
+<section id="batch-script-example">
+<h4>Batch Script Example<a class="headerlink" href="#batch-script-example" title="Link to this heading"></a></h4>
+<p>Here’s how this workflow fits into a typical Slurm batch script:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="c1">#SBATCH ...</span>
+
+<span class="c1"># Copy input to scratch</span>
+pdsh<span class="w"> </span>-R<span class="w"> </span>ssh<span class="w"> </span>-w<span class="w"> </span><span class="nv">$SLURM_JOB_NODELIST</span><span class="w"> </span><span class="s2">&quot;cp -r /home/</span><span class="nv">$USER</span><span class="s2">/input /mnt/scratch/local/</span><span class="nv">$USER</span><span class="s2">/&quot;</span>
+
+<span class="c1"># Run your application</span>
+<span class="c1"># ...</span>
+
+<span class="c1"># Copy results back to home</span>
+pdsh<span class="w"> </span>-R<span class="w"> </span>ssh<span class="w"> </span>-w<span class="w"> </span><span class="nv">$SLURM_JOB_NODELIST</span><span class="w"> </span><span class="s2">&quot;cp -r /mnt/scratch/local/</span><span class="nv">$USER</span><span class="s2">/results /home/</span><span class="nv">$USER</span><span class="s2">/results_\`hostname\`&quot;</span>
+</pre></div>
+</div>
+<p>For aggregated results (e.g., via MPI reduction):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="c1">#SBATCH ...</span>
+
+<span class="c1"># Copy input to scratch</span>
+pdsh<span class="w"> </span>-R<span class="w"> </span>ssh<span class="w"> </span>-w<span class="w"> </span><span class="nv">$SLURM_JOB_NODELIST</span><span class="w"> </span><span class="s2">&quot;cp -r /home/</span><span class="nv">$USER</span><span class="s2">/input /mnt/scratch/local/</span><span class="nv">$USER</span><span class="s2">/&quot;</span>
+
+<span class="c1"># Run your application</span>
+<span class="c1"># ...</span>
+
+<span class="c1"># Copy final results from scratch to home</span>
+cp<span class="w"> </span>-r<span class="w"> </span>/mnt/scratch/local/<span class="nv">$USER</span>/results<span class="w"> </span>/home/<span class="nv">$USER</span>/
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../slurm/job_submission_strategies.html" class="btn btn-neutral float-left" title="Single Job with Multiple Job Steps" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../software/index.html" class="btn btn-neutral float-right" title="Software" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, ITS - Research Computing.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

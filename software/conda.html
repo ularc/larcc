@@ -1,0 +1,651 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Conda (Anaconda/Miniconda/Miniforge) &mdash; LARCC User Documentation  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=3ad828ca" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Gaussian" href="gaussian.html" />
+    <link rel="prev" title="Software" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            LARCC User Documentation
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../accounts_and_support/index.html">Accounts and Support</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../accounts_and_support/index.html#request-an-account">Request an account</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../accounts_and_support/index.html#accounts-for-uofl-individuals">Accounts for UofL individuals</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../accounts_and_support/index.html#uofl-vpn-connection">UofL VPN Connection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../accounts_and_support/index.html#request-support-tickets">Request Support (Tickets)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../gettingstarted/index.html">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/index.html#usage-agreement">Usage Agreement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/index.html#hpc-system-overview">HPC system overview</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../gettingstarted/index.html#about-the-cluster">About the cluster</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gettingstarted/index.html#about-scientific-software">About Scientific Software</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gettingstarted/index.html#about-jobs">About Jobs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/index.html#quickstart">Quickstart</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../gettingstarted/index.html#logging-into-the-cluster">Logging into the cluster</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../gettingstarted/index.html#using-the-command-line">Using the command line</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../gettingstarted/index.html#using-mobaxterm">Using MobaXterm</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../gettingstarted/index.html#copying-files-to-from-the-cluster">Copying files to/from the cluster</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../gettingstarted/index.html#id1">Using the command line</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../gettingstarted/index.html#id2">Using MobaXterm</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../gettingstarted/index.html#using-software-installed-in-the-cluster">Using software installed in the cluster</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../gettingstarted/index.html#list-available-software">List available software</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../gettingstarted/index.html#load-software">Load software</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../gettingstarted/index.html#list-currently-loaded-software">List currently loaded software</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../gettingstarted/index.html#unloading-software">Unloading software</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../gettingstarted/index.html#queues-and-jobs">Queues and jobs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/index.html#policies">Policies</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../gettingstarted/index.html#installing-packages-system-wide">Installing packages system-wide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gettingstarted/index.html#running-applications-on-the-login-nodes">Running applications on the login nodes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gettingstarted/index.html#resource-restrictions">Resource restrictions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../gettingstarted/index.html#job-runtime-restrictions">Job runtime restrictions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../gettingstarted/index.html#storage-restrictions">Storage restrictions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/index.html">Guides</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../guides/system_guide/index.html">HPC System Guide</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../guides/system_guide/index.html#introduction">Introduction</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../guides/system_guide/index.html#what-is-a-shell">What is a Shell?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../guides/system_guide/index.html#what-is-case-sensitivity">What is case-sensitivity?</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../guides/system_guide/index.html#connecting-to-the-cluster">Connecting to the Cluster</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../guides/system_guide/index.html#understanding-filesystems">Understanding Filesystems</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../guides/system_guide/index.html#what-is-a-filesystem">What is a Filesystem?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../guides/system_guide/index.html#filesystem-hierarchies">Filesystem Hierarchies</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../guides/system_guide/index.html#navigating-the-filesystem">Navigating the filesystem</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../guides/system_guide/index.html#using-modules">Using Modules</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/slurm/index.html">Slurm Queueing System Guide</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../guides/slurm/index.html#basic-slurm-terminology">Basic Slurm Terminology</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../guides/slurm/terminology.html">Basic Slurm Terminology</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../guides/slurm/index.html#job-types-and-job-submission">Job Types and Job Submission</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../guides/slurm/interactive_jobs.html">Interactive Jobs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../guides/slurm/batch_jobs.html">Batch Jobs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../guides/slurm/batch_jobs.html#job-arrays">Job Arrays</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../guides/slurm/job_dependencies.html">Job Dependencies</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../guides/slurm/index.html#job-environment">Job Environment</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../guides/slurm/job_environment.html">Slurm environmental variables</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../guides/slurm/index.html#strategies-when-submitting-slurm-jobs">Strategies When Submitting Slurm Jobs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../guides/slurm/job_submission_strategies.html">Single Job with Multiple Job Steps</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../guides/slurm/job_submission_strategies.html#job-arrays">Job Arrays</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../guides/slurm/job_submission_strategies.html#requesting-cpu-nodes-with-multiple-parallel-tasks">Requesting CPU Nodes with Multiple Parallel Tasks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../guides/slurm/job_submission_strategies.html#single-gpu-node-with-one-task-per-gpu-and-cpu-cores-evenly-distributed-across-tasks">Single GPU node with one task per GPU and CPU cores evenly distributed across tasks</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/storage/index.html">Storage Guide</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../guides/storage/index.html#understanding-storage-on-compute-nodes">Understanding Storage on Compute Nodes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../guides/storage/index.html#storage-types">Storage Types</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../guides/storage/index.html#recommended-workflow">Recommended Workflow</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../guides/storage/index.html#copying-data-between-home-and-scratch">Copying Data Between Home and Scratch</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Software</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Conda (Anaconda/Miniconda/Miniforge)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#basics">Basics</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#about-anaconda-miniconda-and-miniforge">About Anaconda, Miniconda and Miniforge</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#what-is-a-conda-environment">What is a Conda environment?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#why-use-multiple-conda-environments">Why use multiple Conda environments?</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#using-conda">Using Conda</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#loading-the-miniforge3-module-and-the-base-environment">Loading the miniforge3 module and the base environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#creating-and-activating-an-environment">Creating and activating an environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#installing-packages-with-conda-and-mamba">Installing packages with conda and mamba</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#installing-packages-with-pip">Installing packages with pip</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cloning-an-environment">Cloning an environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#miscellaneous">Miscellaneous</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#conda-in-a-batch-job">Conda in a batch job</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#conda-in-an-interactive-job">Conda in an interactive job</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="gaussian.html">Gaussian</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="gaussian.html#running-gaussian">Running Gaussian</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="gaussian.html#example-slurm-job-script">Example Slurm Job Script</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="jupyter.html">Jupyter</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="jupyter.html#launching-jupyter-through-a-batch-job">Launching Jupyter through a batch job</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="jupyter.html#optional-create-a-jupyter-environment">1. (Optional) Create a jupyter environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="jupyter.html#create-the-submission-script">2. Create the submission script</a></li>
+<li class="toctree-l4"><a class="reference internal" href="jupyter.html#connect-to-jupyter-from-your-web-browser">3. Connect to jupyter from your web browser</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="jupyter.html#launching-jupyter-through-an-interactive-job">Launching Jupyter through an interactive job</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="jupyter.html#id2">1. (Optional) Create a jupyter environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="jupyter.html#submit-an-interactive-job">2. Submit an interactive job</a></li>
+<li class="toctree-l4"><a class="reference internal" href="jupyter.html#manually-launch-jupyter">3. Manually launch Jupyter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="jupyter.html#access-jupyter-from-your-workstation">4. Access Jupyter from your workstation</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="jupyter.html#transitioning-from-jupyter-to-python-script">Transitioning from Jupyter to Python Script</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="jupyter.html#export-the-notebook">1. Export the Notebook</a></li>
+<li class="toctree-l4"><a class="reference internal" href="jupyter.html#clean-up-the-script">2. Clean Up the Script</a></li>
+<li class="toctree-l4"><a class="reference internal" href="jupyter.html#replace-notebook-specific-features">3. Replace Notebook-Specific Features</a></li>
+<li class="toctree-l4"><a class="reference internal" href="jupyter.html#handle-file-paths-and-inputs">4. Handle File Paths and Inputs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="jupyter.html#test-the-script">5. Test the Script</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="matlab.html">MATLAB</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="matlab.html#basics">Basics</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="matlab.html#workers-and-pools">Workers and pools</a></li>
+<li class="toctree-l4"><a class="reference internal" href="matlab.html#parallel-and-distributed-execution">Parallel and distributed execution</a></li>
+<li class="toctree-l4"><a class="reference internal" href="matlab.html#cluster-profiles">Cluster profiles</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="matlab.html#submitting-a-batch-job">Submitting a batch job</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="matlab.html#submit-jobs-through-a-batch-script">Submit jobs through a batch script</a></li>
+<li class="toctree-l4"><a class="reference internal" href="matlab.html#submit-jobs-through-matlab-s-command-prompt">Submit jobs through MATLAB’s command prompt</a></li>
+<li class="toctree-l4"><a class="reference internal" href="matlab.html#submit-jobs-through-a-batch-script-and-a-matlab-submission-script">Submit jobs through a batch script and a MATLAB submission script</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="matlab.html#creating-a-cluster-profile-for-larcc">Creating a cluster profile for LARCC</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="lammps.html">LAMMPS</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="lammps.html#running-lammps">Running LAMMPS</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="lammps.html#example-slurm-job-script">Example Slurm Job Script</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="lammps.html#building-lammps">Building LAMMPS</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="liggghts.html">LIGGGHTS</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="liggghts.html#running-ligghts">Running LIGGHTS</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="liggghts.html#example-slurm-job-script">Example Slurm Job Script</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pytorch.html">PyTorch</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pytorch.html#verifying-gpu-availability">Verifying GPU Availability</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pytorch.html#using-gpus-in-pytorch">Using GPUs in PyTorch</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pytorch.html#moving-tensors-to-gpu">Moving Tensors to GPU</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pytorch.html#model-training-on-gpu">Model Training on GPU</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pytorch.html#monitoring-gpu-usage">Monitoring GPU Usage</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pytorch.html#multi-gpu-usage-in-pytorch">Multi-GPU Usage in PyTorch</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pytorch.html#single-node-multi-gpu-dataparallel-or-ddp">Single Node, Multi-GPU (DataParallel or DDP)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="R.html">R</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="R.html#using-r">Using R</a></li>
+<li class="toctree-l3"><a class="reference internal" href="R.html#installing-r-packages">Installing R Packages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="R.html#installing-r-packages-in-custom-locations">Installing R packages in custom locations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="R.html#installing-r-packages-with-external-library-dependencies">Installing R Packages with External Library Dependencies</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="R.html#example-installing-the-units-package">Example: Installing the <code class="docutils literal notranslate"><span class="pre">units</span></code> Package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="R.html#example-installing-the-sf-package">Example: Installing the <code class="docutils literal notranslate"><span class="pre">sf</span></code> Package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="R.html#simplifying-with-conda">Simplifying with Conda</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="R.html#using-the-pak-package-manager">Using the <code class="docutils literal notranslate"><span class="pre">pak</span></code> Package Manager</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="rstudio.html">RStudio</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="rstudio.html#pre-launch">Pre-launch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rstudio.html#launch-rstudio-server">Launch RStudio Server</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tensorflow.html">Tensorflow</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tensorflow.html#verifying-gpu-availability">Verifying GPU Availability</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tensorflow.html#single-node-multi-gpu-training">Single Node, Multi-GPU Training</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="vasp.html">VASP</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="vasp.html#license-restrictions">License Restrictions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="vasp.html#running-vasp">Running VASP</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="vasp.html#vasp-on-gpu-nodes">VASP on GPU nodes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="vasp.html#vasp-on-cpu-only-nodes">VASP on CPU-only nodes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="vasp.html#example-slurm-job-script">Example Slurm Job Script</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../usecases/index.html">AI Use Cases</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../usecases/chest_xray.html">Pneumonia detection based on Chest X-Ray</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../usecases/chest_xray.html#ingesting-the-data">1. Ingesting the data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../usecases/chest_xray.html#training-the-models">2. Training the models</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../usecases/chest_xray.html#cnn-training-and-validation">CNN Training and Validation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../usecases/chest_xray.html#transfer-learning-training-and-validation">Transfer Learning Training and Validation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../usecases/chest_xray.html#fine-tuning-training-and-validation">Fine Tuning Training and Validation</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../usecases/chest_xray.html#visualize-metrics">3. Visualize Metrics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../usecases/chest_xray.html#save-your-results-for-further-analyses">4. Save your results for further analyses</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../usecases/medbert.html">Med-BERT</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">LARCC User Documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Software</a></li>
+      <li class="breadcrumb-item active">Conda (Anaconda/Miniconda/Miniforge)</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/software/conda.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="conda-anaconda-miniconda-miniforge">
+<span id="conda"></span><h1>Conda (Anaconda/Miniconda/Miniforge)<a class="headerlink" href="#conda-anaconda-miniconda-miniforge" title="Link to this heading"></a></h1>
+<section id="basics">
+<h2>Basics<a class="headerlink" href="#basics" title="Link to this heading"></a></h2>
+<section id="about-anaconda-miniconda-and-miniforge">
+<h3>About Anaconda, Miniconda and Miniforge<a class="headerlink" href="#about-anaconda-miniconda-and-miniforge" title="Link to this heading"></a></h3>
+<p>The Conda installer is a package manager and environment manager for
+Python, R, and other languages. It comes in 3 flavors:</p>
+<ul class="simple">
+<li><p><strong>Anaconda:</strong> The Anaconda (company) driven Conda installer with hundreds of scientific packages included.</p></li>
+<li><p><strong>Miniconda:</strong> The Anaconda (company) driven minimalistic Conda installer including only Python by default.</p></li>
+<li><p><strong>Miniforge:</strong> The community (conda-forge) driven minimalistic Conda installer
+using the <code class="docutils literal notranslate"><span class="pre">conda-forge</span></code> channel by default.</p></li>
+</ul>
+<p>LARCC only offers support for <strong>Miniforge</strong> as it works just like Anaconda
+or Miniconda but is lightweight and specifically built to support
+open-source and customizable environments. Compared to the other 2, it:</p>
+<ul class="simple">
+<li><p>is smaller than Anaconda (no preinstalled packages).</p></li>
+<li><p>does not rely on the default Anaconda channel, which can sometimes have licensing issues.</p></li>
+<li><p>uses conda-forge as its default channel—a large, community-maintained repository of conda packages.</p></li>
+</ul>
+</section>
+<section id="what-is-a-conda-environment">
+<h3>What is a Conda environment?<a class="headerlink" href="#what-is-a-conda-environment" title="Link to this heading"></a></h3>
+<p>A Conda environment is a self-contained directory that includes:</p>
+<ul class="simple">
+<li><p>A specific version of Python or R</p></li>
+<li><p>Specific versions of packages (like NumPy, TensorFlow, etc.)</p></li>
+<li><p>Any other dependencies</p></li>
+</ul>
+<p>Each environment is isolated from others, which means packages in one environment
+don’t interfere with packages in another.</p>
+</section>
+<section id="why-use-multiple-conda-environments">
+<h3>Why use multiple Conda environments?<a class="headerlink" href="#why-use-multiple-conda-environments" title="Link to this heading"></a></h3>
+<ul>
+<li><p><strong>Avoid Conflicts Between Packages</strong>. Different projects may need different package
+versions. Maintaining 1 or multiple environments per project can help in
+prototyping and or maintining different versions of your code. For example,
+Assume “Project A” requires TensorFlow 2.15 and “Project B” requires TensorFlow 1.14.
+If you installed both in the same environment, they would conflict. With Conda, you can do:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>ProjectA<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.10<span class="w"> </span><span class="nv">tensorflow</span><span class="o">=</span><span class="m">2</span>.15
+conda<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>ProjectB<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.7<span class="w"> </span><span class="nv">tensorflow</span><span class="o">=</span><span class="m">1</span>.14
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p><strong>Safe code prototyping and experimenting with new package versions</strong>. If you want to make sure
+your code works on the latest version of a package or you want to try a new exciting feature
+of the latest version of a package, you can create a new environment before updating.</p></li>
+<li><p><strong>Reproducibility</strong>. Environments can be exported and shared
+to others with <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">env</span> <span class="pre">export</span> <span class="pre">&gt;</span> <span class="pre">environment.yml</span></code> and later imported by another party
+(or another machine) with <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">env</span> <span class="pre">create</span> <span class="pre">-f</span> <span class="pre">environment.yml</span></code>. For example,
+you could build an environment
+in your local workstation, then export it and rebuild it on the login node of the cluster.</p></li>
+</ul>
+</section>
+</section>
+<section id="using-conda">
+<h2>Using Conda<a class="headerlink" href="#using-conda" title="Link to this heading"></a></h2>
+<section id="loading-the-miniforge3-module-and-the-base-environment">
+<h3>Loading the miniforge3 module and the base environment<a class="headerlink" href="#loading-the-miniforge3-module-and-the-base-environment" title="Link to this heading"></a></h3>
+<p>After logging into LARCC, you can start using Miniforge by loading the miniforge3 module with the command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>module<span class="w"> </span>load<span class="w"> </span>miniforge3/24.3.0-0-gcc-11.5.0-wkw4vym
+</pre></div>
+</div>
+<p>After executing this command, you should see your prompt change (it should now start with <code class="docutils literal notranslate"><span class="pre">(base)</span></code>).</p>
+</section>
+<section id="creating-and-activating-an-environment">
+<span id="conda-create-env"></span><h3>Creating and activating an environment<a class="headerlink" href="#creating-and-activating-an-environment" title="Link to this heading"></a></h3>
+<p>Although you can install packages right after loading the miniforge3 module, which
+activates the base Miniforge environment for you, it is best to create and use named environments instead.
+These are isolated, easier to manage, and allow multiple setups under one base environment.</p>
+<p>Miniforge supports both <code class="docutils literal notranslate"><span class="pre">conda</span></code> and <code class="docutils literal notranslate"><span class="pre">mamba</span></code> for managing environments.
+While both work the same way, <code class="docutils literal notranslate"><span class="pre">mamba</span></code>—written in C++—is faster and more memory-efficient than <code class="docutils literal notranslate"><span class="pre">conda</span></code>.
+We recommend using <code class="docutils literal notranslate"><span class="pre">mamba</span></code> for installing packages. However, if you have not run <code class="docutils literal notranslate"><span class="pre">mamba</span> <span class="pre">init</span></code>,
+you will need to use <code class="docutils literal notranslate"><span class="pre">conda</span></code> to activate or deactivate environments.
+For non-installation tasks like listing environments, both tools can be used interchangeably.</p>
+<p>For example, to create an environment named <code class="docutils literal notranslate"><span class="pre">my_env</span></code>:</p>
+<ol class="arabic simple">
+<li><p>Load the miniforge3 module by typing: <code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">load</span> <span class="pre">miniforge3/24.3.0-0-gcc-11.5.0-wkw4vym</span></code>.</p></li>
+<li><p>Create the environment with <code class="docutils literal notranslate"><span class="pre">mamba</span> <span class="pre">create</span> <span class="pre">--name</span> <span class="pre">my_env</span></code> or <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">create</span> <span class="pre">--name</span> <span class="pre">my_env</span></code>.</p></li>
+</ol>
+<p>Once you have created your environment, you can use it by executing <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span> <span class="pre">environment_name_here</span></code>.
+For example, <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span> <span class="pre">my_env</span></code>. The command prompt will then change from <code class="docutils literal notranslate"><span class="pre">(base)</span></code> to <code class="docutils literal notranslate"><span class="pre">(my_env)</span></code>
+to reflect this.</p>
+<p>By default, your environments are stored at <code class="docutils literal notranslate"><span class="pre">/home/user/.conda/envs/env_name</span></code>.
+If you want to indicate a different prefix, you can use the <code class="docutils literal notranslate"><span class="pre">--prefix</span></code> option instead of the
+<code class="docutils literal notranslate"><span class="pre">--name</span></code> option. For example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>create<span class="w"> </span>--prefix<span class="w"> </span>/home/user/ProjectA/my_env
+</pre></div>
+</div>
+</section>
+<section id="installing-packages-with-conda-and-mamba">
+<span id="conda-install-pkgs"></span><h3>Installing packages with conda and mamba<a class="headerlink" href="#installing-packages-with-conda-and-mamba" title="Link to this heading"></a></h3>
+<p>Once you have activated an environment, you can install packages with the <code class="docutils literal notranslate"><span class="pre">mamba</span> <span class="pre">install</span></code> command or the
+<code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span></code> command. You can also control what version of a package you want installed based on
+the following constraints:</p>
+<table class="docutils align-default" id="id1">
+<caption><span class="caption-text">Conda installation constraint types</span><a class="headerlink" href="#id1" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 30.0%" />
+<col style="width: 35.0%" />
+<col style="width: 35.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Constraint type</p></th>
+<th class="head"><p>Syntax</p></th>
+<th class="head"><p>Result</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Fuzzy</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">python=3.11</span></code></p></td>
+<td><p>3.11.0, 3.11.1, 3.11.2, etc.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Exact</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">python==3.11</span></code></p></td>
+<td><p>3.11.0</p></td>
+</tr>
+<tr class="row-even"><td><p>Greater than or equal to</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;python&gt;=3.11&quot;</span></code></p></td>
+<td><p>3.11 or higher</p></td>
+</tr>
+<tr class="row-odd"><td><p>OR</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;python=3.11.1|3.11.3&quot;</span></code></p></td>
+<td><p>3.11.1, 3.11.3</p></td>
+</tr>
+<tr class="row-even"><td><p>AND</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;python&gt;=3.11,&lt;3.13&quot;</span></code></p></td>
+<td><p>3.11, 3.12, not 3.13</p></td>
+</tr>
+</tbody>
+</table>
+<p>For example,</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mamba<span class="w"> </span>install<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.11<span class="w"> </span><span class="c1"># or conda install python=3.11</span>
+<span class="c1"># NOTE: the quotation marks are necessary</span>
+<span class="c1"># to protect the &lt; and &gt; symbols from the shell.</span>
+mamba<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;python&gt;=3.11.1&quot;</span><span class="w"> </span><span class="c1"># or conda install &quot;python&gt;=3.11.1&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="installing-packages-with-pip">
+<h3>Installing packages with pip<a class="headerlink" href="#installing-packages-with-pip" title="Link to this heading"></a></h3>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If pip is not installed in your environment, either:</p>
+<ul class="simple">
+<li><p>The shell won’t find <code class="docutils literal notranslate"><span class="pre">pip</span></code>, or</p></li>
+<li><p>It will use a system-wide version, potentially failing due to lack of permissions to
+install packages system-wide.</p></li>
+</ul>
+<p>Always check that pip is installed in the environment you activated with
+<code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">list</span> <span class="pre">-n</span> <span class="pre">env_name</span> <span class="pre">pip</span></code>. The output should look similar to this:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span># packages in environment at /home/user/.conda/envs/env_name:
+#
+# Name                    Version                   Build  Channel
+pip                       25.1.1             pyh145f28c_0    conda-forge
+</pre></div>
+</div>
+</div>
+<p>We recommend using pip within an environment only if the package you need to install is
+not already available in <code class="docutils literal notranslate"><span class="pre">conda-forge</span></code> or another (open-source) conda channel. For example,
+newer versions of PyTorch are no longer installable via conda and thus must be installed via pip:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip3<span class="w"> </span>install<span class="w"> </span>torch<span class="w"> </span>torchvision<span class="w"> </span>torchaudio
+</pre></div>
+</div>
+</section>
+<section id="cloning-an-environment">
+<span id="conda-clone-env"></span><h3>Cloning an environment<a class="headerlink" href="#cloning-an-environment" title="Link to this heading"></a></h3>
+<p>Sometimes you may want to create a new conda environment based on an existing one. To do this:</p>
+<ol class="arabic simple">
+<li><p>Activate the environment you want to clone.</p></li>
+<li><p>Export its package list to a YAML file with.
+<code class="docutils literal notranslate"><span class="pre">mamba</span> <span class="pre">env</span> <span class="pre">export</span> <span class="pre">&gt;</span> <span class="pre">environment.yml</span></code> or <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">env</span> <span class="pre">export</span> <span class="pre">&gt;</span> <span class="pre">environment.yml</span></code></p></li>
+<li><p>Deactivate the environment.</p></li>
+<li><p>Create the new environment with <code class="docutils literal notranslate"><span class="pre">mamba</span> <span class="pre">env</span> <span class="pre">create</span> <span class="pre">--name</span> <span class="pre">new_env</span> <span class="pre">-f</span> <span class="pre">environment.yml</span></code>
+or <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">env</span> <span class="pre">create</span> <span class="pre">--name</span> <span class="pre">new_env</span> <span class="pre">-f</span> <span class="pre">environment.yml</span></code>.</p></li>
+</ol>
+</section>
+<section id="miscellaneous">
+<h3>Miscellaneous<a class="headerlink" href="#miscellaneous" title="Link to this heading"></a></h3>
+<p>Here are some useful conda commands users are encouraged to get familiar with:</p>
+<table class="docutils align-default" id="id2">
+<caption><span class="caption-text">Some useful Conda commands</span><a class="headerlink" href="#id2" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 44.4%" />
+<col style="width: 55.6%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Command</p></th>
+<th class="head"><p>Meaning</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">create</span> <span class="pre">--name</span> <span class="pre">my_env</span> <span class="pre">PCKAGE1</span> <span class="pre">PACKAGE2</span></code></p></td>
+<td><p>Create a new environment named <code class="docutils literal notranslate"><span class="pre">my_env</span></code>, install packages <code class="docutils literal notranslate"><span class="pre">PCKAGE1</span></code> and <code class="docutils literal notranslate"><span class="pre">PACKAGE2</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span> <span class="pre">my_env</span></code></p></td>
+<td><p>Activate environment <code class="docutils literal notranslate"><span class="pre">my_env</span></code> to use packages installed in it</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">deactivate</span></code></p></td>
+<td><p>Deactivate a currently activated environment. You can only have one environment activated
+at once, so there is not need to name the environment you want to deactivate.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">env</span> <span class="pre">list</span></code></p></td>
+<td><p>Get a list of all available environments. Active environment is shown with *</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">env</span> <span class="pre">remove</span> <span class="pre">--name</span> <span class="pre">my_env</span></code></p></td>
+<td><p>Remove environment <code class="docutils literal notranslate"><span class="pre">my_env</span></code> and everything in it</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">PACKAGE</span></code></p></td>
+<td><p>Install a package. You can also specify the version of the package by using
+the syntax <code class="docutils literal notranslate"><span class="pre">PACKAGE=version</span></code>. For example, <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">python=3.15</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">update</span> <span class="pre">PACKAGE</span></code></p></td>
+<td><p>Update a package</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">search</span> <span class="pre">PACKAGE</span></code></p></td>
+<td><p>Search for package</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">config</span> <span class="pre">--add</span> <span class="pre">channels</span> <span class="pre">CHANNEL</span></code></p></td>
+<td><p>Add a channel to your environment. This is especially helpful for those using bioconda
+(<code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">config</span> <span class="pre">--add</span> <span class="pre">channels</span> <span class="pre">bioconda</span></code>)</p></td>
+</tr>
+</tbody>
+</table>
+<p>As an example, a typical workflow for python looks like this:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>module<span class="w"> </span>load<span class="w"> </span>miniforge3/24.3.0-0-gcc-11.5.0-wkw4vym
+<span class="c1"># Create a custom environment. In this case, create</span>
+<span class="c1"># an environment named &quot;my_env&quot; and install packages</span>
+<span class="c1"># numpy and scipy</span>
+conda<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>my_env<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.11<span class="w"> </span>numpy<span class="w"> </span>scipy
+<span class="c1"># Activate the environment &quot;my_env&quot;</span>
+conda<span class="w"> </span>activate<span class="w"> </span>my_env
+<span class="c1"># Suppose you realized you need the pandas package.</span>
+<span class="c1"># So, install it!</span>
+conda<span class="w"> </span>install<span class="w"> </span>pandas
+</pre></div>
+</div>
+</section>
+</section>
+<section id="conda-in-a-batch-job">
+<h2>Conda in a batch job<a class="headerlink" href="#conda-in-a-batch-job" title="Link to this heading"></a></h2>
+<p>After creating a virtual environment, you can use it within a batch script. Any program
+you install within an environment will become available after said environment is
+activated. That means to effectively use a software installed via Conda in a batch job
+you need to load the <code class="docutils literal notranslate"><span class="pre">miniforge3</span></code> module and then instruct the script to activate the
+desired environment.</p>
+<p>For example, suppose you created an environment named <code class="docutils literal notranslate"><span class="pre">projectA_pytorch</span></code>, then you
+could use it as follows:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+
+<span class="c1">#SBATCH --job-name=projectA_pytorch_job</span>
+<span class="c1">#SBATCH --partition=compute</span>
+<span class="c1">#SBATCH --output=/home/user/slurm-%x-%j.out</span>
+<span class="c1">#SBATCH --time=1:00:00</span>
+<span class="c1">#SBATCH --nodes=1</span>
+<span class="c1">#SBATCH --mem=515002</span>
+
+module<span class="w"> </span>load<span class="w"> </span>miniforge3/24.3.0-0-gcc-11.5.0-wkw4vym
+conda<span class="w"> </span>activate<span class="w"> </span>projectA_pytorch
+
+<span class="c1">## Execute the python script that calls pytorch</span>
+python<span class="w"> </span>program.py
+</pre></div>
+</div>
+<p>To see a more concrete example, see our documentation on
+how to <a class="reference internal" href="jupyter.html#jupyter-batch"><span class="std std-ref">launch jupyter through a batch job</span></a>.</p>
+</section>
+<section id="conda-in-an-interactive-job">
+<h2>Conda in an interactive job<a class="headerlink" href="#conda-in-an-interactive-job" title="Link to this heading"></a></h2>
+<p>After creating a virtual environment, you can use it within an interactive job. Any program
+you install within an environment will become available after said environment is
+activated. That means to effectively use a software installed via Conda
+you need to load the <code class="docutils literal notranslate"><span class="pre">miniforge3</span></code> module, activate the desired environment and run your program.</p>
+<p>For example, suppose you created an environment named <code class="docutils literal notranslate"><span class="pre">projectA_pytorch</span></code>, then you
+could use it as follows:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>srun<span class="w"> </span>--partition<span class="o">=</span>compute<span class="w"> </span>--job-name<span class="o">=</span>projectA_pytorch_job<span class="w"> </span>--time<span class="o">=</span><span class="m">1</span>:00:00<span class="w"> </span>--nodes<span class="o">=</span><span class="m">1</span><span class="w"> </span>--mem<span class="o">=</span><span class="m">515002</span><span class="w"> </span>--pty<span class="w"> </span>/bin/bash<span class="w"> </span>-i
+module<span class="w"> </span>load<span class="w"> </span>miniforge3/24.3.0-0-gcc-11.5.0-wkw4vym
+conda<span class="w"> </span>activate<span class="w"> </span>projectA_pytorch
+
+<span class="c1">## Execute the python script that calls pytorch</span>
+python<span class="w"> </span>program.py
+</pre></div>
+</div>
+<p>To see a more concrete example, see our documentation on
+how to <a class="reference internal" href="jupyter.html#jupyter-interactive"><span class="std std-ref">launch jupyter through an interactive job</span></a>.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Software" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="gaussian.html" class="btn btn-neutral float-right" title="Gaussian" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, ITS - Research Computing.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

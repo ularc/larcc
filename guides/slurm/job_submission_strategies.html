@@ -1,0 +1,544 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Single Job with Multiple Job Steps &mdash; LARCC User Documentation  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=3ad828ca" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Storage Guide" href="../storage/index.html" />
+    <link rel="prev" title="Slurm environmental variables" href="job_environment.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            LARCC User Documentation
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../accounts_and_support/index.html">Accounts and Support</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../accounts_and_support/index.html#request-an-account">Request an account</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../accounts_and_support/index.html#accounts-for-uofl-individuals">Accounts for UofL individuals</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../accounts_and_support/index.html#uofl-vpn-connection">UofL VPN Connection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../accounts_and_support/index.html#request-support-tickets">Request Support (Tickets)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../gettingstarted/index.html">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../gettingstarted/index.html#usage-agreement">Usage Agreement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gettingstarted/index.html#hpc-system-overview">HPC system overview</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../gettingstarted/index.html#about-the-cluster">About the cluster</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../gettingstarted/index.html#about-scientific-software">About Scientific Software</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../gettingstarted/index.html#about-jobs">About Jobs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../gettingstarted/index.html#quickstart">Quickstart</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../gettingstarted/index.html#logging-into-the-cluster">Logging into the cluster</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../gettingstarted/index.html#using-the-command-line">Using the command line</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../gettingstarted/index.html#using-mobaxterm">Using MobaXterm</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../gettingstarted/index.html#copying-files-to-from-the-cluster">Copying files to/from the cluster</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../gettingstarted/index.html#id1">Using the command line</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../gettingstarted/index.html#id2">Using MobaXterm</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../gettingstarted/index.html#using-software-installed-in-the-cluster">Using software installed in the cluster</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../gettingstarted/index.html#list-available-software">List available software</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../gettingstarted/index.html#load-software">Load software</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../gettingstarted/index.html#list-currently-loaded-software">List currently loaded software</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../gettingstarted/index.html#unloading-software">Unloading software</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../gettingstarted/index.html#queues-and-jobs">Queues and jobs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../gettingstarted/index.html#policies">Policies</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../gettingstarted/index.html#installing-packages-system-wide">Installing packages system-wide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../gettingstarted/index.html#running-applications-on-the-login-nodes">Running applications on the login nodes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../gettingstarted/index.html#resource-restrictions">Resource restrictions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../gettingstarted/index.html#job-runtime-restrictions">Job runtime restrictions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../gettingstarted/index.html#storage-restrictions">Storage restrictions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Guides</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../system_guide/index.html">HPC System Guide</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../system_guide/index.html#introduction">Introduction</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../system_guide/index.html#what-is-a-shell">What is a Shell?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../system_guide/index.html#what-is-case-sensitivity">What is case-sensitivity?</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../system_guide/index.html#connecting-to-the-cluster">Connecting to the Cluster</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../system_guide/index.html#understanding-filesystems">Understanding Filesystems</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../system_guide/index.html#what-is-a-filesystem">What is a Filesystem?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../system_guide/index.html#filesystem-hierarchies">Filesystem Hierarchies</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../system_guide/index.html#navigating-the-filesystem">Navigating the filesystem</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../system_guide/index.html#using-modules">Using Modules</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Slurm Queueing System Guide</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="index.html#basic-slurm-terminology">Basic Slurm Terminology</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="terminology.html">Basic Slurm Terminology</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#job-types-and-job-submission">Job Types and Job Submission</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="interactive_jobs.html">Interactive Jobs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="batch_jobs.html">Batch Jobs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="batch_jobs.html#job-arrays">Job Arrays</a></li>
+<li class="toctree-l4"><a class="reference internal" href="job_dependencies.html">Job Dependencies</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#job-environment">Job Environment</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="job_environment.html">Slurm environmental variables</a></li>
+</ul>
+</li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html#strategies-when-submitting-slurm-jobs">Strategies When Submitting Slurm Jobs</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Single Job with Multiple Job Steps</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#job-arrays">Job Arrays</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#requesting-cpu-nodes-with-multiple-parallel-tasks">Requesting CPU Nodes with Multiple Parallel Tasks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#single-gpu-node-with-one-task-per-gpu-and-cpu-cores-evenly-distributed-across-tasks">Single GPU node with one task per GPU and CPU cores evenly distributed across tasks</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../storage/index.html">Storage Guide</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../storage/index.html#understanding-storage-on-compute-nodes">Understanding Storage on Compute Nodes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../storage/index.html#storage-types">Storage Types</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../storage/index.html#recommended-workflow">Recommended Workflow</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../storage/index.html#copying-data-between-home-and-scratch">Copying Data Between Home and Scratch</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../software/index.html">Software</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../software/conda.html">Conda (Anaconda/Miniconda/Miniforge)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../software/conda.html#basics">Basics</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../software/conda.html#about-anaconda-miniconda-and-miniforge">About Anaconda, Miniconda and Miniforge</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software/conda.html#what-is-a-conda-environment">What is a Conda environment?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software/conda.html#why-use-multiple-conda-environments">Why use multiple Conda environments?</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../software/conda.html#using-conda">Using Conda</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../software/conda.html#loading-the-miniforge3-module-and-the-base-environment">Loading the miniforge3 module and the base environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software/conda.html#creating-and-activating-an-environment">Creating and activating an environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software/conda.html#installing-packages-with-conda-and-mamba">Installing packages with conda and mamba</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software/conda.html#installing-packages-with-pip">Installing packages with pip</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software/conda.html#cloning-an-environment">Cloning an environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software/conda.html#miscellaneous">Miscellaneous</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../software/conda.html#conda-in-a-batch-job">Conda in a batch job</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../software/conda.html#conda-in-an-interactive-job">Conda in an interactive job</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../software/gaussian.html">Gaussian</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../software/gaussian.html#running-gaussian">Running Gaussian</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../software/gaussian.html#example-slurm-job-script">Example Slurm Job Script</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../software/jupyter.html">Jupyter</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../software/jupyter.html#launching-jupyter-through-a-batch-job">Launching Jupyter through a batch job</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../software/jupyter.html#optional-create-a-jupyter-environment">1. (Optional) Create a jupyter environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software/jupyter.html#create-the-submission-script">2. Create the submission script</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software/jupyter.html#connect-to-jupyter-from-your-web-browser">3. Connect to jupyter from your web browser</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../software/jupyter.html#launching-jupyter-through-an-interactive-job">Launching Jupyter through an interactive job</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../software/jupyter.html#id2">1. (Optional) Create a jupyter environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software/jupyter.html#submit-an-interactive-job">2. Submit an interactive job</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software/jupyter.html#manually-launch-jupyter">3. Manually launch Jupyter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software/jupyter.html#access-jupyter-from-your-workstation">4. Access Jupyter from your workstation</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../software/jupyter.html#transitioning-from-jupyter-to-python-script">Transitioning from Jupyter to Python Script</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../software/jupyter.html#export-the-notebook">1. Export the Notebook</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software/jupyter.html#clean-up-the-script">2. Clean Up the Script</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software/jupyter.html#replace-notebook-specific-features">3. Replace Notebook-Specific Features</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software/jupyter.html#handle-file-paths-and-inputs">4. Handle File Paths and Inputs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software/jupyter.html#test-the-script">5. Test the Script</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../software/matlab.html">MATLAB</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../software/matlab.html#basics">Basics</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../software/matlab.html#workers-and-pools">Workers and pools</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software/matlab.html#parallel-and-distributed-execution">Parallel and distributed execution</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software/matlab.html#cluster-profiles">Cluster profiles</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../software/matlab.html#submitting-a-batch-job">Submitting a batch job</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../software/matlab.html#submit-jobs-through-a-batch-script">Submit jobs through a batch script</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software/matlab.html#submit-jobs-through-matlab-s-command-prompt">Submit jobs through MATLAB’s command prompt</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software/matlab.html#submit-jobs-through-a-batch-script-and-a-matlab-submission-script">Submit jobs through a batch script and a MATLAB submission script</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../software/matlab.html#creating-a-cluster-profile-for-larcc">Creating a cluster profile for LARCC</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../software/lammps.html">LAMMPS</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../software/lammps.html#running-lammps">Running LAMMPS</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../software/lammps.html#example-slurm-job-script">Example Slurm Job Script</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../software/lammps.html#building-lammps">Building LAMMPS</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../software/liggghts.html">LIGGGHTS</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../software/liggghts.html#running-ligghts">Running LIGGHTS</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../software/liggghts.html#example-slurm-job-script">Example Slurm Job Script</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../software/pytorch.html">PyTorch</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../software/pytorch.html#verifying-gpu-availability">Verifying GPU Availability</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../software/pytorch.html#using-gpus-in-pytorch">Using GPUs in PyTorch</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../software/pytorch.html#moving-tensors-to-gpu">Moving Tensors to GPU</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software/pytorch.html#model-training-on-gpu">Model Training on GPU</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software/pytorch.html#monitoring-gpu-usage">Monitoring GPU Usage</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../software/pytorch.html#multi-gpu-usage-in-pytorch">Multi-GPU Usage in PyTorch</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../software/pytorch.html#single-node-multi-gpu-dataparallel-or-ddp">Single Node, Multi-GPU (DataParallel or DDP)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../software/R.html">R</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../software/R.html#using-r">Using R</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../software/R.html#installing-r-packages">Installing R Packages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../software/R.html#installing-r-packages-in-custom-locations">Installing R packages in custom locations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../software/R.html#installing-r-packages-with-external-library-dependencies">Installing R Packages with External Library Dependencies</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../software/R.html#example-installing-the-units-package">Example: Installing the <code class="docutils literal notranslate"><span class="pre">units</span></code> Package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software/R.html#example-installing-the-sf-package">Example: Installing the <code class="docutils literal notranslate"><span class="pre">sf</span></code> Package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software/R.html#simplifying-with-conda">Simplifying with Conda</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../software/R.html#using-the-pak-package-manager">Using the <code class="docutils literal notranslate"><span class="pre">pak</span></code> Package Manager</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../software/rstudio.html">RStudio</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../software/rstudio.html#pre-launch">Pre-launch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../software/rstudio.html#launch-rstudio-server">Launch RStudio Server</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../software/tensorflow.html">Tensorflow</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../software/tensorflow.html#verifying-gpu-availability">Verifying GPU Availability</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../software/tensorflow.html#single-node-multi-gpu-training">Single Node, Multi-GPU Training</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../software/vasp.html">VASP</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../software/vasp.html#license-restrictions">License Restrictions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../software/vasp.html#running-vasp">Running VASP</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../software/vasp.html#vasp-on-gpu-nodes">VASP on GPU nodes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software/vasp.html#vasp-on-cpu-only-nodes">VASP on CPU-only nodes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software/vasp.html#example-slurm-job-script">Example Slurm Job Script</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../usecases/index.html">AI Use Cases</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../usecases/chest_xray.html">Pneumonia detection based on Chest X-Ray</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../usecases/chest_xray.html#ingesting-the-data">1. Ingesting the data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../usecases/chest_xray.html#training-the-models">2. Training the models</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../usecases/chest_xray.html#cnn-training-and-validation">CNN Training and Validation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../usecases/chest_xray.html#transfer-learning-training-and-validation">Transfer Learning Training and Validation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../usecases/chest_xray.html#fine-tuning-training-and-validation">Fine Tuning Training and Validation</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../usecases/chest_xray.html#visualize-metrics">3. Visualize Metrics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../usecases/chest_xray.html#save-your-results-for-further-analyses">4. Save your results for further analyses</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../usecases/medbert.html">Med-BERT</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">LARCC User Documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Guides</a></li>
+          <li class="breadcrumb-item"><a href="index.html">Slurm Queueing System Guide</a></li>
+      <li class="breadcrumb-item active">Single Job with Multiple Job Steps</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/guides/slurm/job_submission_strategies.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="single-job-with-multiple-job-steps">
+<span id="slurm-single-job-multiple-steps"></span><h1>Single Job with Multiple Job Steps<a class="headerlink" href="#single-job-with-multiple-job-steps" title="Link to this heading"></a></h1>
+<p>If your workload consists of many small, independent tasks (e.g., 50 simulations), and each task uses only a few cores,
+you can submit a single job that launches multiple parallel job steps within the script.</p>
+<p><strong>Example Setup:</strong></p>
+<ul class="simple">
+<li><p>Each node in the compute queue has 128 cores.</p></li>
+<li><p>Request 2 nodes. So, 256 cores total.</p></li>
+<li><p>Divide 256 cores across 50 tasks. That is ~5 cores per task (<code class="docutils literal notranslate"><span class="pre">floor(256/50)</span></code>).</p></li>
+<li><p>Each node has ~515 GB of memory. That is ~4023 MB per core (<code class="docutils literal notranslate"><span class="pre">floor(515GB/128)</span></code>).</p></li>
+</ul>
+<p>Assuming each individual task takes up to 6 hours and all tasks run in parallel, the overall runtime should also be around 6 hours.
+However, in practice, delays or unexpected hang-ups can occur. To account for this, it’s a good idea to request additional time as a buffer.</p>
+<p>For example, adding a 2-hour grace period brings the total requested runtime to 8 hours,
+which helps ensure the job completes successfully even if a few tasks take longer than expected.</p>
+<p><strong>Sample Slurm Script:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#SBATCH --partition=compute</span>
+<span class="c1">#SBATCH --nodes=2</span>
+<span class="c1">#SBATCH --ntasks=256</span>
+<span class="c1">#SBATCH --time=08:00:00</span>
+<span class="c1">#SBATCH --mem-per-cpu=4023M</span>
+<span class="c1">#SBATCH --error=job.err</span>
+<span class="c1">#SBATCH --output=job.out</span>
+<span class="c1">#SBATCH --name=my_simulations</span>
+
+module<span class="w"> </span>load<span class="w"> </span>your_program
+
+<span class="k">for</span><span class="w"> </span>i<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="o">{</span><span class="m">1</span>..50<span class="o">}</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
+<span class="w">  </span><span class="c1"># --exact       Each job step is only given the resources it requested to avoid contention</span>
+<span class="w">  </span><span class="c1"># --exclusive   Ensures srun uses distinct CPUs for each job step</span>
+<span class="w">  </span><span class="c1"># The &amp; makes each job step run in parallel</span>
+<span class="w">  </span>srun<span class="w"> </span>--exact<span class="w"> </span>--exclusive<span class="w"> </span>--cpus-per-task<span class="o">=</span><span class="m">5</span><span class="w"> </span>your_program<span class="w"> </span>...<span class="w"> </span><span class="p">&amp;</span>
+<span class="k">done</span>
+
+<span class="c1"># wait for all job steps to finish</span>
+<span class="nb">wait</span>
+</pre></div>
+</div>
+<p><strong>This approach:</strong></p>
+<ul class="simple">
+<li><p>Submits only one job, staying within the 20-job limit.</p></li>
+<li><p>Maximizes utilization of your allowed 2 nodes.</p></li>
+</ul>
+</section>
+<section id="job-arrays">
+<span id="slurm-job-array-submission"></span><h1>Job Arrays<a class="headerlink" href="#job-arrays" title="Link to this heading"></a></h1>
+<p>If you prefer to submit each task as a separate job, use Slurm job arrays.
+Each array index counts as a job, so you must limit concurrent jobs to 20.</p>
+<p><strong>Example Setup:</strong></p>
+<ul class="simple">
+<li><p>50 tasks total, so <code class="docutils literal notranslate"><span class="pre">--array=0-49%20</span></code> (only 20 run at a time).</p></li>
+<li><p>2 nodes have 256 cores. So, with 20 array jobs running at a time you can maximize utilization with 12 cores per array job (<code class="docutils literal notranslate"><span class="pre">floor(256/20)</span></code>).</p></li>
+<li><p>Memory per task: 12 cores * 4023 MB = 48276 MB.</p></li>
+</ul>
+<p><strong>Sample Slurm Script:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#SBATCH --partition=compute</span>
+<span class="c1">#SBATCH --ntasks=12</span>
+<span class="c1">#SBATCH --mem=48276M</span>
+<span class="c1">#SBATCH --array=0-49%20</span>
+<span class="c1">#SBATCH --time=08:00:00</span>
+<span class="c1">#SBATCH --error=array_%A_%a.err</span>
+<span class="c1">#SBATCH --output=array_%A_%a.out</span>
+<span class="c1">#SBATCH --name=my_array_jobs</span>
+
+module<span class="w"> </span>load<span class="w"> </span>your_program
+
+your_program<span class="w"> </span>...
+</pre></div>
+</div>
+<p><strong>This approach:</strong></p>
+<ul class="simple">
+<li><p>Uses job arrays to manage many tasks.</p></li>
+<li><p>Keeps concurrent jobs within the allowed limit.</p></li>
+</ul>
+</section>
+<section id="requesting-cpu-nodes-with-multiple-parallel-tasks">
+<h1>Requesting CPU Nodes with Multiple Parallel Tasks<a class="headerlink" href="#requesting-cpu-nodes-with-multiple-parallel-tasks" title="Link to this heading"></a></h1>
+<p>This is perhaps the most straightforward scenario and is ideal when you’re running an application that uses only CPUs. Below are basic templates for both batch and interactive jobs.</p>
+<p><strong>Batch Job Template</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="c1">#SBATCH --partition=compute</span>
+<span class="c1">#SBATCH --nodes=&lt;nodes&gt;</span>
+<span class="c1">#SBATCH --ntasks-per-node=&lt;processes&gt;</span>
+<span class="c1">#SBATCH --cpus-per-task=&lt;threads&gt;</span>
+<span class="c1">#SBATCH --time=&lt;walltime&gt;</span>
+</pre></div>
+</div>
+<p><strong>Interactive Job Template</strong></p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>salloc --partition=compute --nodes=&lt;nodes&gt; --ntasks-per-node=&lt;processes&gt; --cpus-per-task=&lt;threads&gt; --time=&lt;walltime&gt;
+</pre></div>
+</div>
+<p>Now, let’s break down how to choose values for <code class="docutils literal notranslate"><span class="pre">&lt;nodes&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;processes&gt;</span></code>, and <code class="docutils literal notranslate"><span class="pre">&lt;threads&gt;</span></code> depending on how your application behaves:</p>
+<section id="case-1-threaded-applications-e-g-openmp-tbb-mpi-threads">
+<h2>Case 1: Threaded Applications (e.g., OpenMP, TBB, MPI threads)<a class="headerlink" href="#case-1-threaded-applications-e-g-openmp-tbb-mpi-threads" title="Link to this heading"></a></h2>
+<p>If your application internally distributes work across threads (e.g., using OpenMP or similar), and does not spawn multiple processes, then:</p>
+<ul class="simple">
+<li><p>nodes = 1</p></li>
+<li><p>processes = 1</p></li>
+<li><p>threads = 128 (assuming you’re using a full node with 128 cores)</p></li>
+</ul>
+<p>This setup gives your application full access to all cores on a single node for threading.</p>
+</section>
+<section id="case-2-multi-process-applications-single-node">
+<h2>Case 2: Multi-Process Applications (Single Node)<a class="headerlink" href="#case-2-multi-process-applications-single-node" title="Link to this heading"></a></h2>
+<p>If your application spawns multiple processes that should run within the same node (and does not benefit from distribution across multiple nodes), then:</p>
+<ul class="simple">
+<li><p>nodes = 1</p></li>
+<li><p>processes = 128</p></li>
+<li><p>threads = 1</p></li>
+</ul>
+<p>This configuration runs 128 independent processes, each using one core.</p>
+</section>
+<section id="case-3-hybrid-parallelism-multiple-processes-each-with-threads">
+<h2>Case 3: Hybrid Parallelism (Multiple Processes, Each with Threads)<a class="headerlink" href="#case-3-hybrid-parallelism-multiple-processes-each-with-threads" title="Link to this heading"></a></h2>
+<p>If your application runs multiple processes, and each process uses multiple threads (e.g., VASP without GPU support), then:</p>
+<ul class="simple">
+<li><p>nodes = 1</p></li>
+<li><p>processes = &lt;number of processes&gt;</p></li>
+<li><p>threads = &lt;threads per process&gt;</p></li>
+</ul>
+<p>This allows you to fine-tune how many cores each process uses, while keeping everything within a single node.</p>
+</section>
+<section id="case-4-multi-node-jobs">
+<h2>Case 4: Multi-Node Jobs<a class="headerlink" href="#case-4-multi-node-jobs" title="Link to this heading"></a></h2>
+<p>If your workload requires multiple nodes, set:</p>
+<ul class="simple">
+<li><p>nodes = &lt;number of nodes&gt;</p></li>
+<li><p>processes &gt;= number of nodes (at minimum)</p></li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Be mindful of per-user node limits. Requesting more nodes than allowed will result in job rejection or queuing delays.</p>
+</div>
+</section>
+<section id="additional-options">
+<h2>Additional Options<a class="headerlink" href="#additional-options" title="Link to this heading"></a></h2>
+<p>You can further customize how your tasks run:</p>
+<ul class="simple">
+<li><p>Use multiple job steps within a single job (see: <a class="reference internal" href="#slurm-single-job-multiple-steps"><span class="std std-ref">Single Job with Multiple Job Steps</span></a>)</p></li>
+<li><p>Use job arrays to manage many similar tasks efficiently (see: <a class="reference internal" href="#slurm-job-array-submission"><span class="std std-ref">Job Arrays</span></a>)</p></li>
+</ul>
+<p>These approaches help you stay within job submission limits while maximizing resource utilization.</p>
+</section>
+</section>
+<section id="single-gpu-node-with-one-task-per-gpu-and-cpu-cores-evenly-distributed-across-tasks">
+<h1>Single GPU node with one task per GPU and CPU cores evenly distributed across tasks<a class="headerlink" href="#single-gpu-node-with-one-task-per-gpu-and-cpu-cores-evenly-distributed-across-tasks" title="Link to this heading"></a></h1>
+<p>This setup is ideal for applications that leverage GPU acceleration and can run multiple tasks in parallel.</p>
+<p><strong>Hardware Overview (Per GPU Node)</strong></p>
+<ul class="simple">
+<li><p>There are 2 GPUs per node in the <code class="docutils literal notranslate"><span class="pre">gpu</span></code> partition, so 2 tasks total.</p></li>
+<li><p>There are 48 CPU cores per node in the <code class="docutils literal notranslate"><span class="pre">gpu</span></code> partition, so 24 cpus per task (<code class="docutils literal notranslate"><span class="pre">48</span> <span class="pre">cpus</span> <span class="pre">/</span> <span class="pre">2</span> <span class="pre">tasks</span></code>)</p></li>
+<li><p>Slurm recognizes 256926MB of RAM on each GPU node, so
+CPU memory per task (i.e. RAM) = CPU memory per gpu (since we have 1 task per GPU) = 256926MB/2 = 128463MB.</p></li>
+</ul>
+<p>With these numbers in mind, here are the basic templates:</p>
+<p><strong>Batch Job Template</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="c1">#SBATCH --partition=gpu</span>
+<span class="c1">#SBATCH --nodes=&lt;nodes&gt;</span>
+<span class="c1">#SBATCH --ntasks-per-node=2</span>
+<span class="c1">#SBATCH --gpus-per-task=1</span>
+<span class="c1">#SBATCH --cpus-per-task=24</span>
+<span class="c1">#SBATCH --mem-per-gpu=128463M</span>
+<span class="c1">#SBATCH --time=&lt;walltime&gt;</span>
+</pre></div>
+</div>
+<p><strong>Interactive Job Template</strong></p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>salloc --partition=gpu --nodes=1 --ntasks-per-node=2 --gpus-per-task=1 --cpus-per-task=24 --mem-per-gpu=128463M --time=&lt;walltime&gt;
+</pre></div>
+</div>
+<p>This configuration ensures that each task gets exclusive access to one GPU and a fair share of CPU and memory resources. It’s particularly useful for GPU-enabled applications that:</p>
+<ul class="simple">
+<li><p>Run two independent tasks per node, each using one GPU.</p></li>
+<li><p>Benefit from dedicated CPU cores for preprocessing, I/O, or hybrid CPU-GPU workloads.</p></li>
+<li><p>Require large memory allocations, such as deep learning models or molecular simulations.</p></li>
+</ul>
+<p>If your application only uses one GPU per node, you can adjust <code class="docutils literal notranslate"><span class="pre">--ntasks-per-node=1</span></code> and scale up the CPU and memory accordingly.</p>
+<p>When arrays keep in mind that each task is bound to
+a GPU, so you can either:</p>
+<ol class="arabic simple">
+<li><p>Submit 4 array jobs at a time (i.e. <code class="docutils literal notranslate"><span class="pre">%4</span></code>) if each array job requests a GPU.</p></li>
+<li><p>Submit 2 array jobs at a time (i.e. <code class="docutils literal notranslate"><span class="pre">%2</span></code>) if each array job requests 2 GPUs.</p></li>
+</ol>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="job_environment.html" class="btn btn-neutral float-left" title="Slurm environmental variables" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../storage/index.html" class="btn btn-neutral float-right" title="Storage Guide" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, ITS - Research Computing.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

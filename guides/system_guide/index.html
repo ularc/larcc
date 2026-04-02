@@ -1,0 +1,588 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HPC System Guide &mdash; LARCC User Documentation  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=3ad828ca" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Slurm Queueing System Guide" href="../slurm/index.html" />
+    <link rel="prev" title="Guides" href="../index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            LARCC User Documentation
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../accounts_and_support/index.html">Accounts and Support</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../accounts_and_support/index.html#request-an-account">Request an account</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../accounts_and_support/index.html#accounts-for-uofl-individuals">Accounts for UofL individuals</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../accounts_and_support/index.html#uofl-vpn-connection">UofL VPN Connection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../accounts_and_support/index.html#request-support-tickets">Request Support (Tickets)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../gettingstarted/index.html">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../gettingstarted/index.html#usage-agreement">Usage Agreement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gettingstarted/index.html#hpc-system-overview">HPC system overview</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../gettingstarted/index.html#about-the-cluster">About the cluster</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../gettingstarted/index.html#about-scientific-software">About Scientific Software</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../gettingstarted/index.html#about-jobs">About Jobs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../gettingstarted/index.html#quickstart">Quickstart</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../gettingstarted/index.html#logging-into-the-cluster">Logging into the cluster</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../gettingstarted/index.html#using-the-command-line">Using the command line</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../gettingstarted/index.html#using-mobaxterm">Using MobaXterm</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../gettingstarted/index.html#copying-files-to-from-the-cluster">Copying files to/from the cluster</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../gettingstarted/index.html#id1">Using the command line</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../gettingstarted/index.html#id2">Using MobaXterm</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../gettingstarted/index.html#using-software-installed-in-the-cluster">Using software installed in the cluster</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../gettingstarted/index.html#list-available-software">List available software</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../gettingstarted/index.html#load-software">Load software</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../gettingstarted/index.html#list-currently-loaded-software">List currently loaded software</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../gettingstarted/index.html#unloading-software">Unloading software</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../gettingstarted/index.html#queues-and-jobs">Queues and jobs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../gettingstarted/index.html#policies">Policies</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../gettingstarted/index.html#installing-packages-system-wide">Installing packages system-wide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../gettingstarted/index.html#running-applications-on-the-login-nodes">Running applications on the login nodes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../gettingstarted/index.html#resource-restrictions">Resource restrictions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../gettingstarted/index.html#job-runtime-restrictions">Job runtime restrictions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../gettingstarted/index.html#storage-restrictions">Storage restrictions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Guides</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">HPC System Guide</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#introduction">Introduction</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#what-is-a-shell">What is a Shell?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#what-is-case-sensitivity">What is case-sensitivity?</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#connecting-to-the-cluster">Connecting to the Cluster</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#understanding-filesystems">Understanding Filesystems</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#what-is-a-filesystem">What is a Filesystem?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#filesystem-hierarchies">Filesystem Hierarchies</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#navigating-the-filesystem">Navigating the filesystem</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#using-modules">Using Modules</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../slurm/index.html">Slurm Queueing System Guide</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../slurm/index.html#basic-slurm-terminology">Basic Slurm Terminology</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../slurm/terminology.html">Basic Slurm Terminology</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../slurm/index.html#job-types-and-job-submission">Job Types and Job Submission</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../slurm/interactive_jobs.html">Interactive Jobs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../slurm/batch_jobs.html">Batch Jobs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../slurm/batch_jobs.html#job-arrays">Job Arrays</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../slurm/job_dependencies.html">Job Dependencies</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../slurm/index.html#job-environment">Job Environment</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../slurm/job_environment.html">Slurm environmental variables</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../slurm/index.html#strategies-when-submitting-slurm-jobs">Strategies When Submitting Slurm Jobs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../slurm/job_submission_strategies.html">Single Job with Multiple Job Steps</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../slurm/job_submission_strategies.html#job-arrays">Job Arrays</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../slurm/job_submission_strategies.html#requesting-cpu-nodes-with-multiple-parallel-tasks">Requesting CPU Nodes with Multiple Parallel Tasks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../slurm/job_submission_strategies.html#single-gpu-node-with-one-task-per-gpu-and-cpu-cores-evenly-distributed-across-tasks">Single GPU node with one task per GPU and CPU cores evenly distributed across tasks</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../storage/index.html">Storage Guide</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../storage/index.html#understanding-storage-on-compute-nodes">Understanding Storage on Compute Nodes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../storage/index.html#storage-types">Storage Types</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../storage/index.html#recommended-workflow">Recommended Workflow</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../storage/index.html#copying-data-between-home-and-scratch">Copying Data Between Home and Scratch</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../software/index.html">Software</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../software/conda.html">Conda (Anaconda/Miniconda/Miniforge)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../software/conda.html#basics">Basics</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../software/conda.html#about-anaconda-miniconda-and-miniforge">About Anaconda, Miniconda and Miniforge</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software/conda.html#what-is-a-conda-environment">What is a Conda environment?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software/conda.html#why-use-multiple-conda-environments">Why use multiple Conda environments?</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../software/conda.html#using-conda">Using Conda</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../software/conda.html#loading-the-miniforge3-module-and-the-base-environment">Loading the miniforge3 module and the base environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software/conda.html#creating-and-activating-an-environment">Creating and activating an environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software/conda.html#installing-packages-with-conda-and-mamba">Installing packages with conda and mamba</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software/conda.html#installing-packages-with-pip">Installing packages with pip</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software/conda.html#cloning-an-environment">Cloning an environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software/conda.html#miscellaneous">Miscellaneous</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../software/conda.html#conda-in-a-batch-job">Conda in a batch job</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../software/conda.html#conda-in-an-interactive-job">Conda in an interactive job</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../software/gaussian.html">Gaussian</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../software/gaussian.html#running-gaussian">Running Gaussian</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../software/gaussian.html#example-slurm-job-script">Example Slurm Job Script</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../software/jupyter.html">Jupyter</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../software/jupyter.html#launching-jupyter-through-a-batch-job">Launching Jupyter through a batch job</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../software/jupyter.html#optional-create-a-jupyter-environment">1. (Optional) Create a jupyter environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software/jupyter.html#create-the-submission-script">2. Create the submission script</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software/jupyter.html#connect-to-jupyter-from-your-web-browser">3. Connect to jupyter from your web browser</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../software/jupyter.html#launching-jupyter-through-an-interactive-job">Launching Jupyter through an interactive job</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../software/jupyter.html#id2">1. (Optional) Create a jupyter environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software/jupyter.html#submit-an-interactive-job">2. Submit an interactive job</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software/jupyter.html#manually-launch-jupyter">3. Manually launch Jupyter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software/jupyter.html#access-jupyter-from-your-workstation">4. Access Jupyter from your workstation</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../software/jupyter.html#transitioning-from-jupyter-to-python-script">Transitioning from Jupyter to Python Script</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../software/jupyter.html#export-the-notebook">1. Export the Notebook</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software/jupyter.html#clean-up-the-script">2. Clean Up the Script</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software/jupyter.html#replace-notebook-specific-features">3. Replace Notebook-Specific Features</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software/jupyter.html#handle-file-paths-and-inputs">4. Handle File Paths and Inputs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software/jupyter.html#test-the-script">5. Test the Script</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../software/matlab.html">MATLAB</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../software/matlab.html#basics">Basics</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../software/matlab.html#workers-and-pools">Workers and pools</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software/matlab.html#parallel-and-distributed-execution">Parallel and distributed execution</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software/matlab.html#cluster-profiles">Cluster profiles</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../software/matlab.html#submitting-a-batch-job">Submitting a batch job</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../software/matlab.html#submit-jobs-through-a-batch-script">Submit jobs through a batch script</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software/matlab.html#submit-jobs-through-matlab-s-command-prompt">Submit jobs through MATLAB’s command prompt</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software/matlab.html#submit-jobs-through-a-batch-script-and-a-matlab-submission-script">Submit jobs through a batch script and a MATLAB submission script</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../software/matlab.html#creating-a-cluster-profile-for-larcc">Creating a cluster profile for LARCC</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../software/lammps.html">LAMMPS</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../software/lammps.html#running-lammps">Running LAMMPS</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../software/lammps.html#example-slurm-job-script">Example Slurm Job Script</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../software/lammps.html#building-lammps">Building LAMMPS</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../software/liggghts.html">LIGGGHTS</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../software/liggghts.html#running-ligghts">Running LIGGHTS</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../software/liggghts.html#example-slurm-job-script">Example Slurm Job Script</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../software/pytorch.html">PyTorch</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../software/pytorch.html#verifying-gpu-availability">Verifying GPU Availability</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../software/pytorch.html#using-gpus-in-pytorch">Using GPUs in PyTorch</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../software/pytorch.html#moving-tensors-to-gpu">Moving Tensors to GPU</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software/pytorch.html#model-training-on-gpu">Model Training on GPU</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software/pytorch.html#monitoring-gpu-usage">Monitoring GPU Usage</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../software/pytorch.html#multi-gpu-usage-in-pytorch">Multi-GPU Usage in PyTorch</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../software/pytorch.html#single-node-multi-gpu-dataparallel-or-ddp">Single Node, Multi-GPU (DataParallel or DDP)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../software/R.html">R</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../software/R.html#using-r">Using R</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../software/R.html#installing-r-packages">Installing R Packages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../software/R.html#installing-r-packages-in-custom-locations">Installing R packages in custom locations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../software/R.html#installing-r-packages-with-external-library-dependencies">Installing R Packages with External Library Dependencies</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../software/R.html#example-installing-the-units-package">Example: Installing the <code class="docutils literal notranslate"><span class="pre">units</span></code> Package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software/R.html#example-installing-the-sf-package">Example: Installing the <code class="docutils literal notranslate"><span class="pre">sf</span></code> Package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software/R.html#simplifying-with-conda">Simplifying with Conda</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../software/R.html#using-the-pak-package-manager">Using the <code class="docutils literal notranslate"><span class="pre">pak</span></code> Package Manager</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../software/rstudio.html">RStudio</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../software/rstudio.html#pre-launch">Pre-launch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../software/rstudio.html#launch-rstudio-server">Launch RStudio Server</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../software/tensorflow.html">Tensorflow</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../software/tensorflow.html#verifying-gpu-availability">Verifying GPU Availability</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../software/tensorflow.html#single-node-multi-gpu-training">Single Node, Multi-GPU Training</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../software/vasp.html">VASP</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../software/vasp.html#license-restrictions">License Restrictions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../software/vasp.html#running-vasp">Running VASP</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../software/vasp.html#vasp-on-gpu-nodes">VASP on GPU nodes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software/vasp.html#vasp-on-cpu-only-nodes">VASP on CPU-only nodes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software/vasp.html#example-slurm-job-script">Example Slurm Job Script</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../usecases/index.html">AI Use Cases</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../usecases/chest_xray.html">Pneumonia detection based on Chest X-Ray</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../usecases/chest_xray.html#ingesting-the-data">1. Ingesting the data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../usecases/chest_xray.html#training-the-models">2. Training the models</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../usecases/chest_xray.html#cnn-training-and-validation">CNN Training and Validation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../usecases/chest_xray.html#transfer-learning-training-and-validation">Transfer Learning Training and Validation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../usecases/chest_xray.html#fine-tuning-training-and-validation">Fine Tuning Training and Validation</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../usecases/chest_xray.html#visualize-metrics">3. Visualize Metrics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../usecases/chest_xray.html#save-your-results-for-further-analyses">4. Save your results for further analyses</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../usecases/medbert.html">Med-BERT</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">LARCC User Documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Guides</a></li>
+      <li class="breadcrumb-item active">HPC System Guide</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/guides/system_guide/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="hpc-system-guide">
+<h1>HPC System Guide<a class="headerlink" href="#hpc-system-guide" title="Link to this heading"></a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h2>
+<p>High-Performance Computing (HPC) clusters are powerful systems used for running large-scale scientific and engineering tasks.
+Most HPC clusters run on <strong>Linux</strong>, and you’ll interact with them mainly through the <strong>command line</strong>.
+This guide will help you get started with the basics:
+how to move around the system, use software modules, and run jobs.</p>
+<p>Before we dive in, let’s go over a few important terms.</p>
+<section id="what-is-a-shell">
+<h3>What is a Shell?<a class="headerlink" href="#what-is-a-shell" title="Link to this heading"></a></h3>
+<p>A <strong>shell</strong> is a program that lets you talk to the operating system by typing commands.
+You use a shell through a <strong>terminal</strong> (a command-line interface) or a <strong>graphical user interface (GUI)</strong>.</p>
+<p>Examples:</p>
+<ul class="simple">
+<li><p>On <strong>Windows</strong>, the GUI is called <strong>File Explorer</strong> (<code class="docutils literal notranslate"><span class="pre">explorer.exe</span></code>), and the terminals are <strong>Command Prompt</strong> (<code class="docutils literal notranslate"><span class="pre">cmd.exe</span></code>) and <strong>PowerShell</strong>.</p></li>
+<li><p>On <strong>macOS</strong>, the GUI is <strong>Finder</strong>, and the terminal is called <strong>Terminal</strong>.</p></li>
+<li><p>On <strong>Linux</strong>, you usually use a terminal with a shell like <strong>bash</strong>.</p></li>
+</ul>
+<p>Most HPC systems use <strong>bash</strong> as the default shell, and that’s what you’ll be using when you log in.</p>
+</section>
+<section id="what-is-case-sensitivity">
+<h3>What is case-sensitivity?<a class="headerlink" href="#what-is-case-sensitivity" title="Link to this heading"></a></h3>
+<p>A case-sensitive system is one that distinguishes between uppercase and lowercase letters in text.
+If you are a Windows user you may have noticed that a letter is treated the same whether it is lower-case or upper-case.
+For example: “hello”, “HeLlo”, and “HELLO” are all the same. Thus, Windows is NOT a case-sensitive system.</p>
+<p>On the other hand, macOS and Linux systems <strong>ARE</strong> case-sensitive. This is an important distinction because when you
+navigate through folders, create files, etc.,  in our systems you <strong>MUST ALWAYS USE</strong> the right cases.</p>
+</section>
+</section>
+<section id="connecting-to-the-cluster">
+<h2>Connecting to the Cluster<a class="headerlink" href="#connecting-to-the-cluster" title="Link to this heading"></a></h2>
+<p>To use the cluster, you’ll connect to it from your own computer using a tool called <strong>SSH</strong> (Secure Shell).
+SSH lets you open a remote session on the cluster so you can run commands as if you were sitting in front of it.</p>
+<p>SSH is available by default on:</p>
+<ul class="simple">
+<li><p><strong>Windows PowerShell</strong> (use <code class="docutils literal notranslate"><span class="pre">ssh</span></code> or <code class="docutils literal notranslate"><span class="pre">ssh.exe</span></code>)</p></li>
+<li><p><strong>macOS Terminal</strong></p></li>
+<li><p><strong>Linux Terminal</strong></p></li>
+</ul>
+<p>&gt; ⚠️ If you’re on Windows, use <strong>PowerShell</strong>, not Command Prompt.</p>
+<p>To connect, use this command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh<span class="w"> </span>your_username@cluster_name.hpc.louisville.edu
+</pre></div>
+</div>
+<p>Replace:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">your_username</span></code> with your actual HPC username.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cluster_name</span></code> with the name of the cluster (e.g., <code class="docutils literal notranslate"><span class="pre">larcc</span></code>).</p></li>
+</ul>
+<p>Example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh<span class="w"> </span>jd01@larcc.hpc.louisville.edu
+</pre></div>
+</div>
+<p>Once connected, you’ll see a prompt like this:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>[jd01@larcc-login1 ~]$
+</pre></div>
+</div>
+<p>Here’s what it means:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">jd01</span></code> - Your username.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">larcc-login1</span></code> - The login node you’re connected to.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">~</span></code> - Your home directory (similar to <code class="docutils literal notranslate"><span class="pre">C:\Users\yourname</span></code> on Windows).</p></li>
+</ul>
+<p>We’ll explain more about the Linux file system in the next section.</p>
+</section>
+<section id="understanding-filesystems">
+<span id="understanding-filesystem"></span><h2>Understanding Filesystems<a class="headerlink" href="#understanding-filesystems" title="Link to this heading"></a></h2>
+<section id="what-is-a-filesystem">
+<h3>What is a Filesystem?<a class="headerlink" href="#what-is-a-filesystem" title="Link to this heading"></a></h3>
+<p>A <strong>filesystem</strong> is the method an operating system uses to organize and store data on storage devices
+such as hard drives or SSDs. It defines how files and directories are named, stored, accessed, and structured.
+Most modern operating systems use a <strong>hierarchical filesystem</strong>, where files are organized in a tree-like
+structure starting from a root directory.</p>
+</section>
+<section id="filesystem-hierarchies">
+<span id="id1"></span><h3>Filesystem Hierarchies<a class="headerlink" href="#filesystem-hierarchies" title="Link to this heading"></a></h3>
+<p>All major operating systems—Linux, Windows, and macOS—use hierarchical filesystems,
+but they differ in how the root and subdirectories are structured.</p>
+<a class="reference internal image-reference" href="../../_images/filesystem_hierarchies.png"><img alt="Filesystem hierarchies" src="../../_images/filesystem_hierarchies.png" width="600" />
+</a>
+<section id="linux-and-macos">
+<h4>Linux and macOS<a class="headerlink" href="#linux-and-macos" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><p>Both Linux and macOS have a <strong>single root directory</strong>, represented by the forward slash: <code class="docutils literal notranslate"><span class="pre">/</span></code>.</p></li>
+<li><p>All other directories branch off from this root.</p></li>
+<li><p>Common directories under <code class="docutils literal notranslate"><span class="pre">/</span></code> include:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">/usr</span></code> - Contains installed applications and system utilities.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/home</span></code> - User directories; similar to <code class="docutils literal notranslate"><span class="pre">C:\Users</span></code> in Windows.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/boot</span></code> - Boot loader files.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/dev</span></code> - Device files (e.g., drives, network interfaces).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/etc</span></code> - System configuration files.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/lib</span></code> - Shared system libraries.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="windows">
+<h4>Windows<a class="headerlink" href="#windows" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><p>Windows uses <strong>multiple root directories</strong>, each represented by a drive letter (e.g., <code class="docutils literal notranslate"><span class="pre">C:</span></code>, <code class="docutils literal notranslate"><span class="pre">D:</span></code>).</p></li>
+<li><p>Each drive has its own independent hierarchy.</p></li>
+<li><p>The primary system drive (usually <code class="docutils literal notranslate"><span class="pre">C:</span></code>) contains:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">C:\Windows</span></code> - Most system files and configurations.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C:\Program</span> <span class="pre">Files</span></code> and <code class="docutils literal notranslate"><span class="pre">C:\Program</span> <span class="pre">Files</span> <span class="pre">(x86)</span></code> - Installed applications.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C:\Users</span></code> - User directories, analogous to Linux’s <code class="docutils literal notranslate"><span class="pre">/home</span></code>.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+<section id="navigating-the-filesystem">
+<h3>Navigating the filesystem<a class="headerlink" href="#navigating-the-filesystem" title="Link to this heading"></a></h3>
+<section id="filesystem-locations-aka-paths">
+<h4>Filesystem locations (aka. paths)<a class="headerlink" href="#filesystem-locations-aka-paths" title="Link to this heading"></a></h4>
+<p>You indentify a location in the filesystem through a <strong>path</strong>, which has 3 elements:
+A root, a separator, and a folder or file name.</p>
+<ul>
+<li><p>Windows:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>rule to make a path:</strong> root + separator + folder name + separator + … + separator + (final) folder or file</p></li>
+<li><p><strong>root:</strong> A letter followed by <code class="docutils literal notranslate"><span class="pre">:</span></code>, such as <code class="docutils literal notranslate"><span class="pre">C:</span></code>, or <code class="docutils literal notranslate"><span class="pre">D:</span></code>.</p></li>
+<li><p><strong>separator:</strong> The character <code class="docutils literal notranslate"><span class="pre">\</span></code>.</p></li>
+<li><p><strong>example of a path:</strong> <code class="docutils literal notranslate"><span class="pre">C:\Windows\System32</span></code></p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><dl>
+<dt>Linux and macOS:</dt><dd><ul class="simple">
+<li><p><strong>rule to make a path:</strong> root + folder name + separator + … + separator + (final) folder or file</p></li>
+<li><p><strong>root:</strong> The character <code class="docutils literal notranslate"><span class="pre">/</span></code>.</p></li>
+<li><p><strong>separator:</strong> The character <code class="docutils literal notranslate"><span class="pre">/</span></code> (YES, it’s the same as the root. Simply put, the first <code class="docutils literal notranslate"><span class="pre">/</span></code> in the path is always the root).</p></li>
+<li><p><strong>example of a path:</strong> <code class="docutils literal notranslate"><span class="pre">/home/jd01</span></code>.</p></li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/filesystem_path.png"><img alt="Filesystem hPath" src="../../_images/filesystem_path.png" width="600" />
+</a>
+</dd>
+</dl>
+</li>
+</ul>
+<p>Our HPC systems use a <strong>Linux-based hierarchical filesystem</strong>, where everything starts from the root directory <code class="docutils literal notranslate"><span class="pre">/</span></code>
+(if this statement confuses you, please read section <a class="reference internal" href="#filesystem-hierarchies"><span class="std std-ref">Filesystem Hierarchies</span></a>).</p>
+<p>Key directories you’ll interact with:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">/home/&lt;username&gt;</span></code> - Your personal persistent space for scripts, logs, files, etc.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/mnt/scratch/local/&lt;username&gt;</span></code> - Temporary storage for files and job outputs. Only available in compute nodes
+and automatically purged after a set period. This is explained in more detail in section <a class="reference internal" href="../storage/index.html#storage-on-compute-nodes"><span class="std std-ref">Understanding Storage on Compute Nodes</span></a>,
+but we recommend you finish reading this guide before jumping there.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/mnt/lab/&lt;project&gt;</span></code> - Persistent shared space for project teams.</p></li>
+</ul>
+</section>
+<section id="the-working-directory">
+<h4>The working directory<a class="headerlink" href="#the-working-directory" title="Link to this heading"></a></h4>
+<p>One important concept to understand when using the shell (in our case, <code class="docutils literal notranslate"><span class="pre">bash</span></code>) to navigate the filesystem is the idea of the <strong>working directory</strong>.
+The <strong>working directory</strong> is the folder where the shell assumes you want to work.
+Any command you run that creates, deletes, or modifies files will do so in this location—unless you tell it to use a different path.</p>
+<p>When you log into one of our HPC systems, you automatically “land” in your <strong>home directory</strong>: <code class="docutils literal notranslate"><span class="pre">/home/your_username</span></code>.
+At that moment, your <strong>working directory</strong> is your home directory. You can confirm this by executing the <code class="docutils literal notranslate"><span class="pre">pwd</span></code> command.
+This will print the <strong>path</strong> to your current working directory.</p>
+<p><strong>Why does it matter?</strong> Let’s say you run the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>touch<span class="w"> </span>notes.txt
+</pre></div>
+</div>
+<p>This creates a file called <code class="docutils literal notranslate"><span class="pre">notes.txt</span></code> in your current working directory. If you’re in <code class="docutils literal notranslate"><span class="pre">/home/your_username</span></code>, the file will be created there.
+Now, if you change to another directory:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/tmp
+</pre></div>
+</div>
+<p>And run the same command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>touch<span class="w"> </span>notes.txt
+</pre></div>
+</div>
+<p>The file will now be created in <code class="docutils literal notranslate"><span class="pre">/tmp</span></code>, because that’s your new working directory.</p>
+</section>
+<section id="managing-files-and-directories">
+<h4>Managing files and directories<a class="headerlink" href="#managing-files-and-directories" title="Link to this heading"></a></h4>
+<p>You can move between directories using the <code class="docutils literal notranslate"><span class="pre">cd</span></code> command:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">/path/to/directory</span></code> - Change directory. Here is an example:</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/cmd_cd.png"><img alt="Example of cd command" src="../../_images/cmd_cd.png" width="600" />
+</a>
+</div></blockquote>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">..</span></code> - Go up one directory from your working directory. Here is an example:</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/cmd_cd_back_one.png"><img alt="Example of cd command going back" src="../../_images/cmd_cd_back_one.png" width="600" />
+</a>
+</div></blockquote>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cd</span></code> - Go back to your home directory at any point.</p></li>
+</ul>
+<p>You can also list files in the current working directory using: <code class="docutils literal notranslate"><span class="pre">ls</span></code>, or <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-a</span></code> to also include hidden files.
+Other useful commands include:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">pwd</span></code> - Print current working directory.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mkdir</span> <span class="pre">/path/to/new/directory</span></code> - Make a new directory</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">du</span> <span class="pre">-sh</span> <span class="pre">/path/to/directory</span></code> - Show disk usage of a directory.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">find</span> <span class="pre">/path/to/directory</span> <span class="pre">-name</span> <span class="pre">filename</span></code> - Search for files within a directory.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cp</span> <span class="pre">/path/to/source</span> <span class="pre">/path/to/destination</span></code> - Copy files.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mv</span> <span class="pre">/path/to/source</span> <span class="pre">/path/to/destination</span></code> - Move or rename files.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rm</span> <span class="pre">/path/to/file</span></code> - Delete files.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tar</span> <span class="pre">-czf</span> <span class="pre">archive.tar.gz</span> <span class="pre">/path/to/some/file</span> <span class="pre">/path/to/some/other/file</span></code> - Compress files into <code class="docutils literal notranslate"><span class="pre">archive.tar.gz</span></code>.</p></li>
+</ul>
+</section>
+</section>
+<section id="using-modules">
+<h3>Using Modules<a class="headerlink" href="#using-modules" title="Link to this heading"></a></h3>
+<p>HPC environments use <strong>environment modules</strong> to manage software versions.</p>
+<p>Basic commands:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">avail</span></code> - List available modules.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">load</span> <span class="pre">&lt;module-name&gt;</span></code> - Load a module.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">list</span></code> - Show currently loaded modules.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">unload</span> <span class="pre">&lt;module-name&gt;</span></code> - Unload a module.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">purge</span></code> - Unload all modules.</p></li>
+</ul>
+<p>Example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>module<span class="w"> </span>load<span class="w"> </span>gcc/11.2.0
+module<span class="w"> </span>load<span class="w"> </span>python/3.10.4
+</pre></div>
+</div>
+<p><strong>Note:</strong> Always load required modules in your job scripts to ensure consistency.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../index.html" class="btn btn-neutral float-left" title="Guides" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../slurm/index.html" class="btn btn-neutral float-right" title="Slurm Queueing System Guide" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, ITS - Research Computing.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

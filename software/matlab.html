@@ -1,0 +1,638 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MATLAB &mdash; LARCC User Documentation  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=3ad828ca" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="LAMMPS" href="lammps.html" />
+    <link rel="prev" title="Jupyter" href="jupyter.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            LARCC User Documentation
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../accounts_and_support/index.html">Accounts and Support</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../accounts_and_support/index.html#request-an-account">Request an account</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../accounts_and_support/index.html#accounts-for-uofl-individuals">Accounts for UofL individuals</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../accounts_and_support/index.html#uofl-vpn-connection">UofL VPN Connection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../accounts_and_support/index.html#request-support-tickets">Request Support (Tickets)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../gettingstarted/index.html">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/index.html#usage-agreement">Usage Agreement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/index.html#hpc-system-overview">HPC system overview</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../gettingstarted/index.html#about-the-cluster">About the cluster</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gettingstarted/index.html#about-scientific-software">About Scientific Software</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gettingstarted/index.html#about-jobs">About Jobs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/index.html#quickstart">Quickstart</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../gettingstarted/index.html#logging-into-the-cluster">Logging into the cluster</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../gettingstarted/index.html#using-the-command-line">Using the command line</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../gettingstarted/index.html#using-mobaxterm">Using MobaXterm</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../gettingstarted/index.html#copying-files-to-from-the-cluster">Copying files to/from the cluster</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../gettingstarted/index.html#id1">Using the command line</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../gettingstarted/index.html#id2">Using MobaXterm</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../gettingstarted/index.html#using-software-installed-in-the-cluster">Using software installed in the cluster</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../gettingstarted/index.html#list-available-software">List available software</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../gettingstarted/index.html#load-software">Load software</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../gettingstarted/index.html#list-currently-loaded-software">List currently loaded software</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../gettingstarted/index.html#unloading-software">Unloading software</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../gettingstarted/index.html#queues-and-jobs">Queues and jobs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/index.html#policies">Policies</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../gettingstarted/index.html#installing-packages-system-wide">Installing packages system-wide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gettingstarted/index.html#running-applications-on-the-login-nodes">Running applications on the login nodes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gettingstarted/index.html#resource-restrictions">Resource restrictions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../gettingstarted/index.html#job-runtime-restrictions">Job runtime restrictions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../gettingstarted/index.html#storage-restrictions">Storage restrictions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/index.html">Guides</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../guides/system_guide/index.html">HPC System Guide</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../guides/system_guide/index.html#introduction">Introduction</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../guides/system_guide/index.html#what-is-a-shell">What is a Shell?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../guides/system_guide/index.html#what-is-case-sensitivity">What is case-sensitivity?</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../guides/system_guide/index.html#connecting-to-the-cluster">Connecting to the Cluster</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../guides/system_guide/index.html#understanding-filesystems">Understanding Filesystems</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../guides/system_guide/index.html#what-is-a-filesystem">What is a Filesystem?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../guides/system_guide/index.html#filesystem-hierarchies">Filesystem Hierarchies</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../guides/system_guide/index.html#navigating-the-filesystem">Navigating the filesystem</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../guides/system_guide/index.html#using-modules">Using Modules</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/slurm/index.html">Slurm Queueing System Guide</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../guides/slurm/index.html#basic-slurm-terminology">Basic Slurm Terminology</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../guides/slurm/terminology.html">Basic Slurm Terminology</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../guides/slurm/index.html#job-types-and-job-submission">Job Types and Job Submission</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../guides/slurm/interactive_jobs.html">Interactive Jobs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../guides/slurm/batch_jobs.html">Batch Jobs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../guides/slurm/batch_jobs.html#job-arrays">Job Arrays</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../guides/slurm/job_dependencies.html">Job Dependencies</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../guides/slurm/index.html#job-environment">Job Environment</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../guides/slurm/job_environment.html">Slurm environmental variables</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../guides/slurm/index.html#strategies-when-submitting-slurm-jobs">Strategies When Submitting Slurm Jobs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../guides/slurm/job_submission_strategies.html">Single Job with Multiple Job Steps</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../guides/slurm/job_submission_strategies.html#job-arrays">Job Arrays</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../guides/slurm/job_submission_strategies.html#requesting-cpu-nodes-with-multiple-parallel-tasks">Requesting CPU Nodes with Multiple Parallel Tasks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../guides/slurm/job_submission_strategies.html#single-gpu-node-with-one-task-per-gpu-and-cpu-cores-evenly-distributed-across-tasks">Single GPU node with one task per GPU and CPU cores evenly distributed across tasks</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/storage/index.html">Storage Guide</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../guides/storage/index.html#understanding-storage-on-compute-nodes">Understanding Storage on Compute Nodes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../guides/storage/index.html#storage-types">Storage Types</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../guides/storage/index.html#recommended-workflow">Recommended Workflow</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../guides/storage/index.html#copying-data-between-home-and-scratch">Copying Data Between Home and Scratch</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Software</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="conda.html">Conda (Anaconda/Miniconda/Miniforge)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="conda.html#basics">Basics</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="conda.html#about-anaconda-miniconda-and-miniforge">About Anaconda, Miniconda and Miniforge</a></li>
+<li class="toctree-l4"><a class="reference internal" href="conda.html#what-is-a-conda-environment">What is a Conda environment?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="conda.html#why-use-multiple-conda-environments">Why use multiple Conda environments?</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="conda.html#using-conda">Using Conda</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="conda.html#loading-the-miniforge3-module-and-the-base-environment">Loading the miniforge3 module and the base environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="conda.html#creating-and-activating-an-environment">Creating and activating an environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="conda.html#installing-packages-with-conda-and-mamba">Installing packages with conda and mamba</a></li>
+<li class="toctree-l4"><a class="reference internal" href="conda.html#installing-packages-with-pip">Installing packages with pip</a></li>
+<li class="toctree-l4"><a class="reference internal" href="conda.html#cloning-an-environment">Cloning an environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="conda.html#miscellaneous">Miscellaneous</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="conda.html#conda-in-a-batch-job">Conda in a batch job</a></li>
+<li class="toctree-l3"><a class="reference internal" href="conda.html#conda-in-an-interactive-job">Conda in an interactive job</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="gaussian.html">Gaussian</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="gaussian.html#running-gaussian">Running Gaussian</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="gaussian.html#example-slurm-job-script">Example Slurm Job Script</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="jupyter.html">Jupyter</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="jupyter.html#launching-jupyter-through-a-batch-job">Launching Jupyter through a batch job</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="jupyter.html#optional-create-a-jupyter-environment">1. (Optional) Create a jupyter environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="jupyter.html#create-the-submission-script">2. Create the submission script</a></li>
+<li class="toctree-l4"><a class="reference internal" href="jupyter.html#connect-to-jupyter-from-your-web-browser">3. Connect to jupyter from your web browser</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="jupyter.html#launching-jupyter-through-an-interactive-job">Launching Jupyter through an interactive job</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="jupyter.html#id2">1. (Optional) Create a jupyter environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="jupyter.html#submit-an-interactive-job">2. Submit an interactive job</a></li>
+<li class="toctree-l4"><a class="reference internal" href="jupyter.html#manually-launch-jupyter">3. Manually launch Jupyter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="jupyter.html#access-jupyter-from-your-workstation">4. Access Jupyter from your workstation</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="jupyter.html#transitioning-from-jupyter-to-python-script">Transitioning from Jupyter to Python Script</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="jupyter.html#export-the-notebook">1. Export the Notebook</a></li>
+<li class="toctree-l4"><a class="reference internal" href="jupyter.html#clean-up-the-script">2. Clean Up the Script</a></li>
+<li class="toctree-l4"><a class="reference internal" href="jupyter.html#replace-notebook-specific-features">3. Replace Notebook-Specific Features</a></li>
+<li class="toctree-l4"><a class="reference internal" href="jupyter.html#handle-file-paths-and-inputs">4. Handle File Paths and Inputs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="jupyter.html#test-the-script">5. Test the Script</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">MATLAB</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#basics">Basics</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#workers-and-pools">Workers and pools</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#parallel-and-distributed-execution">Parallel and distributed execution</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cluster-profiles">Cluster profiles</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#submitting-a-batch-job">Submitting a batch job</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#submit-jobs-through-a-batch-script">Submit jobs through a batch script</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#submit-jobs-through-matlab-s-command-prompt">Submit jobs through MATLAB’s command prompt</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#submit-jobs-through-a-batch-script-and-a-matlab-submission-script">Submit jobs through a batch script and a MATLAB submission script</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#creating-a-cluster-profile-for-larcc">Creating a cluster profile for LARCC</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="lammps.html">LAMMPS</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="lammps.html#running-lammps">Running LAMMPS</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="lammps.html#example-slurm-job-script">Example Slurm Job Script</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="lammps.html#building-lammps">Building LAMMPS</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="liggghts.html">LIGGGHTS</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="liggghts.html#running-ligghts">Running LIGGHTS</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="liggghts.html#example-slurm-job-script">Example Slurm Job Script</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pytorch.html">PyTorch</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pytorch.html#verifying-gpu-availability">Verifying GPU Availability</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pytorch.html#using-gpus-in-pytorch">Using GPUs in PyTorch</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pytorch.html#moving-tensors-to-gpu">Moving Tensors to GPU</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pytorch.html#model-training-on-gpu">Model Training on GPU</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pytorch.html#monitoring-gpu-usage">Monitoring GPU Usage</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pytorch.html#multi-gpu-usage-in-pytorch">Multi-GPU Usage in PyTorch</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pytorch.html#single-node-multi-gpu-dataparallel-or-ddp">Single Node, Multi-GPU (DataParallel or DDP)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="R.html">R</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="R.html#using-r">Using R</a></li>
+<li class="toctree-l3"><a class="reference internal" href="R.html#installing-r-packages">Installing R Packages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="R.html#installing-r-packages-in-custom-locations">Installing R packages in custom locations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="R.html#installing-r-packages-with-external-library-dependencies">Installing R Packages with External Library Dependencies</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="R.html#example-installing-the-units-package">Example: Installing the <code class="docutils literal notranslate"><span class="pre">units</span></code> Package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="R.html#example-installing-the-sf-package">Example: Installing the <code class="docutils literal notranslate"><span class="pre">sf</span></code> Package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="R.html#simplifying-with-conda">Simplifying with Conda</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="R.html#using-the-pak-package-manager">Using the <code class="docutils literal notranslate"><span class="pre">pak</span></code> Package Manager</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="rstudio.html">RStudio</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="rstudio.html#pre-launch">Pre-launch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rstudio.html#launch-rstudio-server">Launch RStudio Server</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tensorflow.html">Tensorflow</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tensorflow.html#verifying-gpu-availability">Verifying GPU Availability</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tensorflow.html#single-node-multi-gpu-training">Single Node, Multi-GPU Training</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="vasp.html">VASP</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="vasp.html#license-restrictions">License Restrictions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="vasp.html#running-vasp">Running VASP</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="vasp.html#vasp-on-gpu-nodes">VASP on GPU nodes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="vasp.html#vasp-on-cpu-only-nodes">VASP on CPU-only nodes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="vasp.html#example-slurm-job-script">Example Slurm Job Script</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../usecases/index.html">AI Use Cases</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../usecases/chest_xray.html">Pneumonia detection based on Chest X-Ray</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../usecases/chest_xray.html#ingesting-the-data">1. Ingesting the data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../usecases/chest_xray.html#training-the-models">2. Training the models</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../usecases/chest_xray.html#cnn-training-and-validation">CNN Training and Validation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../usecases/chest_xray.html#transfer-learning-training-and-validation">Transfer Learning Training and Validation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../usecases/chest_xray.html#fine-tuning-training-and-validation">Fine Tuning Training and Validation</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../usecases/chest_xray.html#visualize-metrics">3. Visualize Metrics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../usecases/chest_xray.html#save-your-results-for-further-analyses">4. Save your results for further analyses</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../usecases/medbert.html">Med-BERT</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">LARCC User Documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Software</a></li>
+      <li class="breadcrumb-item active">MATLAB</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/software/matlab.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="matlab">
+<span id="id1"></span><h1>MATLAB<a class="headerlink" href="#matlab" title="Link to this heading"></a></h1>
+<section id="basics">
+<h2>Basics<a class="headerlink" href="#basics" title="Link to this heading"></a></h2>
+<section id="workers-and-pools">
+<h3>Workers and pools<a class="headerlink" href="#workers-and-pools" title="Link to this heading"></a></h3>
+<p>In MATLAB’s terminology, a <em>worker</em> is a CPU-core and a <em>pool</em> is a
+set of workers (i.e. a group of CPU-cores in a machine).  By default, a parallel pool starts
+automatically when needed by parallel language features such as <code class="docutils literal notranslate"><span class="pre">parfor</span></code> (parallel for-loop),
+<code class="docutils literal notranslate"><span class="pre">parfeval</span></code> (paralle function evaluation), <code class="docutils literal notranslate"><span class="pre">mapreduce</span></code>, among others.</p>
+<p>Users are strongly encouraged to read the <a class="reference external" href="https://www.mathworks.com/help/parallel-computing/run-code-on-parallel-pools.html">“Run Code on Parallel Pools” section</a>
+of MathWorks documentation before attempting to parallelize their code.</p>
+</section>
+<section id="parallel-and-distributed-execution">
+<h3>Parallel and distributed execution<a class="headerlink" href="#parallel-and-distributed-execution" title="Link to this heading"></a></h3>
+<p>When reserving a pool of workers for execution, MATLAB handles communication between workers automatically. This
+also includes workers running on different machines. Thus, parallel and distributed execution look the same
+from an user’s point of view.</p>
+</section>
+<section id="cluster-profiles">
+<span id="matlab-profiles"></span><h3>Cluster profiles<a class="headerlink" href="#cluster-profiles" title="Link to this heading"></a></h3>
+<p>As per MathWorks’ documentation, cluster profiles let users define certain properties for a cluster,
+then have these properties applied when they create cluster, job, and
+task objects in the MATLAB client. For instance, the code below shows an example where
+an user creates a cluster profile from MATLAB’s command-line. Option <code class="docutils literal notranslate"><span class="pre">JobStorageLocation</span></code>
+specifies the path at the user’s workstation (i.e. their local machine) where information about
+a job submitted to a cluster is to be stored. Option <code class="docutils literal notranslate"><span class="pre">NumWorkers</span></code> represents the number of
+workers allowed by the MATLAB license in the cluster (i.e. the remote machine). Option
+<code class="docutils literal notranslate"><span class="pre">ClusterMatlabRoot</span></code> specifies the full path to the MATLAB install folder on the cluster. Option
+<code class="docutils literal notranslate"><span class="pre">OperatingSystem</span></code> specifies the category of the cluster’s operating system. Option <code class="docutils literal notranslate"><span class="pre">HasSharedFilesystem</span></code>
+indicates whether or not there is a disk location accessible to the user’s workstation
+and the workers on the cluster. Option <code class="docutils literal notranslate"><span class="pre">PluginScriptsLocation</span></code> specifies the
+full path to the plugin script folder that contains the
+<a class="reference external" href="https://github.com/mathworks/matlab-parallel-slurm-plugin#readme">matlab-parallel-slurm-plugin</a> or other
+scheduler related plugin.</p>
+<div class="highlight-matlabsession notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt; </span><span class="n">cluster</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">parallel</span><span class="p">.</span><span class="n">cluster</span><span class="p">.</span><span class="n">Generic</span><span class="p">(</span><span class="w"> </span><span class="k">...</span>
+<span class="gp">&gt;&gt; </span><span class="s">&#39;JobStorageLocation&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;C:\MatlabJobs&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">...</span>
+<span class="gp">&gt;&gt; </span><span class="s">&#39;NumWorkers&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w"> </span><span class="k">...</span>
+<span class="gp">&gt;&gt; </span><span class="s">&#39;ClusterMatlabRoot&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;/usr/local/MATLAB/R2025a&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">...</span>
+<span class="gp">&gt;&gt; </span><span class="s">&#39;OperatingSystem&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;unix&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">...</span>
+<span class="gp">&gt;&gt; </span><span class="s">&#39;HasSharedFilesystem&#39;</span><span class="p">,</span><span class="w"> </span><span class="nb">false</span><span class="p">,</span><span class="w"> </span><span class="k">...</span>
+<span class="gp">&gt;&gt; </span><span class="s">&#39;PluginScriptsLocation&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;C:\MatlabSlurmPlugin\shared&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Some of the functions that support the use of cluster profiles are:
+<code class="docutils literal notranslate"><span class="pre">batch</span></code>, <code class="docutils literal notranslate"><span class="pre">parpool</span></code>, <code class="docutils literal notranslate"><span class="pre">parcluster</span></code>. Uses of some of these functions alongside a cluster profile
+for LARCC’s login node are shown later in Sections <a class="reference internal" href="#matlab-batch-job"><span class="std std-ref">Submitting a batch job</span></a> and
+and <a class="reference internal" href="#create-matlab-larcc-cluster-profile"><span class="std std-ref">Creating a cluster profile for LARCC</span></a> respectively.</p>
+<p>Users are encouraged to read more about cluster profiles in the
+<a class="reference external" href="https://www.mathworks.com/help/parallel-computing/discover-clusters-and-use-cluster-profiles.html">“Use Cluster Profiles” section</a>
+of MathWorks’ documentation.</p>
+</section>
+</section>
+<section id="submitting-a-batch-job">
+<span id="matlab-batch-job"></span><h2>Submitting a batch job<a class="headerlink" href="#submitting-a-batch-job" title="Link to this heading"></a></h2>
+<p>There are three options to submit MATLAB batch jobs:</p>
+<ol class="arabic simple">
+<li><dl class="simple">
+<dt><strong>Using a Batch Script:</strong></dt><dd><p>MATLAB is invoked directly from the shell within the batch script, where the project’s main <cite>.m</cite> source file is passed to the MATLAB executable. For a detailed walkthrough, refer to Section <a class="reference internal" href="#matlab-batch-job-batch-script"><span class="std std-ref">Submit jobs through a batch script</span></a>. This method is often the easiest, but <strong>distributed execution is not available with this option</strong>.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>Using MATLAB’s Command Prompt:</strong></dt><dd><p>Users initiate the <cite>matlab</cite> command from the head node. Within the MATLAB prompt, they load the relevant cluster profile and leverage the <cite>batch</cite> option, as detailed in Section <a class="reference internal" href="#matlab-batch-job-matlab-prompt"><span class="std std-ref">Submit jobs through MATLAB’s command prompt</span></a>.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>Using a Batch Script and a MATLAB Submission Script:</strong></dt><dd><p>This approach mixes elements from the preceding two methods. A job is scheduled using option 1, which, in turn, allocates a second job executing the main project’s code in parallel. The process involves creating a batch script, akin to the first option. However, instead of passing the project’s main <cite>.m</cite> source file to the MATLAB executable, an intermediate <cite>.m</cite> file, functioning as the MATLAB submission script, is passed. This intermediate file employs the same commands outlined in option 2 to schedule a new job that employs multiple workers.</p>
+</dd>
+</dl>
+</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Most users should default to launching matlab using method 1 (i.e. a simple batch script),
+as it is the easiest and supports parallel execution. Users whose workloads benefit from distributed
+execution should familiarize themselves with <a class="reference internal" href="#matlab-profiles"><span class="std std-ref">Matlab Cluster Profiles</span></a> first.</p>
+</div>
+<section id="submit-jobs-through-a-batch-script">
+<span id="matlab-batch-job-batch-script"></span><h3>Submit jobs through a batch script<a class="headerlink" href="#submit-jobs-through-a-batch-script" title="Link to this heading"></a></h3>
+<ol class="arabic">
+<li><p>Copy the Matlab project to the cluster. That is, all <code class="docutils literal notranslate"><span class="pre">.m</span></code> source code files that are to be passed to matlab for execution. For example, assume the file <code class="docutils literal notranslate"><span class="pre">/home/user/test.m</span></code> has the following content:</p>
+<blockquote>
+<div><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">p</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">parpool</span><span class="p">(</span><span class="nb">str2num</span><span class="p">(</span><span class="nb">getenv</span><span class="p">(</span><span class="s">&#39;SLURM_NTASKS&#39;</span><span class="p">)));</span>
+<span class="n">t0</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">tic</span><span class="p">;</span>
+<span class="n">A</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">500</span><span class="p">;</span>
+<span class="n">a</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">zeros</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+<span class="k">parfor</span><span class="w"> </span><span class="nb">i</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span><span class="mi">1000</span>
+<span class="n">a</span><span class="p">(</span><span class="nb">i</span><span class="p">)</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">max</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="nb">eig</span><span class="p">(</span><span class="nb">rand</span><span class="p">(</span><span class="n">A</span><span class="p">))));</span>
+<span class="k">end</span>
+<span class="n">t</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">toc</span><span class="p">(</span><span class="n">t0</span><span class="p">)</span>
+<span class="nb">exit</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Create a <a class="reference internal" href="../guides/slurm/batch_jobs.html#batch-job"><span class="std std-ref">batch script</span></a>. For example, assume the file <code class="docutils literal notranslate"><span class="pre">/home/user/matlab_test.sh</span></code> has the following content:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="c1">#SBATCH -J test_matlab</span>
+<span class="c1">#SBATCH -o /home/user/test_matlab-%j.out</span>
+<span class="c1">#SBATCH -e /home/user/tmp/test_matlab-%j.err</span>
+<span class="c1">#SBATCH -p longjobs</span>
+<span class="c1">#SBATCH -n 20</span>
+<span class="c1">#SBATCH -t 20:00</span>
+
+module<span class="w"> </span>load<span class="w"> </span>matlab/r2025a
+matlab<span class="w"> </span>-nosplash<span class="w"> </span>-nodesktop<span class="w"> </span>&lt;<span class="w"> </span>/home/user/test.m
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Use the <code class="docutils literal notranslate"><span class="pre">sbatch</span></code> command to schedule the job. Following the example from previous steps:
+<code class="docutils literal notranslate"><span class="pre">sbatch</span> <span class="pre">/home/user/matlab_test.sh</span></code>.</p></li>
+</ol>
+</section>
+<section id="submit-jobs-through-matlab-s-command-prompt">
+<span id="matlab-batch-job-matlab-prompt"></span><h3>Submit jobs through MATLAB’s command prompt<a class="headerlink" href="#submit-jobs-through-matlab-s-command-prompt" title="Link to this heading"></a></h3>
+<ol class="arabic">
+<li><p>Copy the Matlab project to the cluster. That is, all <code class="docutils literal notranslate"><span class="pre">.m</span></code> source code files that are to be passed to matlab for execution. For example, assume the file <code class="docutils literal notranslate"><span class="pre">/home/user/parallelExample.m</span></code> has the following content:</p>
+<blockquote>
+<div><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span>t<span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nf">parallelExample</span><span class="p">(</span>n<span class="p">)</span>
+<span class="w">    </span><span class="n">t0</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">tic</span><span class="p">;</span>
+<span class="w">    </span><span class="n">A</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">500</span><span class="p">;</span>
+<span class="w">    </span><span class="n">a</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">);</span>
+<span class="w">    </span><span class="k">parfor</span><span class="w"> </span><span class="nb">i</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span><span class="n">n</span>
+<span class="w">        </span><span class="n">a</span><span class="p">(</span><span class="nb">i</span><span class="p">)</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">max</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="nb">eig</span><span class="p">(</span><span class="nb">rand</span><span class="p">(</span><span class="n">A</span><span class="p">))));</span>
+<span class="w">    </span><span class="k">end</span>
+<span class="w">    </span><span class="n">t</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">toc</span><span class="p">(</span><span class="n">t0</span><span class="p">);</span>
+<span class="k">end</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Execute MATLAB’s prompt by loading the appropriate matlab module and running the command <code class="docutils literal notranslate"><span class="pre">matlab</span> <span class="pre">-nodisplay</span> <span class="pre">-nosplash</span> <span class="pre">-nodesktop</span></code> from the head node. For example,</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>user@larcc-login1:~$<span class="w"> </span>module<span class="w"> </span>load<span class="w"> </span>matlab/r2023b
+user@larcc-login1:~$<span class="w"> </span>matlab<span class="w"> </span>-nodisplay<span class="w">  </span>-nosplash<span class="w"> </span>-nodesktop
+
+<span class="w">                                                </span>&lt;<span class="w"> </span>M<span class="w"> </span>A<span class="w"> </span>T<span class="w"> </span>L<span class="w"> </span>A<span class="w"> </span>B<span class="w"> </span><span class="o">(</span>R<span class="o">)</span><span class="w"> </span>&gt;
+<span class="w">                                      </span>Copyright<span class="w"> </span><span class="m">1984</span>-2024<span class="w"> </span>The<span class="w"> </span>MathWorks,<span class="w"> </span>Inc.
+<span class="w">                                 </span>R2025a<span class="w"> </span><span class="o">(</span><span class="m">25</span>.1.0.2943329<span class="o">)</span><span class="w"> </span><span class="m">64</span>-bit<span class="w"> </span><span class="o">(</span>glnxa64<span class="o">)</span>
+<span class="w">                                                  </span>April<span class="w"> </span><span class="m">16</span>,<span class="w"> </span><span class="m">2025</span>
+
+
+To<span class="w"> </span>get<span class="w"> </span>started,<span class="w"> </span><span class="nb">type</span><span class="w"> </span>doc.
+For<span class="w"> </span>product<span class="w"> </span>information,<span class="w"> </span>visit<span class="w"> </span>www.mathworks.com.
+
+&gt;&gt;
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Once in the prompt, load the cluster profile using the <code class="docutils literal notranslate"><span class="pre">parcluster</span></code> command, add additional slurm properties like the job’s time limit and queue to submit the job to, and finally execute the job using the <code class="docutils literal notranslate"><span class="pre">batch</span></code> command from the object obtained from the <code class="docutils literal notranslate"><span class="pre">parcluster</span></code> command. For example:</p>
+<blockquote>
+<div><div class="highlight-matlabsession notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt; </span><span class="c">% The following line loads the larcc-local profile</span>
+<span class="gp">&gt;&gt; </span><span class="n">cluster</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">parcluster</span><span class="p">(</span><span class="s">&#39;larcc-local&#39;</span><span class="p">);</span>
+<span class="gp">&gt;&gt; </span><span class="c">% The following line sets the job&#39;s time limit</span>
+<span class="gp">&gt;&gt; </span><span class="n">cluster</span><span class="p">.</span><span class="n">AdditionalProperties</span><span class="p">.</span><span class="n">WallTime</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&#39;1:00:00&#39;</span><span class="p">;</span>
+<span class="gp">&gt;&gt; </span><span class="c">% The following line sets the queue to where the job will be submitted to</span>
+<span class="gp">&gt;&gt; </span><span class="n">cluster</span><span class="p">.</span><span class="n">AdditionalProperties</span><span class="p">.</span><span class="n">Partition</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&#39;longjobs&#39;</span><span class="p">;</span>
+<span class="gp">&gt;&gt; </span><span class="c">% The following line submits the job. Here is a breakdown of the line:</span>
+<span class="gp">&gt;&gt; </span><span class="c">% - @parallelExample refers to the function in /home/user/parallelExample.m</span>
+<span class="gp">&gt;&gt; </span><span class="c">% - 1 is the number of outputs returned by the function</span>
+<span class="gp">&gt;&gt; </span><span class="c">% - {1000} are the arguments to be passed to the function</span>
+<span class="gp">&gt;&gt; </span><span class="c">% - &#39;Pool&#39; indicates matlab to create a pool of workers for parallel</span>
+<span class="gp">&gt;&gt; </span><span class="c">%   (or distributed) execution</span>
+<span class="gp">&gt;&gt; </span><span class="c">% - 8 indicates the number of workers to use in the pool</span>
+<span class="gp">&gt;&gt; </span><span class="n">job</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">cluster</span><span class="p">.</span><span class="n">batch</span><span class="p">(@</span><span class="n">parallelExample</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="mi">1000</span><span class="p">},</span><span class="w"> </span><span class="s">&#39;Pool&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">);</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>After the job has been submitted, users can wait for the job to finish and fetch any result not persisted to disk by executing in the prompt <code class="docutils literal notranslate"><span class="pre">job.fetchOutputs{:};</span></code>.</p></li>
+</ol>
+</section>
+<section id="submit-jobs-through-a-batch-script-and-a-matlab-submission-script">
+<h3>Submit jobs through a batch script and a MATLAB submission script<a class="headerlink" href="#submit-jobs-through-a-batch-script-and-a-matlab-submission-script" title="Link to this heading"></a></h3>
+<ol class="arabic">
+<li><p>Copy the Matlab project to the cluster. That is, all <code class="docutils literal notranslate"><span class="pre">.m</span></code> source code files that are to be passed to matlab for execution. For example, assume the file <code class="docutils literal notranslate"><span class="pre">/home/user/parallelExample.m</span></code> has the following content:</p>
+<blockquote>
+<div><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span>t<span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nf">parallelExample</span><span class="p">(</span>n<span class="p">)</span>
+<span class="w">    </span><span class="n">t0</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">tic</span><span class="p">;</span>
+<span class="w">    </span><span class="n">A</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">500</span><span class="p">;</span>
+<span class="w">    </span><span class="n">a</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">);</span>
+<span class="w">    </span><span class="k">parfor</span><span class="w"> </span><span class="nb">i</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span><span class="n">n</span>
+<span class="w">        </span><span class="n">a</span><span class="p">(</span><span class="nb">i</span><span class="p">)</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">max</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="nb">eig</span><span class="p">(</span><span class="nb">rand</span><span class="p">(</span><span class="n">A</span><span class="p">))));</span>
+<span class="w">    </span><span class="k">end</span>
+<span class="w">    </span><span class="n">t</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">toc</span><span class="p">(</span><span class="n">t0</span><span class="p">);</span>
+<span class="w">    </span><span class="n">fileToSaveResultTo</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;result.txt&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="nb">save</span><span class="p">(</span><span class="n">fileToSaveResultTo</span><span class="p">)</span>
+<span class="k">end</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Create a MATLAB submission script that invokes project’s code. For example, assume the file <code class="docutils literal notranslate"><span class="pre">/home/user/matlabSubmissionScript.m</span></code> has the following content:</p>
+<blockquote>
+<div><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Get the number of workers from the slurm scheduler. The SLURM_NTASKS</span>
+<span class="c">% environmental variable is set automatically by slurm.</span>
+<span class="n">workers</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">str2num</span><span class="p">(</span><span class="nb">getenv</span><span class="p">(</span><span class="s">&#39;SLURM_NTASKS&#39;</span><span class="p">));</span>
+<span class="c">% Load the larcc-local cluster profile</span>
+<span class="n">cluster</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">parcluster</span><span class="p">(</span><span class="s">&#39;larcc-local&#39;</span><span class="p">);</span>
+<span class="c">% Set the job&#39;s time limit</span>
+<span class="n">cluster</span><span class="p">.</span><span class="n">AdditionalProperties</span><span class="p">.</span><span class="n">TimeLimit</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&#39;1:00:00&#39;</span><span class="p">;</span>
+<span class="c">% Set the queue to where the job will be submitted to</span>
+<span class="n">cluster</span><span class="p">.</span><span class="n">AdditionalProperties</span><span class="p">.</span><span class="n">Partition</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&#39;longjobs&#39;</span><span class="p">;</span>
+<span class="c">% Submit the job. Here is a breakdown of the line:</span>
+<span class="c">% - @parallelExample refers to the function in /home/user/parallelExample.m</span>
+<span class="c">% - 1 is the number of outputs returned by the function</span>
+<span class="c">% - {1000} are the arguments to be passed to the function</span>
+<span class="c">% - &#39;Pool&#39; indicates matlab to create a pool of workers for parallel</span>
+<span class="c">%   (or distributed) execution</span>
+<span class="c">% - 8 indicates the number of workers to use in the pool</span>
+<span class="n">job</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">cluster</span><span class="p">.</span><span class="n">batch</span><span class="p">(@</span><span class="n">parallelExample</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="mi">1000</span><span class="p">},</span><span class="w"> </span><span class="s">&#39;pool&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">workers</span><span class="p">);</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Create a sbatch script that invokes the matlab submission script from the previous step.  For example, assume the file <code class="docutils literal notranslate"><span class="pre">/home/user/matlab_test.sh</span></code> has the following content:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+
+<span class="c1">#SBATCH -J test_matlab</span>
+<span class="c1">#SBATCH -o /home/user/test_matlab-%j.out</span>
+<span class="c1">#SBATCH -e /home/user/tmp/test_matlab-%j.err</span>
+<span class="c1">#SBATCH -p longjobs</span>
+<span class="c1">#SBATCH -n 20</span>
+<span class="c1">#SBATCH -t 20:00</span>
+
+module<span class="w"> </span>load<span class="w"> </span>matlab/r2025a
+matlab<span class="w"> </span>-nodisplay<span class="w"> </span>-nosplash<span class="w"> </span>-nodesktop<span class="w"> </span>-r<span class="w"> </span><span class="s2">&quot;matlabSubmissionScript&quot;</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Use the <code class="docutils literal notranslate"><span class="pre">sbatch</span></code> command to schedule the job. Following the example from previous steps: <code class="docutils literal notranslate"><span class="pre">sbatch</span> <span class="pre">/home/user/matlab_test.sh</span></code></p></li>
+</ol>
+</section>
+</section>
+<section id="creating-a-cluster-profile-for-larcc">
+<span id="create-matlab-larcc-cluster-profile"></span><h2>Creating a cluster profile for LARCC<a class="headerlink" href="#creating-a-cluster-profile-for-larcc" title="Link to this heading"></a></h2>
+<p>The login node acts as a Matlab client in this case. This means that instead of creating a cluster profile
+in their personal or university workstation, an user creates a cluster profile in the login node. The steps are as follows:</p>
+<ol class="arabic">
+<li><p>Log into the cluster.</p></li>
+<li><p>Load the matlab module you would like to use. For example, <code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">load</span> <span class="pre">matlab/r2025a-gcc-11.5.0-cj4bjqf</span></code>.</p></li>
+<li><p>Create a cluster profile by running the command below. Make sure to modify the value of variables:
+<code class="docutils literal notranslate"><span class="pre">profileName</span></code>, <code class="docutils literal notranslate"><span class="pre">numWorkers</span></code>, and <code class="docutils literal notranslate"><span class="pre">jobStorageLocation</span></code> as you see fit.</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>
+cat<span class="w"> </span><span class="s">&lt;&lt; EOF</span>
+<span class="s">profileName = &#39;larcc-cluster&#39;;</span>
+<span class="s">numWorkers = 60;</span>
+<span class="s">jobStorageLocation = &#39;~/.matlab/local_cluster_jobs/r2025a&#39;;</span>
+<span class="s">profiles = parallel.listProfiles;</span>
+<span class="s">if ~any(strcmp(profileName, profiles))</span>
+<span class="s">    c = parallel.cluster.Generic( ...</span>
+<span class="s">          &#39;JobStorageLocation&#39;, jobStorageLocation, ...</span>
+<span class="s">          &#39;NumWorkers&#39;, numWorkers, ...</span>
+<span class="s">          &#39;ClusterMatlabRoot&#39;, &#39;/opt/shared/apps/manual/matlab/r2025a&#39;, ...</span>
+<span class="s">          &#39;OperatingSystem&#39;, &#39;unix&#39;, ...</span>
+<span class="s">          &#39;HasSharedFilesystem&#39;, true, ...</span>
+<span class="s">          &#39;PluginScriptsLocation&#39;, &#39;/opt/shared/apps/manual/matlab/r2025a/toolbox/matlab-parallel-slurm-plugin-2.3.0&#39;);</span>
+<span class="s">    saveAsProfile(c, profileName);</span>
+<span class="s">end</span>
+<span class="s">EOF</span>
+<span class="o">)</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>matlab<span class="w"> </span>-nodisplay<span class="w"> </span>-nosplash<span class="w"> </span>-nodesktop
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Validate that the cluster profile was saved. To do this,
+execute matlab again as follows: <code class="docutils literal notranslate"><span class="pre">matlab</span> <span class="pre">-nodisplay</span> <span class="pre">-nosplash</span> <span class="pre">-nodesktop</span> <span class="pre">-batch</span> <span class="pre">&quot;disp(parallel.listProfiles)&quot;</span></code>.
+The output list should include a cluster profile with the name set in the <code class="docutils literal notranslate"><span class="pre">profileName</span></code> variable.</p></li>
+</ol>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="jupyter.html" class="btn btn-neutral float-left" title="Jupyter" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="lammps.html" class="btn btn-neutral float-right" title="LAMMPS" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, ITS - Research Computing.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

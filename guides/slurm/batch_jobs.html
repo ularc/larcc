@@ -1,0 +1,671 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Batch Jobs &mdash; LARCC User Documentation  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=3ad828ca" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Job Dependencies" href="job_dependencies.html" />
+    <link rel="prev" title="Interactive Jobs" href="interactive_jobs.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            LARCC User Documentation
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../accounts_and_support/index.html">Accounts and Support</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../accounts_and_support/index.html#request-an-account">Request an account</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../accounts_and_support/index.html#accounts-for-uofl-individuals">Accounts for UofL individuals</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../accounts_and_support/index.html#uofl-vpn-connection">UofL VPN Connection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../accounts_and_support/index.html#request-support-tickets">Request Support (Tickets)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../gettingstarted/index.html">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../gettingstarted/index.html#usage-agreement">Usage Agreement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gettingstarted/index.html#hpc-system-overview">HPC system overview</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../gettingstarted/index.html#about-the-cluster">About the cluster</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../gettingstarted/index.html#about-scientific-software">About Scientific Software</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../gettingstarted/index.html#about-jobs">About Jobs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../gettingstarted/index.html#quickstart">Quickstart</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../gettingstarted/index.html#logging-into-the-cluster">Logging into the cluster</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../gettingstarted/index.html#using-the-command-line">Using the command line</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../gettingstarted/index.html#using-mobaxterm">Using MobaXterm</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../gettingstarted/index.html#copying-files-to-from-the-cluster">Copying files to/from the cluster</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../gettingstarted/index.html#id1">Using the command line</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../gettingstarted/index.html#id2">Using MobaXterm</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../gettingstarted/index.html#using-software-installed-in-the-cluster">Using software installed in the cluster</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../gettingstarted/index.html#list-available-software">List available software</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../gettingstarted/index.html#load-software">Load software</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../gettingstarted/index.html#list-currently-loaded-software">List currently loaded software</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../gettingstarted/index.html#unloading-software">Unloading software</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../gettingstarted/index.html#queues-and-jobs">Queues and jobs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../gettingstarted/index.html#policies">Policies</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../gettingstarted/index.html#installing-packages-system-wide">Installing packages system-wide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../gettingstarted/index.html#running-applications-on-the-login-nodes">Running applications on the login nodes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../gettingstarted/index.html#resource-restrictions">Resource restrictions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../gettingstarted/index.html#job-runtime-restrictions">Job runtime restrictions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../gettingstarted/index.html#storage-restrictions">Storage restrictions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Guides</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../system_guide/index.html">HPC System Guide</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../system_guide/index.html#introduction">Introduction</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../system_guide/index.html#what-is-a-shell">What is a Shell?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../system_guide/index.html#what-is-case-sensitivity">What is case-sensitivity?</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../system_guide/index.html#connecting-to-the-cluster">Connecting to the Cluster</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../system_guide/index.html#understanding-filesystems">Understanding Filesystems</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../system_guide/index.html#what-is-a-filesystem">What is a Filesystem?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../system_guide/index.html#filesystem-hierarchies">Filesystem Hierarchies</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../system_guide/index.html#navigating-the-filesystem">Navigating the filesystem</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../system_guide/index.html#using-modules">Using Modules</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Slurm Queueing System Guide</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="index.html#basic-slurm-terminology">Basic Slurm Terminology</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="terminology.html">Basic Slurm Terminology</a></li>
+</ul>
+</li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html#job-types-and-job-submission">Job Types and Job Submission</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="interactive_jobs.html">Interactive Jobs</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Batch Jobs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#job-arrays">Job Arrays</a></li>
+<li class="toctree-l4"><a class="reference internal" href="job_dependencies.html">Job Dependencies</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#job-environment">Job Environment</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="job_environment.html">Slurm environmental variables</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#strategies-when-submitting-slurm-jobs">Strategies When Submitting Slurm Jobs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="job_submission_strategies.html">Single Job with Multiple Job Steps</a></li>
+<li class="toctree-l4"><a class="reference internal" href="job_submission_strategies.html#job-arrays">Job Arrays</a></li>
+<li class="toctree-l4"><a class="reference internal" href="job_submission_strategies.html#requesting-cpu-nodes-with-multiple-parallel-tasks">Requesting CPU Nodes with Multiple Parallel Tasks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="job_submission_strategies.html#single-gpu-node-with-one-task-per-gpu-and-cpu-cores-evenly-distributed-across-tasks">Single GPU node with one task per GPU and CPU cores evenly distributed across tasks</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../storage/index.html">Storage Guide</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../storage/index.html#understanding-storage-on-compute-nodes">Understanding Storage on Compute Nodes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../storage/index.html#storage-types">Storage Types</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../storage/index.html#recommended-workflow">Recommended Workflow</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../storage/index.html#copying-data-between-home-and-scratch">Copying Data Between Home and Scratch</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../software/index.html">Software</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../software/conda.html">Conda (Anaconda/Miniconda/Miniforge)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../software/conda.html#basics">Basics</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../software/conda.html#about-anaconda-miniconda-and-miniforge">About Anaconda, Miniconda and Miniforge</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software/conda.html#what-is-a-conda-environment">What is a Conda environment?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software/conda.html#why-use-multiple-conda-environments">Why use multiple Conda environments?</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../software/conda.html#using-conda">Using Conda</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../software/conda.html#loading-the-miniforge3-module-and-the-base-environment">Loading the miniforge3 module and the base environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software/conda.html#creating-and-activating-an-environment">Creating and activating an environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software/conda.html#installing-packages-with-conda-and-mamba">Installing packages with conda and mamba</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software/conda.html#installing-packages-with-pip">Installing packages with pip</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software/conda.html#cloning-an-environment">Cloning an environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software/conda.html#miscellaneous">Miscellaneous</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../software/conda.html#conda-in-a-batch-job">Conda in a batch job</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../software/conda.html#conda-in-an-interactive-job">Conda in an interactive job</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../software/gaussian.html">Gaussian</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../software/gaussian.html#running-gaussian">Running Gaussian</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../software/gaussian.html#example-slurm-job-script">Example Slurm Job Script</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../software/jupyter.html">Jupyter</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../software/jupyter.html#launching-jupyter-through-a-batch-job">Launching Jupyter through a batch job</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../software/jupyter.html#optional-create-a-jupyter-environment">1. (Optional) Create a jupyter environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software/jupyter.html#create-the-submission-script">2. Create the submission script</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software/jupyter.html#connect-to-jupyter-from-your-web-browser">3. Connect to jupyter from your web browser</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../software/jupyter.html#launching-jupyter-through-an-interactive-job">Launching Jupyter through an interactive job</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../software/jupyter.html#id2">1. (Optional) Create a jupyter environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software/jupyter.html#submit-an-interactive-job">2. Submit an interactive job</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software/jupyter.html#manually-launch-jupyter">3. Manually launch Jupyter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software/jupyter.html#access-jupyter-from-your-workstation">4. Access Jupyter from your workstation</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../software/jupyter.html#transitioning-from-jupyter-to-python-script">Transitioning from Jupyter to Python Script</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../software/jupyter.html#export-the-notebook">1. Export the Notebook</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software/jupyter.html#clean-up-the-script">2. Clean Up the Script</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software/jupyter.html#replace-notebook-specific-features">3. Replace Notebook-Specific Features</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software/jupyter.html#handle-file-paths-and-inputs">4. Handle File Paths and Inputs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software/jupyter.html#test-the-script">5. Test the Script</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../software/matlab.html">MATLAB</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../software/matlab.html#basics">Basics</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../software/matlab.html#workers-and-pools">Workers and pools</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software/matlab.html#parallel-and-distributed-execution">Parallel and distributed execution</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software/matlab.html#cluster-profiles">Cluster profiles</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../software/matlab.html#submitting-a-batch-job">Submitting a batch job</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../software/matlab.html#submit-jobs-through-a-batch-script">Submit jobs through a batch script</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software/matlab.html#submit-jobs-through-matlab-s-command-prompt">Submit jobs through MATLAB’s command prompt</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software/matlab.html#submit-jobs-through-a-batch-script-and-a-matlab-submission-script">Submit jobs through a batch script and a MATLAB submission script</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../software/matlab.html#creating-a-cluster-profile-for-larcc">Creating a cluster profile for LARCC</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../software/lammps.html">LAMMPS</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../software/lammps.html#running-lammps">Running LAMMPS</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../software/lammps.html#example-slurm-job-script">Example Slurm Job Script</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../software/lammps.html#building-lammps">Building LAMMPS</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../software/liggghts.html">LIGGGHTS</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../software/liggghts.html#running-ligghts">Running LIGGHTS</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../software/liggghts.html#example-slurm-job-script">Example Slurm Job Script</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../software/pytorch.html">PyTorch</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../software/pytorch.html#verifying-gpu-availability">Verifying GPU Availability</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../software/pytorch.html#using-gpus-in-pytorch">Using GPUs in PyTorch</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../software/pytorch.html#moving-tensors-to-gpu">Moving Tensors to GPU</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software/pytorch.html#model-training-on-gpu">Model Training on GPU</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software/pytorch.html#monitoring-gpu-usage">Monitoring GPU Usage</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../software/pytorch.html#multi-gpu-usage-in-pytorch">Multi-GPU Usage in PyTorch</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../software/pytorch.html#single-node-multi-gpu-dataparallel-or-ddp">Single Node, Multi-GPU (DataParallel or DDP)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../software/R.html">R</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../software/R.html#using-r">Using R</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../software/R.html#installing-r-packages">Installing R Packages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../software/R.html#installing-r-packages-in-custom-locations">Installing R packages in custom locations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../software/R.html#installing-r-packages-with-external-library-dependencies">Installing R Packages with External Library Dependencies</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../software/R.html#example-installing-the-units-package">Example: Installing the <code class="docutils literal notranslate"><span class="pre">units</span></code> Package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software/R.html#example-installing-the-sf-package">Example: Installing the <code class="docutils literal notranslate"><span class="pre">sf</span></code> Package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software/R.html#simplifying-with-conda">Simplifying with Conda</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../software/R.html#using-the-pak-package-manager">Using the <code class="docutils literal notranslate"><span class="pre">pak</span></code> Package Manager</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../software/rstudio.html">RStudio</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../software/rstudio.html#pre-launch">Pre-launch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../software/rstudio.html#launch-rstudio-server">Launch RStudio Server</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../software/tensorflow.html">Tensorflow</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../software/tensorflow.html#verifying-gpu-availability">Verifying GPU Availability</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../software/tensorflow.html#single-node-multi-gpu-training">Single Node, Multi-GPU Training</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../software/vasp.html">VASP</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../software/vasp.html#license-restrictions">License Restrictions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../software/vasp.html#running-vasp">Running VASP</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../software/vasp.html#vasp-on-gpu-nodes">VASP on GPU nodes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software/vasp.html#vasp-on-cpu-only-nodes">VASP on CPU-only nodes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software/vasp.html#example-slurm-job-script">Example Slurm Job Script</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../usecases/index.html">AI Use Cases</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../usecases/chest_xray.html">Pneumonia detection based on Chest X-Ray</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../usecases/chest_xray.html#ingesting-the-data">1. Ingesting the data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../usecases/chest_xray.html#training-the-models">2. Training the models</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../usecases/chest_xray.html#cnn-training-and-validation">CNN Training and Validation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../usecases/chest_xray.html#transfer-learning-training-and-validation">Transfer Learning Training and Validation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../usecases/chest_xray.html#fine-tuning-training-and-validation">Fine Tuning Training and Validation</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../usecases/chest_xray.html#visualize-metrics">3. Visualize Metrics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../usecases/chest_xray.html#save-your-results-for-further-analyses">4. Save your results for further analyses</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../usecases/medbert.html">Med-BERT</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">LARCC User Documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Guides</a></li>
+          <li class="breadcrumb-item"><a href="index.html">Slurm Queueing System Guide</a></li>
+      <li class="breadcrumb-item active">Batch Jobs</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/guides/slurm/batch_jobs.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="batch-jobs">
+<span id="batch-job"></span><h1>Batch Jobs<a class="headerlink" href="#batch-jobs" title="Link to this heading"></a></h1>
+<p>These are jobs that are submitted to run in the background without requiring direct user interaction
+once they start. The user submits the job to a queue, and Slurm schedules the job to run when resources
+become available. This is ideal for large, non-interactive computational tasks, simulations, data analysis, etc.</p>
+<p>Here, you write a job script (typically a shell script) that contains the commands to execute your task,
+along with Slurm directives to specify resource requirements (e.g., number of nodes, CPUs, memory, etc.).
+Once submitted, the job runs automatically without user interaction.</p>
+<section id="submitting-batch-jobs">
+<h2>Submitting batch jobs<a class="headerlink" href="#submitting-batch-jobs" title="Link to this heading"></a></h2>
+<p>The command <code class="docutils literal notranslate"><span class="pre">sbatch</span></code> serves as the means to submit batch jobs to Slurm,
+typically in the form of a shell script written in the bash command language.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A shell script is essentially a text file containing instructions
+that are parsed and executed by a shell or command-line interpreter.</p>
+</div>
+<p>When submitting a job to Slurm, the shell script must adhere to the following requirements:</p>
+<ol class="arabic">
+<li><p>The first line of the script should specify the shell to be used.
+This is accomplished by including a shebang (<code class="docutils literal notranslate"><span class="pre">#!</span></code>) followed by <code class="docutils literal notranslate"><span class="pre">/bin/env</span></code>, a space,
+and the name of the desired shell. For example, for a bash script: <code class="docutils literal notranslate"><span class="pre">#!/bin/env</span> <span class="pre">bash</span></code>.
+Alternatively, the path to the shell can be used directly: <code class="docutils literal notranslate"><span class="pre">#!/bin/bash</span></code>.</p></li>
+<li><p>The lines following lines should define a set of parameters in the form of comments
+(lines preceded by the <code class="docutils literal notranslate"><span class="pre">#</span></code> symbol). These parameters are utilized by Slurm
+to establish job priority and resource requirements. Each parameter should begin
+with the word <code class="docutils literal notranslate"><span class="pre">SBATCH</span></code> and should be placed on its own separate line. For instance:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/env bash</span>
+<span class="c1">#SBATCH --job-name=some_job_name</span>
+<span class="c1">#SBATCH --time=01:00</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>DO NOT place anything between the first line of the script (i.e <code class="docutils literal notranslate"><span class="pre">#!/bin/bash</span></code> or <code class="docutils literal notranslate"><span class="pre">#!/bin/env</span> <span class="pre">bash</span></code>) and the <code class="docutils literal notranslate"><span class="pre">#SBATCH</span></code> directives
+as doing so prevents Slurm from properly parsing the job parameters. For example:</p>
+<p><strong>This is correct:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="c1">#SBATCH --job-name=...</span>
+<span class="c1">#SBATCH --partition=...</span>
+<span class="c1">#SBATCH --nodes=...</span>
+<span class="c1">#SBATCH --ntasks-per-node=...</span>
+<span class="c1">#SBATCH --gpus-per-task=...</span>
+<span class="c1">#SBATCH --cpus-per-task=...</span>
+<span class="c1">#SBATCH --time=...</span>
+<span class="c1">#SBATCH --output=...</span>
+<span class="c1">#SBATCH --error=...</span>
+some<span class="w"> </span><span class="nb">command</span>
+</pre></div>
+</div>
+<p><strong>This is incorrect:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+some<span class="w"> </span><span class="nb">command</span>
+<span class="c1">#SBATCH --job-name=...</span>
+<span class="c1">#SBATCH --partition=...</span>
+<span class="c1">#SBATCH --nodes=...</span>
+<span class="c1">#SBATCH --ntasks-per-node=...</span>
+<span class="c1">#SBATCH --gpus-per-task=...</span>
+<span class="c1">#SBATCH --cpus-per-task=...</span>
+<span class="c1">#SBATCH --time=...</span>
+<span class="c1">#SBATCH --output=...</span>
+<span class="c1">#SBATCH --error=...</span>
+</pre></div>
+</div>
+</div>
+<p>A list of common sbatch options is provided below for convenience:</p>
+<table class="docutils align-default" id="id2">
+<caption><span class="caption-text">Common sbatch options</span><a class="headerlink" href="#id2" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 22.7%" />
+<col style="width: 36.4%" />
+<col style="width: 22.7%" />
+<col style="width: 18.2%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head stub"><p><strong>Parameter</strong></p></th>
+<th class="head"><p><strong>Description</strong></p></th>
+<th class="head"><p><strong>Value</strong></p></th>
+<th class="head"><p><strong>Mandatory</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><th class="stub"><p><code class="docutils literal notranslate"><span class="pre">-J,</span> <span class="pre">--job-name</span></code></p></th>
+<td><p>A user defined name assigned to the job</p></td>
+<td><p>Any combination of letters and numbers</p></td>
+<td><p>no</p></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p><code class="docutils literal notranslate"><span class="pre">-t,</span> <span class="pre">--time</span></code></p></th>
+<td><p>Maximum time the job will be allowed to run</p></td>
+<td><p>Time given in format: DD-HH:MM:SS</p></td>
+<td><p><strong>YES</strong></p></td>
+</tr>
+<tr class="row-even"><th class="stub"><p><code class="docutils literal notranslate"><span class="pre">--mem</span></code></p></th>
+<td><p>Amount of memory the job requires per <strong>node</strong></p></td>
+<td><p>&lt;number&gt;[units], where units are K for kilobytes, M for megabytes, G for gigabytes or T for terabytes</p></td>
+<td><p><strong>YES</strong> (for the <code class="docutils literal notranslate"><span class="pre">gpu</span></code> partition only)</p></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p><code class="docutils literal notranslate"><span class="pre">-n,</span> <span class="pre">--ntasks</span></code></p></th>
+<td><p>Number of tasks of the job</p></td>
+<td><p>Number</p></td>
+<td><p>no (default 1)</p></td>
+</tr>
+<tr class="row-even"><th class="stub"><p><code class="docutils literal notranslate"><span class="pre">--ntasks-per-node</span></code></p></th>
+<td><p>Number of tasks assigned to a node</p></td>
+<td><p>Number</p></td>
+<td><p>no (default 1)</p></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p><code class="docutils literal notranslate"><span class="pre">-N,</span> <span class="pre">--nodes</span></code></p></th>
+<td><p>Number of nodes requested</p></td>
+<td><p>Number</p></td>
+<td><p>no (default 1)</p></td>
+</tr>
+<tr class="row-even"><th class="stub"><p><code class="docutils literal notranslate"><span class="pre">-c,</span> <span class="pre">--cpus-per-task</span></code></p></th>
+<td><p>Number of threads per task</p></td>
+<td><p>Number</p></td>
+<td><p>no (default 1)</p></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p><code class="docutils literal notranslate"><span class="pre">-p,</span> <span class="pre">--partition</span></code></p></th>
+<td><p>Partition/queue where the job will be submited</p></td>
+<td><p>compute or gpu</p></td>
+<td><p><strong>YES</strong></p></td>
+</tr>
+<tr class="row-even"><th class="stub"><p><code class="docutils literal notranslate"><span class="pre">--output</span></code></p></th>
+<td><p>File where the standard output will be written. You can use placeholders to control the file naming scheme (see <a class="reference external" href="https://slurm.schedmd.com/sbatch.html#SECTION_FILENAME-PATTERN">https://slurm.schedmd.com/sbatch.html#SECTION_FILENAME-PATTERN</a>)</p></td>
+<td><p>Any combination of letters and numbers</p></td>
+<td><p>no</p></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p><code class="docutils literal notranslate"><span class="pre">--error</span></code></p></th>
+<td><p>File where the standard error will be written. You can use placeholders to control the file naming scheme (see <a class="reference external" href="https://slurm.schedmd.com/sbatch.html#SECTION_FILENAME-PATTERN">https://slurm.schedmd.com/sbatch.html#SECTION_FILENAME-PATTERN</a>)</p></td>
+<td><p>Any combination of letters and numbers</p></td>
+<td><p>no</p></td>
+</tr>
+<tr class="row-even"><th class="stub"><p><code class="docutils literal notranslate"><span class="pre">--exclusive</span></code></p></th>
+<td><p>The job cannot share nodes with other running jobs</p></td>
+<td><p>No values</p></td>
+<td><p><strong>YES</strong> (for the <code class="docutils literal notranslate"><span class="pre">compute</span></code> partition only)</p></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p><code class="docutils literal notranslate"><span class="pre">--test-only</span></code></p></th>
+<td><p>Return an estimate of when a job would be run</p></td>
+<td><p>No values</p></td>
+<td><p>no</p></td>
+</tr>
+</tbody>
+</table>
+<p>For more comprehensive details, please consult
+<a class="reference external" href="https://slurm.schedmd.com/sbatch.html">Slurm’s sbatch manual</a>.</p>
+<p>Once the necessary parameters have been incorporated into the script,
+users should proceed to configure the environment for the application they intend to execute.
+If the job uses a software installed within the cluster,
+users are encouraged to load the corresponding modulefiles within the script using
+the <code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">load</span> <span class="pre">&lt;modulefile&gt;</span></code> command.
+Alternatively, users can load their custom modulefiles or manually set
+the required environmental variables.
+Any additional tasks such as directory or file creation, among others,
+should be performed at this stage. Note that the submission script
+essentially functions as a shell script with additional comments at the beginning.
+As such, any actions that a user would typically carry out in a regular shell session
+can be executed within the script.</p>
+<p>Finally, the script should encompass the core job tasks,
+which typically involve executing simulations, experiments, or other relevant operations.
+During this phase, users would typically initiate the necessary scientific software required
+for their specific needs.</p>
+</section>
+<section id="batch-job-example">
+<h2>Batch Job Example<a class="headerlink" href="#batch-job-example" title="Link to this heading"></a></h2>
+<p>Consider the following bash script:</p>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-text">Example bash script to launch a batch job</span><a class="headerlink" href="#id3" title="Link to this code"></a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="c1">#!/bin/bash</span>
+<span class="w"> </span><span class="c1">#SBATCH --job-name=example_batch_job</span>
+<span class="w"> </span><span class="c1">#SBATCH --error=/home/user/%x.%j.err</span>
+<span class="w"> </span><span class="c1">#SBATCH --output=/home/user/%x.%j.out</span>
+<span class="w"> </span><span class="c1">#SBATCH --time=05:30:00</span>
+<span class="w"> </span><span class="c1">#SBATCH --ntasks-per-node=128</span>
+<span class="w"> </span><span class="c1">#SBATCH --nodes=2</span>
+<span class="w"> </span><span class="c1">#SBATCH --partition=compute</span>
+
+<span class="w"> </span><span class="c1"># print list of nodes assigned to the job.</span>
+<span class="w"> </span><span class="c1"># Example output:</span>
+<span class="w"> </span><span class="c1"># larcc-cpu1</span>
+<span class="w"> </span><span class="c1"># larcc-cpu2</span>
+<span class="w"> </span>scontrol<span class="w"> </span>show<span class="w"> </span>hostnames<span class="w"> </span><span class="nv">$SLURM_JOB_NODELIST</span>
+</pre></div>
+</div>
+</div>
+<p>In this script, the job is assigned the name <em>example_batch_job</em> using the <code class="docutils literal notranslate"><span class="pre">#SBATCH</span> <span class="pre">--job-name</span></code>
+directive. The maximum allowed running time is set to 5 hours and 30 minutes through the
+<code class="docutils literal notranslate"><span class="pre">#SBATCH</span> <span class="pre">--time</span></code> directive. The job is configured to utilize 2 nodes (<code class="docutils literal notranslate"><span class="pre">#SBATCH</span> <span class="pre">--nodes</span></code>)
+and 128 processors per node (<code class="docutils literal notranslate"><span class="pre">#SBATCH</span> <span class="pre">--ntasks-per-node</span></code>). It is intended to run in the <em>compute</em> queue
+(<code class="docutils literal notranslate"><span class="pre">#SBATCH</span> <span class="pre">--partition</span></code>). Any encountered error messages are to be stored in the file
+<code class="docutils literal notranslate"><span class="pre">/home/user/%x.%j.out</span></code>, where <code class="docutils literal notranslate"><span class="pre">%x</span></code> is replaced with the job name specified with the
+<code class="docutils literal notranslate"><span class="pre">#SBATCH</span> <span class="pre">--job-name</span></code> directive and <code class="docutils literal notranslate"><span class="pre">%j</span></code> is replaced with the job ID assigned by Slurm.
+Similarly, non-error messages are directed to the file <code class="docutils literal notranslate"><span class="pre">/home/user/%x.%j.err</span></code>
+for logging purposes. The environmental variable <code class="docutils literal notranslate"><span class="pre">SLURM_JOB_NODELIST</span></code> is passed
+to the script by slurm (see section <a class="reference internal" href="job_environment.html#slurm-env-vars"><span class="std std-ref">Slurm environmental variables</span></a>).</p>
+<p>Suppose this script is located at path: <code class="docutils literal notranslate"><span class="pre">/home/user/example_batch_job.sh</span></code>. Then,
+the command below would submit the batch job to slurm:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sbatch<span class="w"> </span>/home/user/example_batch_job.sh
+</pre></div>
+</div>
+</section>
+</section>
+<section id="job-arrays">
+<span id="id1"></span><h1>Job Arrays<a class="headerlink" href="#job-arrays" title="Link to this heading"></a></h1>
+<p>Job arrays are a powerful feature in Slurm that allow you to submit and manage multiple similar jobs efficiently using a single job script. This is especially useful when you need to run the same program many times with different input parameters, files, or configurations.</p>
+<p>Instead of writing and submitting dozens (or hundreds) of separate job scripts, you can use a single script and let Slurm handle the rest.</p>
+<section id="how-job-arrays-work">
+<h2>How Job Arrays Work<a class="headerlink" href="#how-job-arrays-work" title="Link to this heading"></a></h2>
+<p>When you use the <code class="docutils literal notranslate"><span class="pre">#SBATCH</span> <span class="pre">--array</span></code> directive in your job script, Slurm creates multiple jobs, each with a unique index called <code class="docutils literal notranslate"><span class="pre">SLURM_ARRAY_TASK_ID</span></code>. This environment variable is automatically set by Slurm and can be used inside your script to control behavior for each job.</p>
+<p>Each array index corresponds to a separate job instance. For example, <code class="docutils literal notranslate"><span class="pre">#SBATCH</span> <span class="pre">--array=1-3</span></code>
+will submit three jobs, with <code class="docutils literal notranslate"><span class="pre">SLURM_ARRAY_TASK_ID</span></code> set to 1, 2, and 3 respectively. You can use this variable to select input files, set parameters, or control logic in your script.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><strong>Important:</strong> The order in which array jobs run is not guaranteed. For example, the job with SLURM_ARRAY_TASK_ID=2 may run before or after the one with ID 3.</p>
+</div>
+</section>
+<section id="array-syntax-options">
+<h2>Array Syntax Options<a class="headerlink" href="#array-syntax-options" title="Link to this heading"></a></h2>
+<p>You can define array indices in several ways:</p>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td></td>
+<td><p><strong>Description</strong></p></td>
+<td><p><strong>Example</strong></p></td>
+<td><p><strong>Example Outcome</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>Explicit list</p></td>
+<td><p>Comma separated list of array IDs.</p></td>
+<td><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#SBATCH --array=1,2,3,7,10</span>
+</pre></div>
+</div>
+</td>
+<td><p>Runs 5 jobs with Array Task IDs 1, 2, 3, 7, 10.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Range</p></td>
+<td><p>Interval of array IDs. Both endpoints are inclusive.</p></td>
+<td><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#SBATCH --array=1-10</span>
+</pre></div>
+</div>
+</td>
+<td><p>Runs 10 jobs with Array Task IDs 1, 2, 3, 4, …, 9, 10.</p></td>
+</tr>
+<tr class="row-even"><td><p>Range with an offset to skip array indexes.</p></td>
+<td><p>Interval of array IDs.</p></td>
+<td><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#SBATCH --array=1-10:2</span>
+</pre></div>
+</div>
+</td>
+<td><p>Runs 5 jobs with Array Task IDs 1, 3, 5, 7, 9.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Limit concurrent jobs</p></td>
+<td><p>Indicate how many arrays jobs are submitted to the queue at a given time.</p></td>
+<td><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#SBATCH --array=0-49%20</span>
+</pre></div>
+</div>
+</td>
+<td><p>Submit 50 jobs, with Array Task IDs 0, 1, 2, …, 48, 49, but only 20 run at a time.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="example-job-array-script">
+<h2>Example Job Array Script<a class="headerlink" href="#example-job-array-script" title="Link to this heading"></a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="c1">#SBATCH --partition=compute</span>
+<span class="c1">#SBATCH --array=1-10</span>
+<span class="c1">#SBATCH --ntasks=1</span>
+<span class="c1">#SBATCH --cpus-per-task=4</span>
+<span class="c1">#SBATCH --mem=8G</span>
+<span class="c1">#SBATCH --time=01:00:00</span>
+<span class="c1">#SBATCH --output=job_%A_%a.out</span>
+<span class="c1">#SBATCH --error=job_%A_%a.err</span>
+<span class="c1">#SBATCH --job-name=array_example</span>
+
+module<span class="w"> </span>load<span class="w"> </span>my_program
+
+<span class="c1"># Use SLURM_ARRAY_TASK_ID to select input file</span>
+<span class="nv">INPUT_FILE</span><span class="o">=</span><span class="s2">&quot;input_</span><span class="si">${</span><span class="nv">SLURM_ARRAY_TASK_ID</span><span class="si">}</span><span class="s2">.dat&quot;</span>
+
+<span class="c1"># Run the program with the selected input</span>
+my_program<span class="w"> </span>--input<span class="w"> </span><span class="nv">$INPUT_FILE</span><span class="w"> </span>--output<span class="w"> </span>output_<span class="si">${</span><span class="nv">SLURM_ARRAY_TASK_ID</span><span class="si">}</span>.dat
+</pre></div>
+</div>
+<p><strong>Explanation:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">#SBATCH</span> <span class="pre">--array=1-10</span></code>: Submits 10 jobs, each with a unique array index from 1 to 10.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#SBATCH</span> <span class="pre">--ntasks=1</span></code>: Each job runs a single task (i.e., spawns one process).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#SBATCH</span> <span class="pre">--cpus-per-task=4</span></code>: Each job requests 4 CPU cores. Since –ntasks=1, this likely means the process will use 4 threads.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#SBATCH</span> <span class="pre">--mem=8G</span></code>: Each job requests 8 GB of RAM.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#SBATCH</span> <span class="pre">--time=01:00:00</span></code>: Each job can run for up to 1 hour.</p></li>
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">#SBATCH</span> <span class="pre">--output=job_%A_%a.out</span></code> and <code class="docutils literal notranslate"><span class="pre">#SBATCH</span> <span class="pre">--error=job_%A_%a.err</span></code></dt><dd><ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">%A</span></code>: Replaced with the job ID of the array.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">%a</span></code>: Replaced with the array index (i.e., the value of SLURM_ARRAY_TASK_ID).</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>Each job runs independently with its own input and output.</p></li>
+</ul>
+<p><strong>Resource Considerations:</strong></p>
+<p>Since these jobs are submitted to the compute partition, we can estimate how they will be scheduled:</p>
+<ul class="simple">
+<li><p><strong>CPU usage:</strong> 10 jobs * 1 task * 4 cores = 40 cores total. Each node in the compute queue has 128 cores, so all jobs can likely run on a single node.</p></li>
+<li><p><strong>Memory usage:</strong> 10 jobs * 8 GB = 80 GB total. Each node in the compute queue has ~515 GB of RAM, so memory is not a limiting factor.</p></li>
+</ul>
+<p>This means the scheduler may place all 10 jobs on the same node, depending on availability and other jobs in the queue.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="interactive_jobs.html" class="btn btn-neutral float-left" title="Interactive Jobs" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="job_dependencies.html" class="btn btn-neutral float-right" title="Job Dependencies" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, ITS - Research Computing.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

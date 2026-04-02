@@ -1,0 +1,515 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RStudio &mdash; LARCC User Documentation  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=3ad828ca" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Tensorflow" href="tensorflow.html" />
+    <link rel="prev" title="R" href="R.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            LARCC User Documentation
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../accounts_and_support/index.html">Accounts and Support</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../accounts_and_support/index.html#request-an-account">Request an account</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../accounts_and_support/index.html#accounts-for-uofl-individuals">Accounts for UofL individuals</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../accounts_and_support/index.html#uofl-vpn-connection">UofL VPN Connection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../accounts_and_support/index.html#request-support-tickets">Request Support (Tickets)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../gettingstarted/index.html">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/index.html#usage-agreement">Usage Agreement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/index.html#hpc-system-overview">HPC system overview</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../gettingstarted/index.html#about-the-cluster">About the cluster</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gettingstarted/index.html#about-scientific-software">About Scientific Software</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gettingstarted/index.html#about-jobs">About Jobs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/index.html#quickstart">Quickstart</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../gettingstarted/index.html#logging-into-the-cluster">Logging into the cluster</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../gettingstarted/index.html#using-the-command-line">Using the command line</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../gettingstarted/index.html#using-mobaxterm">Using MobaXterm</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../gettingstarted/index.html#copying-files-to-from-the-cluster">Copying files to/from the cluster</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../gettingstarted/index.html#id1">Using the command line</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../gettingstarted/index.html#id2">Using MobaXterm</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../gettingstarted/index.html#using-software-installed-in-the-cluster">Using software installed in the cluster</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../gettingstarted/index.html#list-available-software">List available software</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../gettingstarted/index.html#load-software">Load software</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../gettingstarted/index.html#list-currently-loaded-software">List currently loaded software</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../gettingstarted/index.html#unloading-software">Unloading software</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../gettingstarted/index.html#queues-and-jobs">Queues and jobs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../gettingstarted/index.html#policies">Policies</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../gettingstarted/index.html#installing-packages-system-wide">Installing packages system-wide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gettingstarted/index.html#running-applications-on-the-login-nodes">Running applications on the login nodes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gettingstarted/index.html#resource-restrictions">Resource restrictions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../gettingstarted/index.html#job-runtime-restrictions">Job runtime restrictions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../gettingstarted/index.html#storage-restrictions">Storage restrictions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/index.html">Guides</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../guides/system_guide/index.html">HPC System Guide</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../guides/system_guide/index.html#introduction">Introduction</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../guides/system_guide/index.html#what-is-a-shell">What is a Shell?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../guides/system_guide/index.html#what-is-case-sensitivity">What is case-sensitivity?</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../guides/system_guide/index.html#connecting-to-the-cluster">Connecting to the Cluster</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../guides/system_guide/index.html#understanding-filesystems">Understanding Filesystems</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../guides/system_guide/index.html#what-is-a-filesystem">What is a Filesystem?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../guides/system_guide/index.html#filesystem-hierarchies">Filesystem Hierarchies</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../guides/system_guide/index.html#navigating-the-filesystem">Navigating the filesystem</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../guides/system_guide/index.html#using-modules">Using Modules</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/slurm/index.html">Slurm Queueing System Guide</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../guides/slurm/index.html#basic-slurm-terminology">Basic Slurm Terminology</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../guides/slurm/terminology.html">Basic Slurm Terminology</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../guides/slurm/index.html#job-types-and-job-submission">Job Types and Job Submission</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../guides/slurm/interactive_jobs.html">Interactive Jobs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../guides/slurm/batch_jobs.html">Batch Jobs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../guides/slurm/batch_jobs.html#job-arrays">Job Arrays</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../guides/slurm/job_dependencies.html">Job Dependencies</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../guides/slurm/index.html#job-environment">Job Environment</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../guides/slurm/job_environment.html">Slurm environmental variables</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../guides/slurm/index.html#strategies-when-submitting-slurm-jobs">Strategies When Submitting Slurm Jobs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../guides/slurm/job_submission_strategies.html">Single Job with Multiple Job Steps</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../guides/slurm/job_submission_strategies.html#job-arrays">Job Arrays</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../guides/slurm/job_submission_strategies.html#requesting-cpu-nodes-with-multiple-parallel-tasks">Requesting CPU Nodes with Multiple Parallel Tasks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../guides/slurm/job_submission_strategies.html#single-gpu-node-with-one-task-per-gpu-and-cpu-cores-evenly-distributed-across-tasks">Single GPU node with one task per GPU and CPU cores evenly distributed across tasks</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/storage/index.html">Storage Guide</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../guides/storage/index.html#understanding-storage-on-compute-nodes">Understanding Storage on Compute Nodes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../guides/storage/index.html#storage-types">Storage Types</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../guides/storage/index.html#recommended-workflow">Recommended Workflow</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../guides/storage/index.html#copying-data-between-home-and-scratch">Copying Data Between Home and Scratch</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Software</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="conda.html">Conda (Anaconda/Miniconda/Miniforge)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="conda.html#basics">Basics</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="conda.html#about-anaconda-miniconda-and-miniforge">About Anaconda, Miniconda and Miniforge</a></li>
+<li class="toctree-l4"><a class="reference internal" href="conda.html#what-is-a-conda-environment">What is a Conda environment?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="conda.html#why-use-multiple-conda-environments">Why use multiple Conda environments?</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="conda.html#using-conda">Using Conda</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="conda.html#loading-the-miniforge3-module-and-the-base-environment">Loading the miniforge3 module and the base environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="conda.html#creating-and-activating-an-environment">Creating and activating an environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="conda.html#installing-packages-with-conda-and-mamba">Installing packages with conda and mamba</a></li>
+<li class="toctree-l4"><a class="reference internal" href="conda.html#installing-packages-with-pip">Installing packages with pip</a></li>
+<li class="toctree-l4"><a class="reference internal" href="conda.html#cloning-an-environment">Cloning an environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="conda.html#miscellaneous">Miscellaneous</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="conda.html#conda-in-a-batch-job">Conda in a batch job</a></li>
+<li class="toctree-l3"><a class="reference internal" href="conda.html#conda-in-an-interactive-job">Conda in an interactive job</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="gaussian.html">Gaussian</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="gaussian.html#running-gaussian">Running Gaussian</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="gaussian.html#example-slurm-job-script">Example Slurm Job Script</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="jupyter.html">Jupyter</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="jupyter.html#launching-jupyter-through-a-batch-job">Launching Jupyter through a batch job</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="jupyter.html#optional-create-a-jupyter-environment">1. (Optional) Create a jupyter environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="jupyter.html#create-the-submission-script">2. Create the submission script</a></li>
+<li class="toctree-l4"><a class="reference internal" href="jupyter.html#connect-to-jupyter-from-your-web-browser">3. Connect to jupyter from your web browser</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="jupyter.html#launching-jupyter-through-an-interactive-job">Launching Jupyter through an interactive job</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="jupyter.html#id2">1. (Optional) Create a jupyter environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="jupyter.html#submit-an-interactive-job">2. Submit an interactive job</a></li>
+<li class="toctree-l4"><a class="reference internal" href="jupyter.html#manually-launch-jupyter">3. Manually launch Jupyter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="jupyter.html#access-jupyter-from-your-workstation">4. Access Jupyter from your workstation</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="jupyter.html#transitioning-from-jupyter-to-python-script">Transitioning from Jupyter to Python Script</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="jupyter.html#export-the-notebook">1. Export the Notebook</a></li>
+<li class="toctree-l4"><a class="reference internal" href="jupyter.html#clean-up-the-script">2. Clean Up the Script</a></li>
+<li class="toctree-l4"><a class="reference internal" href="jupyter.html#replace-notebook-specific-features">3. Replace Notebook-Specific Features</a></li>
+<li class="toctree-l4"><a class="reference internal" href="jupyter.html#handle-file-paths-and-inputs">4. Handle File Paths and Inputs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="jupyter.html#test-the-script">5. Test the Script</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="matlab.html">MATLAB</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="matlab.html#basics">Basics</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="matlab.html#workers-and-pools">Workers and pools</a></li>
+<li class="toctree-l4"><a class="reference internal" href="matlab.html#parallel-and-distributed-execution">Parallel and distributed execution</a></li>
+<li class="toctree-l4"><a class="reference internal" href="matlab.html#cluster-profiles">Cluster profiles</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="matlab.html#submitting-a-batch-job">Submitting a batch job</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="matlab.html#submit-jobs-through-a-batch-script">Submit jobs through a batch script</a></li>
+<li class="toctree-l4"><a class="reference internal" href="matlab.html#submit-jobs-through-matlab-s-command-prompt">Submit jobs through MATLAB’s command prompt</a></li>
+<li class="toctree-l4"><a class="reference internal" href="matlab.html#submit-jobs-through-a-batch-script-and-a-matlab-submission-script">Submit jobs through a batch script and a MATLAB submission script</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="matlab.html#creating-a-cluster-profile-for-larcc">Creating a cluster profile for LARCC</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="lammps.html">LAMMPS</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="lammps.html#running-lammps">Running LAMMPS</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="lammps.html#example-slurm-job-script">Example Slurm Job Script</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="lammps.html#building-lammps">Building LAMMPS</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="liggghts.html">LIGGGHTS</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="liggghts.html#running-ligghts">Running LIGGHTS</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="liggghts.html#example-slurm-job-script">Example Slurm Job Script</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pytorch.html">PyTorch</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pytorch.html#verifying-gpu-availability">Verifying GPU Availability</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pytorch.html#using-gpus-in-pytorch">Using GPUs in PyTorch</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pytorch.html#moving-tensors-to-gpu">Moving Tensors to GPU</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pytorch.html#model-training-on-gpu">Model Training on GPU</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pytorch.html#monitoring-gpu-usage">Monitoring GPU Usage</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pytorch.html#multi-gpu-usage-in-pytorch">Multi-GPU Usage in PyTorch</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pytorch.html#single-node-multi-gpu-dataparallel-or-ddp">Single Node, Multi-GPU (DataParallel or DDP)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="R.html">R</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="R.html#using-r">Using R</a></li>
+<li class="toctree-l3"><a class="reference internal" href="R.html#installing-r-packages">Installing R Packages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="R.html#installing-r-packages-in-custom-locations">Installing R packages in custom locations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="R.html#installing-r-packages-with-external-library-dependencies">Installing R Packages with External Library Dependencies</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="R.html#example-installing-the-units-package">Example: Installing the <code class="docutils literal notranslate"><span class="pre">units</span></code> Package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="R.html#example-installing-the-sf-package">Example: Installing the <code class="docutils literal notranslate"><span class="pre">sf</span></code> Package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="R.html#simplifying-with-conda">Simplifying with Conda</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="R.html#using-the-pak-package-manager">Using the <code class="docutils literal notranslate"><span class="pre">pak</span></code> Package Manager</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">RStudio</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#pre-launch">Pre-launch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#launch-rstudio-server">Launch RStudio Server</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tensorflow.html">Tensorflow</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tensorflow.html#verifying-gpu-availability">Verifying GPU Availability</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tensorflow.html#single-node-multi-gpu-training">Single Node, Multi-GPU Training</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="vasp.html">VASP</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="vasp.html#license-restrictions">License Restrictions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="vasp.html#running-vasp">Running VASP</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="vasp.html#vasp-on-gpu-nodes">VASP on GPU nodes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="vasp.html#vasp-on-cpu-only-nodes">VASP on CPU-only nodes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="vasp.html#example-slurm-job-script">Example Slurm Job Script</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../usecases/index.html">AI Use Cases</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../usecases/chest_xray.html">Pneumonia detection based on Chest X-Ray</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../usecases/chest_xray.html#ingesting-the-data">1. Ingesting the data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../usecases/chest_xray.html#training-the-models">2. Training the models</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../usecases/chest_xray.html#cnn-training-and-validation">CNN Training and Validation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../usecases/chest_xray.html#transfer-learning-training-and-validation">Transfer Learning Training and Validation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../usecases/chest_xray.html#fine-tuning-training-and-validation">Fine Tuning Training and Validation</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../usecases/chest_xray.html#visualize-metrics">3. Visualize Metrics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../usecases/chest_xray.html#save-your-results-for-further-analyses">4. Save your results for further analyses</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../usecases/medbert.html">Med-BERT</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">LARCC User Documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Software</a></li>
+      <li class="breadcrumb-item active">RStudio</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/software/rstudio.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="rstudio">
+<span id="id1"></span><h1>RStudio<a class="headerlink" href="#rstudio" title="Link to this heading"></a></h1>
+<section id="pre-launch">
+<h2>Pre-launch<a class="headerlink" href="#pre-launch" title="Link to this heading"></a></h2>
+<ol class="arabic">
+<li><p>Login to the cluster and download a singularity/apptainer image from the rocker project
+(<a class="reference external" href="https://hub.docker.com/r/rocker/rstudio/tags">https://hub.docker.com/r/rocker/rstudio/tags</a>). Pick one with the desired version of R. For example:</p>
+<ul class="simple">
+<li><p>Download image for R 4.5</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>user@larcc-login1<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>module<span class="w"> </span>load<span class="w"> </span>apptainer/1.3.4-gcc-11.5.0
+<span class="o">[</span>user@larcc-login1<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>apptainer<span class="w"> </span>pull<span class="w"> </span>docker://rocker/rstudio:4.5
+<span class="o">[</span>user@larcc-login1<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>ls
+rstudio_4.5.sif
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Download image for latest R</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>user@larcc-login1<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>module<span class="w"> </span>load<span class="w"> </span>apptainer/1.3.4-gcc-11.5.0
+<span class="o">[</span>user@larcc-login1<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>apptainer<span class="w"> </span>pull<span class="w"> </span>docker://rocker/rstudio:latest
+<span class="o">[</span>user@larcc-login1<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>ls
+rstudio_latest.sif
+</pre></div>
+</div>
+</li>
+<li><p>Create the following batch script, modifying the <code class="docutils literal notranslate"><span class="pre">CHANGE</span> <span class="pre">ME!!!</span></code> section and slurm parameter
+as appropriate</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="ch">#!/bin/sh</span>
+<span class="linenos"> 2</span><span class="c1">#SBATCH --job-name=&quot;rstudio-server&quot;</span>
+<span class="linenos"> 3</span><span class="c1">#SBATCH --time=08:00:00</span>
+<span class="linenos"> 4</span><span class="c1">#SBATCH --signal=USR2</span>
+<span class="linenos"> 5</span><span class="c1">#SBATCH --nodes=1</span>
+<span class="linenos"> 6</span><span class="c1">#SBATCH --partition=compute</span>
+<span class="linenos"> 7</span><span class="c1">#SBATCH --mem=515002</span>
+<span class="linenos"> 8</span><span class="c1">#SBATCH --output=/home/%u/rstudio-server.%j.out</span>
+<span class="linenos"> 9</span><span class="c1">#SBATCH --error=/home/%u/rstudio-server.%j.err</span>
+<span class="linenos">10</span>
+<span class="linenos">11</span>module<span class="w"> </span>load<span class="w"> </span>apptainer/1.3.4-gcc-11.5.0
+<span class="linenos">12</span>
+<span class="linenos">13</span><span class="c1">## CHANGE ME!!! #############################################</span>
+<span class="linenos">14</span><span class="c1"># You can set this to a specific R version if you would like</span>
+<span class="linenos">15</span><span class="c1"># For example, VERSION_OF_R=4.5</span>
+<span class="linenos">16</span><span class="nv">VERSION_OF_R</span><span class="o">=</span>latest
+<span class="linenos">17</span><span class="c1"># Folder where the apptainer/singularity instances are saved</span>
+<span class="linenos">18</span><span class="nv">FOLDER_CONTAINER_INSTANCES</span><span class="o">=</span><span class="nv">$HOME</span>
+<span class="linenos">19</span><span class="c1">############################################################</span>
+<span class="linenos">20</span>
+<span class="linenos">21</span><span class="nv">CONTAINER</span><span class="o">=</span><span class="si">${</span><span class="nv">FOLDER_CONTAINER_INSTANCES</span><span class="si">}</span>/rstudio_<span class="si">${</span><span class="nv">VERSION_OF_R</span><span class="si">}</span>.sif
+<span class="linenos">22</span>
+<span class="linenos">23</span><span class="k">if</span><span class="w"> </span>!<span class="w"> </span><span class="o">[</span><span class="w"> </span>-f<span class="w"> </span><span class="nv">$CONTAINER</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="linenos">24</span><span class="w">    </span><span class="nb">printf</span><span class="w"> </span><span class="s2">&quot;Please run apptainer pull docker://rocker/rstudio:</span><span class="si">${</span><span class="nv">VERSION_OF_R</span><span class="si">}</span><span class="s2"> and, once the download finishes, make sure the rstudio_</span><span class="si">${</span><span class="nv">VERSION_OF_R</span><span class="si">}</span><span class="s2">.sif file is placed in </span><span class="si">${</span><span class="nv">FOLDER_CONTAINER_INSTANCES</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="m">1</span>&gt;<span class="p">&amp;</span><span class="m">2</span>
+<span class="linenos">25</span><span class="k">fi</span>
+<span class="linenos">26</span>
+<span class="linenos">27</span><span class="c1"># Create temporary directory to be populated with directories to bind-mount in the container</span>
+<span class="linenos">28</span><span class="c1"># where writable file systems are necessary. Adjust path as appropriate for your computing environment.</span>
+<span class="linenos">29</span><span class="nv">workdir</span><span class="o">=</span><span class="k">$(</span>mktemp<span class="w"> </span>-d<span class="k">)</span>
+<span class="linenos">30</span>
+<span class="linenos">31</span><span class="c1"># Set R_LIBS_USER to an existing path specific to rocker/rstudio to avoid conflicts with</span>
+<span class="linenos">32</span><span class="c1"># personal libraries from any R installation in the host environment</span>
+<span class="linenos">33</span>
+<span class="linenos">34</span>cat<span class="w"> </span>&gt;<span class="w"> </span><span class="si">${</span><span class="nv">workdir</span><span class="si">}</span>/rsession.sh<span class="w"> </span><span class="s">&lt;&lt;END</span>
+<span class="linenos">35</span><span class="s">#!/bin/sh</span>
+<span class="linenos">36</span><span class="s">export R_LIBS_USER=\${HOME}/R/rocker-rstudio/${VERSION_OF_R}</span>
+<span class="linenos">37</span><span class="s">mkdir -p &quot;\${R_LIBS_USER}&quot;</span>
+<span class="linenos">38</span><span class="s">## custom Rprofile &amp; Renviron (default is \$HOME/.Rprofile and \$HOME/.Renviron)</span>
+<span class="linenos">39</span><span class="s"># export R_PROFILE_USER=/path/to/Rprofile</span>
+<span class="linenos">40</span><span class="s"># export R_ENVIRON_USER=/path/to/Renviron</span>
+<span class="linenos">41</span><span class="s">exec /usr/lib/rstudio-server/bin/rsession &quot;\${@}&quot;</span>
+<span class="linenos">42</span><span class="s">END</span>
+<span class="linenos">43</span>
+<span class="linenos">44</span>chmod<span class="w"> </span>+x<span class="w"> </span><span class="si">${</span><span class="nv">workdir</span><span class="si">}</span>/rsession.sh
+<span class="linenos">45</span>
+<span class="linenos">46</span><span class="nb">export</span><span class="w"> </span><span class="nv">APPTAINER_BIND</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">workdir</span><span class="si">}</span><span class="s2">/rsession.sh:/etc/rstudio/rsession.sh&quot;</span>
+<span class="linenos">47</span>
+<span class="linenos">48</span><span class="c1"># Do not suspend idle sessions.</span>
+<span class="linenos">49</span><span class="c1"># Alternative to setting session-timeout-minutes=0 in /etc/rstudio/rsession.conf</span>
+<span class="linenos">50</span><span class="c1"># https://github.com/rstudio/rstudio/blob/v1.4.1106/src/cpp/server/ServerSessionManager.cpp#L126</span>
+<span class="linenos">51</span><span class="nb">export</span><span class="w"> </span><span class="nv">APPTAINERENV_RSTUDIO_SESSION_TIMEOUT</span><span class="o">=</span><span class="m">0</span>
+<span class="linenos">52</span>
+<span class="linenos">53</span><span class="nb">export</span><span class="w"> </span><span class="nv">APPTAINERENV_USER</span><span class="o">=</span><span class="k">$(</span>id<span class="w"> </span>-un<span class="k">)</span>
+<span class="linenos">54</span><span class="nb">export</span><span class="w"> </span><span class="nv">APPTAINERENV_PASSWORD</span><span class="o">=</span><span class="k">$(</span>openssl<span class="w"> </span>rand<span class="w"> </span>-base64<span class="w"> </span><span class="m">15</span><span class="k">)</span>
+<span class="linenos">55</span><span class="c1"># get unused socket per https://unix.stackexchange.com/a/132524</span>
+<span class="linenos">56</span><span class="c1"># tiny race condition between the python &amp; singularity commands</span>
+<span class="linenos">57</span><span class="nb">readonly</span><span class="w"> </span><span class="nv">PORT</span><span class="o">=</span><span class="k">$(</span>python3<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;import socket; s=socket.socket(); s.bind((&quot;&quot;, 0)); print(s.getsockname()[1]); s.close()&#39;</span><span class="k">)</span>
+<span class="linenos">58</span>cat<span class="w"> </span><span class="m">1</span>&gt;<span class="p">&amp;</span><span class="m">2</span><span class="w"> </span><span class="s">&lt;&lt;END</span>
+<span class="linenos">59</span><span class="s">1. SSH tunnel from your workstation using the following command:</span>
+<span class="linenos">60</span>
+<span class="linenos">61</span><span class="s">   ssh -N -L 8787:`hostname | sed &#39;s/larcc-/larcc-hs-/&#39;`:${PORT} ${APPTAINERENV_USER}@larcc.hpc.louisville.edu</span>
+<span class="linenos">62</span>
+<span class="linenos">63</span><span class="s">   and point your web browser to http://localhost:8787</span>
+<span class="linenos">64</span>
+<span class="linenos">65</span><span class="s">2. log in to RStudio Server using the following credentials:</span>
+<span class="linenos">66</span>
+<span class="linenos">67</span><span class="s">   user: ${APPTAINERENV_USER}</span>
+<span class="linenos">68</span><span class="s">   password: ${APPTAINERENV_PASSWORD}</span>
+<span class="linenos">69</span>
+<span class="linenos">70</span><span class="s">When done using RStudio Server, terminate the job by:</span>
+<span class="linenos">71</span>
+<span class="linenos">72</span><span class="s">1. Exit the RStudio Session (&quot;power&quot; button in the top right corner of the RStudio window)</span>
+<span class="linenos">73</span><span class="s">2. Issue the following command on the login node:</span>
+<span class="linenos">74</span>
+<span class="linenos">75</span><span class="s">      scancel -f ${SLURM_JOB_ID}</span>
+<span class="linenos">76</span><span class="s">END</span>
+<span class="linenos">77</span>
+<span class="linenos">78</span>singularity<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>--cleanenv<span class="w"> </span><span class="se">\</span>
+<span class="linenos">79</span><span class="w">                 </span>--scratch<span class="w"> </span>/run,/tmp,/var/lib/rstudio-server<span class="w"> </span><span class="se">\</span>
+<span class="linenos">80</span><span class="w">                 </span>--workdir<span class="w"> </span><span class="si">${</span><span class="nv">workdir</span><span class="si">}</span><span class="w"> </span><span class="se">\</span>
+<span class="linenos">81</span><span class="w">                 </span><span class="si">${</span><span class="nv">CONTAINER</span><span class="si">}</span><span class="w"> </span><span class="se">\</span>
+<span class="linenos">82</span><span class="w">    </span>rserver<span class="w"> </span>--www-port<span class="w"> </span><span class="si">${</span><span class="nv">PORT</span><span class="si">}</span><span class="w"> </span><span class="se">\</span>
+<span class="linenos">83</span><span class="w">            </span>--auth-none<span class="o">=</span><span class="m">0</span><span class="w"> </span><span class="se">\</span>
+<span class="linenos">84</span><span class="w">            </span>--auth-pam-helper-path<span class="o">=</span>pam-helper<span class="w"> </span><span class="se">\</span>
+<span class="linenos">85</span><span class="w">            </span>--auth-stay-signed-in-days<span class="o">=</span><span class="m">30</span><span class="w"> </span><span class="se">\</span>
+<span class="linenos">86</span><span class="w">            </span>--auth-timeout-minutes<span class="o">=</span><span class="m">0</span><span class="w"> </span><span class="se">\</span>
+<span class="linenos">87</span><span class="w">            </span>--server-user<span class="o">=</span><span class="k">$(</span>whoami<span class="k">)</span><span class="w"> </span><span class="se">\</span>
+<span class="linenos">88</span><span class="w">            </span>--rsession-path<span class="o">=</span>/etc/rstudio/rsession.sh
+<span class="linenos">89</span><span class="nb">printf</span><span class="w"> </span><span class="s1">&#39;rserver exited&#39;</span><span class="w"> </span><span class="m">1</span>&gt;<span class="p">&amp;</span><span class="m">2</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ol>
+</section>
+<section id="launch-rstudio-server">
+<h2>Launch RStudio Server<a class="headerlink" href="#launch-rstudio-server" title="Link to this heading"></a></h2>
+<ol class="arabic">
+<li><p>Assume the script from the pre-launch step is located at <code class="docutils literal notranslate"><span class="pre">~/rstudio-server.sbatch</span></code>.
+Then, submit it to slurm with <code class="docutils literal notranslate"><span class="pre">sbatch</span> <span class="pre">~/rstudio-server.sbatch</span></code>.</p></li>
+<li><p>The script will print to the standard error file
+(the one indicated in the <code class="docutils literal notranslate"><span class="pre">#SBATCH</span> <span class="pre">--error</span></code> option in the sbatch file)
+the instructions on how to connect to the RStudio web instance. Example output:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>1. SSH tunnel from your workstation using the following command:
+
+   ssh -N -L 8787:larcc-hs-cpu1:48221 user@larcc.hpc.louisville.edu
+
+   and point your web browser to http://localhost:8787
+
+2. log in to RStudio Server using the following credentials:
+
+   user: user
+
+   password: XnUPB9E0OVvjPfNH0nup
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">48221</span></code> is a randomly picked port (see line 51 of the script) and
+the password <code class="docutils literal notranslate"><span class="pre">XnUPB9E0OVvjPfNH0nup</span></code> is randomly generated (see line 49 of the script).
+The ssh command in line 3 of the example output uses the login node
+as a proxy and reach the allocated compute node.</p>
+</div>
+</li>
+</ol>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="R.html" class="btn btn-neutral float-left" title="R" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="tensorflow.html" class="btn btn-neutral float-right" title="Tensorflow" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, ITS - Research Computing.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
