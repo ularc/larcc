@@ -3,7 +3,10 @@ skinparam linetype polyline
 skinparam linetype ortho
 
 storage "<b>CARDS:</b> 4PB Shared\nCeph Storage" as cards
+storage "<b>CARDS:</b> 1PB Shared\nCeph NVMe Storage" as cards_nvme
 node "LARCC CPU Node" as cpu_node {
+  folder "/work/$USER" as cpu_work {
+  }
   folder "/home/$USER" as cpu_home {
   }
   folder "/mnt/scratch/local/$USER" as cpu_scratch_folder {
@@ -12,15 +15,18 @@ node "LARCC CPU Node" as cpu_node {
 }
 
 node "LARCC GPU Node" as gpu_node {
+  folder "/work/$USER" as gpu_work {
+  }
   folder "/home/$USER" as gpu_home {
   }
   folder "/mnt/scratch/local/$USER" as gpu_scratch_folder {
   }
-  storage "28TB Local\n NVMe Storage" as gpu_scratch
+  storage "14TB Local\n NVMe Storage" as gpu_scratch
 }
+cpu_work -down-> cards_nvme
 cpu_home -down-> cards
 gpu_home -down-> cards
-
+gpu_work -down-> cards_nvme
 gpu_scratch_folder -down-> gpu_scratch
 cpu_scratch_folder -down-> cpu_scratch
 cpu_home -[hidden]right-> cpu_scratch
