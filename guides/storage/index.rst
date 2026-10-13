@@ -7,7 +7,7 @@ Understanding Storage on Compute Nodes
 ======================================
 
 When working on any compute node within the system, there are
-two primary types of storage available to users: ``scratch`` storage and ``home`` storage.
+three primary types of storage available to users: ``scratch`` storage, ``work`` storage and ``home`` storage.
 These are illustrated in the diagram below:
 
 .. image:: images/logical_storage_architecture.png
@@ -29,14 +29,23 @@ Storage Types
 - **Shared across all nodes**: Accessible from any compute node in the system.
 - **Large capacity**: Designed to store a user's persistent data, such as source code, datasets, and results.
 - **Slower access**: Due to its shared nature, read/write operations are generally slower than ``scratch`` storage.
-- **Data retention policy:** Data is kept as this storage space is designed to hold persistent data.
+- **Data retention policy**: Data is kept as this storage space is designed to hold persistent data.
+- **Quota**: Default of 1TiB Quota, expansion is approved by the CARDS Governance Committee through ticket
+
+``work`` Storage
+^^^^^^^^^^^^^^^^
+- **Shared accross all nodes**: Accessible from any compute node in the system.
+- **Large capacity**: Designed to store users datasets across multiple nodes
+- **Slower Access**: due to its shared nature, read/write operationsa are generally slower than ``scratch`` storage
+- **Low Latency**: Backed by NVMe rather than slower Hard Drives, ``work`` has lower-latency than a users ``home`` storage.
+- **Data retention policy**: Data is subject to removal after not having been accessed within 30 days
 
 Recommended Workflow
 ====================
 
 A common and efficient workflow for running jobs on the system is:
 
-1. **Prepare Input Data**: Copy necessary input files from your ``home`` storage to the node's local ``scratch`` storage at the start of your job.
+1. **Prepare Input Data**: Copy necessary input files from your ``home`` storage or ``work`` storage to the node's local ``scratch`` storage at the start of your job.
 2. **Run the Application**: Configure your application to read from and write to the ``scratch`` storage during execution.
    This takes advantage of its high-speed performance.
 3. **Save Results**: Once the job completes, copy the output files back to your ``home`` storage for long-term retention.
