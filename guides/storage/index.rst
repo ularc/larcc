@@ -35,8 +35,8 @@ Storage Types
 ``work`` Storage
 ^^^^^^^^^^^^^^^^
 - **Shared accross all nodes**: Accessible from any compute node in the system.
-- **Large capacity**: Designed to store users datasets across multiple nodes
-- **Slower Access**: due to its shared nature, read/write operationsa are generally slower than ``scratch`` storage
+- **Purpose**: Fast access to large data from the compute nodes.
+- **Slower Access**: due to its shared nature, read/write operations are generally slower than ``scratch`` storage
 - **Low Latency**: Backed by NVMe rather than slower Hard Drives, ``work`` has lower-latency than a users ``home`` storage.
 - **Data retention policy**: Data is subject to removal after not having been accessed within 30 days
 

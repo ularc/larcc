@@ -2,7 +2,7 @@
 skinparam linetype polyline
 skinparam linetype ortho
 
-storage "<b>CARDS:</b> 4PB Shared\nCeph Storage" as cards
+storage "<b>CARDS:</b> 4.5PB Shared\nCeph Storage" as cards
 storage "<b>CARDS:</b> 1PB Shared\nCeph NVMe Storage" as cards_nvme
 node "LARCC CPU Node" as cpu_node {
   folder "/work/$USER" as cpu_work {
