@@ -1,25 +1,25 @@
 @startuml
 
-rectangle "Copy results from scratch to home" {
-caption \lpdsh -R ssh -w $SLURM_JOB_NODELIST "cp -r /mnt/scratch/local/$USER/results /home/$USER/results_\`hostname\`"
+rectangle "Copy results from scratch to work" {
+caption \lpdsh -R ssh -w $SLURM_JOB_NODELIST "cp -r /mnt/scratch/local/$USER/results /work/$USER/results_\`hostname\`"
 rectangle "<b>larcc-cpu1\nExecutes the pdsh command" as job_executor
 note left
   This is where slurm executes
   your submission script
 end note
-rectangle "<b>CARDS 4.5PB Storage" as Shared
+rectangle "<b>CARDS 1PB NVMe Storage" as Shared
 
 rectangle "<b>larcc-cpu1\nExecutes cp command" as Node1 {
-  folder "/home/$USER" as Node1Home
+  folder "/work/$USER" as Node1Home
   folder "/mnt/scratch/local/$USER" as Node1Scratch
 }
 
 rectangle "<b>larcc-cpu2\nExecutes cp command" as Node2 {
-  folder "/home/$USER" as Node2Home
+  folder "/work/$USER" as Node2Home
   folder "/mnt/scratch/local/$USER" as Node2Scratch
 }
 rectangle "<b>larcc-cpu3\nExecutes cp command" as Node3 {
-  folder "/home/$USER" as Node3Home
+  folder "/work/$USER" as Node3Home
   folder "/mnt/scratch/local/$USER" as Node3Scratch
 }
 
