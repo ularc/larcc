@@ -90,7 +90,7 @@ that ``larcc-cpu1`` is chosen as the node where the batch script is to be execut
 command above would:
 
 #. Create 3 (parallel) ssh sessions from ``larcc-cpu1`` to itself, ``larcc-cpu2`` and ``larcc-cpu3``.
-#. Within each session, instruct the node to copy the folder ``/home/$USER/input`` to ``/mnt/scratch/local/$USER/``
+#. Within each session, instruct the node to copy the folder ``/work/$USER/input`` to ``/mnt/scratch/local/$USER/``
 
 .. image:: images/pdsh_work_to_scratch.png
    :width: 900
@@ -117,7 +117,7 @@ commands above would:
 
 #. Create 3 (parallel) ssh sessions from ``larcc-cpu1`` to itself, ``larcc-cpu2`` and ``larcc-cpu3``.
 #. Within each session, instruct the node to copy (or move if using ``mv``) the folder ``/mnt/scratch/local/$USER/results``
-   to ``/home/$USER/``, appending ``_`` followed by the node's hostname to the copy. i.e., 
+   to ``/work/$USER/``, appending ``_`` followed by the node's hostname to the copy. i.e., 
    
    .. code-block:: bash
 
