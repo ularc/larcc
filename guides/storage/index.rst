@@ -11,8 +11,7 @@ The CARDS ceph storage system hosts all of the storage on LARCC. CARDS has 8PB o
 Understanding Storage on Compute Nodes
 ======================================
 
-When working on any compute node within the system, there are
-three primary types of storage available to users: ``scratch`` storage, ``work`` storage, and ``home`` storage.
+When working on any compute node within the system, there are three primary types of storage available to users: ``scratch`` storage, ``work`` storage, and ``home`` storage.
 These are illustrated in the diagram below:
 
 .. image:: images/logical_storage_architecture.png
