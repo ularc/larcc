@@ -21,27 +21,26 @@ These are illustrated in the diagram below:
 Storage Types
 -------------
 
-``scratch`` Storage
+``scratch`` Storage (node-local NVMe)
 ^^^^^^^^^^^^^^^^^^^
 - **Local to each compute node**: This means it is **not shared** across nodes.
 - **High performance**: Offers significantly faster read/write speeds compared to ``home`` storage.
 - **Limited capacity**: Typically smaller in size, so it's best suited for temporary files and high-speed I/O operations during job execution.
 - **Data retention policy:** ALL DATA IS REMOVED after a job finishes.
 
-``home`` Storage
+``home`` Storage (HDD drives)
 ^^^^^^^^^^^^^^^^
 - **Shared across all nodes**: Accessible from any compute node in the system.
 - **Large capacity**: Designed to store a user's persistent data, such as source code, datasets, and results.
-- **Slower access**: Due to its shared nature, read/write operations are generally slower than ``scratch`` storage.
+- **Data access speed**: Due to its shared nature, read/write operations are generally slower than ``scratch`` storage.
 - **Data retention policy**: Data is kept as this storage space is designed to hold persistent data.
 - **Quota**: Default of 1TB Quota, additional storage space requests can be made to the CARDS Governance Committee through a ticket
 
-``work`` Storage
+``work`` Storage (NVMe drives)
 ^^^^^^^^^^^^^^^^
 - **Shared accross all nodes**: Accessible from any compute node in the system.
 - **Purpose**: Fast access to large data from the compute nodes.
-- **Slower Access**: due to its shared nature, read/write operations are generally slower than ``scratch`` storage
-- **Low Latency**: Backed by NVMe rather than slower Hard Drives, ``work`` has lower-latency than a user's ``home`` storage.
+- **Data access speed**: read/write operations can be slower than ``scratch`` storage but can be faster than ``home``, and ``work`` has lower latency than ``home``
 - **Data retention policy**: The data that has not been accessed in the last 30 days is a likely candidate to get purged in the event space needs to be reclaimed in ``work``. All data meant for long-term retention should be copied to an appropriate folder in ``home``.
 
 Recommended Workflow
@@ -50,8 +49,7 @@ Recommended Workflow
 A common and efficient workflow for running jobs on the system is:
 
 1. **Prepare Input Data**: Copy necessary input files from your ``home`` storage or ``work`` storage to the node's local ``scratch`` storage at the start of your job.
-2. **Run the Application**: Configure your application to read from and write to the ``scratch`` storage during execution.
-   This takes advantage of its high-speed performance.
+2. **Run the Application**: Configure your application to read from and write to the ``scratch`` storage during execution to take advantage of its high-speed performance.
 3. **Save Results**: Once the job completes, copy the output files back to ``work``. In case you need to retain the data for long-term, copy that to ``home`` from ``work``.
 
 See Section :ref:`Copying Data Between Work and Scratch <storage_copy_data>` for more information on how to implement
@@ -84,8 +82,7 @@ Copy input data from work to scratch on all nodes
 
    pdsh -R ssh -w $SLURM_JOB_NODELIST "cp -r /work/$USER/input /mnt/scratch/local/$USER/"
 
-For example, assume you submitted a batch job requesting 3 nodes and slurm allocated ``larcc-cpu[1-3]`` such
-that ``larcc-cpu1`` is chosen as the node where the batch script is to be executed from. Then, the ``pdsh``
+For example, assume you submitted a batch job requesting 3 nodes and slurm allocated ``larcc-cpu[1-3]``. Then, the ``pdsh``
 command above would:
 
 #. Create 3 (parallel) ssh sessions from ``larcc-cpu1`` to itself, ``larcc-cpu2`` and ``larcc-cpu3``.
