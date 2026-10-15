@@ -6,7 +6,7 @@ Storage Guide
 CARDS Storage System
 ====================
 
-The CARDS ceph storage system hosts all of the storage on LARCC. CARDS has 8PB of RAW storage capacity. After redundancy and blocking out a 1PB block for the Open Science Data Federation (OSDF), 4.5PB are available to UofL users.
+The CARDS ceph storage system hosts all of the storage on LARCC. CARDS has 8PB of RAW storage capacity. After redundancy and blocking out a 1PB block for the Open Science Data Federation (OSDF), 4.5PB is the usable space available to UofL users.
 
 Understanding Storage on Compute Nodes
 ======================================
