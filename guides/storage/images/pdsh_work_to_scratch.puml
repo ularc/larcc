@@ -1,6 +1,6 @@
 @startuml
 
-rectangle "Copy input from home to scratch" {
+rectangle "Copy input from work to scratch" {
 caption \lpdsh -R ssh -w $SLURM_JOB_NODELIST "cp -r /work/$USER/input /mnt/scratch/local/$USER/"
 
 rectangle "<b>larcc-cpu1\nExecutes the pdsh command" as job_executor
