@@ -34,7 +34,7 @@ Storage Types
 - **Large capacity**: Designed to store a user's persistent data, such as source code, datasets, and results.
 - **Slower access**: Due to its shared nature, read/write operations are generally slower than ``scratch`` storage.
 - **Data retention policy**: Data is kept as this storage space is designed to hold persistent data.
-- **Quota**: Default of 1TB Quota, expansion is approved by the CARDS Governance Committee through ticket
+- **Quota**: Default of 1TB Quota, additional storage space requests can be made to the CARDS Governance Committee through a ticket
 
 ``work`` Storage
 ^^^^^^^^^^^^^^^^
