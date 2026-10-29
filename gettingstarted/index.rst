@@ -120,8 +120,7 @@ Quickstart
 Logging into the cluster
 ------------------------
 
-Upon creating an account, users are provided with a username and password, 
-which they can utilize to access the cluster via SSH (Secure Shell Protocol).
+Once your account is created on the system, please utilize your ULink credentials to access the cluster via SSH (Secure Shell Protocol).
 The procedure entails employing an SSH client from their personal computers
 to establish a connection with the login node. 
 
